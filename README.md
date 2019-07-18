@@ -42,10 +42,10 @@ Show collections
 > show collections
 
 Find any collection info
-db.requestHeader.find()
+> db.requestHeader.find()
 
 Find last insert
-db.requestHeader.find().sort({$natural:-1}).limit(1).pretty()
+> db.requestHeader.find().sort({$natural:-1}).limit(1).pretty()
 
 
 ## View Distinct IPs
