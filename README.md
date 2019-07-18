@@ -35,5 +35,17 @@ sudo kill -9 <pid>
 
 ## Queries Example:
 
+Show dbs
+> show dbs
+
+Show collections
+> show collections
+
+Find any collection info
+db.requestHeader.find()
+
+Find last insert
+db.requestHeader.find().sort({$natural:-1}).limit(1).pretty()
+
 
 ## View Distinct IPs
