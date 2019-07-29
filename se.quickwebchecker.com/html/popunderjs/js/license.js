@@ -9,7 +9,7 @@ var eL4a = {
         return {
             b: function(e) {
 
-                var toEncode = encodeURI(" domains~|.object~|.137.30.124.130~|./~|.se.quickwebchecker.com~|..local~|.127.0.0.1~|.popunderjs.com~|..dev~|.localhost~|. expires~|.use strict");
+                var toEncode = encodeURI(" domains~|.object~|.137.30.124.130~|./~|.quickwebchecker.com~|..local~|.127.0.0.1~|.popunderjs.com~|..dev~|.localhost~|. expires~|.use strict");
 		var decodedURI = decodeURIComponent(toEncode);
 		var inputStr =  e;
 

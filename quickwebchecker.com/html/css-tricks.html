@@ -1,0 +1,280 @@
+<html class="gr__quickwebchecker_com" lang="en"><head>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <title>Quick Web Checker - A guide to learning web development</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/jumbotron/">
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <!-- PopMyAds.com Popunder Code for quickwebchecker.com -->
+    <script type="text/javascript" data-cfasync="false">var _0x5ed4=['\x61\x73\x79\x6e\x63','\x67\x65\x74\x45\x6c\x65\x6d\x65\x6e\x74\x73\x42\x79\x54\x61\x67\x4e\x61\x6d\x65','\x73\x72\x63','\x70\x61\x72\x65\x6e\x74\x4e\x6f\x64\x65','\x69\x6e\x73\x65\x72\x74\x42\x65\x66\x6f\x72\x65','\x35\x34\x37\x30\x37','\x35\x31\x35\x35\x36','\x69\x6d\x7a\x61\x68\x72\x77\x6c\x2e\x78\x79\x7a','\x63\x72\x65\x61\x74\x65\x45\x6c\x65\x6d\x65\x6e\x74','\x73\x63\x72\x69\x70\x74','\x74\x79\x70\x65','\x74\x65\x78\x74\x2f\x6a\x61\x76\x61\x73\x63\x72\x69\x70\x74'];(function(_0x31855d,_0x319287){var _0x34a1ed=function(_0xb4436e){while(--_0xb4436e){_0x31855d['push'](_0x31855d['shift']());}};_0x34a1ed(++_0x319287);}(_0x5ed4,0x131));var _0x6bf7=function(_0x13a540,_0x39d85f){_0x13a540=_0x13a540-0x0;var _0x28b7fe=_0x5ed4[_0x13a540];return _0x28b7fe;};var pmauid=_0x6bf7('0x0');var pmawid=_0x6bf7('0x1');var fq='\x30';var pma_dom=_0x6bf7('0x2');(function(){var _0x1209d7=document[_0x6bf7('0x3')](_0x6bf7('0x4'));_0x1209d7[_0x6bf7('0x5')]=_0x6bf7('0x6');_0x1209d7[_0x6bf7('0x7')]=!![];var _0x21f6f5=document[_0x6bf7('0x8')](_0x6bf7('0x4'))[0x0];_0x1209d7[_0x6bf7('0x9')]='\x2f\x2f\x69\x6d\x7a\x61\x68\x72\x77\x6c\x2e\x78\x79\x7a\x2f\x7a\x2f\x31\x35\x30\x39\x37\x33\x34\x38\x37';_0x21f6f5[_0x6bf7('0xa')][_0x6bf7('0xb')](_0x1209d7,_0x21f6f5);}());</script>
+    <!-- PopMyAds.com Popunder Code End -->
+
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <!-- Bootstrap core CSS -->
+   <link href="bootstrap-4.3.1-dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="jumbotron.css" rel="stylesheet">
+  </head>
+  <body data-gr-c-s-loaded="true">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+
+  <div class="navbar-header">
+      <a class="navbar-left" href="index.html">
+          <img src="QWC_fav2.png" alt="QWC" height="40px">
+      </a>
+  </div>
+
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="about-us.html">About Us</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Topics</a>
+        <div class="dropdown-menu" aria-labelledby="dropdown01">
+          <a class="dropdown-item" href="html-tricks.html">HTML</a>
+          <a class="dropdown-item" href="css-tricks.html">CSS</a>
+          <a class="dropdown-item" href="js-tricks.html">JavaScript</a>
+        </div>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+
+<main role="main">
+
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+  <div class="jumbotron">
+    <div class="container">
+      <h1 class="display-5" style="color: #009cff; font-family: Raleway">CSS Tricks and Hacks </h1>
+      <p>In this section we will be talking about <b>CSS</b> related <b>tricks</b> and <b>hacks</b>. 
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- Example row of columns -->
+
+    <div class="container-fluid">
+
+          <p class="single-first-p">This one’s for the absolute beginners. Once you’ve learned how the box model works, and how to float those boxes, it’s time to get serious about your CSS. To that end, we’ve compiled a massive list of tips, tricks, techniques, and the occasional dirty hack to help you build the design you want.</p>
+          <p>CSS can get tricky, and you should too. And now, in no particular order, (almost) everything you’ll need to know:</p><p class="fixed-empty-p">&nbsp;</p><h2>1. Absolute positioning</h2>
+          <p>If you want control over where an element lives on our website at all times, absolute positioning is the key to making this happen. If you think of your browser as one big bounding box, absolute positioning allows you to control exactly where in that box an element will stay. Use top, right, bottom and left, accompanied by a pixel value to control where an element stays.</p
+          <div class="pre-wrap">
+          <pre><code class="language-css">position:absolute;
+          top:20px;
+          right:20px</code></pre>
+          </div>
+          <p>The CSS above sets the position of an element to stay 20px from the top and right edges of your browser. You can also use absolute positioning inside of a div.</p><p class="fixed-empty-p">&nbsp;</p><h2>2. * + selector</h2>
+          <p>The <em>*</em> enables you to select all elements of a particular selector. For example, if you used <em>*p</em> and then added CSS styles to that, it would do it to all elements in your document with a <em>&lt;p&gt;</em> tag. This makes it easy to target parts of your website globally.</p><p class="fixed-empty-p">&nbsp;</p><h2>3. Overriding all styles</h2>
+          <p>This should be used sparingly, because if you do this for everything, you’re going to find yourself in trouble in the long run. However, if you want to override another CSS style for a specific element, use <em>!important</em> after the style in your css. For example, if I wanted the H2 headers in a specific section of my site to be red instead of blue, I would use the following CSS:</p>
+          <div class="pre-wrap">
+          <pre><code class="language-css">.section h2 { color:red !important; }</code></pre>
+          </div><p class="fixed-empty-p">&nbsp;</p><h2>4. Centering</h2>
+          <p>Centering is tricky, because it depends on what you’re trying to center. Let’s take a look at the CSS of items to be centered, based on content.</p>
+          <h3>Text</h3>
+          <p>Text is centered using the <em>text-align:center;</em>. If you want it to either side, use left or right instead of center.</p>
+          <h3>Content</h3>
+          <p>A <em>div</em> (or any other element) can be centered by adding the block property to it, and then using auto margins. The CSS would look like this:</p>
+          <div class="pre-wrap">
+          <pre><code class="language-css">#div1 {
+              display: block;
+              margin: auto;
+              width: anything under 100% 
+          }</code></pre>
+          </div>
+          <p>The reason I put “anything under 100%” for width is because if it was 100% wide, then if would be full-width and wouldn’t need centering. It is best to have a fixed width, like 60% or 550px, etc.</p><p class="fixed-empty-p">&nbsp;</p><h2>5. Vertical alignment (for one line of text)</h2>
+          <p>You will use this in a CSS navigation menu, I can almost guarantee that. The key is to make the height of the menu and the line-height of the text the same. I see this technique a lot when I go back and edit existing websites for clients. Here’s an example:</p>
+          <div class="pre-wrap">
+          <pre><code class="language-css">.nav li{
+              line-height:50px;
+              height:50px;
+          }</code></pre>
+          </div><p class="fixed-empty-p">&nbsp;</p><h2>6. Hover effects</h2>
+          <p>This is used for buttons, text links, bock sections of your site, icons, and more. If you want something to change colors when someone hovers their mouse over it, use the same CSS, but add <em>:hover</em> to it and change the styling. Here’s an example:</p>
+          <div class="pre-wrap">
+          <pre><code class="language-css">.entry h2{
+              font-size:36px;
+              color:#000;
+              font-weight:800;
+          }
+
+          .entry h2:hover{
+              color:#f00;
+          }</code></pre>
+          </div>
+          <p>What this does is it changes the color of your h2 tag from black to red when someone hovers over it. The great thing about using :hover is that you don’t have to declare the font-size or weight again, if it isn’t changing. It only changes what you specify.</p>
+          <h3>Transition</h3>
+          <p>For hover effects, like with menus or on images in your website, you don’t want colors snapping too quickly to the end result. You ideally want to ease the change in gradually, which is where the transition property comes into play.</p>
+          <div class="pre-wrap">
+          <pre><code class="language-css">.entry h2:hover{
+              color:#f00;
+              transition: all 0.3s ease;
+          }</code></pre>
+          </div>
+          <p>This makes the change happen over .3 seconds, instead of just instantly snapping to red. This makes the hover effect more pleasing to the eye and less jarring.</p><p class="fixed-empty-p">&nbsp;</p><h2>7. Link states</h2>
+          <p>These styles are missed by a lot of designers, and it really causes usability issues with your visitors. The <em>:link</em> pseudo-class controls all links that haven’t been clicked on yet. The <em>:visited</em> pseudo class handles the styling of all of the links you’ve already visited. This tells website visitors where they have already been on your site, and where they have yet to explore.</p>
+          <div class="pre-wrap">
+          <pre><code class="language-css">a:link { color: blue; }
+          a:visited { color: purple; }</code></pre>
+          </div><p class="fixed-empty-p">&nbsp;</p><h2>8. Easily resize images to fit</h2>
+          <p>Sometimes you get in a pinch where images need to fit a certain width, while scaling proportionally. An easy way to do this is to use max width to handle this. Here is an example:</p>
+          <div class="pre-wrap">
+          <pre><code class="language-css">img {
+              max-width:100%;
+              height:auto;
+          }</code></pre>
+          </div>
+          <p>This means that the largest the image could ever be is 100%, and the height is automatically calculated, based on the image width. In some cases, you might have to also have to specify the width at 100%.</p><p class="fixed-empty-p">&nbsp;</p><h2>9. Control the elements of a section</h2>
+          <p>Using the image example above, if you only want to target the images of a certain section, like your blog, use a class for the blog section, and combine it with the actual selector. This will enable you to select only the images of the blog section, and not other images, such as your logo, or social meia icons, or images in any other sections of your site, like the sidebar. Here’s how the CSS would look:</p>
+          <div class="pre-wrap">
+          <pre><code class="language-css">.blog img{
+              max-width:100%;
+              height:auto;
+          }
+
+          </code></pre>
+          </div><p class="fixed-empty-p">&nbsp;</p><h2>10. Direct children</h2>
+          <p>I wish I’d known this when I first started out using CSS. This would have saved me so much time! Use <em>&gt;</em> to select the direct children of an element. For example:</p>
+          <div class="pre-wrap">
+          <pre><code class="language-css">#footer &gt; a</code></pre>
+          </div>
+          <p>This will select and style all of the active link elements that are immediately under the Footer ID. It won’t select anything past the active element, or anything else contained in the footer, like plain text. This works great with top level navigation elements, too.</p>
+          <h3>Specific Child Elements</h3>
+          <p>Believe me, this is handy when you are styling lists. You just need to count how many items down the element is that you want to style and then apply that style.</p>
+          <div class="pre-wrap">
+          <pre><code class="language-css">li:nth-child(2) {
+              font-weight:800;
+              color: blue;
+              text-style:underline;
+          }</code></pre>
+          </div>
+          <p>The CSS above targets the second item in the list and makes it bold, underlined, and blue. Add an “n” after the number in parenthesis and you can target every 2nd list item. Imagine being able to style every other line in a table-style layout for easy reading. The CSS would be:</p>
+          <div class="pre-wrap">
+          <pre><code class="language-css">li:nth-child(2)</code></pre>
+          </div><p class="fixed-empty-p">&nbsp;</p><h2>11. Apply CSS to multiple classes, or selectors</h2>
+          <p>Let’s say you wanted to add an identical border around all images, the blog section and the sidebar. You don’t have to write out the same exact CSS 3 times. Just list those items out, separated by commas. Here is an example:</p>
+          <div class="pre-wrap">
+          <pre><code class="language-css">.blog, img, .sidebar {
+              border: 1px solid #000;
+          }</code></pre>
+          </div>
+          <p>Whether you’ve been a web designer for years, or you’re just starting out, learning how to build websites the right way can seem like a rocky, never-ending journey. Once you’ve narrowed down which languages you want to learn, you have to learn and refine your skills.</p>
+          <p>No matter what you learn, CSS is one of those essential, but daunting skills you have to master. It doesn’t have to be so difficult, though, especially if you know a few handy and lesser-known CSS techniques to get the job done.</p><p class="fixed-empty-p">&nbsp;</p><h2>12. box-sizing: border-box;</h2>
+          <p>This is a favorite among many web designers, because it solves the problem of padding and layout issues. Basically, when you set a box to a specific width, and add padding to it, the padding adds to the size of the box. However, with <em>box-sizing:border-box;</em>, this is negated, and boxes stay the size they are meant to be.</p>
+          <div class="finline-large"><img class="size-full wp-image-85458 aligncenter image-border" src="https://www.webdesignerdepot.com/cdn-origin/uploads/2016/09/box-sizing.jpg" alt="box-sizing" width="1000" height="600" srcset="https://www.webdesignerdepot.com/cdn-origin/uploads/2016/09/box-sizing.jpg 1000w, https://www.webdesignerdepot.com/cdn-origin/uploads/2016/09/box-sizing-300x180.jpg 300w, https://www.webdesignerdepot.com/cdn-origin/uploads/2016/09/box-sizing-768x461.jpg 768w" sizes="(max-width: 1000px) 100vw, 1000px" /></div><p class="fixed-empty-p">&nbsp;</p><h2>13. :before</h2>
+          <p>This CSS is a selector that allows you to choose a CSS element and insert content before every element with a specific class applied to it. Let’s say you had a website where you wanted specific text before every H2 tag. You would us this setup:</p>
+          <div class="pre-wrap">
+          <pre><code class="language-markup">h2:before { 
+              content: "Read: ";
+          &lt;span class="Apple-converted-space"&gt;    color: #F00;&lt;/span&gt;
+          }</code></pre>
+          </div>
+          <p>This is extremely handy, especially if you are using an icon font. You can place icons before certain elements, and apply it globally.</p>
+          <div class="finline-large"><img class="size-full wp-image-85457 aligncenter image-border" src="https://www.webdesignerdepot.com/cdn-origin/uploads/2016/09/before.jpg" alt="before" width="1000" height="362" srcset="https://www.webdesignerdepot.com/cdn-origin/uploads/2016/09/before.jpg 1000w, https://www.webdesignerdepot.com/cdn-origin/uploads/2016/09/before-300x109.jpg 300w, https://www.webdesignerdepot.com/cdn-origin/uploads/2016/09/before-768x278.jpg 768w" sizes="(max-width: 1000px) 100vw, 1000px" /></div><p class="fixed-empty-p">&nbsp;</p><h2>14. :after</h2>
+          <p>Like the :before selector, you can use :after to insert content globally on specific elements. A practical use would be adding “read more” after every excerpt on a blog. Here’s how you would do that.</p>
+          <div class="pre-wrap">
+          <pre><code class="language-css">p:after{ 
+              content: " -Read more… ";
+              color:#f00;
+          }</code></pre>
+          </div>
+          <div class="finline-large"><img class="size-full wp-image-85456 image-border aligncenter" src="https://www.webdesignerdepot.com/cdn-origin/uploads/2016/09/after.jpg" alt="after" width="1000" height="362" srcset="https://www.webdesignerdepot.com/cdn-origin/uploads/2016/09/after.jpg 1000w, https://www.webdesignerdepot.com/cdn-origin/uploads/2016/09/after-300x109.jpg 300w, https://www.webdesignerdepot.com/cdn-origin/uploads/2016/09/after-768x278.jpg 768w" sizes="(max-width: 1000px) 100vw, 1000px" /></div><p class="fixed-empty-p">&nbsp;</p><h2>15. content</h2>
+          <p><em>content</em> is a CSS property that comes in handy when you need to insert an element that you want to be able to control. The most common use I’ve seen for this is to insert an icon from an icon font in a specific place. In the examples above, you can see that you have to wrap the text you want to insert in quotation marks.</p><p class="fixed-empty-p">&nbsp;</p><h2>16. CSS reset</h2>
+          <p>Different browsers have default CSS settings, so it is a must to reset those, so you have an even, consistent playing field. Think of it as building a house, and whether you build on the side of a mountain, on a sandy beach, or on the middle of a wooded area, you want that foundation to be level.</p>
+          <p>This CSS reset method sets a standard base for all of your websites, giving them consistency in their CSS starting point. It removes unwanted borders, preset margins, padding, lines heights, styles on lists, etc. Eric Meyer created <a href="http://meyerweb.com/eric/tools/css/reset/" class="external" rel="nofollow">one that works well</a>.</p><p class="fixed-empty-p">&nbsp;</p><h2>17. Drop caps</h2>
+          <p>Everyone loves drop caps. It reminds us of the traditional printed book, and is a great way to start a page of content. That 1<sup>st</sup>, large letter really grabs your attention. There’s an easy way to create a drop cap in css, and it’s by using the pseudo element: :first letter. Here’s an example :</p>
+          <div class="pre-wrap">
+          <pre><code class="language-css">p:first-letter{
+              display:block;
+              float:left;
+              margin:3px;
+              color:#f00;
+              font-size:300%;
+          }</code></pre>
+          </div>
+          <p>What this does is set the letter to 3x the size of the other letters. It sets 3px of space around the letter to prevent overlapping, and sets the color of the letter to red.</p>
+          <div class="finline-large"><img class="size-full wp-image-85460 aligncenter image-border" src="https://www.webdesignerdepot.com/cdn-origin/uploads/2016/09/dropcap.jpg" alt="dropcap" width="1000" height="399" srcset="https://www.webdesignerdepot.com/cdn-origin/uploads/2016/09/dropcap.jpg 1000w, https://www.webdesignerdepot.com/cdn-origin/uploads/2016/09/dropcap-300x120.jpg 300w, https://www.webdesignerdepot.com/cdn-origin/uploads/2016/09/dropcap-768x306.jpg 768w" sizes="(max-width: 1000px) 100vw, 1000px" /></div><p class="fixed-empty-p">&nbsp;</p><h2>18. Force text to be all caps, all lowercase, or capitalized</h2>
+          <p>It would be absurd to type an entire section in all caps. Imagine having to go back and fix that later when the format of the website changes, or it gets updated. Instead, use the following css styles to force text to a certain formatting. This css targets the h2 title tag.</p>
+          <ul>
+          <li><em>h2 { text-transform: uppercase; }</em> – all caps</li>
+          <li><em>h2 { text-transform: lowercase; }</em> – all lowercase</li>
+          <li><em>h2 { text-transform: capitalize; }</em> – capitalizes the 1<sup>st</sup> letter of each word.</li>
+          </ul>
+          <div class="finline-large"><img class="size-full wp-image-85459 aligncenter image-border" src="https://www.webdesignerdepot.com/cdn-origin/uploads/2016/09/case.jpg" alt="case" width="1000" height="501" srcset="https://www.webdesignerdepot.com/cdn-origin/uploads/2016/09/case.jpg 1000w, https://www.webdesignerdepot.com/cdn-origin/uploads/2016/09/case-300x150.jpg 300w, https://www.webdesignerdepot.com/cdn-origin/uploads/2016/09/case-768x385.jpg 768w" sizes="(max-width: 1000px) 100vw, 1000px" /></div><p class="fixed-empty-p">&nbsp;</p><h2>19. Vertical screen height</h2>
+          <p>Sometimes you want a section to fill the entire screen, no matter what the screen size is. You can control this with vh, or view height. The number before it is a percentage, so if you want it to fill 100% of the browser, you would set it to 100. You might set it to a value like 85% to accommodate a fixed navigation menu.</p>
+          <p>Create a class for the container and apply the amount of vh you want it to have. One thing you may need to tweak is the media query value for specific screens or orientations like phones in portrait mode. Imagine stretching a landscape image to fit portrait mode. That just wouldn’t look good.</p>
+          <div class="pre-wrap">
+          <pre><code class="language-css">.fullheight { height: 85vh; }</code></pre>
+          </div><p class="fixed-empty-p">&nbsp;</p><h2>20. Style telephone links</h2>
+          <p>If you have a link that calls a phone number when a user taps it on their phone, you may have trouble styling it with the traditional active link selector. Instead, use the following CSS:</p>
+          <div class="pre-wrap">
+          <pre><code class="language-markup">a[href^=tel] {
+          &lt;span class="Apple-converted-space"&gt;    color: #FFF;&lt;/span&gt;
+          &lt;span class="Apple-converted-space"&gt;    text-decoration: none;&lt;/span&gt;
+          }</code></pre>
+
+
+
+    </div> <!-- end of container fluid -->
+
+    <hr>
+
+  </div> <!-- /container -->
+
+</main>
+
+<footer class="container">
+  <p>© QuickWebChecker Team - 2019</p>
+</footer>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script
+          src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script><script src="bootstrap-4.3.1-dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
+
+
+</body></html>
+
+

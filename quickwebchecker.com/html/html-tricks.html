@@ -1,0 +1,372 @@
+<html class="gr__quickwebchecker_com" lang="en"><head>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <title>Quick Web Checker - A guide to learning web development</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/jumbotron/">
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <!-- PopAds.net Popunder Code for quickwebchecker.com | 2019-07-29,3473131,0,200 -->
+    <script type="text/javascript" data-cfasync="false">
+    /*<![CDATA[/* */
+    /* Privet darkv. Each domain is 2h fox dead */
+    (function(){ var e=window;e["\u005f\x70\x6f\u0070"]=[["s\u0069\u0074\x65\x49\u0064",3473131],["\x6di\x6e\u0042\u0069\x64",0],["\u0070o\x70\x75\x6e\x64er\u0073\u0050\x65r\x49\u0050",200],["\x64\u0065l\x61\u0079Be\x74wee\u006e",0],["\x64\x65f\x61ul\u0074",false],["\u0064\x65\u0066\u0061\u0075l\u0074\u0050er\x44\x61\u0079",0],["t\x6fp\x6d\x6f\x73tLa\x79\x65\x72",!0]];var b=["//c\u0031\u002ep\x6fp\u0061d\x73.\u006ee\u0074/p\x6f\x70\x2ejs","//c\u0032\u002e\x70\u006f\u0070a\u0064s\x2ene\u0074\u002f\x70\x6f\x70\u002ej\x73","\u002f\x2f\x77\u0077\x77\u002e\u006dei\x6e\u006cn\u0069m.\u0063om/d\x69j\u0075\x2e\u006a\u0073","\u002f/\u0077w\x77\u002eq\x65i\u0076n\u0063\u0076k\u002ec\u006f\u006d\u002f\x79\u0067\u0062\x2ejs",""],o=0,f,z=function(){if(""==b[o])return;f=e["\x64oc\x75me\x6e\x74"]["\u0063\x72e\x61\x74\x65\u0045\u006c\u0065m\x65nt"]("\x73c\u0072\u0069\u0070t");f["type"]="t\x65xt/\u006a\u0061\x76asc\x72\u0069\x70t";f["a\u0073yn\u0063"]=!0;var w=e["\u0064ocu\x6d\x65\x6e\x74"]["\x67\u0065t\x45\x6c\u0065m\u0065n\u0074\u0073B\u0079\u0054\u0061\x67\u004e\u0061\u006d\x65"]("\u0073\x63\x72\u0069\u0070\u0074")[0];f["\x73\u0072c"]=b[o];if(o<2){f["\x63r\x6f\u0073s\u004fr\u0069g\u0069\x6e"]="\x61no\x6e\u0079mo\u0075\x73";};f["\u006fne\x72\x72\x6fr"]=function(){o++;z()};w["\u0070\u0061\u0072\u0065\x6etNo\x64e"]["\u0069nser\x74B\x65fo\x72e"](f,w)};z()})();
+      /*]]>/* */
+    </script>
+
+  
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <!-- Bootstrap core CSS -->
+   <link href="bootstrap-4.3.1-dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="jumbotron.css" rel="stylesheet">
+  </head>
+  <body data-gr-c-s-loaded="true">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+
+  <div class="navbar-header">
+      <a class="navbar-left" href="index.html">
+          <img src="QWC_fav2.png" alt="QWC" height="40px">
+      </a>
+  </div>
+
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="about-us.html">About Us</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Topics</a>
+        <div class="dropdown-menu" aria-labelledby="dropdown01">
+          <a class="dropdown-item" href="html-tricks.html">HTML</a>
+          <a class="dropdown-item" href="css-tricks.html">CSS</a>
+          <a class="dropdown-item" href="js-tricks.html">JavaScript</a>
+        </div>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+
+<main role="main">
+
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+  <div class="jumbotron">
+    <div class="container">
+      <h1 class="display-5" style="color: #009cff; font-family: Raleway">HTML Web Tricks and Hacks </h1>
+      <p>In this section we will be talking about <b>html</b> related <b>tricks</b> and <b>hacks</b>. 
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- Example row of columns -->
+
+    <div class="container-fluid">
+
+            <p>You may not have trained in graphic design or the art of user experience, but that doesn't mean you cannot design and build websites or blogs that look good and are a pleasure to visit. With HTML, CSS3 and JavaScript, you have a lot of simple tools at your disposal to make your website or blog look attractive, user-friendly and modern. <a href="https://www.w3.org/TR/html5/" target="_blank">HTML5</a> has made a huge contribution to the <a href="https://www.awwwards.com/websites/html5/" target="_blank">gorgeous websites</a> being designed everyday.</p>
+            <p dir="ltr">A little intuition, empathy, and testing - along with some cool HTML tricks - will help you get there too!</p>
+            <h2 dir="ltr">1. Tableizer</h2>
+            <p dir="ltr">This one is not really an HTML trick since Tableizer is an external app. But it's great for building HTML tables out of data, using existing Calc or Excel spreadsheet templates. You only have to paste your cells into the Tableizer, and it will generate an HTML code snippet to paste into your website code. The result is a neat table where you can edit details like background colors to customize.</p>
+            <h2 dir="ltr">2. Map images</h2>
+            <p dir="ltr">Image maps are cool images with clickable areas that you can link to other parts of the document, or other web pages. Not everyone may be aware that the &lt;map&gt; element will let you define the areas on an image that a visitor can click. Simply mention the corresponding X Y coordinates in the &lt;area&gt; elements inside &lt;map&gt;.</p>
+            <p dir="ltr">An example of this feature would be a world map that would take visitors to the different regions where your business has a presence.</p>
+            <p dir="ltr">You can only style markers directly on the image in image editing software.</p>
+            <p dir="ltr">Here is an example code:</p>
+            <pre class="language-markup"><code>&lt;h1 style="text-align:center;"&gt;The 7 Continents&lt;/h1&gt;
+
+            &lt;h4 style="text-align:center;"&gt;&amp;#10148; Click on the dots in the image to go to a continent section&lt;/h4&gt;
+
+            &lt;map name="continents_map"&gt;
+
+             &lt;area shape="circle" coords="70,70,10" href="#north_america"&gt;
+
+             &lt;area shape="circle" coords="133,185,10" href="#south_america"&gt;
+
+             &lt;area shape="circle" coords="270,137,10" href="#africa"&gt;
+
+             &lt;area shape="circle" coords="292,44,10" href="#europe"&gt;
+
+             &lt;area shape="circle" coords="469,201,10" href="#australia"&gt;
+
+             &lt;area shape="circle" coords="374,65,10" href="#asia"&gt;
+
+             &lt;area shape="circle" coords="340,267,10" href="#antartica"&gt;
+
+            &lt;/map&gt;
+
+            &lt;figure style="text-align:center;"&gt;
+
+                &lt;img usemap="#continents_map" src=https://bit.ly/2bgFrvL width="600px" /&gt;
+
+                &lt;figcaption&gt;World Map&lt;/figcaption&gt;
+
+            &lt;/figure&gt;
+
+            &lt;div&gt;
+
+                &lt;h3 id="africa"&gt;Africa&lt;/h3&gt;
+
+                &lt;p&gt;Our locations in Africa&lt;/p&gt;
+
+            &lt;/div&gt;
+
+            &lt;div&gt;
+
+                &lt;h3 id="asia"&gt;Asia&lt;/h3&gt;
+
+                &lt;p&gt;Our locations in Asia&lt;/p&gt;
+
+            &lt;/div&gt;
+
+            &lt;div&gt;
+
+                &lt;h3 id="europe"&gt;Europe&lt;/h3&gt;
+
+                &lt;p&gt;Our locations in Europe.&lt;/p&gt;
+
+            &lt;/div&gt;
+
+            &lt;div&gt;
+
+                &lt;h3 id="south_america"&gt;South America&lt;/h3&gt;
+
+                &lt;p&gt;Our locations in South America.&lt;/p&gt;
+
+            &lt;/div&gt;
+
+            &lt;div&gt;
+
+                &lt;h3 id="north_america"&gt;North America&lt;/h3&gt;
+
+                &lt;p&gt;Our locations in North America:&lt;/p&gt;
+
+            &lt;/div&gt;
+
+            &lt;div&gt;
+
+                &lt;h3 id="antartica"&gt;Antarctica&lt;/h3&gt;
+
+                &lt;p&gt;Our locations in Antarctica.&lt;/p&gt;
+
+            &lt;/div&gt;
+
+            &lt;div&gt;
+
+                &lt;h3 id="australia"&gt;Australia&lt;/h3&gt;
+
+                &lt;p&gt;Our locations in Australia.&lt;/p&gt;
+
+            &lt;/div&gt;</code></pre>
+            <p dir="ltr">The accompanying CSS code can be:</p>
+            <pre class="language-css"><code>body {
+                font-family: "bookman old style";
+            }
+            :target {
+                color: lightyellow;
+                background: indianred;
+            }
+            h3,
+            h1 {
+                color: indianred;
+            }
+            img {
+                border: 3px dashed indianred;
+            }
+            body {
+                counter-reset: srl;
+            }
+            h3::before {
+                counter-increment: srl;
+                content: counter(srl)". ";
+            }</code></pre>
+            <h2 dir="ltr">3. Allow visitors to change background or text color</h2>
+            <p dir="ltr">A little extra bit of code will allow your visitors to choose their own text and background color. It's impossible for you to please everyone with your color choices, so using this trick will be an excellent case of pleasing all of the people, all of the time.</p>
+            <p dir="ltr">Here's the code you will need:</p>
+            <pre class="language-css"><code>&lt;select name=”clr” onchange=”document.bgColor=this.options[this.selectedIndex].value” size=”1″&gt;
+                &lt;br&gt;
+                &lt;option value=”black”&gt;black
+                    &lt;option value=”orange”&gt;orange
+                        &lt;option value=”flamingred”&gt;fuschia
+                            &lt;option value=”lightyellow”&gt;light yellow
+                                &lt;option value=”green”&gt;green
+                                    &lt;option value=”cyan”&gt;cyan
+                                        &lt;option value=”yellow”&gt;yellow
+                                            &lt;option value=”red”&gt;red
+                                                &lt;option value=”white”&gt;white&lt;/option&gt;
+            &lt;/select&gt;&amp;nbsp;&amp;nbsp;Background Color
+
+            &lt;br&gt;
+            &lt;select name=”clr” onchange=”document.fgColor=this.options[this.selectedIndex].value” size=”1″&gt;
+                &lt;br&gt;
+                &lt;option value=”black”&gt;black
+                    &lt;option value=”orange”&gt;orange
+                        &lt;option value=”flamingred”&gt;fuschia
+                            &lt;option value=”lightyellow”&gt;light yellow
+                                &lt;option value=”cyan”&gt;cyan
+                                    &lt;option value=”yellow”&gt;yellow
+                                        &lt;option value=”red”&gt;red
+                                            &lt;option value=”white”&gt;white&lt;/option&gt;
+            &lt;/select&gt;&amp;nbsp;&amp;nbsp;Text Color</code></pre>
+            <h2 dir="ltr">4. Add MetaData</h2>
+            <p dir="ltr">Be seen on Google's searches and other search engine searches by making sure that you have provided meta data about your website. In fact, it is no longer an option, but essential if you want to stay neck on neck with your competition.</p>
+            <p dir="ltr">Don’t forget to optimize the rest of your website content for users on search engines to find you easily. SEO pros at <a href="/">Freelancer</a> can help you with your back-end SEO and search engine marketing (SEM) needs.</p>
+            <p dir="ltr">Meanwhile, the code for adding meta is simple:</p>
+            <pre class="language-css"><code>&lt;meta name=”description” content=”Used auto parts for sale”&gt;
+
+            &lt;meta name=”keywords” content=”fuel filters, brake discs, belts” /&gt;</code></pre>
+            <h2 dir="ltr">5. Hide Field</h2>
+            <p dir="ltr">Reddit warriors have pointed out <a href="https://i.redd.it/0pa8flqct1cz.png" target="_blank">this example</a> of "programming horror" in which a field for internal use is visible for the public to see.</p>
+            <p dir="ltr">This form is an example of amateurish programming, and you don't want such an oversight on your website. HTML gives you the option to hide fields. The visitor can't type anything into a hidden field, and when the visitor submits the form, the form carries the hidden field.</p>
+            <p dir="ltr">Here's how it works:</p>
+            <pre class="language-markup"><code>&lt;html&gt;
+
+            &lt;head&gt;
+
+                &lt;title&gt;My Page&lt;/title&gt;
+
+            &lt;/head&gt;
+
+            &lt;body&gt;
+
+                &lt;form name="contact" action="http://www.mydomain.com/myformhandler.cgi" method="POST"&gt;
+
+                    &lt;div align="center"&gt;
+
+                        &lt;input type="text" size="25" value="Enter your name here!"&gt;
+
+                        &lt;input type="hidden" name="Language" value="English"&gt;
+
+                        &lt;br&gt;&lt;br&gt;
+
+                    &lt;/div&gt;
+
+                &lt;/form&gt;
+
+            &lt;/body&gt;
+
+            &lt;/html&gt;</code></pre>
+            <p dir="ltr">From the code above, the resulting output will be a hidden field that visitors will not be able to see. The hidden field here will tell the form handler the users preferred English.</p>
+            <h2 dir="ltr">6. Add a horizontal line</h2>
+            <p dir="ltr">A horizontal line to break up long sections of your website will make the page easier on the eye. To add the line, use the &lt;hr/&gt; tag, as in:</p>
+            <pre class="language-markup"><code>&lt;h1&gt;HTML&lt;/h1&gt;
+
+            &lt;p&gt;HTML is a language for describing web pages.....&lt;/p&gt;
+
+            &lt;hr&gt;
+
+            &lt;h1&gt;CSS&lt;/h1&gt;
+
+            &lt;p&gt;CSS defines how to display HTML elements.....&lt;/p&gt;</code></pre>
+            <h2 dir="ltr">7.  Input suggestions</h2>
+            <p dir="ltr">You can make it easier for visitors to find what they're looking for by bringing up a list of suggestions when they're typing input values. Use the following code:</p>
+            <p dir="ltr"> </p>
+            <p dir="ltr">   Type your favourite text editor:</p>
+            <pre class="language-css"><code>&lt;input type="text" list="text_editors"&gt;
+            &lt;datalist id="text_editors"&gt;
+                &lt;option value="Atom"&gt;&lt;/option&gt;
+                &lt;option value="Notepad ++"&gt;&lt;/option&gt;
+                &lt;option value="Sublime Text"&gt;&lt;/option&gt;
+                &lt;option value="Wordpad"&gt;&lt;/option&gt;
+            &lt;/datalist&gt;
+            &lt;p&gt;&lt;em&gt;For example;
+               &lt;/em&gt; Sublime Text&lt;/p&gt;</code></pre>
+            <h2 dir="ltr">8. Highlight text</h2>
+            <p dir="ltr">The &lt;span&gt; tag will let you add highlights to text on both Firefox and IE. You can choose the color of the highlight, of course. The code is simple:</p>
+            <pre class="language-markup"><code>&lt;span style=“ background-color: #FFFF00”&gt;Your text here.&lt;/span&gt;</code></pre>
+            <h2 dir="ltr">9. Add background image to text</h2>
+            <p dir="ltr">You can add a background image instead of a highlight to your text if the font is large enough. We recommend not using this tip for fonts smaller than 20 pts, or there won't be much of a difference between the image and a background color. The code is:</p>
+            <pre class="language-css"><code>&lt;SPAN STYLE=”background-image: url(//www.myimage.png ); font-size: 20pt”&gt;NoBoringHighlight…&lt;/SPAN&gt;</code></pre>
+            <h2 dir="ltr">10. Add fine print</h2>
+            <p dir="ltr">Add legal rights, citations, restrictions, terms and other fine print at the bottom of your document with the &lt;small&gt; tag.</p>
+            <pre class="language-markup"><code>&lt;h1&gt;Black Friday Sale!!! Upto 70% off on all products under &lt;i&gt;Toys &amp;amp; Recreation&lt;/i&gt;&lt;sup&gt;*&lt;/sup&gt;&lt;/h1&gt;
+
+            &lt;p&gt;&lt;small&gt;* Terms and Conditions apply&lt;/small&gt;&lt;/p&gt;</code></pre>
+            <h2 dir="ltr">11.  Color Picker</h2>
+            <p dir="ltr">With HTML5, there are some really interactive customizations that visitors to your website will like. The <a href="https://www.w3schools.com/colors/colors_picker.asp" target="_blank">color picker</a> will need a little JavaScript coding and CSS to let you choose what color you want from a palette rather than having to enter an abstract color code. This feature will be particularly user-friendly for those new to coding or without a lot of coding knowledge.</p>
+            <p dir="ltr">The code can be something like this:</p>
+            <pre class="language-css"><code>&lt;!--HTML--&gt; Choose a color to color the below text &lt;input id="color_picker" type="color" onchange="showHex();"&gt; &lt;span id="color_hex_value"&gt;&lt;/span&gt; &lt;h1&gt;COLOR ME !&lt;/h1&gt; &lt;!--CSS--&gt; body {
+                font-family: "bookman old style";
+            }
+            &lt;!--JS--&gt; function showHex() {
+                var hex document.querySelector("#color_hex_value"), h1 document.querySelector("h1");
+                h1.style.color document.querySelector("#color_picker").value;
+            }</code></pre>
+            <h2 dir="ltr">12. Add voice recognition</h2>
+            <p dir="ltr">In HTML5 and later, you can add speech recognition to a text input, and it's as simple as:</p>
+            <pre class="language-markup"><code>&lt;input type="text" x-webkit-speech /&gt;</code></pre>
+            <h2 dir="ltr">13. Insert math equations</h2>
+            <p dir="ltr">Inserting math equations (using the MathML language) is super simple in HTML5 and later. Put all your equations between the tags &lt;math&gt; and &lt;/math&gt;.</p>
+            <p dir="ltr">This code will insert a fraction 'a/b' to your page:</p>
+            <pre class="language-markup"><code>&lt;math&gt;
+
+            &lt;mfrac&gt;
+
+            &lt;mi&gt;a&lt;/mi&gt;
+
+            &lt;mi&gt;b&lt;/mi&gt;
+
+            &lt;/mfrac&gt;
+
+            &lt;/math&gt;</code></pre>
+            <p dir="ltr">There are as many as 142 HTML elements that the W3C  has standardized for your use. HTML5 has given us exciting features to make our websites as user-friendly and media-rich as possible, with support for video formats and canvas, among other things.</p>    
+
+   </div> <!-- end of container fluid -->
+
+    <hr>
+
+  </div> <!-- /container -->
+
+</main>
+
+<footer class="container">
+  <p>© QuickWebChecker Team - 2019</p>
+</footer>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script
+          src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script><script src="bootstrap-4.3.1-dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
+
+
+</body></html>
+
+
