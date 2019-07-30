@@ -19,6 +19,7 @@
 ## Mongo Info:
 
 mongod --auth
+
 mongo --port 27017 -u "pwnuno" --authenticationDatabase "botDetector" -p 
 
 ## Restart service
@@ -47,5 +48,16 @@ Find any collection info
 Find last insert
 > db.requestHeader.find().sort({$natural:-1}).limit(1).pretty()
 
+Total count
+> db.requestHeader.find().count()
+
+Find specific entries:
+> db.requestHeader.find({"asn.OrgName":"Google LLC"}).pretty()
+
+Distinct entries of types
+> db.requestHeader.distinct("asn.OrgName")
+
+Get Object Insertion Timestamp
+> ObjectId("5d011729289bb8bf267b2075").getTimestamp()
 
 ## View Distinct IPs
