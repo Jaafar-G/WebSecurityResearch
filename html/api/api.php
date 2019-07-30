@@ -119,12 +119,14 @@
     		$bulk = new MongoDB\Driver\BulkWrite;
 		if ($type == 'domain') {
 		   $doc =[
-	                '_id' => new MongoDB\BSON\ObjectID, 
+	                '_id' => new MongoDB\BSON\ObjectID,
+			'domain' => $_POST['domain'],
                         'domainInfo' => $store
                    ];
                 } else if ($type == 'ip') {
 			$doc = [
-            		'_id' => new MongoDB\BSON\ObjectID, 
+            		'_id' => new MongoDB\BSON\ObjectID,
+                        'ip' => $_POST['ip'],
             		'ipInfo' => $store
           		];
 		}
