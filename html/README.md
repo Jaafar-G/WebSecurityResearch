@@ -19,6 +19,7 @@
 ## Mongo Info:
 
 mongod --auth
+
 mongo --port 27017 -u "pwnuno" --authenticationDatabase "botDetector" -p 
 
 ## Restart service
