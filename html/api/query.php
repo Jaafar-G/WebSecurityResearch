@@ -56,7 +56,7 @@ $ip_err = "Please enter IP";
 	<br /> <br /> 
 	<br /> <br />
 
-        <p align="center"> API Access </p>
+        <p align="center"><b> API Access </b></p>
 	<br /> <br />
 
     <table align="center">
@@ -65,7 +65,9 @@ $ip_err = "Please enter IP";
                 <div>
                     <form action="api.php" method="post">
                         <div class="form-group">
-                            <label>Domain</label>
+                            <label>Search by Domain Name </label> <br />
+			    <input type="radio" name="store" value="yes"> Display and Store Data <br>
+                            <input type="radio" name="store" value="no"> Display Only Data <br> <br />
                             <input type="text" name="domain" class="form-control">
                         </div>
                         <div class="form-group">
@@ -79,7 +81,9 @@ $ip_err = "Please enter IP";
                 <div>
                         <form action="api.php" method="post">
                         <div class="form-group">
-                            <label>IP</label>
+                            <label>Search by IP Address </label> <br />
+			    <input type="radio" name="store" value="yes"> Display and Store Data <br>
+                            <input type="radio" name="store" value="no"> Display Only Data <br> <br />
                             <input type="ip" name="ip" class="form-control">
                         </div>
                         <div class="form-group">

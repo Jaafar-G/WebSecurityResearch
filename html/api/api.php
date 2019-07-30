@@ -108,7 +108,7 @@
 		curl_close ($ch);
 		
 
-	if(isset($_POST['save']) && !empty($_POST['save'])) {
+	if(isset($_POST["store"]) && $_POST["store"] == 'yes') {
              $username = "pwnuno";
              $password = 'a#nsus6y3!';
              $dbName = 'botDetector';
