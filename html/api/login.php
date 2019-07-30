@@ -40,11 +40,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 $_SESSION["username"] = $username;
 		header("location: query.php");  
 	}
-    } else {
-	echo "Credential umatched found!";
-	}
    }
-
+}
 ?>
  
 <!DOCTYPE html>
