@@ -2,127 +2,127 @@
 Hilltopsads Flow of Urls
 -------------------------
 
-finized.co								88.85.94.232
-tsyndicate								104.17.47.101
-crptgate.com							93.93.51.223
-cradver.livejasmin.com					93.93.51.191
-pt-static2.jsmstat.com					93.93.51.200
-d31qbv1cthcecs.cloudfront.net			52.222.176.239
-galleryn1.awemwh.com					93.93.51.190
+finized.co                              88.85.94.232
+tsyndicate                              104.17.47.101
+crptgate.com                            93.93.51.223
+cradver.livejasmin.com                  93.93.51.191
+pt-static2.jsmstat.com                  93.93.51.200
+d31qbv1cthcecs.cloudfront.net           52.222.176.239
+galleryn1.awemwh.com                    93.93.51.190
 
 ------------------------------------------------------------------------
 
-finized.co								88.85.94.232
-	Subdomains                              afletedly.info
-		www.finized.com                     amiderations.info
-	IP Resolutions							anizablevetor.pro
-		194.187.97.67						bitests.pro
-		208.88.225.39						comproliverton.pro
-		74.117.183.163						dentaint.pro
-		88.85.94.227						faunlesnuff.co
-		88.85.94.232						finized.co
-											hot-girls.tv
-											lanesson.pro
-											redewdit.pro
-											ruletka-online24.com
-											talstoyistic.pro
-											thatterians.pro
-											withdromnit.pro
-											www.afletedly.info
-											www.hot-girls.tv
+finized.co                              88.85.94.232
+    Subdomains                              afletedly.info
+        www.finized.com                     amiderations.info
+    IP Resolutions                          anizablevetor.pro
+        194.187.97.67                       bitests.pro
+        208.88.225.39                       comproliverton.pro
+        74.117.183.163                      dentaint.pro
+        88.85.94.227                        faunlesnuff.co
+        88.85.94.232                        finized.co
+                                            hot-girls.tv
+                                            lanesson.pro
+                                            redewdit.pro
+                                            ruletka-online24.com
+                                            talstoyistic.pro
+                                            thatterians.pro
+                                            withdromnit.pro
+                                            www.afletedly.info
+                                            www.hot-girls.tv
 
-tsyndicate.com								104.17.47.101
-	IP Resolutions								No domain match found
-		104.20.47.37
-		104.20.48.37
-		104.31.94.46
-		104.17.47.107
-		104.17.51.107
-		104.17.50.107
-		104.17.49.107
-		104.17.48.107
-
-
-crptgate.com							93.93.51.223
-											awecrptjmp.com
-											awejmp.com
-											crptentry.com
-											crptgate.com
-											jmp.awempire.com
-											jsmcrjmp.com
-											jsmcrptjmp.com
-											jsmentry.com
-											jsmjmp.com
-											jsmptjmp.com
-											mptentry.com
-											mptgate.com
-											protojsmgw.com
-											ptentry.com
+tsyndicate.com                              104.17.47.101
+    IP Resolutions                              No domain match found
+        104.20.47.37
+        104.20.48.37
+        104.31.94.46
+        104.17.47.107
+        104.17.51.107
+        104.17.50.107
+        104.17.49.107
+        104.17.48.107
 
 
-cradver.livejasmin.com					93.93.51.191
-	Domain Siblings							awempt.com
-		registration.livejasmin.com                 aweproto.com
-		old.livejasmin.com 					awepsi.com
-		new.livejasmin.com 					awept.com
-		crpt.livejasmin.com 				cradver.livejasmin.com
-		click.livejasmin.com                crcom.livejasmin.com
-		m.livejasmin.com 					crpop.livejasmin.com
-		www.livejasmin.com                  jsmpsi.com
-		relay.livejasmin.com                protoawe.com
-		tv.livejasmin.com                   pt.awecr.com            
-			+ 90 MORE DOMAINS				pt.awempt.com
-											pt.aweproto.com
-											pt.awepsi.com
-											pt.jsmpsi.com
-											pt.protoawe.com
-											pt.ptawe.com
-											www.awept.com	
-
-pt-static2.jsmstat.com					93.93.51.200
-	Domain Siblings							pt-static.awecr.com
-		pt-static1.jsmstat.com 				pt-static1.awecr.com
-		pt-static3.jsmstat.com              pt-static1.awepsi.com
-		pt-static4.jsmstat.com              pt-static1.awestat.com
-		pt-static5.jsmstat.com              pt-static1.jsmpsi.com
-											pt-static1.jsmstat.com
-											pt-static1.jsmstatic.com
-												+ 24 MORE DOMAINS
+crptgate.com                            93.93.51.223
+                                            awecrptjmp.com
+                                            awejmp.com
+                                            crptentry.com
+                                            crptgate.com
+                                            jmp.awempire.com
+                                            jsmcrjmp.com
+                                            jsmcrptjmp.com
+                                            jsmentry.com
+                                            jsmjmp.com
+                                            jsmptjmp.com
+                                            mptentry.com
+                                            mptgate.com
+                                            protojsmgw.com
+                                            ptentry.com
 
 
-d31qbv1cthcecs.cloudfront.net			52.222.176.239
-	Domain Siblings							apps-api.wezeroplus.com
-		d2tdscrgd1jtli.cloudfront.net		aus5.mozilla.org
-		d37kxq42vikeaj.cloudfront.net		build-cdn.liftoff.io
-		d31q2yc49lu7a5.cloudfront.net		cdn1.crystalcommerce.com
-			+ 97 MORE DOMAINS				cdn3.inspsearchapi.com
-	IP Resolutions							d31qbv1cthcecs.cloudfront.net
-		13.224.106.119						d3unph2e8mq0qx.cloudfront.net
-		13.224.106.63						i1.sndcdn.com
-		13.224.106.74						radioheadchicago.com
-		13.224.106.94						rayburst.com
-		13.224.132.117						rudysflowershop.com
-		13.224.132.24						thesoilworks.com
-			+ 1000 MORE DOMAINS	
+cradver.livejasmin.com                  93.93.51.191
+    Domain Siblings                         awempt.com
+        registration.livejasmin.com                 aweproto.com
+        old.livejasmin.com                  awepsi.com
+        new.livejasmin.com                  awept.com
+        crpt.livejasmin.com                 cradver.livejasmin.com
+        click.livejasmin.com                crcom.livejasmin.com
+        m.livejasmin.com                    crpop.livejasmin.com
+        www.livejasmin.com                  jsmpsi.com
+        relay.livejasmin.com                protoawe.com
+        tv.livejasmin.com                   pt.awecr.com            
+            + 90 MORE DOMAINS               pt.awempt.com
+                                            pt.aweproto.com
+                                            pt.awepsi.com
+                                            pt.jsmpsi.com
+                                            pt.protoawe.com
+                                            pt.ptawe.com
+                                            www.awept.com   
+
+pt-static2.jsmstat.com                  93.93.51.200
+    Domain Siblings                         pt-static.awecr.com
+        pt-static1.jsmstat.com              pt-static1.awecr.com
+        pt-static3.jsmstat.com              pt-static1.awepsi.com
+        pt-static4.jsmstat.com              pt-static1.awestat.com
+        pt-static5.jsmstat.com              pt-static1.jsmpsi.com
+                                            pt-static1.jsmstat.com
+                                            pt-static1.jsmstatic.com
+                                                + 24 MORE DOMAINS
 
 
-galleryn1.awemwh.com					93.93.51.190
-	Domain Siblings							awemwh.com
-		galleryn3.awemwh.com 			 	gallery0.awecr.com
-		galleryn2.awemwh.com 				gallery1.awecr.com
-		galleryn0.awemwh.com 				gallery2.awecr.com
-		gaslleryn3.awemwh.com 				gallery2.awemwh.com
-	    gaslleryn2.awemwh.com 			    gallery3.awecr.com
-	    gaslleryn1.awemwh.com 			    galleryn0.awemwh.com
-	    gaslleryn0.awemwh.com 			    galleryn0.jsmstatic.com
-	    gallery2.awemwh.com 			    galleryn1.awemwh.com
-	    www.awemwh.com 					    galleryn1.jsmstatic.com
-		              						galleryn2.awemwh.com
-		              						galleryn2.jsmstatic.com
-		              						galleryn3.awemwh.com
-		              						galleryn3.jsmstatic.com
-		              						gaslleryn0.awemwh.com
-		              						gaslleryn1.awemwh.com
-		              						gaslleryn2.awemwh.com
-		              						gaslleryn3.awemwh.com
-		              						www.awemwh.com
+d31qbv1cthcecs.cloudfront.net           52.222.176.239
+    Domain Siblings                         apps-api.wezeroplus.com
+        d2tdscrgd1jtli.cloudfront.net       aus5.mozilla.org
+        d37kxq42vikeaj.cloudfront.net       build-cdn.liftoff.io
+        d31q2yc49lu7a5.cloudfront.net       cdn1.crystalcommerce.com
+            + 97 MORE DOMAINS               cdn3.inspsearchapi.com
+    IP Resolutions                          d31qbv1cthcecs.cloudfront.net
+        13.224.106.119                      d3unph2e8mq0qx.cloudfront.net
+        13.224.106.63                       i1.sndcdn.com
+        13.224.106.74                       radioheadchicago.com
+        13.224.106.94                       rayburst.com
+        13.224.132.117                      rudysflowershop.com
+        13.224.132.24                       thesoilworks.com
+            + 1000 MORE DOMAINS 
+
+
+galleryn1.awemwh.com                    93.93.51.190
+    Domain Siblings                         awemwh.com
+        galleryn3.awemwh.com                gallery0.awecr.com
+        galleryn2.awemwh.com                gallery1.awecr.com
+        galleryn0.awemwh.com                gallery2.awecr.com
+        gaslleryn3.awemwh.com               gallery2.awemwh.com
+        gaslleryn2.awemwh.com               gallery3.awecr.com
+        gaslleryn1.awemwh.com               galleryn0.awemwh.com
+        gaslleryn0.awemwh.com               galleryn0.jsmstatic.com
+        gallery2.awemwh.com                 galleryn1.awemwh.com
+        www.awemwh.com                      galleryn1.jsmstatic.com
+                                            galleryn2.awemwh.com
+                                            galleryn2.jsmstatic.com
+                                            galleryn3.awemwh.com
+                                            galleryn3.jsmstatic.com
+                                            gaslleryn0.awemwh.com
+                                            gaslleryn1.awemwh.com
+                                            gaslleryn2.awemwh.com
+                                            gaslleryn3.awemwh.com
+                                            www.awemwh.com

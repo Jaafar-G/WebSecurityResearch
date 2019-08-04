@@ -1,20 +1,20 @@
 
 // -------------------------------------------------
-	
-	Revenue Hits
-	quickwebchecker.com/js-tricks.html
+    
+    Revenue Hits
+    quickwebchecker.com/js-tricks.html
 
 // -------------------------------------------------
 
 
      GET http://beta.mybetterdl.com/adServe/banners?tid=359246_703845_2&tagid=2&hybridPop=true
              ← 200 text/javascript    
-             Resolved IP: 184.173.87.162		(attached banner.js) - It calculates what banner type to fetch based on customer selection of code type
+             Resolved IP: 184.173.87.162        (attached banner.js) - It calculates what banner type to fetch based on customer selection of code type
 
 
      GET http://mybetterdl.com/adServe/banners?tid=359246_703845_1&pause=5
              ← 200 text/javascript 
-             Resolved IP: 184.173.87.162		(attached adserve.js) (preset code for firing)
+             Resolved IP: 184.173.87.162        (attached adserve.js) (preset code for firing)
 
 
                    This script tries to read the goolgeusercontent. It was able to find my email "ba127004@gmail.com"
@@ -23,35 +23,35 @@
 
                         PROPFIND https://apidata.googleusercontent.com/caldav/v2/ba127004%40gmail.com/user/
                                ← 401 application/vnd.google.gdata.error+xml 210b 283ms
-				     
-				     PROPFIND https://apidata.googleusercontent.com/caldav/v2/ba127004%40gmail.com/user/
-				                        ← 401 application/vnd.google.gdata.error+xml 210b 270ms
-				     
-				     PROPFIND https://apidata.googleusercontent.com/
-				                        ← 404 text/html 29b 273ms
-				     
-				     PROPFIND https://apidata.googleusercontent.com/principals/
-				                        ← 404 text/html 29b 270ms
+                     
+                     PROPFIND https://apidata.googleusercontent.com/caldav/v2/ba127004%40gmail.com/user/
+                                        ← 401 application/vnd.google.gdata.error+xml 210b 270ms
+                     
+                     PROPFIND https://apidata.googleusercontent.com/
+                                        ← 404 text/html 29b 273ms
+                     
+                     PROPFIND https://apidata.googleusercontent.com/principals/
+                                        ← 404 text/html 29b 270ms
 
 
-				        / ------------------------------
-				        // Potential social media attack
-					    / -------------------------------
+                        / ------------------------------
+                        // Potential social media attack
+                        / -------------------------------
 
-				     Found the checking for accounts in array: 
+                     Found the checking for accounts in array: 
 
-				     127: "https://accounts.google.com/CheckCookie?continue=https://www.google.com/intl/en/images/logos/accounts_
+                     127: "https://accounts.google.com/CheckCookie?continue=https://www.google.com/intl/en/images/logos/accounts_
 
-				     662: https://login.yahoo.com/account/personalinfo
+                     662: https://login.yahoo.com/account/personalinfo
 
-				     823: connect.facebook.net/en_US/sdk.js
+                     823: connect.facebook.net/en_US/sdk.js
 
-				     858: "https://plus.google.com/up/?continue=https://www.google.com/intl/en/images/logos/accounts_logo.png&amp;type=st&amp;gpsrc=ogpy0"
+                     858: "https://plus.google.com/up/?continue=https://www.google.com/intl/en/images/logos/accounts_logo.png&amp;type=st&amp;gpsrc=ogpy0"
 
 
-				     Also uses to website for ad yielding 
-				           http://ad.yieldmanager.com/
-				           http://clkdeals.com/adServe/track? 
+                     Also uses to website for ad yielding 
+                           http://ad.yieldmanager.com/
+                           http://clkdeals.com/adServe/track? 
 
 
      GET http://p0.mycdn.co/script/rhpop_80.2-1.js (This script looks similar
@@ -59,7 +59,7 @@
      set up was similar for least)
 
      GET http://p359246.mycdn.co/banners/bounce/bounce-tag_80.2-1.js
-         (For ad metrics calculation)	(attached bounce.js)
+         (For ad metrics calculation)   (attached bounce.js)
 
 
      GET https://fides-pol.apple.com/v2/policy/com.apple.proactive.PMLDESPlugin/en_US/Mac
@@ -95,55 +95,55 @@
 
              Resolved IP: 184.173.87.162
 
-	     GET http://www.gotoapp2.com/wim/static/wi/?tp=iw&cid=8334&v=34&gnum=1&clickid=368111833074599801667&cachecode=nRz4WymXmok%2FjyPG4UdmVA%3D%
-	             3D%3AZm…
-	             ← 200 text/html 591b 295ms
+         GET http://www.gotoapp2.com/wim/static/wi/?tp=iw&cid=8334&v=34&gnum=1&clickid=368111833074599801667&cachecode=nRz4WymXmok%2FjyPG4UdmVA%3D%
+                 3D%3AZm…
+                 ← 200 text/html 591b 295ms
 
-	        Resolved: 104.27.135.50
+            Resolved: 104.27.135.50
 
-	     GET https://gsafe.getawesome2.com/wim/static/wi/main.html?tp=iw&cid=8334&v=34&gnum=1&clickid=368111833074599801667&cachecode=nRz4WymXmok%2
-	             FjyPG4U… HTTP/2.0
-	             ← 200 text/html 1.14k 368ms
+         GET https://gsafe.getawesome2.com/wim/static/wi/main.html?tp=iw&cid=8334&v=34&gnum=1&clickid=368111833074599801667&cachecode=nRz4WymXmok%2
+                 FjyPG4U… HTTP/2.0
+                 ← 200 text/html 1.14k 368ms
 
-	             Resolved IP: 172.64.131.15
+                 Resolved IP: 172.64.131.15
 
-	     GET https://gsafe.getawesome2.com/wim/static/dist/bundle.js?cd=1 HTTP/2.0
-	             ← 304 [no content] 339ms
-	     GET https://gsafe.getawesome2.com/wim/static/lps/movies/34.3/index.html HTTP/2.0
-	             ← 304 [no content] 388ms
-	     GET https://www.cherami-cloud.com/report/wa?ctag=8334_368111833_lp34.3_wit1564747485&clickid=368111833074599801667&yid=e8ds&vertical=movie
-	             s&step=… HTTP/2.0
-	             ← 200 text/plain 2b 291ms
+         GET https://gsafe.getawesome2.com/wim/static/dist/bundle.js?cd=1 HTTP/2.0
+                 ← 304 [no content] 339ms
+         GET https://gsafe.getawesome2.com/wim/static/lps/movies/34.3/index.html HTTP/2.0
+                 ← 304 [no content] 388ms
+         GET https://www.cherami-cloud.com/report/wa?ctag=8334_368111833_lp34.3_wit1564747485&clickid=368111833074599801667&yid=e8ds&vertical=movie
+                 s&step=… HTTP/2.0
+                 ← 200 text/plain 2b 291ms
 
-	        Resolved IP: 104.27.143.196
+            Resolved IP: 104.27.143.196
 
-	     GET https://gsafe.getawesome2.com/wim/static/lps/movies/34.3/css/bootstrap-reboot.min.css HTTP/2.0
-	             ← 304 [no content] 331ms
-	     GET https://gsafe.getawesome2.com/wim/static/lps/movies/34.3/css/bootstrap.min.css HTTP/2.0
-	             ← 304 [no content] 418ms
-	     GET https://gsafe.getawesome2.com/wim/static/lps/movies/34.3/css/style.css HTTP/2.0
-	             ← 304 [no content] 405ms
-	     GET https://gsafe.getawesome2.com/wim/static/lps/movies/34.3/js/script.js HTTP/2.0
-	             ← 304 [no content] 410ms
-	     GET https://gsafe.getawesome2.com/wim/static/app/register.js HTTP/2.0
-	             ← 304 [no content] 320ms
-	     GET https://gsafe.getawesome2.com/wim/static/lps/movies/34.3/images/player-v2.png HTTP/2.0
-	             ← 304 [no content] 464ms
-	     GET https://gsafe.getawesome2.com/wim/static/components/retry/4.1/index.html HTTP/2.0
-	             ← 304 [no content] 403ms
-	     GET https://gsafe.getawesome2.com/wim/static/components/stepsspinner/1/index.html HTTP/2.0
-	             ← 304 [no content] 538ms
-	     GET https://gsafe.getawesome2.com/wim/static/components/ty/1/index.html HTTP/2.0
-	             ← 304 [no content] 524ms
-	     GET https://gsafe.getawesome2.com/wim/static/components/flows/5.2.1/flow.js?_=1564747484412 HTTP/2.0
-	             ← 200 application/javascript 1.04k 421ms
-	     GET https://gsafe.getawesome2.com/wim/static/components/info/2/index.html HTTP/2.0
-	             ← 304 [no content] 520ms
+         GET https://gsafe.getawesome2.com/wim/static/lps/movies/34.3/css/bootstrap-reboot.min.css HTTP/2.0
+                 ← 304 [no content] 331ms
+         GET https://gsafe.getawesome2.com/wim/static/lps/movies/34.3/css/bootstrap.min.css HTTP/2.0
+                 ← 304 [no content] 418ms
+         GET https://gsafe.getawesome2.com/wim/static/lps/movies/34.3/css/style.css HTTP/2.0
+                 ← 304 [no content] 405ms
+         GET https://gsafe.getawesome2.com/wim/static/lps/movies/34.3/js/script.js HTTP/2.0
+                 ← 304 [no content] 410ms
+         GET https://gsafe.getawesome2.com/wim/static/app/register.js HTTP/2.0
+                 ← 304 [no content] 320ms
+         GET https://gsafe.getawesome2.com/wim/static/lps/movies/34.3/images/player-v2.png HTTP/2.0
+                 ← 304 [no content] 464ms
+         GET https://gsafe.getawesome2.com/wim/static/components/retry/4.1/index.html HTTP/2.0
+                 ← 304 [no content] 403ms
+         GET https://gsafe.getawesome2.com/wim/static/components/stepsspinner/1/index.html HTTP/2.0
+                 ← 304 [no content] 538ms
+         GET https://gsafe.getawesome2.com/wim/static/components/ty/1/index.html HTTP/2.0
+                 ← 304 [no content] 524ms
+         GET https://gsafe.getawesome2.com/wim/static/components/flows/5.2.1/flow.js?_=1564747484412 HTTP/2.0
+                 ← 200 application/javascript 1.04k 421ms
+         GET https://gsafe.getawesome2.com/wim/static/components/info/2/index.html HTTP/2.0
+                 ← 304 [no content] 520ms
 
-	     GET https://movie.splendidsearch.com/wim/static/wi/install.php?cid=8334_368111833_lp34.3_wit1564747485&yid=e8ds&clickid=368111833074599801
-	             667&ver… HTTP/2.0
-	             ← 200 text/html 1.04k 366ms
+         GET https://movie.splendidsearch.com/wim/static/wi/install.php?cid=8334_368111833_lp34.3_wit1564747485&yid=e8ds&clickid=368111833074599801
+                 667&ver… HTTP/2.0
+                 ← 200 text/html 1.04k 366ms
 
-	             Resolved IP: 104.27.176.208
+                 Resolved IP: 104.27.176.208
 
 

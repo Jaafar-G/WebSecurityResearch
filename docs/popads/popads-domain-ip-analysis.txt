@@ -2,169 +2,169 @@
 PopAds Flow of Urls
 ----------------------
 
-c.adsco.re								104.17.166.186
-6.adsco.re								104.17.166.186
-adsco.re								162.252.214.5
-serve.popads.net						216.21.13.16
-onfwv.bemobtrk.com						13.232.114.105
-serve.popads.net						216.21.13.16
-handicap-asiatic.net					104.18.46.190
-www.bet365.com							5.226.176.16
-members.bet365.com						5.226.176.7
+c.adsco.re                              104.17.166.186
+6.adsco.re                              104.17.166.186
+adsco.re                                162.252.214.5
+serve.popads.net                        216.21.13.16
+onfwv.bemobtrk.com                      13.232.114.105
+serve.popads.net                        216.21.13.16
+handicap-asiatic.net                    104.18.46.190
+www.bet365.com                          5.226.176.16
+members.bet365.com                      5.226.176.7
 
 
 -------------------------------------------------------
 Ad is blocked for publisher - Flow for message display
 -------------------------------------------------------
 
-c.adsco.re								104.17.167.186
-adsco.re								162.252.214.5
-serve.popads.net						216.21.13.16
+c.adsco.re                              104.17.167.186
+adsco.re                                162.252.214.5
+serve.popads.net                        216.21.13.16
 
 --------------------------------------------------------
 
 
-c.adsco.re								104.17.166.186
-	Domain Siblings							6.adsco.re
-		qthejcwbqobv.s.adsco.re 			c.adsco.re
-		awcegozqyncc.l.adsco.re 			www.adsco.re
-		zbik5dzfbsug.s.adsco.re 			
-		w.adsco.re
-		jxuce0vzbk62.l.adsco.re
-		y0sort5xgd9u.l.adsco.re
-		i8iorbsfxhkr.l.adsco.re
-		9ljfzs9j28ts.n.adsco.re
-		axanvaolawli.n.adsco.re
-		xokzdq7htqt9.l.adsco.re
-			+ 89 MORE DOMAINS
+c.adsco.re                              104.17.166.186
+    Domain Siblings                         6.adsco.re
+        qthejcwbqobv.s.adsco.re             c.adsco.re
+        awcegozqyncc.l.adsco.re             www.adsco.re
+        zbik5dzfbsug.s.adsco.re             
+        w.adsco.re
+        jxuce0vzbk62.l.adsco.re
+        y0sort5xgd9u.l.adsco.re
+        i8iorbsfxhkr.l.adsco.re
+        9ljfzs9j28ts.n.adsco.re
+        axanvaolawli.n.adsco.re
+        xokzdq7htqt9.l.adsco.re
+            + 89 MORE DOMAINS
 
-	Resolutions
-		104.17.166.186
-		104.17.167.186
-		185.246.209.12
-		185.59.220.19
-		185.59.220.22
-		185.59.221.12
-		185.59.221.25
-		185.59.222.14
-		185.59.222.19
-		185.59.222.22
-		185.76.10.8
-		185.93.1.13
-		185.93.1.29
-		185.93.1.7
-		185.93.2.21
-		185.93.2.2
-		195.181.172.4
-		195.181.174.17
-		195.181.174.23
-		195.181.174.9
+    Resolutions
+        104.17.166.186
+        104.17.167.186
+        185.246.209.12
+        185.59.220.19
+        185.59.220.22
+        185.59.221.12
+        185.59.221.25
+        185.59.222.14
+        185.59.222.19
+        185.59.222.22
+        185.76.10.8
+        185.93.1.13
+        185.93.1.29
+        185.93.1.7
+        185.93.2.21
+        185.93.2.2
+        195.181.172.4
+        195.181.174.17
+        195.181.174.23
+        195.181.174.9
 
-6.adsco.re								104.17.166.186
-	same as above 							same as above
+6.adsco.re                              104.17.166.186
+    same as above                           same as above
 
 
-adsco.re								162.252.214.5
-	IP Resolutions 							adsco.re
-		162.252.214.4 						w.adsco.re
-		162.252.214.5 						www.adsco.re
-		216.21.13.18
-	Subdomains
-		qthejcwbqobv.s.adsco.re
-		c.adsco.re
-		w.adsco.re
-		jxuce0vzbk62.l.adsco.re
-		i8iorbsfxhkr.l.adsco.re
-			+ 94 MORAE DOMAINS
+adsco.re                                162.252.214.5
+    IP Resolutions                          adsco.re
+        162.252.214.4                       w.adsco.re
+        162.252.214.5                       www.adsco.re
+        216.21.13.18
+    Subdomains
+        qthejcwbqobv.s.adsco.re
+        c.adsco.re
+        w.adsco.re
+        jxuce0vzbk62.l.adsco.re
+        i8iorbsfxhkr.l.adsco.re
+            + 94 MORAE DOMAINS
 
-serve.popads.net						216.21.13.16
-	Domain Siblings							serve.popads.net
-		www.popads.net						
-		serve.popads.net
-		c1.popads.net
-		c2.popads.net
-		static.popads.net
-		banners.popads.net
-		out.popads.net
-		anycast.popads.net
-	IP Resolutions
-		173.236.89.196
-		184.154.76.140
-		216.21.13.10
-		216.21.13.11
-		216.21.13.16
-		216.21.13.17
+serve.popads.net                        216.21.13.16
+    Domain Siblings                         serve.popads.net
+        www.popads.net                      
+        serve.popads.net
+        c1.popads.net
+        c2.popads.net
+        static.popads.net
+        banners.popads.net
+        out.popads.net
+        anycast.popads.net
+    IP Resolutions
+        173.236.89.196
+        184.154.76.140
+        216.21.13.10
+        216.21.13.11
+        216.21.13.16
+        216.21.13.17
 
-onfwv.bemobtrk.com						13.232.114.105
-	Domain Siblings							No Mapping Found
-		xajtw.bemobtrk.com
-		yeuki.bemobtrk.com
-		b93ot.bemobtrk.com
-		b3zg1.bemobtrk.com
-		aa60g.bemobtrk.com
-			+ 95 MORE DOMAINS
-	Resolutions
-		3.209.3.87
-		3.209.57.99
-		3.218.162.123
-		3.220.100.132
-		34.201.90.235
-		34.202.66.161
-		34.226.165.43
-		34.231.56.95
-		34.238.95.28
-		52.2.57.178
-		52.203.200.65
-		52.21.136.213
-		52.44.226.179
-		52.5.243.55
-		52.71.198.231
-		52.87.18.212
-		54.210.210.7
-		54.86.245.203
-		54.88.159.246
-		54.88.99.240
+onfwv.bemobtrk.com                      13.232.114.105
+    Domain Siblings                         No Mapping Found
+        xajtw.bemobtrk.com
+        yeuki.bemobtrk.com
+        b93ot.bemobtrk.com
+        b3zg1.bemobtrk.com
+        aa60g.bemobtrk.com
+            + 95 MORE DOMAINS
+    Resolutions
+        3.209.3.87
+        3.209.57.99
+        3.218.162.123
+        3.220.100.132
+        34.201.90.235
+        34.202.66.161
+        34.226.165.43
+        34.231.56.95
+        34.238.95.28
+        52.2.57.178
+        52.203.200.65
+        52.21.136.213
+        52.44.226.179
+        52.5.243.55
+        52.71.198.231
+        52.87.18.212
+        54.210.210.7
+        54.86.245.203
+        54.88.159.246
+        54.88.99.240
 
-handicap-asiatic.net					104.18.46.190
-	Domain Siblings 						00797775.cn
-		www.handicap-asiatic.net			05177902.cn
-											05820063.cn
-											06012656.cn
-											06676336.cn
-											111l111.com
-											1166mu.com
-											1867275.top
-											2016bn.com
-											213xygpmjb.top
-											24caretgames.com
-												+ 1000 MORE DOMAINS
+handicap-asiatic.net                    104.18.46.190
+    Domain Siblings                         00797775.cn
+        www.handicap-asiatic.net            05177902.cn
+                                            05820063.cn
+                                            06012656.cn
+                                            06676336.cn
+                                            111l111.com
+                                            1166mu.com
+                                            1867275.top
+                                            2016bn.com
+                                            213xygpmjb.top
+                                            24caretgames.com
+                                                + 1000 MORE DOMAINS
 
-www.bet365.com							5.226.176.16
-	Domain Siblings							bet33335.com	
-		members.bet365.com					bet33338.com
-		mobile.bet365.com					bet365-bg.com
-		help.bet365.com						bet365.com
-		casino.bet365.com					bet365affiliates.com
-		extra.bet365.com					beton247.com
-			+ 59 MORE DOMAINS				blogabet.es
-	IP Resolutions							extra.bet365.com	
-		5.226.176.11						help.bet365.com
-		178.237.172.84						notifications.bet365.com
-		5.226.176.16						responsiblegambling.bet365.com
-											streaming.bet365.com
-											vegasplus90.com
-											videostream.bet365.com
-											www.bet365.bg
-											www.bet365.com
+www.bet365.com                          5.226.176.16
+    Domain Siblings                         bet33335.com    
+        members.bet365.com                  bet33338.com
+        mobile.bet365.com                   bet365-bg.com
+        help.bet365.com                     bet365.com
+        casino.bet365.com                   bet365affiliates.com
+        extra.bet365.com                    beton247.com
+            + 59 MORE DOMAINS               blogabet.es
+    IP Resolutions                          extra.bet365.com    
+        5.226.176.11                        help.bet365.com
+        178.237.172.84                      notifications.bet365.com
+        5.226.176.16                        responsiblegambling.bet365.com
+                                            streaming.bet365.com
+                                            vegasplus90.com
+                                            videostream.bet365.com
+                                            www.bet365.bg
+                                            www.bet365.com
 
-members.bet365.com						5.226.176.7
-	Domain Siblings 						members.bet365.com
-		loadgames5.bet365.com
-		loadgames.bet365.com
-		premlp-pt3.bet365.com
-		gateway-members.bet365.com
-		premlp-pt23.bet365.com
-			+ 59 MORE DOMAINS
-	IP Resolutions
-		178.237.172.39
-		5.226.176.7
+members.bet365.com                      5.226.176.7
+    Domain Siblings                         members.bet365.com
+        loadgames5.bet365.com
+        loadgames.bet365.com
+        premlp-pt3.bet365.com
+        gateway-members.bet365.com
+        premlp-pt23.bet365.com
+            + 59 MORE DOMAINS
+    IP Resolutions
+        178.237.172.39
+        5.226.176.7

@@ -1,8 +1,8 @@
 
 // ---------------------------------------------------
 
-		PopMyAds - quickwebchecker.com/css-tricks.html
-		PopMyAds.com
+        PopMyAds - quickwebchecker.com/css-tricks.html
+        PopMyAds.com
 // ----------------------------------------------------
 
 
@@ -16,28 +16,28 @@ It uses the popunder JS code..
 
 
 Step 1: GET https://popmyads.com/serve/54707/51asdsdas....
-		Response script (serve.html)	(Resolved IP: 104.24.126.152)
+        Response script (serve.html)    (Resolved IP: 104.24.126.152)
 
 Step 2: GET Loads JS script 
 
 
-		https://imzahrwl.xyz/z/150973487 	(Resolved IP: 104.27.140.223) (Z.js)
-		https://popmyads.com/x/pma 			(Resolved IP: 104.24.126.152) (BetterJS)
-		https://imzahrwl.xyz/y/33584		(Resolved IP: 104.27.140.223) (Y.js)
+        https://imzahrwl.xyz/z/150973487    (Resolved IP: 104.27.140.223) (Z.js)
+        https://popmyads.com/x/pma          (Resolved IP: 104.24.126.152) (BetterJS)
+        https://imzahrwl.xyz/y/33584        (Resolved IP: 104.27.140.223) (Y.js)
 
 
-		The code (tags) load from Config array seems similar to Adstra code (Partial match)
+        The code (tags) load from Config array seems similar to Adstra code (Partial match)
 
-		The Z.js contains fuckAdBlock function
+        The Z.js contains fuckAdBlock function
 
-		Contains Y.js file - For tag loader, definition and construction
+        Contains Y.js file - For tag loader, definition and construction
 
 
-Step 3: [302] GET https://popmhyads.com/go	(Resolved IP: 104.24.126.152)
-		Redirects to ad page:
-		
-		Url:	
-			https://tracking.marketing/ff0949f6-819d-4205-b0f3-44b4885272e5?siteid=51556&ip=27
+Step 3: [302] GET https://popmhyads.com/go  (Resolved IP: 104.24.126.152)
+        Redirects to ad page:
+        
+        Url:    
+            https://tracking.marketing/ff0949f6-819d-4205-b0f3-44b4885272e5?siteid=51556&ip=27
                              .34.70.7&useragent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5)                                
                              AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142                                             
                              Safari/537.36&country=NP 
@@ -47,7 +47,7 @@ Step 3: [302] GET https://popmhyads.com/go	(Resolved IP: 104.24.126.152)
 Step 4: The above redirection loads the final page.
 
 
-		http://www.apple.com-scan-mac.live/redirect/?ip=27.34.70.7&campid=ff0949f6-819d-
+        http://www.apple.com-scan-mac.live/redirect/?ip=27.34.70.7&campid=ff0949f6-819d-
                                  4205-b0f3-44b4885272e5&zn=51556&sc=da70dd78-219a-4801-b875-e968036136e3&browser=
                                  Chrome&browserversion=Chrome%2075&city=Lalitpur&os=MacOS&osv=MacOS%2010.14%20Moj
                                  ave&model=Desktop&td=tracking.marketing&ua=Mozilla%2F5.0%20%28Macintosh%3B%20Int
@@ -70,35 +70,35 @@ Step 4: The above redirection loads the final page.
 
 
 
-                                 The above url loads with following JS, and images file	;
+                                 The above url loads with following JS, and images file ;
 
                                      All the following are resolved to IP Address: 139.59.35.10
 
                                           GET http://cpacdn.ourcdn77.xyz/apple/old/arrow_animation.gif
-						             ← 200 image/gif 7.76k 350ms
-						     GET http://cpacdn.ourcdn77.xyz/apple/old/jquery-3.2.1.min.js
-						             ← 200 application/javascript 33.08k 453ms
-						     GET http://cpacdn.ourcdn77.xyz/apple/old/moment-with-locales.min.js
-						             ← 200 application/javascript 72.94k 519ms
-						     GET http://cpacdn.ourcdn77.xyz/apple/old/scripts.js
-						             ← 200 application/javascript 1.37k 119ms
-						     GET http://cpacdn.ourcdn77.xyz/apple/old/icon_saf.png
-						             ← 200 image/png 487b 120ms
-						     GET http://cpacdn.ourcdn77.xyz/apple/old/arrow_animation2.gif
-						             ← 200 image/gif 7.76k 121ms
-						     GET http://cpacdn.ourcdn77.xyz/apple/old/header_o.png
-						             ← 200 image/png 22.5k 117ms
-						     GET http://cpacdn.ourcdn77.xyz/apple/old/myriadpro-light.otf
-						             ← 200 application/octet-stream 92.08k 461ms
-						     GET http://cpacdn.ourcdn77.xyz/apple/old/appcare_o.png
-						             ← 200 image/png 9.38k 136ms
-						     GET http://cpacdn.ourcdn77.xyz/apple/old/ajax2.svg
-						             ← 200 image/svg+xml 430b 132ms
-						     GET http://cpacdn.ourcdn77.xyz/apple/old/dreq.png
-						             ← 200 image/png 1.84k 174ms
-						     GET http://cpacdn.ourcdn77.xyz/apple/old/cross.png
-						             ← 200 image/png 344b 125ms
-						     GET http://cpacdn.ourcdn77.xyz/apple/old/tick.png
+                                     ← 200 image/gif 7.76k 350ms
+                             GET http://cpacdn.ourcdn77.xyz/apple/old/jquery-3.2.1.min.js
+                                     ← 200 application/javascript 33.08k 453ms
+                             GET http://cpacdn.ourcdn77.xyz/apple/old/moment-with-locales.min.js
+                                     ← 200 application/javascript 72.94k 519ms
+                             GET http://cpacdn.ourcdn77.xyz/apple/old/scripts.js
+                                     ← 200 application/javascript 1.37k 119ms
+                             GET http://cpacdn.ourcdn77.xyz/apple/old/icon_saf.png
+                                     ← 200 image/png 487b 120ms
+                             GET http://cpacdn.ourcdn77.xyz/apple/old/arrow_animation2.gif
+                                     ← 200 image/gif 7.76k 121ms
+                             GET http://cpacdn.ourcdn77.xyz/apple/old/header_o.png
+                                     ← 200 image/png 22.5k 117ms
+                             GET http://cpacdn.ourcdn77.xyz/apple/old/myriadpro-light.otf
+                                     ← 200 application/octet-stream 92.08k 461ms
+                             GET http://cpacdn.ourcdn77.xyz/apple/old/appcare_o.png
+                                     ← 200 image/png 9.38k 136ms
+                             GET http://cpacdn.ourcdn77.xyz/apple/old/ajax2.svg
+                                     ← 200 image/svg+xml 430b 132ms
+                             GET http://cpacdn.ourcdn77.xyz/apple/old/dreq.png
+                                     ← 200 image/png 1.84k 174ms
+                             GET http://cpacdn.ourcdn77.xyz/apple/old/cross.png
+                                     ← 200 image/png 344b 125ms
+                             GET http://cpacdn.ourcdn77.xyz/apple/old/tick.png
 
 
 

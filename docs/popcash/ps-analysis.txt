@@ -1,6 +1,6 @@
 // -------------------------------------------
-	PopCash.Net
-	quickwebchecker.com/about-us.html
+    PopCash.Net
+    quickwebchecker.com/about-us.html
 // -------------------------------------------
 
 PopCash.net blocked for Nepal.
@@ -10,16 +10,16 @@ Analyzed via Tor browser "network tab".
 
 
 GET http://cdn.popcash.net/pop.js 
-		Uses Popunder JS (BetterJSPop code)			
-													(attached popjs.js)
+        Uses Popunder JS (BetterJSPop code)         
+                                                    (attached popjs.js)
 GET https://dcba.popcash.net/znWaa3gu
-		No response									
+        No response                                 
 
 
 Don't have much info on flow as network tabs opens a separate window
 and need further investigation omn MITM setup with Tor browser.
 
 Final Ad Landing Page upon clicked the page:
-		https://dopor.info/?directlink=1&code_type=1&sid=869855&subid=863942#pc187152&echck=165933.7554264
+        https://dopor.info/?directlink=1&code_type=1&sid=869855&subid=863942#pc187152&echck=165933.7554264
 
-		This page blank.
+        This page blank.

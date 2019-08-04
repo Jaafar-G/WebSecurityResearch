@@ -4,70 +4,70 @@ Revenue Hits Flow of Urls
 
 Before click of ad
 
-beta.mybetterdl.com							184.173.87.162
-mybetterdl.com								184.173.87.162
-p0.mycdn.co								
+beta.mybetterdl.com                         184.173.87.162
+mybetterdl.com                              184.173.87.162
+p0.mycdn.co                             
 p359246.mycdn.co
-fides-pol.apple.com							17.253.83.205
+fides-pol.apple.com                         17.253.83.205
 
 After click of ad
 
-www.gotoapp2.com							104.27.135.50
-gsafe.getawesome2.com						172.64.131.15
-www.cherami-cloud.com						104.27.143.196
-movie.splendidsearch.com					104.27.176.208
+www.gotoapp2.com                            104.27.135.50
+gsafe.getawesome2.com                       172.64.131.15
+www.cherami-cloud.com                       104.27.143.196
+movie.splendidsearch.com                    104.27.176.208
 
 Note: The after of ad display is same as Adsterra. Please refer
-		to domain-ip info from Adsterra for after click.
+        to domain-ip info from Adsterra for after click.
 
 ------------------------------------------------------------------------
 
-beta.mybetterdl.com							184.173.87.162
-	Domain Siblings								a2.57.adb8.ip4.static.sl-reverse.com
-		p232207.mybetterdl.com					beta.mybetterdl.com
-		p320390.mybetterdl.com					mybestdl.com
-		www.mybetterdl.com						mybetterdl.com
-		p225392.mybetterdl.com					p102226.mybetterdl.com
-			+ 95 MORE DOMAINS						+ 146 MORE DOMAINS
+beta.mybetterdl.com                         184.173.87.162
+    Domain Siblings                             a2.57.adb8.ip4.static.sl-reverse.com
+        p232207.mybetterdl.com                  beta.mybetterdl.com
+        p320390.mybetterdl.com                  mybestdl.com
+        www.mybetterdl.com                      mybetterdl.com
+        p225392.mybetterdl.com                  p102226.mybetterdl.com
+            + 95 MORE DOMAINS                       + 146 MORE DOMAINS
 
-mybetterdl.com								184.173.87.162
-	Subdomains									Same as above
-		p225392.mybetterdl.com
-		p357540.mybetterdl.com
-		www.mybetterdl.com
-		p35092.mybetterdl.com
-			+ 97 MORE DOMAINS
+mybetterdl.com                              184.173.87.162
+    Subdomains                                  Same as above
+        p225392.mybetterdl.com
+        p357540.mybetterdl.com
+        www.mybetterdl.com
+        p35092.mybetterdl.com
+            + 97 MORE DOMAINS
 
-p0.mycdn.co 								94.31.29.128
-	Domain Siblings
-		p352817.mycdn.co
-		p236518.mycdn.co							
-		p131675.mycdn.co
-		p349748.mycdn.co
+p0.mycdn.co                                 94.31.29.128
+    Domain Siblings
+        p352817.mycdn.co
+        p236518.mycdn.co                            
+        p131675.mycdn.co
+        p349748.mycdn.co
 
 p359246.mycdn.co
-	Result Not Found
+    Result Not Found
 
-fides-pol.apple.com							17.253.83.205
-	Domain Siblings								iosapps.itunes.apple.com
-		trailers.apple.com						mesu-rand.g.aaplimg.com	
-		appstoreconnect.apple.com				mesu.apple.com
-		gsp1.apple.com							sgsin3-vip-bx-005.aaplimg.com
-		search.itunes.apple.com
-		help.apple.com
-		qtpartners.apple.com
-		time-macos.apple.com
-		news.apple.com
-		music.apple.com
-		www.apple.com
-			+ 90 MORE DOMAINS
-	IP Resolutions
-		17.253.109.201
-		17.253.109.202
-		17.253.109.203
-		17.253.109.204
-		17.253.113.201
-		17.253.113.202
-		17.253.113.203
-		17.253.113.204
-			+34 MORE IPs
+fides-pol.apple.com                         17.253.83.205
+    Domain Siblings                             iosapps.itunes.apple.com
+        trailers.apple.com                      mesu-rand.g.aaplimg.com 
+        appstoreconnect.apple.com               mesu.apple.com
+        gsp1.apple.com                          sgsin3-vip-bx-005.aaplimg.com
+        search.itunes.apple.com
+        help.apple.com
+        qtpartners.apple.com
+        time-macos.apple.com
+        news.apple.com
+        music.apple.com
+        www.apple.com
+            + 90 MORE DOMAINS
+    IP Resolutions
+        17.253.109.201
+        17.253.109.202
+        17.253.109.203
+        17.253.109.204
+        17.253.113.201
+        17.253.113.202
+        17.253.113.203
+        17.253.113.204
+            +34 MORE IPs
