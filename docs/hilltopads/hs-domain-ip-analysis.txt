@@ -13,7 +13,7 @@ galleryn1.awemwh.com					93.93.51.190
 ------------------------------------------------------------------------
 
 finized.co								88.85.94.232
-	Subdomains                          	afletedly.info
+	Subdomains                              afletedly.info
 		www.finized.com                     amiderations.info
 	IP Resolutions							anizablevetor.pro
 		194.187.97.67						bitests.pro
@@ -62,7 +62,7 @@ crptgate.com							93.93.51.223
 
 cradver.livejasmin.com					93.93.51.191
 	Domain Siblings							awempt.com
-		registration.livejasmin.com         aweproto.com
+		registration.livejasmin.com                 aweproto.com
 		old.livejasmin.com 					awepsi.com
 		new.livejasmin.com 					awept.com
 		crpt.livejasmin.com 				cradver.livejasmin.com
@@ -70,7 +70,7 @@ cradver.livejasmin.com					93.93.51.191
 		m.livejasmin.com 					crpop.livejasmin.com
 		www.livejasmin.com                  jsmpsi.com
 		relay.livejasmin.com                protoawe.com
-		tv.livejasmin.com             		pt.awecr.com      
+		tv.livejasmin.com                   pt.awecr.com            
 			+ 90 MORE DOMAINS				pt.awempt.com
 											pt.aweproto.com
 											pt.awepsi.com
@@ -112,17 +112,17 @@ galleryn1.awemwh.com					93.93.51.190
 		galleryn2.awemwh.com 				gallery1.awecr.com
 		galleryn0.awemwh.com 				gallery2.awecr.com
 		gaslleryn3.awemwh.com 				gallery2.awemwh.com
-	    gaslleryn2.awemwh.com 				gallery3.awecr.com
-	    gaslleryn1.awemwh.com 				galleryn0.awemwh.com
-	    gaslleryn0.awemwh.com 				galleryn0.jsmstatic.com
-	    gallery2.awemwh.com 				galleryn1.awemwh.com
-	    www.awemwh.com 						galleryn1.jsmstatic.com
-	    									galleryn2.awemwh.com
-	    									galleryn2.jsmstatic.com
-	    									galleryn3.awemwh.com
-	    									galleryn3.jsmstatic.com
-	    									gaslleryn0.awemwh.com
-	    									gaslleryn1.awemwh.com
-	    									gaslleryn2.awemwh.com
-	    									gaslleryn3.awemwh.com
-	    									www.awemwh.com
+	    gaslleryn2.awemwh.com 			    gallery3.awecr.com
+	    gaslleryn1.awemwh.com 			    galleryn0.awemwh.com
+	    gaslleryn0.awemwh.com 			    galleryn0.jsmstatic.com
+	    gallery2.awemwh.com 			    galleryn1.awemwh.com
+	    www.awemwh.com 					    galleryn1.jsmstatic.com
+		              						galleryn2.awemwh.com
+		              						galleryn2.jsmstatic.com
+		              						galleryn3.awemwh.com
+		              						galleryn3.jsmstatic.com
+		              						gaslleryn0.awemwh.com
+		              						gaslleryn1.awemwh.com
+		              						gaslleryn2.awemwh.com
+		              						gaslleryn3.awemwh.com
+		              						www.awemwh.com

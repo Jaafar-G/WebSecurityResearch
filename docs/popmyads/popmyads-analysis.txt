@@ -38,67 +38,67 @@ Step 3: [302] GET https://popmhyads.com/go	(Resolved IP: 104.24.126.152)
 		
 		Url:	
 			https://tracking.marketing/ff0949f6-819d-4205-b0f3-44b4885272e5?siteid=51556&ip=27
-               .34.70.7&useragent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5)                
-               AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142                       
-               Safari/537.36&country=NP 
+                             .34.70.7&useragent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5)                                
+                             AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142                                             
+                             Safari/537.36&country=NP 
 
-               Resolved IP: 139.229.6.134
+                             Resolved IP: 139.229.6.134
 
 Step 4: The above redirection loads the final page.
 
 
 		http://www.apple.com-scan-mac.live/redirect/?ip=27.34.70.7&campid=ff0949f6-819d-
-                 4205-b0f3-44b4885272e5&zn=51556&sc=da70dd78-219a-4801-b875-e968036136e3&browser=
-                 Chrome&browserversion=Chrome%2075&city=Lalitpur&os=MacOS&osv=MacOS%2010.14%20Moj
-                 ave&model=Desktop&td=tracking.marketing&ua=Mozilla%2F5.0%20%28Macintosh%3B%20Int
-                 el%20Mac%20OS%20X%2010_14_5%29%20AppleWebKit%2F537.36%20%28KHTML%2C%20like%20Gec
-                 ko%29%20Chrome%2F75.0.3770.142%20Safari%2F537.36&language=en&connection=BROADBAN
-                 D&isp=Worldlink%20Communications%20Pvt%20ltd&carrier=&country=NP&cep=9Nnv4KgMCVx
-                 n0iKc0-NOk0tHldGAWnL-UpDJsg_l_76yZsin7w7VzCvs3R_5r71vNGAxldbj4-md3B1IMZWekyNGWXk
-                 YQ4hkggCz_tEJk-rbfmzKPPk0vk6nDVWmo6VxV_7Ozll8DqOnaXxes3gK-Oc3wnna8MiU4PINSnItY7C
-                 4CLPAC-0z2nQ5_TrReDBGN52OkT1-F3Gfg07v6JGu7a5jmaZVXA3kbwG0KXDauVTBTCMyht8qw7teolJ
-                 jp0mFsCkcZKpIgl9Y-TVQxdzpP3PphWpiYAjj8YnXf_2F26f09pQCM--1nir-DbuHFMMaiJEYtGQCrL3
-                 6w5fOL6g3X33BiEtTU55VHRNXnBTAMSR8UFSoE-VkEeyRBYo7zppMfF6lvvO_wAmTzwwAOdCXS_vo4DX
-                 YSyMpn4SEsV1lZTaefvkyTV63ZBblLBFmNH_ccToeb2uclawj5OH_FmWeHh_6PUY2BBnXJcUQWV1nHLy
-                 2FrWdl7SZ7vL7LcZhmF-bbyTHxvelQ1HRarYxo_sXqg&lptoken=150364d274e202f961be&siteid=
-                 51556&useragent=Mozilla/5.0%20(Macintosh;%20Intel%20Mac%20OS%20X%2010_14_5)%20Ap
-                 pleWebKit/537.36%20(KHTML,%20like%20Gecko)%20Chrome/75.0.3770.142%20Safari/537.3
-                 6                    
+                                 4205-b0f3-44b4885272e5&zn=51556&sc=da70dd78-219a-4801-b875-e968036136e3&browser=
+                                 Chrome&browserversion=Chrome%2075&city=Lalitpur&os=MacOS&osv=MacOS%2010.14%20Moj
+                                 ave&model=Desktop&td=tracking.marketing&ua=Mozilla%2F5.0%20%28Macintosh%3B%20Int
+                                 el%20Mac%20OS%20X%2010_14_5%29%20AppleWebKit%2F537.36%20%28KHTML%2C%20like%20Gec
+                                 ko%29%20Chrome%2F75.0.3770.142%20Safari%2F537.36&language=en&connection=BROADBAN
+                                 D&isp=Worldlink%20Communications%20Pvt%20ltd&carrier=&country=NP&cep=9Nnv4KgMCVx
+                                 n0iKc0-NOk0tHldGAWnL-UpDJsg_l_76yZsin7w7VzCvs3R_5r71vNGAxldbj4-md3B1IMZWekyNGWXk
+                                 YQ4hkggCz_tEJk-rbfmzKPPk0vk6nDVWmo6VxV_7Ozll8DqOnaXxes3gK-Oc3wnna8MiU4PINSnItY7C
+                                 4CLPAC-0z2nQ5_TrReDBGN52OkT1-F3Gfg07v6JGu7a5jmaZVXA3kbwG0KXDauVTBTCMyht8qw7teolJ
+                                 jp0mFsCkcZKpIgl9Y-TVQxdzpP3PphWpiYAjj8YnXf_2F26f09pQCM--1nir-DbuHFMMaiJEYtGQCrL3
+                                 6w5fOL6g3X33BiEtTU55VHRNXnBTAMSR8UFSoE-VkEeyRBYo7zppMfF6lvvO_wAmTzwwAOdCXS_vo4DX
+                                 YSyMpn4SEsV1lZTaefvkyTV63ZBblLBFmNH_ccToeb2uclawj5OH_FmWeHh_6PUY2BBnXJcUQWV1nHLy
+                                 2FrWdl7SZ7vL7LcZhmF-bbyTHxvelQ1HRarYxo_sXqg&lptoken=150364d274e202f961be&siteid=
+                                 51556&useragent=Mozilla/5.0%20(Macintosh;%20Intel%20Mac%20OS%20X%2010_14_5)%20Ap
+                                 pleWebKit/537.36%20(KHTML,%20like%20Gecko)%20Chrome/75.0.3770.142%20Safari/537.3
+                                 6                                        
 
 
-                 Resolved IP: 52.29.39.28
+                                 Resolved IP: 52.29.39.28
 
 
 
-                 The above url loads with following JS, and images file	;
+                                 The above url loads with following JS, and images file	;
 
-                 		All the following are resolved to IP Address: 139.59.35.10
+                                     All the following are resolved to IP Address: 139.59.35.10
 
-                 		   GET http://cpacdn.ourcdn77.xyz/apple/old/arrow_animation.gif
-						       ← 200 image/gif 7.76k 350ms
-						   GET http://cpacdn.ourcdn77.xyz/apple/old/jquery-3.2.1.min.js
-						       ← 200 application/javascript 33.08k 453ms
-						   GET http://cpacdn.ourcdn77.xyz/apple/old/moment-with-locales.min.js
-						       ← 200 application/javascript 72.94k 519ms
-						   GET http://cpacdn.ourcdn77.xyz/apple/old/scripts.js
-						       ← 200 application/javascript 1.37k 119ms
-						   GET http://cpacdn.ourcdn77.xyz/apple/old/icon_saf.png
-						       ← 200 image/png 487b 120ms
-						   GET http://cpacdn.ourcdn77.xyz/apple/old/arrow_animation2.gif
-						       ← 200 image/gif 7.76k 121ms
-						   GET http://cpacdn.ourcdn77.xyz/apple/old/header_o.png
-						       ← 200 image/png 22.5k 117ms
-						   GET http://cpacdn.ourcdn77.xyz/apple/old/myriadpro-light.otf
-						       ← 200 application/octet-stream 92.08k 461ms
-						   GET http://cpacdn.ourcdn77.xyz/apple/old/appcare_o.png
-						       ← 200 image/png 9.38k 136ms
-						   GET http://cpacdn.ourcdn77.xyz/apple/old/ajax2.svg
-						       ← 200 image/svg+xml 430b 132ms
-						   GET http://cpacdn.ourcdn77.xyz/apple/old/dreq.png
-						       ← 200 image/png 1.84k 174ms
-						   GET http://cpacdn.ourcdn77.xyz/apple/old/cross.png
-						       ← 200 image/png 344b 125ms
-						   GET http://cpacdn.ourcdn77.xyz/apple/old/tick.png
+                                          GET http://cpacdn.ourcdn77.xyz/apple/old/arrow_animation.gif
+						             ← 200 image/gif 7.76k 350ms
+						     GET http://cpacdn.ourcdn77.xyz/apple/old/jquery-3.2.1.min.js
+						             ← 200 application/javascript 33.08k 453ms
+						     GET http://cpacdn.ourcdn77.xyz/apple/old/moment-with-locales.min.js
+						             ← 200 application/javascript 72.94k 519ms
+						     GET http://cpacdn.ourcdn77.xyz/apple/old/scripts.js
+						             ← 200 application/javascript 1.37k 119ms
+						     GET http://cpacdn.ourcdn77.xyz/apple/old/icon_saf.png
+						             ← 200 image/png 487b 120ms
+						     GET http://cpacdn.ourcdn77.xyz/apple/old/arrow_animation2.gif
+						             ← 200 image/gif 7.76k 121ms
+						     GET http://cpacdn.ourcdn77.xyz/apple/old/header_o.png
+						             ← 200 image/png 22.5k 117ms
+						     GET http://cpacdn.ourcdn77.xyz/apple/old/myriadpro-light.otf
+						             ← 200 application/octet-stream 92.08k 461ms
+						     GET http://cpacdn.ourcdn77.xyz/apple/old/appcare_o.png
+						             ← 200 image/png 9.38k 136ms
+						     GET http://cpacdn.ourcdn77.xyz/apple/old/ajax2.svg
+						             ← 200 image/svg+xml 430b 132ms
+						     GET http://cpacdn.ourcdn77.xyz/apple/old/dreq.png
+						             ← 200 image/png 1.84k 174ms
+						     GET http://cpacdn.ourcdn77.xyz/apple/old/cross.png
+						             ← 200 image/png 344b 125ms
+						     GET http://cpacdn.ourcdn77.xyz/apple/old/tick.png
 
 
 

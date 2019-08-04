@@ -8,7 +8,7 @@
 
 Step 1:
 
-Site source given in the script tag of hosting which loads the JS. This is  static js source url.
+Site source given in the script tag of hosting which loads the JS. This is    static js source url.
 This is provided to the publisher during the time of ad code generation. This is headed at head of the publisher html file.
 
 
@@ -22,50 +22,50 @@ This is provided to the publisher during the time of ad code generation. This is
 
 
 {
-    "bdVar": "TRQuYZYIgi",
-    "counters": {
-        "dailySeq": "kadDS",
-        "domain": "kadPD",
-        "iframePage": "kadPIP",
-        "lastPageTimer": "kadLPT",
-        "lastTimer": "kadLT",
-        "max": "kadPM",
-        "page": "kadPP",
-        "schemeClicks": "kadSC",
-        "schemeSeq": "kadSS"
-    },
-    "freq": {
-        "context": "domain",
-        "distance": 60,
-        "distances": "",
-        "max": 0,
-        "pagelim": 0,
-        "period": 3600,
-        "qty": 3,
-        "scheme": "time",
-        "session": false,
-        "sessionExpiration": 3600,
-        "sessionKeepAliveTime": 0
-    },
-    "misc": {
-        "coverTags": "iframe",
-        "newTab": true,
-        "under": false
-    },
-    "names": {
-        "clickedElement": "ce",
-        "dailySeq": "dseq",
-        "iabc": "iabc",
-        "schemeSeq": "sseq"
-    },
-    "popns": "dfd604",
-    "revert": false,
-    "script": "https://www.reberr.pro/dfd604/lszipbvljhtv.js",
-    "scriptSrc": "/c.DB9p6Ob/2q5ulxSxWMQD9/NBDTE_xOMHTzMtzkO/Cx0/0SMZTHENxBM/zJMs5o",
-    "window": {
-        "url": "http://finized.co/br3sVt0uPv2wlxjyPzXABBzCJDmE9F0GPHUI5JEKRLXMhNNOVPEQ1R6STT0UNVRWeXEY5ZUaWbTcBdOeefkgEhxiTjXkplBmMn0oppFqNrVsFtKuRv0wpx5yYzjAJBGCaD1ElFtGRHnIVJaKQL1MFNrOZPDQIR5SeTWUJVHWUXnYNZhaVbzcVdyeSfUgdhOidjmkJlXmMnToFpiqbrWsxtquWvVwhxSyczGAIByCNDXEpFJGSHEIIJyKZLEMNNROePEQ5RESSTmU1VOWaXlYUZ0aWbVcRdVeefEg5htiTjTkJlPmRn0oZprqTrjsJtZuMvlwlxqyaz3ApBNCaDmEdF3GTH1IRJjKMLVMlNqOTPmQtRNSZTyU0VtWJXnYZZ0aPbTcEd1eNfjgQh3iMjDkUlzmMnDocptqMrzsQt2uMvTwlxjyYzTAEB0CZDDEhFlGNHDIgJ4KZLWMVNkOZPTQhRjSOTTUEV3WYXTYZZmaObDcIdweZfGgIh"
-    },
-    "zh": "530389e24eb43608609c0c32957fa0f6"
+        "bdVar": "TRQuYZYIgi",
+        "counters": {
+                "dailySeq": "kadDS",
+                "domain": "kadPD",
+                "iframePage": "kadPIP",
+                "lastPageTimer": "kadLPT",
+                "lastTimer": "kadLT",
+                "max": "kadPM",
+                "page": "kadPP",
+                "schemeClicks": "kadSC",
+                "schemeSeq": "kadSS"
+        },
+        "freq": {
+                "context": "domain",
+                "distance": 60,
+                "distances": "",
+                "max": 0,
+                "pagelim": 0,
+                "period": 3600,
+                "qty": 3,
+                "scheme": "time",
+                "session": false,
+                "sessionExpiration": 3600,
+                "sessionKeepAliveTime": 0
+        },
+        "misc": {
+                "coverTags": "iframe",
+                "newTab": true,
+                "under": false
+        },
+        "names": {
+                "clickedElement": "ce",
+                "dailySeq": "dseq",
+                "iabc": "iabc",
+                "schemeSeq": "sseq"
+        },
+        "popns": "dfd604",
+        "revert": false,
+        "script": "https://www.reberr.pro/dfd604/lszipbvljhtv.js",
+        "scriptSrc": "/c.DB9p6Ob/2q5ulxSxWMQD9/NBDTE_xOMHTzMtzkO/Cx0/0SMZTHENxBM/zJMs5o",
+        "window": {
+                "url": "http://finized.co/br3sVt0uPv2wlxjyPzXABBzCJDmE9F0GPHUI5JEKRLXMhNNOVPEQ1R6STT0UNVRWeXEY5ZUaWbTcBdOeefkgEhxiTjXkplBmMn0oppFqNrVsFtKuRv0wpx5yYzjAJBGCaD1ElFtGRHnIVJaKQL1MFNrOZPDQIR5SeTWUJVHWUXnYNZhaVbzcVdyeSfUgdhOidjmkJlXmMnToFpiqbrWsxtquWvVwhxSyczGAIByCNDXEpFJGSHEIIJyKZLEMNNROePEQ5RESSTmU1VOWaXlYUZ0aWbVcRdVeefEg5htiTjTkJlPmRn0oZprqTrjsJtZuMvlwlxqyaz3ApBNCaDmEdF3GTH1IRJjKMLVMlNqOTPmQtRNSZTyU0VtWJXnYZZ0aPbTcEd1eNfjgQh3iMjDkUlzmMnDocptqMrzsQt2uMvTwlxjyYzTAEB0CZDDEhFlGNHDIgJ4KZLWMVNkOZPTQhRjSOTTUEV3WYXTYZZmaObDcIdweZfGgIh"
+        },
+        "zh": "530389e24eb43608609c0c32957fa0f6"
 }
 
 
@@ -84,7 +84,7 @@ This weburl redirects to another Url:
 finized.co/dmp?
 	05: 4111388
 	uId: hash (key of the publisher)
-	b1:  hash
+	b1:    hash
 	d6: window info
 	ay: 10258
 	c0: 0.21
@@ -119,19 +119,19 @@ Example:
 	As you can see from attached crypgate.html it redirects to https://cradver.livejasmin.com :
 
 			https://cradver.livejasmin.com/pu/fsrnd?
-					ms_rnd:     1564711794.22125
-					pstool:     300_20
-					psid:       ed_tsrmntt3
-					site:       jsm
+					ms_rnd:         1564711794.22125
+					pstool:         300_20
+					psid:             ed_tsrmntt3
+					site:             jsm
 					utm_medium: partner
 					utm_source: TS
-					category:   girl
-					origin:     finized.co
+					category:     girl
+					origin:         finized.co
 
 	Resolved IP: 93.93.51.191:443
 
 
-	The response part is interesting. It has adblock code  but not much info ... (attached cradver.js)
+	The response part is interesting. It has adblock code    but not much info ... (attached cradver.js)
 	
 	The above code loads one of the JS code which has adblock JS file
 	url: 

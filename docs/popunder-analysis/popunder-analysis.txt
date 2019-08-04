@@ -4,7 +4,7 @@ The following basic steps were performed by author in order to create licensing 
 
 Step 1. Create an input string of domain (s) "toEncode" which must be passed through encodeURI() function. The encodeURI() function encodes a Uniform Resource Identifier (URI) [reference]. 
 
-   var toEncode = encodeURI(" domains~|.object~|.192.168.1.99~|./~|.quickwebchecker.com~|..local~|.127.0.0.1~|.popunderjs.com~|..dev~|.localhost~|. expires~|.use strict");
+     var toEncode = encodeURI(" domains~|.object~|.192.168.1.99~|./~|.quickwebchecker.com~|..local~|.127.0.0.1~|.popunderjs.com~|..dev~|.localhost~|. expires~|.use strict");
 
 In the above toEncode variable, we replaced the acutal client domains with "quickwebchecker.com" and rest other variables were kept as it was. 
 
@@ -67,38 +67,38 @@ Following is the hack codebase that we created to get the hashes for the test do
 
  // creating hashes of input domains
 
-    var domains = ["quickwebchecker.com", ".dev", ".local", "127.0.0.1", "localhost", "192.168.1.99"];
-    var domainLength = domains.length;
-    var hashOfDomains = Array(23);
+        var domains = ["quickwebchecker.com", ".dev", ".local", "127.0.0.1", "localhost", "192.168.1.99"];
+        var domainLength = domains.length;
+        var hashOfDomains = Array(23);
 
-    // Preset values
-    
-    hashOfDomains[0] = 119;
-    hashOfDomains[1] = 179;
-    hashOfDomains[2] = 180;
-    hashOfDomains[3] = 156;
-    hashOfDomains[4] = 192;
-    hashOfDomains[5] = 155;
+        // Preset values
+        
+        hashOfDomains[0] = 119;
+        hashOfDomains[1] = 179;
+        hashOfDomains[2] = 180;
+        hashOfDomains[3] = 156;
+        hashOfDomains[4] = 192;
+        hashOfDomains[5] = 155;
 
-    for(var count = 0; count < domainLength; count++) {
-       var str = domains[count];
-       var a = str.charCodeAt(0) * hashOfDomains[count] + count + 1;
-       var b = str.charCodeAt(str.length -1) * 2 * hashOfDomains[count];
-       var c = str.length * 3 * hashOfDomains[count];
+        for(var count = 0; count < domainLength; count++) {
+             var str = domains[count];
+             var a = str.charCodeAt(0) * hashOfDomains[count] + count + 1;
+             var b = str.charCodeAt(str.length -1) * 2 * hashOfDomains[count];
+             var c = str.length * 3 * hashOfDomains[count];
 
-       sixthIndex = domainLength + count;
-       twelfthIndex = 2 * domainLength + count;
-       eighteenthIndex = 3 * domainLength + count;
+             sixthIndex = domainLength + count;
+             twelfthIndex = 2 * domainLength + count;
+             eighteenthIndex = 3 * domainLength + count;
 
-       hashOfDomains[sixthIndex] = a;
-       hashOfDomains[twelfthIndex] = b;
-       hashOfDomains[eighteenthIndex] = c;
-    }
+             hashOfDomains[sixthIndex] = a;
+             hashOfDomains[twelfthIndex] = b;
+             hashOfDomains[eighteenthIndex] = c;
+        }
 //
 
 Methodology
 
-We created a server blocks for test domain(s) in local nginx server. The /etc/hosts was edited to redirect the test domain (s) to the localhost. When requested to open such test domain (s) on browser, these test domains were simply redirected by server blocks to  to specified code folder. These test domains would have created toEncode domain names, and hashes. So, we were able to verify that our code hacks for each test domains on licensing would work.  
+We created a server blocks for test domain(s) in local nginx server. The /etc/hosts was edited to redirect the test domain (s) to the localhost. When requested to open such test domain (s) on browser, these test domains were simply redirected by server blocks to    to specified code folder. These test domains would have created toEncode domain names, and hashes. So, we were able to verify that our code hacks for each test domains on licensing would work.    
 
 
 

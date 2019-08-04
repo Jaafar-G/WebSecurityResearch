@@ -124,7 +124,7 @@ clk.rtpdn10.com										174.137.155.139
 															+84 more domains
 
 adaranth.com										188.72.202.134
-	IP Resolutions                                   	adaranth.com
+	IP Resolutions                                      adaranth.com
 		188.72.202.12									superadbid.com
 		188.72.202.134
 		188.72.202.19
@@ -161,24 +161,24 @@ my.rtmark.net										188.42.160.69
 www.gearbest.com									23.10.41.150
 	Subdomains											No resolutions found
 		affiliate.gearbest.com
-        order.gearbest.com
-        support.gearbest.com
-        www.gearbest.com
-        pt.gearbest.com
-        es.gearbest.com
-        login.gearbest.com
-        goto.gearbest.com
-        mx.gearbest.com
-        br.gearbest.com
-        de.gearbest.com
-        	+ 82 more Domains
-      IP Resolutions
-      		104.100.76.148
-      		104.101.245.145
-      		104.102.219.201
-      		104.102.95.229
-      		104.106.240.164
-      		104.106.78.157
-      		104.107.11.196
-      			+ 150 more IP Addresses
+                order.gearbest.com
+                support.gearbest.com
+                www.gearbest.com
+                pt.gearbest.com
+                es.gearbest.com
+                login.gearbest.com
+                goto.gearbest.com
+                mx.gearbest.com
+                br.gearbest.com
+                de.gearbest.com
+                  + 82 more Domains
+            IP Resolutions
+                104.100.76.148
+                104.101.245.145
+                104.102.219.201
+                104.102.95.229
+                104.106.240.164
+                104.106.78.157
+                104.107.11.196
+                  + 150 more IP Addresses
 

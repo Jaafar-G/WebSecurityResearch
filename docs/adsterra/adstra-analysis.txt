@@ -11,24 +11,24 @@ The above document has the link to open that opens a new tab. This has no popund
 
 Example: URL GENERATION - The url is generated at line 573
 
-        'url': _0x5948('0xff') + _0x21c9b0 + '&key=27a43b8438454dd86d9518c8a3ddeea7&scrWidth=' + screen[_0x5948('0x68')] + '&scrHeight=' + screen[_0x5948('0x66')] + _0x5948('0x100') + new Date()[_0x5948('0x101')]() / -0x3c + '&ship=' + '&pst=' + _0x5948('0x102') + window[_0x5948('0x95')]['runTests']()[_0x5948('0x103')]() + _0x5948('0x104') + (window[_0x5948('0x95')][_0x5948('0x105')]() ? 'e' : 'r')
+                'url': _0x5948('0xff') + _0x21c9b0 + '&key=27a43b8438454dd86d9518c8a3ddeea7&scrWidth=' + screen[_0x5948('0x68')] + '&scrHeight=' + screen[_0x5948('0x66')] + _0x5948('0x100') + new Date()[_0x5948('0x101')]() / -0x3c + '&ship=' + '&pst=' + _0x5948('0x102') + window[_0x5948('0x95')]['runTests']()[_0x5948('0x103')]() + _0x5948('0x104') + (window[_0x5948('0x95')][_0x5948('0x105')]() ? 'e' : 'r')
 
 The url is in the form of:
 
 <a id="lk92f" href="http://0byv9mgbn0.com/v41mvce1
-          ?grdpt=78&
-          amp;refer=http%3A%2F%2Fwww.phanivadrevu.com%2Ffiles%2Fscratch_2.html
-          %3Forigin_team%3DTHGU1E6UE&amp;kw=%5B%5D&
-          amp;key=27a43b8438454dd86d9518c8a3ddeea7&
-          amp;scrWidth=1440&amp;scrHeight=900&
-          amp;tz=5.75&
-          amp;ship=&
-          amp;pst=&
-          amp;res=5.287&
-          amp;dev=r&a
-          mp;adb=n" 
-          target="_blank" 
-          style="display: block; height: inherit;"></a>
+                    ?grdpt=78&
+                    amp;refer=http%3A%2F%2Fwww.phanivadrevu.com%2Ffiles%2Fscratch_2.html
+                    %3Forigin_team%3DTHGU1E6UE&amp;kw=%5B%5D&
+                    amp;key=27a43b8438454dd86d9518c8a3ddeea7&
+                    amp;scrWidth=1440&amp;scrHeight=900&
+                    amp;tz=5.75&
+                    amp;ship=&
+                    amp;pst=&
+                    amp;res=5.287&
+                    amp;dev=r&a
+                    mp;adb=n" 
+                    target="_blank" 
+                    style="display: block; height: inherit;"></a>
 
 
 The above link is the target ad that is created as a new tab. I came to see that the domain name is generated differently. For example:
@@ -71,7 +71,7 @@ There are three steps here in ad generation.
 
 http://cjl58f3agc.com/v41mvce1?key=0f22c1fd609f13cb7947c8cabfe1a90d&psid=14375064
 
-3. Step Final  - The target ad display
+3. Step Final    - The target ad display
 
 http://www.apple.com-shield.live/redirect/?
 ip=27.34.22.49&
@@ -124,7 +124,7 @@ The sample template of the MAC User with alert message.
 	var input = document.createElement("input");
 
 
-	hasCustomProtocolHandler - returns boolean value for  registerProtocolHander. lets web sites register themselves as possible handlers for particular protocols. [reference navigator.registerProtocolHandler]
+	hasCustomProtocolHandler - returns boolean value for    registerProtocolHander. lets web sites register themselves as possible handlers for particular protocols. [reference navigator.registerProtocolHandler]
 
 	hasCrypto: - The Window.crypto property returns the Crypto object associated to the global object. This object allows web pages access to certain cryptographic related services. 
 
@@ -136,103 +136,103 @@ The sample template of the MAC User with alert message.
 
 	hasSharedWorker - Shared web workers allow any number of scripts to communicate with a single worker. [reference - https://www.sitepoint.com/javascript-shared-web-workers-html5/ ]
 
-    hasInputCapture -  It is the parameters that is passed from the publisher page (params{}). If hasInputCapture param is found, creates an element namd 'capture' of type input
+        hasInputCapture -    It is the parameters that is passed from the publisher page (params{}). If hasInputCapture param is found, creates an element namd 'capture' of type input
 
-    capture'in d.createElement('input')
+        capture'in d.createElement('input')
 
 	hasConsole - checks window.console (chrome / nonfirefox), window.console.firebug (firefox specific)
 
 
-    hasTouchEvents - This property checks for touch screen such as mobile / smart devices. It detects window.DocumentTouch, checks instance of DocumentTouch or any start event of ontouchstart. The DocumentTouch interface used to provide convenience methods for creating Touch and TouchList objects, but DocumentTouch been removed from the standards. These two methods now live on the Document interface.
+        hasTouchEvents - This property checks for touch screen such as mobile / smart devices. It detects window.DocumentTouch, checks instance of DocumentTouch or any start event of ontouchstart. The DocumentTouch interface used to provide convenience methods for creating Touch and TouchList objects, but DocumentTouch been removed from the standards. These two methods now live on the Document interface.
 
-    hasWindowOrientationProperty - returns the current screen orientation property
+        hasWindowOrientationProperty - returns the current screen orientation property
 
 
 // The above returns the window and document type.
 
-   
-   I came to find out that this advertisement options in the JSON declare in the beginning are of two types:
+     
+     I came to find out that this advertisement options in the JSON declare in the beginning are of two types:
 
-   1. instanceOf(window['atAsyncContainers'] or instanceOf(window['atOptions']
+     1. instanceOf(window['atAsyncContainers'] or instanceOf(window['atOptions']
 
-   2.  instanceOf(window['atAsyncOptions'])
+     2.    instanceOf(window['atAsyncOptions'])
 
-   Our is atOptions type, which can be found as the publisher code in the publisher page of the script
+     Our is atOptions type, which can be found as the publisher code in the publisher page of the script
 
-   This options are later intake as params in process(options) in the line 248 of invoke.js code. This is part which dictates the referer, iframe, advertiser container, XML server request loader, loads an iframe in the publisher page from advertiser with the source Js and source frame url. For further detail:
+     This options are later intake as params in process(options) in the line 248 of invoke.js code. This is part which dictates the referer, iframe, advertiser container, XML server request loader, loads an iframe in the publisher page from advertiser with the source Js and source frame url. For further detail:
 
-   Here are the params calculating in the code of process(options) functions.
+     Here are the params calculating in the code of process(options) functions.
 
-   Input param:
+     Input param:
 
-   Options : 
+     Options : 
 
-         format: iframe
-         height: 60
-         key: e3900016 ....
-         params {}
-         width: 468
+                 format: iframe
+                 height: 60
+                 key: e3900016 ....
+                 params {}
+                 width: 468
 
 
-    These are the Options that publisher provide
+        These are the Options that publisher provide
 
-    Calculated in the functions:
+        Calculated in the functions:
 
-    result = top.location.href # This is the referrer url of the publisher, in our is http://www.phanivadrevu.com/files/scratch_2.html?origin_team=THGU1E6UE
+        result = top.location.href # This is the referrer url of the publisher, in our is http://www.phanivadrevu.com/files/scratch_2.html?origin_team=THGU1E6UE
 
-    seed = Math.ceil(now.getTime() * Math.random()) # randomly generated from getTime()
-    
-    timezone = now.getTimezoneOffset() / -60 
-    
-    sourceJS = '//www.urldelivery.com/watch.' + seed + '.js' + '?key=' + options.key + '&kw=' + encodeURIComponent(JSON.stringify(keywords)) + '&refer=' + encodeURIComponent(refer) + (custom.length ? '&custom=' + encodeURIComponent('{' + custom.join(',') + '}') : '') + '&tz=' + timezone + '&dev=' + (window.LieDetector.runTests().isEmulate() ? 'e' : 'r') + '&res=' + window.LieDetector.getResults()
+        seed = Math.ceil(now.getTime() * Math.random()) # randomly generated from getTime()
+        
+        timezone = now.getTimezoneOffset() / -60 
+        
+        sourceJS = '//www.urldelivery.com/watch.' + seed + '.js' + '?key=' + options.key + '&kw=' + encodeURIComponent(JSON.stringify(keywords)) + '&refer=' + encodeURIComponent(refer) + (custom.length ? '&custom=' + encodeURIComponent('{' + custom.join(',') + '}') : '') + '&tz=' + timezone + '&dev=' + (window.LieDetector.runTests().isEmulate() ? 'e' : 'r') + '&res=' + window.LieDetector.getResults()
 
-    sourceIframe = '//www.urldelivery.com/watch.' + seed + '?key=' + options.key + '&kw=' + encodeURIComponent(JSON.stringify(keywords)) + '&refer=' + encodeURIComponent(refer) + (custom.length ? '&custom=' + encodeURIComponent('{' + custom.join(',') + '}') : '') + '&tz=' + timezone + '&dev=' + (window.LieDetector.runTests().isEmulate() ? 'e' : 'r') + '&res=' + window.LieDetector.getResults()
+        sourceIframe = '//www.urldelivery.com/watch.' + seed + '?key=' + options.key + '&kw=' + encodeURIComponent(JSON.stringify(keywords)) + '&refer=' + encodeURIComponent(refer) + (custom.length ? '&custom=' + encodeURIComponent('{' + custom.join(',') + '}') : '') + '&tz=' + timezone + '&dev=' + (window.LieDetector.runTests().isEmulate() ? 'e' : 'r') + '&res=' + window.LieDetector.getResults()
 
-    Here:
+        Here:
 
-       Two of the things interesting are:
-            
-           
-       		b. LieDetector - As discussed above which checks for if emulator / console is on / off
-       		c. LieDetector results - It checks the add up value for all the runTests / addTests checker.
+             Two of the things interesting are:
+                        
+                     
+                 b. LieDetector - As discussed above which checks for if emulator / console is on / off
+                 c. LieDetector results - It checks the add up value for all the runTests / addTests checker.
 
-       		        runTests: function() {
+                                 runTests: function() {
 
-       		        		# feature is the above list of AddTestParams. In our case it has only fals points assigned with some digit. The 
-       		        		true points are empty.
-                            # initial resultsBit is zero, and featureIdx is assigned digit to each addParamTests
-                            # featureIdx is the counter (incremental counter for the loop)
-   
-				            var result, resultPoints;
-				            return tests.forEach(function(feature, featureIdx) {
-				                try {
-				                    (result = 'function' == typeof feature.fn ? feature.fn() : feature.fn) && (resultsBit |= 1 << featureIdx),
-				                    resultPoints = result ? feature.truePoints : feature.falsePoints,
-				                    results.push({
-				                        name: feature.name,
-				                        result: resultPoints
-				                    })
-				                } catch (e) {
-				                    errorsBit |= 1 << featureIdx
-				                }
-			            }),
-			            this
-			        },
+                                     # feature is the above list of AddTestParams. In our case it has only fals points assigned with some digit. The 
+                                     true points are empty.
+                                                        # initial resultsBit is zero, and featureIdx is assigned digit to each addParamTests
+                                                        # featureIdx is the counter (incremental counter for the loop)
+     
+				                        var result, resultPoints;
+				                        return tests.forEach(function(feature, featureIdx) {
+				                                try {
+				                                        (result = 'function' == typeof feature.fn ? feature.fn() : feature.fn) && (resultsBit |= 1 << featureIdx),
+				                                        resultPoints = result ? feature.truePoints : feature.falsePoints,
+				                                        results.push({
+				                                                name: feature.name,
+				                                                result: resultPoints
+				                                        })
+				                                } catch (e) {
+				                                        errorsBit |= 1 << featureIdx
+				                                }
+			                        }),
+			                        this
+			                },
 
-			        	# The default value of the version is 4. So, in our example we have 4. as the results shown 
+			                  # The default value of the version is 4. So, in our example we have 4. as the results shown 
 
-			        getResults: function() {
-			            return version + '.' + resultsBit + (0 < errorsBit ? '.' + errorsBit : '')
+			                getResults: function() {
+			                        return version + '.' + resultsBit + (0 < errorsBit ? '.' + errorsBit : '')
+			                }
 			        }
-			    }
 
 
-       		 sourceJS
+                  sourceJS
 				"//www.urldelivery.com/watch.1245701099626.js?key=e39001666425730d94257dc9a2a18e09&kw=%5B%5D&refer=http%3A%2F%2Fwww.phanivadrevu.com%2Ffiles%2Fscratch_2.html%3Forigin_team%3DTHGU1E6UE&tz=5.75&dev=r&res=4.287"
 				sourceIframe
 				"//www.urldelivery.com/watch.1245701099626?key=e39001666425730d94257dc9a2a18e09&kw=%5B%5D&refer=http%3A%2F%2Fwww.phanivadrevu.com%2Ffiles%2Fscratch_2.html%3Forigin_team%3DTHGU1E6UE&tz=5.75&dev=r&res=4.287"
 
-    
+        
 			sourceIframe
 			"//www.urldelivery.com/watch.1245701099626?key=e39001666425730d94257dc9a2a18e09&kw=%5B%5D&refer=http%3A%2F%2Fwww.phanivadrevu.com%2Ffiles%2Fscratch_2.html%3Forigin_team%3DTHGU1E6UE&tz=5.75&dev=r&res=4.287"
 
@@ -242,126 +242,126 @@ The sample template of the MAC User with alert message.
 				2. The dev options checks for is emulator / console open or not
 				3. result options gets the result bit as calculate from the above. In ideal, the result version with no error would be 4.0
 			 
-    
-    xhrRequest = new ('onload'in new XMLHttpRequest ? XMLHttpRequest : XDomainRequest)
+        
+        xhrRequest = new ('onload'in new XMLHttpRequest ? XMLHttpRequest : XDomainRequest)
 
-    		The XMLHttpRequest object can be used to request data from a web server. Example update a webpage, request a data from server, receive data from server, send data to a server.
+            The XMLHttpRequest object can be used to request data from a web server. Example update a webpage, request a data from server, receive data from server, send data to a server.
 
-    		'onload' new XMLHttpRequest : is the function called when an XMLHttpRequest transaction completes successfully.
+            'onload' new XMLHttpRequest : is the function called when an XMLHttpRequest transaction completes successfully.
 
-    		Difference between XDomainRequest and XMLHttpRequest (Copied from Stackoverflow)
+            Difference between XDomainRequest and XMLHttpRequest (Copied from Stackoverflow)
 
-    		XDomainRequest is the only way of having an XHR that supports CORS in IE8 and 9. At the time of IE8, Microsoft decided to come up with their own CORS XHR instead of the standard CORS XMLHttpRequest which is now used in IE10. Since IE10, XDomainRequest has been removed (editor: see comment).
+            XDomainRequest is the only way of having an XHR that supports CORS in IE8 and 9. At the time of IE8, Microsoft decided to come up with their own CORS XHR instead of the standard CORS XMLHttpRequest which is now used in IE10. Since IE10, XDomainRequest has been removed (editor: see comment).
 
 			You should only use XDomainRequest if you need CORS in IE8/9. XDomainRequest is not completely interchangeable with XMLHttpRequest, the interfaces aren't exactly the same. One is example is it doesn't support the onreadystatechange event. So if you want to switch between them like in the question, you will need to make sure you use onload not onreadystatechange and check any other functionality is interchangeable.
 
-    		Reference:
-    		https://stackoverflow.com/questions/25141650/xdomainrequest-vs-xmlhttprequest
-    		https://www.w3schools.com/xml/xml_http.asp
-    		https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequestEventTarget/onload
-    
-    invokeTag = findInvokeTag(options.key)
+            Reference:
+            https://stackoverflow.com/questions/25141650/xdomainrequest-vs-xmlhttprequest
+            https://www.w3schools.com/xml/xml_http.asp
+            https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequestEventTarget/onload
+        
+        invokeTag = findInvokeTag(options.key)
 
-	   		input param : ads placementkey = "e39001666425730d94257dc9a2a18e09"
-	   		returns : script  by adding a className prefix "Script.atScript" and returns the tag name
+	         input param : ads placementkey = "e39001666425730d94257dc9a2a18e09"
+	         returns : script    by adding a className prefix "Script.atScript" and returns the tag name
 
-	   		<script type="text/javascript" src="http://www.bcloudhost.com/e39001666425730d94257dc9a2a18e09/invoke.js" class="atScripte39001666425730d94257dc9a2a18e09_0"></script>
-    
-    parentTagName = invokeTag.parentNode.nodeName
+	         <script type="text/javascript" src="http://www.bcloudhost.com/e39001666425730d94257dc9a2a18e09/invoke.js" class="atScripte39001666425730d94257dc9a2a18e09_0"></script>
+        
+        parentTagName = invokeTag.parentNode.nodeName
 
-    		"BODY"
+            "BODY"
 
-    
-    iframeBanner = document.createElement('iframe')
+        
+        iframeBanner = document.createElement('iframe')
 
-    		creates an emptyIframeBanner
-    
-    iframeOptions = {
-	    allowtransparency: 'true',
-	    scrolling: 'no',
-	    frameborder: 0,
-	    framespacing: 0
-     }
+            creates an emptyIframeBanner
+        
+        iframeOptions = {
+	        allowtransparency: 'true',
+	        scrolling: 'no',
+	        frameborder: 0,
+	        framespacing: 0
+         }
 
-     		sets iframeBanner options
-
-
-    advContainer = document.createElement('div')
-
-    		creates an advertisment container with div
+             sets iframeBanner options
 
 
-    widthRegExp = /frame_width=([0-9]{1,});/
+        advContainer = document.createElement('div')
 
-    		sets frame regexp frame width
-   
-
-    heightRegExp = /frame_height=([0-9]{1,});/
-
-    		sets frame regexp height
-   
-
-    pasteBannerNode = function(bannerNode) {
-
-    // does not go through if as we have parentTagName is "BODY"
-
-    if (null !== window.frameElement && 'HEAD' === parentTagName) {
-        var bodyNode = document.getElementsByTagName('body')[0];
-        void 0 !== bodyNode ? bodyNode.childNodes.length || bodyNode.appendChild(bannerNode) : document.addEventListener('DOMContentLoaded', function() {
-            (bodyNode = document.getElementsByTagName('body')[0]).childNodes.length || bodyNode.appendChild(bannerNode)
-        })
-    } else
-
-  		// inserts a script
-        invokeTag.parentNode.insertBefore(bannerNode, invokeTag)
-    }
+            creates an advertisment container with div
 
 
-    errorHandler = function() {
+        widthRegExp = /frame_width=([0-9]{1,});/
 
-    		# Since our options for height and width is given in param
-    		# it goes through the first if statement
+            sets frame regexp frame width
+     
 
-                    if (void 0 !== options.height && void 0 !== options.width)
+        heightRegExp = /frame_height=([0-9]{1,});/
 
-                    	// sets provided height and width 
-                        iframeOptions['width'] = options.width,
-                        iframeOptions['height'] = options.height,
+            sets frame regexp height
+     
+
+        pasteBannerNode = function(bannerNode) {
+
+        // does not go through if as we have parentTagName is "BODY"
+
+        if (null !== window.frameElement && 'HEAD' === parentTagName) {
+                var bodyNode = document.getElementsByTagName('body')[0];
+                void 0 !== bodyNode ? bodyNode.childNodes.length || bodyNode.appendChild(bannerNode) : document.addEventListener('DOMContentLoaded', function() {
+                        (bodyNode = document.getElementsByTagName('body')[0]).childNodes.length || bodyNode.appendChild(bannerNode)
+                })
+        } else
+
+        // inserts a script
+                invokeTag.parentNode.insertBefore(bannerNode, invokeTag)
+        }
 
 
-                        // This is where server request happens to load the adnetwork content for
-                        advertisement banner
+        errorHandler = function() {
 
-                        // The base line is to get the sourceJS with provided credentials.
-                        // In our case: The credential userId is null
+            # Since our options for height and width is given in param
+            # it goes through the first if statement
 
-                        // xhrRequest.open('GET', sourceJS + '&uuid=' + userId),
-                        // xhrRequest.send()
+                                        if (void 0 !== options.height && void 0 !== options.width)
 
-                        loadScriptWithStatsData(function(userId) {
+                                          // sets provided height and width 
+                                                iframeOptions['width'] = options.width,
+                                                iframeOptions['height'] = options.height,
 
-                        	// sets source for IframeBanner
-                        	// userId is found empty
 
-                            iframeBanner['src'] = sourceIframe + '&uuid=' + userId
-                        }),
+                                                // This is where server request happens to load the adnetwork content for
+                                                advertisement banner
 
-                        	// sets iframe banner options and attributes
-                        setAttributes(iframeBanner, iframeOptions),
+                                                // The base line is to get the sourceJS with provided credentials.
+                                                // In our case: The credential userId is null
 
-                        // options type container set
+                                                // xhrRequest.open('GET', sourceJS + '&uuid=' + userId),
+                                                // xhrRequest.send()
 
-                        options.async ? document.getElementById(options.container).appendChild(iframeBanner) : pasteBannerNode(iframeBanner);
-                    else {
-                        var containerName = 'string' == typeof options.container ? options.container : 'atContainer-' + options.key;
-                        window['atAsyncContainers'][options.key] = containerName,
-                        options.async || (advContainer.id = containerName,
-                        pasteBannerNode(advContainer)),
-                        loadScriptWithStatsData(function(userId) {
-                            appendScript(containerName, sourceJS + '&uuid=' + userId)
-                        })
-                    }
-    
+                                                loadScriptWithStatsData(function(userId) {
+
+                                                  // sets source for IframeBanner
+                                                  // userId is found empty
+
+                                                        iframeBanner['src'] = sourceIframe + '&uuid=' + userId
+                                                }),
+
+                                                  // sets iframe banner options and attributes
+                                                setAttributes(iframeBanner, iframeOptions),
+
+                                                // options type container set
+
+                                                options.async ? document.getElementById(options.container).appendChild(iframeBanner) : pasteBannerNode(iframeBanner);
+                                        else {
+                                                var containerName = 'string' == typeof options.container ? options.container : 'atContainer-' + options.key;
+                                                window['atAsyncContainers'][options.key] = containerName,
+                                                options.async || (advContainer.id = containerName,
+                                                pasteBannerNode(advContainer)),
+                                                loadScriptWithStatsData(function(userId) {
+                                                        appendScript(containerName, sourceJS + '&uuid=' + userId)
+                                                })
+                                        }
+        
 
 This returns the window to 27a43b8438454dd86d9518c8a3ddeea7.js script at settimeout options
 		
@@ -377,19 +377,19 @@ This returns the window to 27a43b8438454dd86d9518c8a3ddeea7.js script at settime
 					hasLiedLanguage
 
 				'addTest': function(_0x4b950b, _0x351c6c, _0x207cff, _0x381db4) {
-		                _0x19c6e8['push']({
-		                    'name': _0x4b950b,
-		                    'truePoints': _0x351c6c,
-		                    'falsePoints': _0x207cff,
-		                    'fn': _0x381db4
-		                });
-            	},
+		                                _0x19c6e8['push']({
+		                                        'name': _0x4b950b,
+		                                        'truePoints': _0x351c6c,
+		                                        'falsePoints': _0x207cff,
+		                                        'fn': _0x381db4
+		                                });
+                          },
 
-            	Here true points and false points are calculated. If there is no lies, both
-            	truePoints and falsePoints are same to cancel each other / balance ?? 
-            	Ex. DocumentTouch points for Desktop version 
-            	Since, desktop has no touch for Mac OS that I am doing the research on, I suppose
-            	this would be a balancing factor on points
+                          Here true points and false points are calculated. If there is no lies, both
+                          truePoints and falsePoints are same to cancel each other / balance ?? 
+                          Ex. DocumentTouch points for Desktop version 
+                          Since, desktop has no touch for Mac OS that I am doing the research on, I suppose
+                          this would be a balancing factor on points
 
 
 //------------------------------
@@ -405,92 +405,92 @@ This returns the window to 27a43b8438454dd86d9518c8a3ddeea7.js script at settime
 
 Step 1. http://pl14475563.pvclouds.com/27/a4/3b/27a43b8438454dd86d9518c8a3ddeea7.js
 
-        Resolved Address: 214.196.2.1
+                Resolved Address: 214.196.2.1
 
 Step 2. http://www.bcloudhost.com/e39001666425730d94257dc9a2a18e09/invoke.js
 
-        Resolved Address: 213.196.2.1
+                Resolved Address: 213.196.2.1
 
 Step 3. http://ie8eamus.com/sfp.js
 
-        Domain associated with IP: 172.64.193.25
+                Domain associated with IP: 172.64.193.25
 
 Step 4. [307 Temporary redirect] wwww.urldelivery.com
-        key: e39001666425730d94257dc9a2a18e09
-        kw: []
-        refer: http://www.phanivadrevu.com/files/scratch_2.html?origin_team=THGU1E6UE
-        tz: 5.75
-        dev: r
-        res: 4.287
-        uuid: 60ad98fa-7ccf-4b28-a888-4da02e2aa55b:2:1
+                key: e39001666425730d94257dc9a2a18e09
+                kw: []
+                refer: http://www.phanivadrevu.com/files/scratch_2.html?origin_team=THGU1E6UE
+                tz: 5.75
+                dev: r
+                res: 4.287
+                uuid: 60ad98fa-7ccf-4b28-a888-4da02e2aa55b:2:1
 
-        Request url : http://www.urldelivery.com/watch.220516023196.js?key=e39001666425730d94257dc9a2a18e09&kw=%5B%5D&refer=http%3A%2F%2Fwww.phanivadrevu.com%2Ffiles%2Fscratch_2.html%3Forigin_team%3DTHGU1E6UE&tz=5.75&dev=r&res=4.287&uuid=60ad98fa-7ccf-4b28-a888-4da02e2aa55b:2:1
+                Request url : http://www.urldelivery.com/watch.220516023196.js?key=e39001666425730d94257dc9a2a18e09&kw=%5B%5D&refer=http%3A%2F%2Fwww.phanivadrevu.com%2Ffiles%2Fscratch_2.html%3Forigin_team%3DTHGU1E6UE&tz=5.75&dev=r&res=4.287&uuid=60ad98fa-7ccf-4b28-a888-4da02e2aa55b:2:1
 
-        Response url:
-        http://www.urldelivery.com/watch.220516023196.js?key=e39001666425730d94257dc9a2a18e09&kw=%5B%5D&refer=http%3A%2F%2Fwww.phanivadrevu.com%2Ffiles%2Fscratch_2.html%3Forigin_team%3DTHGU1E6UE&tz=5.75&dev=r&res=4.287&uuid=60ad98fa-7ccf-4b28-a888-4da02e2aa55b%3A2%3A1&shu=9fbaa3e70d7a4d4fc80f117a31da8587f97c179579a38aad3920bb687c8d6b61813035f311ae9246eb2e70191b6595d66141e5878642171dd2eeb78de63b7125bc3600d4fa39adfce949e7fff785e2&pst=1564563526&rmtc=t
+                Response url:
+                http://www.urldelivery.com/watch.220516023196.js?key=e39001666425730d94257dc9a2a18e09&kw=%5B%5D&refer=http%3A%2F%2Fwww.phanivadrevu.com%2Ffiles%2Fscratch_2.html%3Forigin_team%3DTHGU1E6UE&tz=5.75&dev=r&res=4.287&uuid=60ad98fa-7ccf-4b28-a888-4da02e2aa55b%3A2%3A1&shu=9fbaa3e70d7a4d4fc80f117a31da8587f97c179579a38aad3920bb687c8d6b61813035f311ae9246eb2e70191b6595d66141e5878642171dd2eeb78de63b7125bc3600d4fa39adfce949e7fff785e2&pst=1564563526&rmtc=t
 
-        Resolved Address: 213.196.5.3
+                Resolved Address: 213.196.5.3
 
 
 Step 5. http://ouh3igaeb.com
 
-            uuid: 60ad98fa-7ccf-4b28-a888-4da02e2aa55b
-            eb: 80f9f88845db92c5953105273b301ddc
-            te: 4aca619cbba6960dda828827b41e058a
-            ua: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36
-            dev: r
-            res: 4.287
-            b_frame: 0
-            pk: 27a43b8438454dd86d9518c8a3ddeea7
+                        uuid: 60ad98fa-7ccf-4b28-a888-4da02e2aa55b
+                        eb: 80f9f88845db92c5953105273b301ddc
+                        te: 4aca619cbba6960dda828827b41e058a
+                        ua: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36
+                        dev: r
+                        res: 4.287
+                        b_frame: 0
+                        pk: 27a43b8438454dd86d9518c8a3ddeea7
 
-            Resolved Address: 198.134.112.241
+                        Resolved Address: 198.134.112.241
 
 Step 6. http://fingahvf.top/advertisers.js [Not shown in Mitm but in Network tab of Chrome]
 
 Step 7. www.urldelivery.com
 
-            	key: e39001666425730d94257dc9a2a18e09
-            	kw: []
-            	refer: http://www.phanivadrevu.com/files/scratch_2.html?origin_team=THGU1E6UE
-            	tz: 5.75
-            	dev: r
-            	res: 4.287
-            	uuid: 60ad98fa-7ccf-4b28-a888-4da02e2aa55b:2:1
-            	shu: a20903a043f1f527f25cdc080bd086f982052fd4b19c3a746a661cd2e5de26bfb8a3aced160ded9bbd843555bbfcb4cc099580bad34afe28f4ced7dd7786a0a26608af130429e2ceb880cdba7462571f2f6165
-            	pst: 1564564369
-            	rmtc: t
+                          key: e39001666425730d94257dc9a2a18e09
+                          kw: []
+                          refer: http://www.phanivadrevu.com/files/scratch_2.html?origin_team=THGU1E6UE
+                          tz: 5.75
+                          dev: r
+                          res: 4.287
+                          uuid: 60ad98fa-7ccf-4b28-a888-4da02e2aa55b:2:1
+                          shu: a20903a043f1f527f25cdc080bd086f982052fd4b19c3a746a661cd2e5de26bfb8a3aced160ded9bbd843555bbfcb4cc099580bad34afe28f4ced7dd7786a0a26608af130429e2ceb880cdba7462571f2f6165
+                          pst: 1564564369
+                          rmtc: t
 
-            Resolved Address: 213.196.5.4
+                        Resolved Address: 213.196.5.4
 
-            RequestURl: 
-            http://www.urldelivery.com/watch.1124682374224.js?key=e39001666425730d94257dc9a2a18e09&kw=%5B%5D&refer=http%3A%2F%2Fwww.phanivadrevu.com%2Ffiles%2Fscratch_2.html%3Forigin_team%3DTHGU1E6UE&tz=5.75&dev=r&res=4.287&uuid=60ad98fa-7ccf-4b28-a888-4da02e2aa55b%3A2%3A1&shu=a20903a043f1f527f25cdc080bd086f982052fd4b19c3a746a661cd2e5de26bfb8a3aced160ded9bbd843555bbfcb4cc099580bad34afe28f4ced7dd7786a0a26608af130429e2ceb880cdba7462571f2f6165&pst=1564564369&rmtc=t
+                        RequestURl: 
+                        http://www.urldelivery.com/watch.1124682374224.js?key=e39001666425730d94257dc9a2a18e09&kw=%5B%5D&refer=http%3A%2F%2Fwww.phanivadrevu.com%2Ffiles%2Fscratch_2.html%3Forigin_team%3DTHGU1E6UE&tz=5.75&dev=r&res=4.287&uuid=60ad98fa-7ccf-4b28-a888-4da02e2aa55b%3A2%3A1&shu=a20903a043f1f527f25cdc080bd086f982052fd4b19c3a746a661cd2e5de26bfb8a3aced160ded9bbd843555bbfcb4cc099580bad34afe28f4ced7dd7786a0a26608af130429e2ceb880cdba7462571f2f6165&pst=1564564369&rmtc=t
 
 Response: (JS Code)
 
 				(function() {
-				  var template = "\
-				    frame_width=468;frame_height=60;<a id='atLink-e39001666425730d94257dc9a2a18e09' href='https://3.securefinds1.com/adServe/aff?oid=123798&pid=138709&subid=VjN8MTQzNzU5NTV8MTYyOTE5NXwxODYxODE5fDE1NjQ1NjQzMTB8NjBhZDk4ZmEtN2NjZi00YjI4LWE4ODgtNGRhMDJlMmFhNTVifDI3LjM0LjcwLjg4fDExfHNoPWEyMDkwM2EwNDNmMWY1MjdmMjVjZGMwODBiZDA4NmY5ODIwNTJmZDRiMTljM2E3NDZhNjYxY2QyZTVkZTI2YmZiOGEzYWNlZDE2MGRlZDliYmQ4NDM1NTViYmZjYjRjYzA5OTU4MGJhZDM0YWZlMjhmNGNlZDdkZDc3ODZhMGEyNjYwOGFmMTMwNDI5ZTJjZWI4ODBjZGJhNzQ2MjU3MWYyZjYxNjV8YWViMzNhMDM4MTIyYTllMTNmZmU5YTUzM2QwZWY3NGE=&ap1=14375955' target='_blank'><img border='0' alt='' src='https://allow4banners.com/1710bn/player/468x60_player_04.gif' width='468' height='60'></a><script type='text/javascript'>                  (function() {                        var bn;                        if (bn = document.getElementById('atLink-e39001666425730d94257dc9a2a18e09')) {                                var callback = function () { (new Image()).src = '//www.urldelivery.com/clk.gif?landing_id=1629195&placement_id=14375955&sid=H4sIAAAAAAAC%2F1RTzWtdRRs%2FN33zlpLF+2IVBAUPFxctJLdz5nzNiQvpB62hSRubQl0Il%2FnMHe%2F5Yuace9qUYrEWuoy4dHPzJE2t7UI3ulBBTt0VhMZVUIJ%2Fityb0uizmN%2Fzwczv98w8c3+rPnBOQU33b60UGzpN6Zmwh9xTK5TrvCrs4D13Ka9k6q5Q7l5dcz9yPdT3gn542j1blqm8IdllXZ0J%2FbjnR+6pyx9cX1med1M9lO4lyYfFaff8wBSZPBOHPdTz4xj1vAC7a1RRo19uA10+wXHPD3ox6hECN82%2FQlufAEtPgBgdOK+BFnvO24MfQfMW8uzxK50wEg+niiAT%2F8gq0wGVP7og7bAqSijsntPJ%2FwdF%2FjCj%2FOoaFKNH3kRSLwSm95xO9QOwfPdQM7ARxCGwFGQOTMxBM2pBpi1o2gIv7oEWL5xt4AKurEKePbwiS5oeFum9qdBj94+Dbg4xz366UZhULOt86J4vsqzONaeVLnLrro4quKnGoG+2oNdbKOsWqo1Z0M0z4NVnoMVvzskvr0GePVothgNqKGix%2F26EqEiIogsx52ohYJgsUELIQiAowhJTGoZselFat6BVC6ncBGpnoLYdqHUHajUDdTkDmdh3Exx4BMvQUwITIoOIKSVpRLgQiqjYg5pPmtqEqtwEnm4CN5%2FvlmJQDUc7lanl14c+jqfRTp1zu0V2J4DjLQKluQtD%2FcWL2b%2FA1L+AHezvUowS5FMU+MpTIY4VDrngiCAmEIlUQjAKsRIB8xLu0ziIaBR5XGAZCokjphihPuVSeBESUiSMCRL4YRgypjgLOEdJEhLEqPADqiQmKuBSxELEMYkoojiKEKHK81GAE4m5ZIQgLtiECYexp7CKvCgEK+bAVntO553jMBJjaKQDjXWgoQ402tkqD5z%2FT1%2F7j49PwlDuu9JPEPKiKApwGPtIJBMUPKGYekSiBKweg7YzQG0HNiZTV34P5QQXLgGjz8Cmz4DrY0Drt4A220FEgA4gQrCRf1sOaK5HVBg5qnu8yEAUYyir%2F2ylB84bUxlv%2FjkHkj93XhpwA7fvQDldP9G%2Ffni7a4rGdhfD+YnTXfTmu7ailewuRvPdvF9JW3UX0XxX234jWVnbQZ%2FVJq%2FLflpy1ddZaaS1usi7i4qmVt6B9fTB9rWi6excKxo7+93VstKZ3pjO9trk5P9+c1neagojli7Yzcdn+aQwcZ9el7ZaprnQ+bp1npzTQkhzsTBcOj8v2RuSrdZ2cG7Kvbx6%2FuLSK+YWqH7x+lPges+ZWf1q+nXn5j4FbVow9Riy+qh9XbTAy7tgy6OcLRww6VHMSgeaerxtMDtKUt5u2QewbmaBVvcgz8YwMmMYpWOg6SbY+th2VZrn7%2F%2FuTw1Y2tlmqXF2WGomdb3vUk5CFSVMCB9Lj%2FA48BXnsRcEMfJCQv8GAAD%2F%2FwEAAP%2F%2FfGfoHn4FAAA=&psid=';};                                if (bn.addEventListener) bn.addEventListener('click', callback, false);                                else if (bn.attachEvent) bn.attachEvent('onclick', callback);                                else bn.onclick = callback;                        }                })();</script> \
-				  ";
-				  if (typeof atAsyncContainers === 'object' && atAsyncContainers['e39001666425730d94257dc9a2a18e09']) {
-				    var container, scripts;
-				    if (container = document.getElementById(atAsyncContainers['e39001666425730d94257dc9a2a18e09'])) {
-				      container.innerHTML = template;
-				      scripts = container.getElementsByTagName('script');
-				      for (var i = 0; i < scripts.length; i++) {
-				        if (!!scripts[i].src) {
-				          (function(raw) {
-				            var script = document.createElement('script');
-				            for (var j = 0, length = raw.attributes.length; j < length; j++) {
-				              script[raw.attributes[j]['name']] = raw.attributes[j]['value'];
+				    var template = "\
+				        frame_width=468;frame_height=60;<a id='atLink-e39001666425730d94257dc9a2a18e09' href='https://3.securefinds1.com/adServe/aff?oid=123798&pid=138709&subid=VjN8MTQzNzU5NTV8MTYyOTE5NXwxODYxODE5fDE1NjQ1NjQzMTB8NjBhZDk4ZmEtN2NjZi00YjI4LWE4ODgtNGRhMDJlMmFhNTVifDI3LjM0LjcwLjg4fDExfHNoPWEyMDkwM2EwNDNmMWY1MjdmMjVjZGMwODBiZDA4NmY5ODIwNTJmZDRiMTljM2E3NDZhNjYxY2QyZTVkZTI2YmZiOGEzYWNlZDE2MGRlZDliYmQ4NDM1NTViYmZjYjRjYzA5OTU4MGJhZDM0YWZlMjhmNGNlZDdkZDc3ODZhMGEyNjYwOGFmMTMwNDI5ZTJjZWI4ODBjZGJhNzQ2MjU3MWYyZjYxNjV8YWViMzNhMDM4MTIyYTllMTNmZmU5YTUzM2QwZWY3NGE=&ap1=14375955' target='_blank'><img border='0' alt='' src='https://allow4banners.com/1710bn/player/468x60_player_04.gif' width='468' height='60'></a><script type='text/javascript'>                                    (function() {                                                var bn;                                                if (bn = document.getElementById('atLink-e39001666425730d94257dc9a2a18e09')) {                                                                var callback = function () { (new Image()).src = '//www.urldelivery.com/clk.gif?landing_id=1629195&placement_id=14375955&sid=H4sIAAAAAAAC%2F1RTzWtdRRs%2FN33zlpLF+2IVBAUPFxctJLdz5nzNiQvpB62hSRubQl0Il%2FnMHe%2F5Yuace9qUYrEWuoy4dHPzJE2t7UI3ulBBTt0VhMZVUIJ%2Fityb0uizmN%2Fzwczv98w8c3+rPnBOQU33b60UGzpN6Zmwh9xTK5TrvCrs4D13Ka9k6q5Q7l5dcz9yPdT3gn542j1blqm8IdllXZ0J%2FbjnR+6pyx9cX1med1M9lO4lyYfFaff8wBSZPBOHPdTz4xj1vAC7a1RRo19uA10+wXHPD3ox6hECN82%2FQlufAEtPgBgdOK+BFnvO24MfQfMW8uzxK50wEg+niiAT%2F8gq0wGVP7og7bAqSijsntPJ%2FwdF%2FjCj%2FOoaFKNH3kRSLwSm95xO9QOwfPdQM7ARxCGwFGQOTMxBM2pBpi1o2gIv7oEWL5xt4AKurEKePbwiS5oeFum9qdBj94+Dbg4xz366UZhULOt86J4vsqzONaeVLnLrro4quKnGoG+2oNdbKOsWqo1Z0M0z4NVnoMVvzskvr0GePVothgNqKGix%2F26EqEiIogsx52ohYJgsUELIQiAowhJTGoZselFat6BVC6ncBGpnoLYdqHUHajUDdTkDmdh3Exx4BMvQUwITIoOIKSVpRLgQiqjYg5pPmtqEqtwEnm4CN5%2FvlmJQDUc7lanl14c+jqfRTp1zu0V2J4DjLQKluQtD%2FcWL2b%2FA1L+AHezvUowS5FMU+MpTIY4VDrngiCAmEIlUQjAKsRIB8xLu0ziIaBR5XGAZCokjphihPuVSeBESUiSMCRL4YRgypjgLOEdJEhLEqPADqiQmKuBSxELEMYkoojiKEKHK81GAE4m5ZIQgLtiECYexp7CKvCgEK+bAVntO553jMBJjaKQDjXWgoQ402tkqD5z%2FT1%2F7j49PwlDuu9JPEPKiKApwGPtIJBMUPKGYekSiBKweg7YzQG0HNiZTV34P5QQXLgGjz8Cmz4DrY0Drt4A220FEgA4gQrCRf1sOaK5HVBg5qnu8yEAUYyir%2F2ylB84bUxlv%2FjkHkj93XhpwA7fvQDldP9G%2Ffni7a4rGdhfD+YnTXfTmu7ailewuRvPdvF9JW3UX0XxX234jWVnbQZ%2FVJq%2FLflpy1ddZaaS1usi7i4qmVt6B9fTB9rWi6excKxo7+93VstKZ3pjO9trk5P9+c1neagojli7Yzcdn+aQwcZ9el7ZaprnQ+bp1npzTQkhzsTBcOj8v2RuSrdZ2cG7Kvbx6%2FuLSK+YWqH7x+lPges+ZWf1q+nXn5j4FbVow9Riy+qh9XbTAy7tgy6OcLRww6VHMSgeaerxtMDtKUt5u2QewbmaBVvcgz8YwMmMYpWOg6SbY+th2VZrn7%2F%2FuTw1Y2tlmqXF2WGomdb3vUk5CFSVMCB9Lj%2FA48BXnsRcEMfJCQv8GAAD%2F%2FwEAAP%2F%2FfGfoHn4FAAA=&psid=';};                                                                if (bn.addEventListener) bn.addEventListener('click', callback, false);                                                                else if (bn.attachEvent) bn.attachEvent('onclick', callback);                                                                else bn.onclick = callback;                                                }                                })();</script> \
+				    ";
+				    if (typeof atAsyncContainers === 'object' && atAsyncContainers['e39001666425730d94257dc9a2a18e09']) {
+				        var container, scripts;
+				        if (container = document.getElementById(atAsyncContainers['e39001666425730d94257dc9a2a18e09'])) {
+				            container.innerHTML = template;
+				            scripts = container.getElementsByTagName('script');
+				            for (var i = 0; i < scripts.length; i++) {
+				                if (!!scripts[i].src) {
+				                    (function(raw) {
+				                        var script = document.createElement('script');
+				                        for (var j = 0, length = raw.attributes.length; j < length; j++) {
+				                            script[raw.attributes[j]['name']] = raw.attributes[j]['value'];
+				                        }
+				                        raw.parentNode.replaceChild(script, raw);
+				                    })(scripts[i]);
+				                } else {
+				                    eval(scripts[i].innerHTML);
+				                }
 				            }
-				            raw.parentNode.replaceChild(script, raw);
-				          })(scripts[i]);
-				        } else {
-				          eval(scripts[i].innerHTML);
 				        }
-				      }
 				    }
-				  }
 				})();
 
 // end of JS script that was reponse on the urldelivery 
@@ -504,102 +504,102 @@ Response: (JS Code)
 
 Step 8. [Image] www.urldelivery.com
 
-        Resolved Address: 213.196.5.4
+                Resolved Address: 213.196.5.4
 
-        landing_id: 1629195
-        placement_id: 14375955
-        sid: (long characters) ...
-        psid: (empty)
+                landing_id: 1629195
+                placement_id: 14375955
+                sid: (long characters) ...
+                psid: (empty)
 
 Step 9: https://3.securefinds1.com/adServer/aff?
 
-    		oid:   123798
-    		pid:   138709
-    		subid: VjN8MTQzNzU5NTV8MTYyOTE5NXwxODYxODE5fDE1NjQ1NjQzMTB8NjBhZDk4ZmEtN2NjZi00YjI4LWE4ODgtNGRhMDJlMmFhNTVi
-    		fDI3LjM0LjcwLjg4fDExfHNoPWEyMDkwM2EwNDNmMWY1MjdmMjVjZGMwODBiZDA4NmY5ODIwNTJmZDRiMTljM2E3NDZhNjYxY2QyZTVkZTI
-    		2YmZiOGEzYWNlZDE2MGRlZDliYmQ4NDM1NTViYmZjYjRjYzA5OTU4MGJhZDM0YWZlMjhmNGNlZDdkZDc3ODZhMGEyNjYwOGFmMTMwNDI5ZT
-    		JjZWI4ODBjZGJhNzQ2MjU3MWYyZjYxNjV8YWViMzNhMDM4MTIyYTllMTNmZmU5YTUzM2QwZWY3NGE=
-    		ap1:   14375955
+            oid:     123798
+            pid:     138709
+            subid: VjN8MTQzNzU5NTV8MTYyOTE5NXwxODYxODE5fDE1NjQ1NjQzMTB8NjBhZDk4ZmEtN2NjZi00YjI4LWE4ODgtNGRhMDJlMmFhNTVi
+            fDI3LjM0LjcwLjg4fDExfHNoPWEyMDkwM2EwNDNmMWY1MjdmMjVjZGMwODBiZDA4NmY5ODIwNTJmZDRiMTljM2E3NDZhNjYxY2QyZTVkZTI
+            2YmZiOGEzYWNlZDE2MGRlZDliYmQ4NDM1NTViYmZjYjRjYzA5OTU4MGJhZDM0YWZlMjhmNGNlZDdkZDc3ODZhMGEyNjYwOGFmMTMwNDI5ZT
+            JjZWI4ODBjZGJhNzQ2MjU3MWYyZjYxNjV8YWViMzNhMDM4MTIyYTllMTNmZmU5YTUzM2QwZWY3NGE=
+            ap1:     14375955
 
-        Resolved Address: 173.192.101.27
+                Resolved Address: 173.192.101.27
 
-        Server Certificates Alt Names: *.securefinds1.com, securefinds1.com
+                Server Certificates Alt Names: *.securefinds1.com, securefinds1.com
 
-        Response [302 No Content]: 
-        	http://www.gotoapp8.com/wim/static/wi/?
-        	tp:        iw
-        	cid:       8319
-        	v:         14
-        	gnum:      1
-        	clickid:   00138709p074553032446
-        	cachecode: /WUWW+41H6pwflS1YSBfmw==:ZmVkY2JhOTg3NjU0MzIxMA==
-        	ctag:      14375955
-        	aes:       1
+                Response [302 No Content]: 
+                  http://www.gotoapp8.com/wim/static/wi/?
+                  tp:                iw
+                  cid:             8319
+                  v:                 14
+                  gnum:            1
+                  clickid:     00138709p074553032446
+                  cachecode: /WUWW+41H6pwflS1YSBfmw==:ZmVkY2JhOTg3NjU0MzIxMA==
+                  ctag:            14375955
+                  aes:             1
 
 
 
 Step 9. http://wwww.gotoapp8.com/static/wi/?
 
-        	tp:        iw
-        	cid:       8319
-        	v:         14
-        	gnum:      1
-        	clickid:   00138709p074553032446
-        	cachecode: /WUWW+41H6pwflS1YSBfmw==:ZmVkY2JhOTg3NjU0MzIxMA==
-        	ctag:      14375955
-        	aes:       1
+                  tp:                iw
+                  cid:             8319
+                  v:                 14
+                  gnum:            1
+                  clickid:     00138709p074553032446
+                  cachecode: /WUWW+41H6pwflS1YSBfmw==:ZmVkY2JhOTg3NjU0MzIxMA==
+                  ctag:            14375955
+                  aes:             1
 
-        	Resolved Address: 104.27.188.26
-        	Server: Cloudfare
+                  Resolved Address: 104.27.188.26
+                  Server: Cloudfare
 
 Response [HTML Code]:
 
 			 <!DOCTYPE html>
 			<html lang="en">
 			<script>
-			  if (window.location.hostname === 'www.givemeofferlnk.com' || window.location.hostname ===
+			    if (window.location.hostname === 'www.givemeofferlnk.com' || window.location.hostname ===
 			'www.gettheapplinkff.com') {
-			    window.location.href = `https://www.gettheappff.com/wim/static/wi/main.html${window.location.search}`;
-			  } else if (window.location.hostname === 'www.gotoapp1.com') {
-			    window.location.href =
+			        window.location.href = `https://www.gettheappff.com/wim/static/wi/main.html${window.location.search}`;
+			    } else if (window.location.hostname === 'www.gotoapp1.com') {
+			        window.location.href =
 			`https://safely.mypdfconverter.net/wim/static/wi/main.html${window.location.search}`;
-			  } else if (window.location.hostname === 'www.privatelycenter.net') {
-			      window.location.href =
+			    } else if (window.location.hostname === 'www.privatelycenter.net') {
+			            window.location.href =
 			`https://www.privatelycenter.net/wim/static/wi/main.html${window.location.search}`;
-			  } else {
-			    let now = new Date();
-			    let onejan = new Date(now.getFullYear(), 0, 1);
-			    let week = Math.ceil((((now - onejan) / 86400000) + onejan.getDay() + 1) / 7);
-			    let awesomeId = (week % 10) + 1; // awesomeId range will be 1-10
+			    } else {
+			        let now = new Date();
+			        let onejan = new Date(now.getFullYear(), 0, 1);
+			        let week = Math.ceil((((now - onejan) / 86400000) + onejan.getDay() + 1) / 7);
+			        let awesomeId = (week % 10) + 1; // awesomeId range will be 1-10
 
-			    awesomeId = 2; // temp (since 30/6)
-			    // TODO: REMEMBER: while this comment is here,  getawesome8 | getawesome9 | getawesome10 goes to
+			        awesomeId = 2; // temp (since 30/6)
+			        // TODO: REMEMBER: while this comment is here,    getawesome8 | getawesome9 | getawesome10 goes to
 			Cloudflare
-			    // TODO: REMEMBER: before applying this, make sure we have getawesome5 (private)
+			        // TODO: REMEMBER: before applying this, make sure we have getawesome5 (private)
 
-			    let subDomain = 'gsafe';
-			    let appPath = 'static/wi/';
-			    let urlParams = window.location.search;
-			    let indexFile = 'main.html';
+			        let subDomain = 'gsafe';
+			        let appPath = 'static/wi/';
+			        let urlParams = window.location.search;
+			        let indexFile = 'main.html';
 
-			    window.location.href =
+			        window.location.href =
 			`https://${subDomain}.getawesome${awesomeId}.com/wim/${appPath}${indexFile}${urlParams}`;
-			  }
+			    }
 			</script>
 			</html>
 
-      
+            
 
 
 Step 10: https://gsafe.getawesome2.com/wim/static/wi/main.html?
-		tp:        iw
-		cid:       8319
-		v:         14
-		gnum:      1
-		clickid:   00138709p074553032446
+		tp:                iw
+		cid:             8319
+		v:                 14
+		gnum:            1
+		clickid:     00138709p074553032446
 		cachecode: /WUWW+41H6pwflS1YSBfmw==:ZmVkY2JhOTg3NjU0MzIxMA==
-		ctag:      14375955
-		aes:       1
+		ctag:            14375955
+		aes:             1
 
 
 		Resolved IP: 172.64.131.15:443
@@ -609,56 +609,56 @@ Step 10: https://gsafe.getawesome2.com/wim/static/wi/main.html?
 				<!DOCTYPE html>
 				<html lang="en">
 				<head>
-				  <meta charset="UTF-8">
-				  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-				  <title></title>
-				  <script>
-				    if(navigator.userAgent.indexOf('MSIE') !== -1
-				        || navigator.appVersion.indexOf('Trident/') > -1) {
-				      window.location.replace('//' + window.location.hostname + '/wim/static/wi/unsupported.html');
-				    }
-				  </script>
-				  <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-				  <script>
-				    window.jQuery || document.write('
-				    <script src="../assets/jquery/jquery-3.3.1.min.js">
-				      <\/script>')</script>
-				      <script src="https://browser.sentry-cdn.com/4.3.2/bundle.min.js" crossorigin="anonymous"></script>
-				      <style>
-				        .noselect {
-				            -webkit-touch-callout: none; /* iOS Safari */
-				            -webkit-user-select: none; /* Safari */
-				            -khtml-user-select: none; /* Konqueror HTML */
-				            -moz-user-select: none; /* Firefox */
-				            -ms-user-select: none; /* Internet Explorer/Edge */
-				            user-select: none; /* Non-prefixed version, currently
-				                                  supported by Chrome and Opera */
+				    <meta charset="UTF-8">
+				    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+				    <title></title>
+				    <script>
+				        if(navigator.userAgent.indexOf('MSIE') !== -1
+				                || navigator.appVersion.indexOf('Trident/') > -1) {
+				            window.location.replace('//' + window.location.hostname + '/wim/static/wi/unsupported.html');
 				        }
-				        .noscroll {
-				            height: 100%;
-				            overflow: hidden;
-				        }
-				        .install-btn {
-				            cursor: pointer;
-				        }
-				        #stepsbar-container, #lp-container, #flows-container,
+				    </script>
+				    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+				    <script>
+				        window.jQuery || document.write('
+				        <script src="../assets/jquery/jquery-3.3.1.min.js">
+				            <\/script>')</script>
+				            <script src="https://browser.sentry-cdn.com/4.3.2/bundle.min.js" crossorigin="anonymous"></script>
+				            <style>
+				                .noselect {
+				                        -webkit-touch-callout: none; /* iOS Safari */
+				                        -webkit-user-select: none; /* Safari */
+				                        -khtml-user-select: none; /* Konqueror HTML */
+				                        -moz-user-select: none; /* Firefox */
+				                        -ms-user-select: none; /* Internet Explorer/Edge */
+				                        user-select: none; /* Non-prefixed version, currently
+				                                                                    supported by Chrome and Opera */
+				                }
+				                .noscroll {
+				                        height: 100%;
+				                        overflow: hidden;
+				                }
+				                .install-btn {
+				                        cursor: pointer;
+				                }
+				                #stepsbar-container, #lp-container, #flows-container,
 				#retry-container,#exit-container,#ty-container,#info-container {
-				            z-index: 1;
-				        }
-				        .notmaximized #flows-container {
-				            height: calc(100vh - 120px);
-				        }
-				        #if-loadto-container {
-				            position: fixed;
-				            top: 0;
-				            left: 0;
-				            width: 100%;
-				            height: 100%;
-				            cursor: pointer;
-				            z-index: 2147483644;
-				            display: none; 
-				        }
-				        #loader-container{display:none;height:100vh;width:100%;position:fixed;background-color:#fff;z-index
+				                        z-index: 1;
+				                }
+				                .notmaximized #flows-container {
+				                        height: calc(100vh - 120px);
+				                }
+				                #if-loadto-container {
+				                        position: fixed;
+				                        top: 0;
+				                        left: 0;
+				                        width: 100%;
+				                        height: 100%;
+				                        cursor: pointer;
+				                        z-index: 2147483644;
+				                        display: none; 
+				                }
+				                #loader-container{display:none;height:100vh;width:100%;position:fixed;background-color:#fff;z-index
 				:2147483647;text-align:center;font-size:x-large}@keyframes lds-eclipse{0%{-webkit-transform:rotate(0);trans
 				form:rotate(0)}50%{-webkit-transform:rotate(180deg);transform:rotate(180deg)}100%{-webkit-transform:rotate(
 				360deg);transform:rotate(360deg)}}@-webkit-keyframes lds-eclipse{0%{-webkit-transform:rotate(0);transform:r
@@ -670,33 +670,33 @@ Step 10: https://gsafe.getawesome2.com/wim/static/wi/main.html?
 				82px}.lds-eclipse{width:200px!important;height:200px!important;-webkit-transform:translate(-100px,-100px)
 				scale(1) translate(100px,100px);transform:translate(-100px,-100px) scale(1) translate(100px,100px);margin:0
 				auto}
-				      </style>
+				            </style>
 				</head>
 				<body class="noselect" style="padding: 0; margin: 0; visibility: hidden;">
-				  <div id="if-loadto-container" class="install-btn"></div>
-				  <div id="loader-container">
-				    <div class="lds-css ng-scope">
-				      <div style="width:100%;height:100%" class="lds-eclipse">
-				        <div></div>
-				      </div>
-				      Loading...
+				    <div id="if-loadto-container" class="install-btn"></div>
+				    <div id="loader-container">
+				        <div class="lds-css ng-scope">
+				            <div style="width:100%;height:100%" class="lds-eclipse">
+				                <div></div>
+				            </div>
+				            Loading...
+				        </div>
 				    </div>
-				  </div>
-				  <div id="stepsbar-container"></div>
-				  <div id="lp-container"></div>
-				  <div id="flows-container"></div>
-				  <div id="retry-container"></div>
-				  <div id="exit-container"></div>
-				  <div id="ty-container"></div>
-				  <div id="info-container"></div>
-				  <div id="browserdsearch-container"></div>
-				  <div id="lpmodal-container"></div>
-				  <script>
-				    if (Math.floor(Math.random() * (10)) + 1 === 1) {
-				        Sentry.init({dsn: 'https://6dfc74c38f7647199d9120c10e4ab985@sentry.io/1326193'});
-				    }
-				  </script>
-				  <script src="../dist/bundle.js?cd=1"></script>
+				    <div id="stepsbar-container"></div>
+				    <div id="lp-container"></div>
+				    <div id="flows-container"></div>
+				    <div id="retry-container"></div>
+				    <div id="exit-container"></div>
+				    <div id="ty-container"></div>
+				    <div id="info-container"></div>
+				    <div id="browserdsearch-container"></div>
+				    <div id="lpmodal-container"></div>
+				    <script>
+				        if (Math.floor(Math.random() * (10)) + 1 === 1) {
+				                Sentry.init({dsn: 'https://6dfc74c38f7647199d9120c10e4ab985@sentry.io/1326193'});
+				        }
+				    </script>
+				    <script src="../dist/bundle.js?cd=1"></script>
 				</body>
 				</html>
 
@@ -714,92 +714,92 @@ Resolved Address: 172.64.131.15:443
 
 Step 13: https://www.cherami-cloud.com
 
-    GET https://www.cherami-cloud.com/report/wa?
-    		ctag:     8319_14375955_lp14_wit1564564999
-			clickid:  00138709p074553032446
-			yid:      e8ds
+        GET https://www.cherami-cloud.com/report/wa?
+            ctag:         8319_14375955_lp14_wit1564564999
+			clickid:    00138709p074553032446
+			yid:            e8ds
 			vertical: movies
-			step:     0
-			res:      2880X1800
-			extType:  ds
-			action:   inc
-			inc:      false
+			step:         0
+			res:            2880X1800
+			extType:    ds
+			action:     inc
+			inc:            false
 
 
-           Resolved IP : 104.27.142.196:443
+                     Resolved IP : 104.27.142.196:443
 
-       ← 200 text/plain 2b 295ms
-
-
-   GET https://gsafe.getawesome2.com/wim/static/lps/movies/14/css/style.css HTTP/2.0
-       ← 304 [no content] 327ms
-   GET https://gsafe.getawesome2.com/wim/static/app/register.js HTTP/2.0
-       ← 304 [no content] 408ms
-   GET https://gsafe.getawesome2.com/wim/static/components/retry/4.1/index.html HTTP/2.0
-       ← 304 [no content] 547ms
-   GET https://gsafe.getawesome2.com/wim/static/components/flows/5.2.1/flow.js?_=1564564998553 HTTP/2.0
-       ← 200 application/javascript 1.04k 314ms
-   GET https://gsafe.getawesome2.com/wim/static/components/ty/1/index.html HTTP/2.0
-       ← 304 [no content] 538ms
-   GET https://gsafe.getawesome2.com/wim/static/components/info/2/index.html HTTP/2.0
-       ← 304 [no content] 530ms
-   GET https://gsafe.getawesome2.com/wim/static/components/stepsspinner/1/index.html HTTP/2.0
-       ← 304 [no content] 515ms
-   GET https://gsafe.getawesome2.com/wim/static/components/lp-modal/3.1/index.html HTTP/2.0
-       ← 304 [no content] 498ms
-   GET https://gsafe.getawesome2.com/wim/static/lps/movies/14/images/arrow.png HTTP/2.0
-       ← 304 [no content] 425ms
+             ← 200 text/plain 2b 295ms
 
 
+     GET https://gsafe.getawesome2.com/wim/static/lps/movies/14/css/style.css HTTP/2.0
+             ← 304 [no content] 327ms
+     GET https://gsafe.getawesome2.com/wim/static/app/register.js HTTP/2.0
+             ← 304 [no content] 408ms
+     GET https://gsafe.getawesome2.com/wim/static/components/retry/4.1/index.html HTTP/2.0
+             ← 304 [no content] 547ms
+     GET https://gsafe.getawesome2.com/wim/static/components/flows/5.2.1/flow.js?_=1564564998553 HTTP/2.0
+             ← 200 application/javascript 1.04k 314ms
+     GET https://gsafe.getawesome2.com/wim/static/components/ty/1/index.html HTTP/2.0
+             ← 304 [no content] 538ms
+     GET https://gsafe.getawesome2.com/wim/static/components/info/2/index.html HTTP/2.0
+             ← 304 [no content] 530ms
+     GET https://gsafe.getawesome2.com/wim/static/components/stepsspinner/1/index.html HTTP/2.0
+             ← 304 [no content] 515ms
+     GET https://gsafe.getawesome2.com/wim/static/components/lp-modal/3.1/index.html HTTP/2.0
+             ← 304 [no content] 498ms
+     GET https://gsafe.getawesome2.com/wim/static/lps/movies/14/images/arrow.png HTTP/2.0
+             ← 304 [no content] 425ms
 
-   GET https://movie.splendidsearch.com/wim/static/wi/install.php?
-   		cid:     8319_14375955_lp14_wit1564564999
-		yid:     e8ds
+
+
+     GET https://movie.splendidsearch.com/wim/static/wi/install.php?
+         cid:         8319_14375955_lp14_wit1564564999
+		yid:         e8ds
 		clickid: 00138709p074553032446
-		vert:    movies
-		days:    180
-		extid:   klpfdhccnmoiaphhnakjlmaengdeehpp
-		npage:   skip
-		bnp:     1
-		icon:    icons
+		vert:        movies
+		days:        180
+		extid:     klpfdhccnmoiaphhnakjlmaengdeehpp
+		npage:     skip
+		bnp:         1
+		icon:        icons
 
 		Resolved IP: 104.27.177.208
 
-       ← 200 text/html 1.04k 393ms
+             ← 200 text/html 1.04k 393ms
 
 
-   GET https://gsafe.getawesome2.com/wim/static/wi/main.html?tp=iw&cid=8319&v=14&gnum=1&clicki
-                  d=00138709p074553032446&cachecode=%2FWUWW%2B41H6pwflS1YSBfmw%3D%3D%3AZmVkY2JhOTg3NjU0Mz
-                  IxMA%3D%3D&ctag=14375955&aes=1  HTTP/2.0
+     GET https://gsafe.getawesome2.com/wim/static/wi/main.html?tp=iw&cid=8319&v=14&gnum=1&clicki
+                                    d=00138709p074553032446&cachecode=%2FWUWW%2B41H6pwflS1YSBfmw%3D%3D%3AZmVkY2JhOTg3NjU0Mz
+                                    IxMA%3D%3D&ctag=14375955&aes=1    HTTP/2.0
 
-                  (This is pretty much the final page ... After this loads the JS/CSS necessary file)
+                                    (This is pretty much the final page ... After this loads the JS/CSS necessary file)
  
-       ← 200 application/json 35b 331ms
-   GET https://gsafe.getawesome2.com/wim/static/assets/lobibox/css/lobibox.min.css HTTP/2.0
-       ← 304 [no content] 435ms
-   GET https://gsafe.getawesome2.com/wim/static/assets/lobibox/js/lobibox.min.js HTTP/2.0
-       ← 304 [no content] 424ms
-   GET https://gsafe.getawesome2.com/wim/static/components/info/2/info.png HTTP/2.0
-       ← 304 [no content] 317ms
-   GET https://gsafe.getawesome2.com/wim/static/components/ty/1/css/style.css HTTP/2.0
-       ← 304 [no content] 408ms
-   GET https://gsafe.getawesome2.com/wim/static/components/ty/1/ty.js HTTP/2.0
-       ← 304 [no content] 413ms
-   GET https://gsafe.getawesome2.com/wim/static/components/lp-modal/3.1/src/demos/css/cookie_notice_1.css
-       HTTP/2.0
-       ← 304 [no content] 330ms
-   GET https://gsafe.getawesome2.com/wim/static/components/lp-modal/3.1/src/plugin/css/slickmodal.min.css
-       HTTP/2.0
-       ← 304 [no content] 422ms
-   GET https://gsafe.getawesome2.com/wim/static/components/lp-modal/3.1/src/plugin/js/jquery.slickmodal.min
-       .js HTTP/2.0
-       ← 304 [no content] 428ms
-   GET https://gsafe.getawesome2.com/wim/static/assets/slick-modal/slickModal.min.css HTTP/2.0
-       ← 304 [no content] 417ms
-   GET https://gsafe.getawesome2.com/wim/static/assets/slick-modal/slickModal.min.js HTTP/2.0
-       ← 304 [no content] 325ms
-   GET https://gsafe.getawesome2.com/wim/static/components/stepsspinner/1/stepsspinner.js HTTP/2.0
-       ← 304 [no content] 344ms
+             ← 200 application/json 35b 331ms
+     GET https://gsafe.getawesome2.com/wim/static/assets/lobibox/css/lobibox.min.css HTTP/2.0
+             ← 304 [no content] 435ms
+     GET https://gsafe.getawesome2.com/wim/static/assets/lobibox/js/lobibox.min.js HTTP/2.0
+             ← 304 [no content] 424ms
+     GET https://gsafe.getawesome2.com/wim/static/components/info/2/info.png HTTP/2.0
+             ← 304 [no content] 317ms
+     GET https://gsafe.getawesome2.com/wim/static/components/ty/1/css/style.css HTTP/2.0
+             ← 304 [no content] 408ms
+     GET https://gsafe.getawesome2.com/wim/static/components/ty/1/ty.js HTTP/2.0
+             ← 304 [no content] 413ms
+     GET https://gsafe.getawesome2.com/wim/static/components/lp-modal/3.1/src/demos/css/cookie_notice_1.css
+             HTTP/2.0
+             ← 304 [no content] 330ms
+     GET https://gsafe.getawesome2.com/wim/static/components/lp-modal/3.1/src/plugin/css/slickmodal.min.css
+             HTTP/2.0
+             ← 304 [no content] 422ms
+     GET https://gsafe.getawesome2.com/wim/static/components/lp-modal/3.1/src/plugin/js/jquery.slickmodal.min
+             .js HTTP/2.0
+             ← 304 [no content] 428ms
+     GET https://gsafe.getawesome2.com/wim/static/assets/slick-modal/slickModal.min.css HTTP/2.0
+             ← 304 [no content] 417ms
+     GET https://gsafe.getawesome2.com/wim/static/assets/slick-modal/slickModal.min.js HTTP/2.0
+             ← 304 [no content] 325ms
+     GET https://gsafe.getawesome2.com/wim/static/components/stepsspinner/1/stepsspinner.js HTTP/2.0
+             ← 304 [no content] 344ms
 
 
 
@@ -820,77 +820,77 @@ https://gsafe.getawesome2.com/wim/static/wi/main.html?tp=iw&cid=8319&v=14&gnum=1
 
 GET http://www.urldelivery.com/clk.gif?
 
-    landing_id:   1629195
-    placement_id: 14375955
-    sid:          H4sIAAAAAAAC/1RTzWtdRRs/N33zlpLF
-    2IVBAUPFxctJLdz5nzNiQvpB62hSRubQl0Il/nMHe/5Yuace9qUYrEWuoy4dHPzJE2t7UI3ulBBTt0VhMZVUIJ/ityb0uizmN/zwczv98w8c3
-    rPnBOQU33b60UGzpN6Zmwh9xTK5TrvCrs4D13Ka9k6q5Q7l5dcz9yPdT3gn542j1blqm8IdllXZ0J/bjnR 6pyx9cX1med1M9lO4lyYfFaff8wBSZPBOHPdTz4xj1vAC7a1RRo19uA10
-    wXHPD3ox6hECN82/QlufAEtPgBgdOK BFnvO24MfQfMW8uzxK50wEg
-    niiAT/8gq0wGVP7og7bAqSijsntPJ/wdF/jCj/OoaFKNH3kRSLwSm95xO9QOwfPdQM7ARxCGwFGQOTMxBM2pBpi1o2gIv7oEWL5xt4AKurEKePbwiS5oeFum9qdBj94
-    Dbg4xz366UZhULOt86J4vsqzONaeVLnLrro4quKnGoG 2oNdbKOsWqo1Z0M0z4NVnoMVvzskvr0GePVothgNqKGix/26EqEiIogsx52ohYJgsUELIQiAowhJTGoZselFat6BVC6ncBGpnoLYdqHUHajUDdT
-    kDmdh3Exx4BMvQUwITIoOIKSVpRLgQiqjYg5pPmtqEqtwEnm4CN5/vlmJQDUc7lanl14c jqfRTp1zu0V2J4DjLQKluQtD/cWL2b/A1L AHezvUowS5FMU
-    MpTIY4VDrngiCAmEIlUQjAKsRIB8xLu0ziIaBR5XGAZCokjphihPuVSeBESUiSMCRL4YRgypjgLOEdJEhLEqPADqiQmKuBSxELEMYkoojiKEKHK81GAE4m5ZIQgLtiECYexp7CKvCgEK bAVntO553jMBJj
-    aKQDjXWgoQ402tkqD5z/T1/7j49PwlDuu9JPEPKiKApwGPtIJBMUPKGYekSiBKweg7YzQG0HNiZTV34P5QQXLgGjz8Cmz4DrY0Drt4A220FEgA4gQrCRf1sOaK5HVBg5qnu8yEAUYyir/2ylB84bUxlv/jk
-    Hkj93XhpwA7fvQDldP9G/fni7a4rGdhfD YnTXfTmu7ailewuRvPdvF9JW3UX0XxX234jWVnbQZ/VJq/Lflpy1ddZaaS1usi7i4qmVt6B9fTB9rWi6excKxo7 93VstKZ3pjO9trk5P9
-    c1neagojli7Yzcdn aQwcZ9el7ZaprnQ bp1npzTQkhzsTBcOj8v2RuSrdZ2cG7Kvbx6/uLSK YWqH7x lPges ZWf1q nXn5j4FbVow9Riy
-    qh9XbTAy7tgy6OcLRww6VHMSgeaerxtMDtKUt5u2QewbmaBVvcgz8YwMmMYpWOg6SbY th2VZrn7//uTw1Y2tlmqXF2WGomdb3vUk5CFSVMCB9Lj/A48BXnsRcEMfJCQv8GAAD//wEAAP//fGfoHn4FAAA=
-    psid:         
+        landing_id:     1629195
+        placement_id: 14375955
+        sid:                    H4sIAAAAAAAC/1RTzWtdRRs/N33zlpLF
+        2IVBAUPFxctJLdz5nzNiQvpB62hSRubQl0Il/nMHe/5Yuace9qUYrEWuoy4dHPzJE2t7UI3ulBBTt0VhMZVUIJ/ityb0uizmN/zwczv98w8c3
+        rPnBOQU33b60UGzpN6Zmwh9xTK5TrvCrs4D13Ka9k6q5Q7l5dcz9yPdT3gn542j1blqm8IdllXZ0J/bjnR 6pyx9cX1med1M9lO4lyYfFaff8wBSZPBOHPdTz4xj1vAC7a1RRo19uA10
+        wXHPD3ox6hECN82/QlufAEtPgBgdOK BFnvO24MfQfMW8uzxK50wEg
+        niiAT/8gq0wGVP7og7bAqSijsntPJ/wdF/jCj/OoaFKNH3kRSLwSm95xO9QOwfPdQM7ARxCGwFGQOTMxBM2pBpi1o2gIv7oEWL5xt4AKurEKePbwiS5oeFum9qdBj94
+        Dbg4xz366UZhULOt86J4vsqzONaeVLnLrro4quKnGoG 2oNdbKOsWqo1Z0M0z4NVnoMVvzskvr0GePVothgNqKGix/26EqEiIogsx52ohYJgsUELIQiAowhJTGoZselFat6BVC6ncBGpnoLYdqHUHajUDdT
+        kDmdh3Exx4BMvQUwITIoOIKSVpRLgQiqjYg5pPmtqEqtwEnm4CN5/vlmJQDUc7lanl14c jqfRTp1zu0V2J4DjLQKluQtD/cWL2b/A1L AHezvUowS5FMU
+        MpTIY4VDrngiCAmEIlUQjAKsRIB8xLu0ziIaBR5XGAZCokjphihPuVSeBESUiSMCRL4YRgypjgLOEdJEhLEqPADqiQmKuBSxELEMYkoojiKEKHK81GAE4m5ZIQgLtiECYexp7CKvCgEK bAVntO553jMBJj
+        aKQDjXWgoQ402tkqD5z/T1/7j49PwlDuu9JPEPKiKApwGPtIJBMUPKGYekSiBKweg7YzQG0HNiZTV34P5QQXLgGjz8Cmz4DrY0Drt4A220FEgA4gQrCRf1sOaK5HVBg5qnu8yEAUYyir/2ylB84bUxlv/jk
+        Hkj93XhpwA7fvQDldP9G/fni7a4rGdhfD YnTXfTmu7ailewuRvPdvF9JW3UX0XxX234jWVnbQZ/VJq/Lflpy1ddZaaS1usi7i4qmVt6B9fTB9rWi6excKxo7 93VstKZ3pjO9trk5P9
+        c1neagojli7Yzcdn aQwcZ9el7ZaprnQ bp1npzTQkhzsTBcOj8v2RuSrdZ2cG7Kvbx6/uLSK YWqH7x lPges ZWf1q nXn5j4FbVow9Riy
+        qh9XbTAy7tgy6OcLRww6VHMSgeaerxtMDtKUt5u2QewbmaBVvcgz8YwMmMYpWOg6SbY th2VZrn7//uTw1Y2tlmqXF2WGomdb3vUk5CFSVMCB9Lj/A48BXnsRcEMfJCQv8GAAD//wEAAP//fGfoHn4FAAA=
+        psid:                 
 
 
-    Resolved IP: 213.196.5.3:80
+        Resolved IP: 213.196.5.3:80
 
 
 
  [302 no content] GET https://3.securefinds1.com/adServe/aff?
-                                          
-      oid:   123798
-      pid:   138709
-      subid: VjN8MTQzNzU5NTV8MTYyOTE5NXwxODYxODE5fDE1NjQ1NjQzMTB8NjBhZDk4ZmEtN2NjZi00YjI4LWE4ODgtNGRhMDJlMmFhNTVifDI3LjM0LjcwLjg4fDExfHNoPWEyMDkwM2EwNDNmMWY1Mjdm
-      MjVjZGMwODBiZDA4NmY5ODIwNTJmZDRiMTljM2E3NDZhNjYxY2QyZTVkZTI2YmZiOGEzYWNlZDE2MGRlZDliYmQ4NDM1NTViYmZjYjRjYzA5OTU4MGJhZDM0YWZlMjhmNGNlZDdkZDc3ODZhMGEyNjYwOGF
-      mMTMwNDI5ZTJjZWI4ODBjZGJhNzQ2MjU3MWYyZjYxNjV8YWViMzNhMDM4MTIyYTllMTNmZmU5YTUzM2QwZWY3NGE=
-      ap1:   14375955
+                                                                                    
+            oid:     123798
+            pid:     138709
+            subid: VjN8MTQzNzU5NTV8MTYyOTE5NXwxODYxODE5fDE1NjQ1NjQzMTB8NjBhZDk4ZmEtN2NjZi00YjI4LWE4ODgtNGRhMDJlMmFhNTVifDI3LjM0LjcwLjg4fDExfHNoPWEyMDkwM2EwNDNmMWY1Mjdm
+            MjVjZGMwODBiZDA4NmY5ODIwNTJmZDRiMTljM2E3NDZhNjYxY2QyZTVkZTI2YmZiOGEzYWNlZDE2MGRlZDliYmQ4NDM1NTViYmZjYjRjYzA5OTU4MGJhZDM0YWZlMjhmNGNlZDdkZDc3ODZhMGEyNjYwOGF
+            mMTMwNDI5ZTJjZWI4ODBjZGJhNzQ2MjU3MWYyZjYxNjV8YWViMzNhMDM4MTIyYTllMTNmZmU5YTUzM2QwZWY3NGE=
+            ap1:     14375955
 
 
-      Response:
+            Response:
 
-      http://www.gotoapp8.com/wim/static/wi/?tp=iw&cid=8319&v=14&gnum=1&clickid=00138709p074555112908&cachecode=CYgAwlEX9h%2BdKFsYumoC4A%3D%3D
-                 %3AZmVkY2JhOTg3NjU0MzIxMA%3D%3D&ctag=14375955&aes=1
+            http://www.gotoapp8.com/wim/static/wi/?tp=iw&cid=8319&v=14&gnum=1&clickid=00138709p074555112908&cachecode=CYgAwlEX9h%2BdKFsYumoC4A%3D%3D
+                                 %3AZmVkY2JhOTg3NjU0MzIxMA%3D%3D&ctag=14375955&aes=1
 
 
-      Resolved IP: 173.192.101.27
+            Resolved IP: 173.192.101.27
 
 
 [200 OK] GET http://www.gotoapp8.com/wim/static/wi/?
-      tp:        iw
-      cid:       8319
-      v:         14
-      gnum:      1
-      clickid:   00138709p074555112908
-      cachecode: CYgAwlEX9h+dKFsYumoC4A==:ZmVkY2JhOTg3NjU0MzIxMA==
-      ctag:      14375955
-      aes:       1
+            tp:                iw
+            cid:             8319
+            v:                 14
+            gnum:            1
+            clickid:     00138709p074555112908
+            cachecode: CYgAwlEX9h+dKFsYumoC4A==:ZmVkY2JhOTg3NjU0MzIxMA==
+            ctag:            14375955
+            aes:             1
 
 
-      Response: HTML Code as above ..
+            Response: HTML Code as above ..
 
-      Resolved IP: 104.27.188.26:80
-
-
- GET https://gsafe.getawesome2.com/wim/static/wi/main.html?                                                               
-
-      tp:        iw
-      cid:       8319
-      v:         14
-      gnum:      1
-      clickid:   00138709p074555112908
-      cachecode: CYgAwlEX9h+dKFsYumoC4A==:ZmVkY2JhOTg3NjU0MzIxMA==
-      ctag:      14375955
-      aes:       1
+            Resolved IP: 104.27.188.26:80
 
 
-      Response: HTML Code
+ GET https://gsafe.getawesome2.com/wim/static/wi/main.html?                                                                                                                             
 
-      Resolved IP: 172.64.130.15:443
+            tp:                iw
+            cid:             8319
+            v:                 14
+            gnum:            1
+            clickid:     00138709p074555112908
+            cachecode: CYgAwlEX9h+dKFsYumoC4A==:ZmVkY2JhOTg3NjU0MzIxMA==
+            ctag:            14375955
+            aes:             1
+
+
+            Response: HTML Code
+
+            Resolved IP: 172.64.130.15:443
 
 GET https://gsafe.getawesome2.com/wim/static/components/flows/5.2.1/flow.js?_=1564574105926
 	
@@ -899,179 +899,179 @@ GET https://gsafe.getawesome2.com/wim/static/components/flows/5.2.1/flow.js?_=15
 
 GET https://movie.splendidsearch.com/wim/static/wi/install.php?
 
-      cid:     8319_14375955_lp14_wit1564574106
-      yid:     e8ds
-      clickid: 00138709p074555112908
-      vert:    movies
-      days:    180
-      extid:   klpfdhccnmoiaphhnakjlmaengdeehpp
-      npage:   skip
-      bnp:     1
+            cid:         8319_14375955_lp14_wit1564574106
+            yid:         e8ds
+            clickid: 00138709p074555112908
+            vert:        movies
+            days:        180
+            extid:     klpfdhccnmoiaphhnakjlmaengdeehpp
+            npage:     skip
+            bnp:         1
 
-      Resolved IP: 104.27.177.208:443
+            Resolved IP: 104.27.177.208:443
 
-      Response: (HTML Data)
+            Response: (HTML Data)
 
 			<!DOCTYPE html>
 			<html lang="en">
 			<head>
-			  <meta charset="UTF-8">
-			  <title></title>
+			    <meta charset="UTF-8">
+			    <title></title>
 			</head>
 			<body>
-			  <script type="text/javascript">
-			    const cookieName = 'e8ds_ext';
-			    const yid = 'e8ds';
-			    const extId = 'klpfdhccnmoiaphhnakjlmaengdeehpp';
-			    const iconFolder = 'icons';
+			    <script type="text/javascript">
+			        const cookieName = 'e8ds_ext';
+			        const yid = 'e8ds';
+			        const extId = 'klpfdhccnmoiaphhnakjlmaengdeehpp';
+			        const iconFolder = 'icons';
 
-			    setTimeout(() => {
-			        check()
-			            .then((installed) => {
-			                if (installed) {
-			                    window.parent.postMessage({result: 'installed', yid: yid}, '*');
-			                    setCookie(cookieName, yid, 365);
-			                } else {
-			                    window.parent.postMessage({result: 'notInstalled', yid: yid}, '*');
-			                    window.checkInterval = setInterval(() => {
-			                        check()
-			                            .then((installed) => {
+			        setTimeout(() => {
+			                check()
+			                        .then((installed) => {
 			                                if (installed) {
-			                                    window.parent.postMessage({result: 'installed', yid: yid}, '*');
-			                                    setCookie(cookieName, yid, 365);
-			                                    clearInterval(window.checkInterval);
+			                                        window.parent.postMessage({result: 'installed', yid: yid}, '*');
+			                                        setCookie(cookieName, yid, 365);
+			                                } else {
+			                                        window.parent.postMessage({result: 'notInstalled', yid: yid}, '*');
+			                                        window.checkInterval = setInterval(() => {
+			                                                check()
+			                                                        .then((installed) => {
+			                                                                if (installed) {
+			                                                                        window.parent.postMessage({result: 'installed', yid: yid}, '*');
+			                                                                        setCookie(cookieName, yid, 365);
+			                                                                        clearInterval(window.checkInterval);
+			                                                                }
+			                                                        });
+			                                        }, 500);
 			                                }
-			                            });
-			                    }, 500);
+			                        });
+			        }, 300);
+
+
+			        window.addEventListener('message', (event) => {
+			                try {
+			                        if (event instanceof Object
+			                                && event.data instanceof Object
+			                                && typeof event.data.message === 'string'
+			                                && event.data.message === 'openDashboard') {
+			                                if (window.hasOwnProperty('openDashboard')) {
+			                                        openDashboard();
+			                                } else {
+			                                        console.log('openDashboard: no such function');
+			                                        window.parent.postMessage({message: 'goToNextPage'}, '*');
+			                                }
+
+			                         }
+
+			                } catch (e) {
+			                        console.error('Caught Exception:', e);
 			                }
-			            });
-			    }, 300);
+			        }, false);
 
-
-			    window.addEventListener('message', (event) => {
-			        try {
-			            if (event instanceof Object
-			                && event.data instanceof Object
-			                && typeof event.data.message === 'string'
-			                && event.data.message === 'openDashboard') {
-			                if (window.hasOwnProperty('openDashboard')) {
-			                    openDashboard();
+			        function check() {
+			                if (extId.includes('.xpi')) {
+			                        return new Promise((resolve) => {
+			                                let classes = document.body.className + '';
+			                                resolve(classes.includes(yid));
+			                        });
 			                } else {
-			                    console.log('openDashboard: no such function');
-			                    window.parent.postMessage({message: 'goToNextPage'}, '*');
+			                        let url = `chrome-extension://${extId}/${iconFolder}/icon16.png`;
+			                        return new Promise((resolve) => {
+			                                let oImg = document.createElement('img');
+			                                oImg.setAttribute('src', url);
+			                                oImg.setAttribute('height', '1px');
+			                                oImg.setAttribute('width', '1px');
+			                                oImg.setAttribute('id', 'extension-check');
+			                                oImg.addEventListener('load', () => {
+			                                        resolve(true);
+			                                });
+			                                oImg.addEventListener('error', () => {
+			                                        resolve(false);
+			                                });
+			                        });
+			                }
+			        }
+
+			        function getCookie(name) {
+			                var nameEQ = name + '=';
+			                var ca = document.cookie.split(';');
+			                for (var i = 0; i
+			        < ca.length; i++) {
+			                                var c = ca[i];
+			                                while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+			                                if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+			                        }
+			                        return null;
 			                }
 
-			             }
-
-			        } catch (e) {
-			            console.error('Caught Exception:', e);
-			        }
-			    }, false);
-
-			    function check() {
-			        if (extId.includes('.xpi')) {
-			            return new Promise((resolve) => {
-			                let classes = document.body.className + '';
-			                resolve(classes.includes(yid));
-			            });
-			        } else {
-			            let url = `chrome-extension://${extId}/${iconFolder}/icon16.png`;
-			            return new Promise((resolve) => {
-			                let oImg = document.createElement('img');
-			                oImg.setAttribute('src', url);
-			                oImg.setAttribute('height', '1px');
-			                oImg.setAttribute('width', '1px');
-			                oImg.setAttribute('id', 'extension-check');
-			                oImg.addEventListener('load', () => {
-			                    resolve(true);
-			                });
-			                oImg.addEventListener('error', () => {
-			                    resolve(false);
-			                });
-			            });
-			        }
-			    }
-
-			    function getCookie(name) {
-			        var nameEQ = name + '=';
-			        var ca = document.cookie.split(';');
-			        for (var i = 0; i
-			    < ca.length; i++) {
-			                var c = ca[i];
-			                while (c.charAt(0) === ' ') c = c.substring(1, c.length);
-			                if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
-			            }
-			            return null;
-			        }
-
-			        function setCookie(name, value, days, domain) {
-			            if (typeof domain === 'undefined') {
-			                domain = window.location.hostname;
-			                let parts = domain.split('.');
-			                parts.shift();
-			                domain = parts.join('.');
-			            }
-			            let expires = '';
-			            if (days) {
-			                let date = new Date();
-			                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-			                expires = '; expires=' + date.toUTCString();
-			            }
-			            document.cookie = name + '=' + value + expires + '; path=/; domain=.' + domain;
-			        }
-			    </script>
+			                function setCookie(name, value, days, domain) {
+			                        if (typeof domain === 'undefined') {
+			                                domain = window.location.hostname;
+			                                let parts = domain.split('.');
+			                                parts.shift();
+			                                domain = parts.join('.');
+			                        }
+			                        let expires = '';
+			                        if (days) {
+			                                let date = new Date();
+			                                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+			                                expires = '; expires=' + date.toUTCString();
+			                        }
+			                        document.cookie = name + '=' + value + expires + '; path=/; domain=.' + domain;
+			                }
+			        </script>
 			</body>
 
 
 
 GET https://www.cherami-cloud.com/report/wa?
-		ctag:     8319_14375955_lp14_wit1564574106
-		clickid:  00138709p074555112908
-		yid:      e8ds
+		ctag:         8319_14375955_lp14_wit1564574106
+		clickid:    00138709p074555112908
+		yid:            e8ds
 		vertical: movies
-		step:     0
-		res:      2880X1800
-		extType:  ds
-		action:   inc
-		inc:      false
+		step:         0
+		res:            2880X1800
+		extType:    ds
+		action:     inc
+		inc:            false
 
 		Resolved IP: 104.27.143.196:443
 
 
 
 GET https://gsafe.getawesome2.com/wim/wi/ccValid.php?
-        skip:     true
-        ctag:     8319_14375955_lp14_wit1564574106
-        clickid:  00138709p074555112908
-        yid:      e8ds
-        vertical: movies
-        extType:  ds
-        step:     0
-        cc2:      CYgAwlEX9h+dKFsYumoC4A==:ZmVkY2JhOTg3NjU0MzIxMA==
+                skip:         true
+                ctag:         8319_14375955_lp14_wit1564574106
+                clickid:    00138709p074555112908
+                yid:            e8ds
+                vertical: movies
+                extType:    ds
+                step:         0
+                cc2:            CYgAwlEX9h+dKFsYumoC4A==:ZmVkY2JhOTg3NjU0MzIxMA==
 
-        Response: JSON
-        {
-            "result": true,
-            "timeElapsed" : 3
+                Response: JSON
+                {
+                        "result": true,
+                        "timeElapsed" : 3
 
-        }
+                }
 
-        Resolved IP: 172.64.130.15:443
+                Resolved IP: 172.64.130.15:443
 
 
  GET https://www.cherami-cloud.com/report/wa?
-        ctag:     8319_14375955_lp14_wit1564574106
-        clickid:  00138709p074555112908
-        yid:      e8ds
-        vertical: movies
-        step:     0
-        res:      2880X1800
-        extType:  ds
-        action:   pageload
+                ctag:         8319_14375955_lp14_wit1564574106
+                clickid:    00138709p074555112908
+                yid:            e8ds
+                vertical: movies
+                step:         0
+                res:            2880X1800
+                extType:    ds
+                action:     pageload
 
-        Response: OK (As Plain Text type)
+                Response: OK (As Plain Text type)
 
-        Resolved IP: 104.27.143.196:443
+                Resolved IP: 104.27.143.196:443
 
 
 
@@ -1099,234 +1099,234 @@ GET https://gsafe.getawesome2.com/wim/wi/ccValid.php?
  	// Steps in the ad display (Over all flow)
 
 		Step 1: GET http://www.phanivadrevu.com/files/scratch_2.html?origin_team=THGU1E6UE
-		       ← 304 [no content] 439ms
+		             ← 304 [no content] 439ms
 
-		Step 2:	  GET http://pl14475563.pvclouds.com/27/a4/3b/27a43b8438454dd86d9518c8a3ddeea7.js
-		       ← 200 application/javascript 15.44k 753ms
+		Step 2:	    GET http://pl14475563.pvclouds.com/27/a4/3b/27a43b8438454dd86d9518c8a3ddeea7.js
+		             ← 200 application/javascript 15.44k 753ms
 
-		Step 3:   GET http://www.bcloudhost.com/e39001666425730d94257dc9a2a18e09/invoke.js
-		       ← 200 application/javascript 6.02k 502ms
+		Step 3:     GET http://www.bcloudhost.com/e39001666425730d94257dc9a2a18e09/invoke.js
+		             ← 200 application/javascript 6.02k 502ms
 
-		Step 4:    GET http://ie8eamus.com/sfp.js
-		       ← 200 application/javascript 22.19k 218ms
-		  
-		Step 5:   GET http://www.urldelivery.com/watch.1175268688682.js?key=e39001666425730d94257dc9a2a18e09&kw=%5B%5D&refer=http%3A%2F%2Fwww.phanivadrevu.com%2Ffiles%2Fscratch_2.html%3Forigin_team%3DTHGU1E6UE&tz=5.75&de       ev=r&re…
-		       ← 307 text/html [no content] 447ms
+		Step 4:        GET http://ie8eamus.com/sfp.js
+		             ← 200 application/javascript 22.19k 218ms
+		    
+		Step 5:     GET http://www.urldelivery.com/watch.1175268688682.js?key=e39001666425730d94257dc9a2a18e09&kw=%5B%5D&refer=http%3A%2F%2Fwww.phanivadrevu.com%2Ffiles%2Fscratch_2.html%3Forigin_team%3DTHGU1E6UE&tz=5.75&de             ev=r&re…
+		             ← 307 text/html [no content] 447ms
 
-		       The botton url is redirected from the request
-		       Resolved IP: 213.196.5.3
+		             The botton url is redirected from the request
+		             Resolved IP: 213.196.5.3
 
-		       http://www.urldelivery.com/watch.1175268688682.js?
-			            key:   e39001666425730d94257dc9a2a18e09
-			            kw:    []
-			            refer: http://www.phanivadrevu.com/files/scratch_2.html?origin_team=THGU1E6UE
-			            tz:    5.75
-			            dev:   r
-			            res:   4.31
-			            uuid:  60ad98fa-7ccf-4b28-a888-4da02e2aa55b:2:1
-
-
-			            Resolved IP: 213.196.5.3:80
+		             http://www.urldelivery.com/watch.1175268688682.js?
+			                        key:     e39001666425730d94257dc9a2a18e09
+			                        kw:        []
+			                        refer: http://www.phanivadrevu.com/files/scratch_2.html?origin_team=THGU1E6UE
+			                        tz:        5.75
+			                        dev:     r
+			                        res:     4.31
+			                        uuid:    60ad98fa-7ccf-4b28-a888-4da02e2aa55b:2:1
 
 
-			            Redirected:
-			            http://www.urldelivery.com/watch.1175268688682.js?key=e39001666425730d94257dc9a2a18e09&kw=%5B%5D&refer=http%3A%2F%2Fwww.phanivadrevu.com%2Ffiles%2Fscratch_2.html%3Forigin_team%3DTHGU1E6UE&tz=5.75&dev=r&res=4.31&uuid=60ad98fa-7ccf-4b28-a888-4da02e2aa55b%3A2%3A1&shu=623a5e53a5b5e269b85daa2f5168c3233015656fe42381cc92bac5aac451e6c50f4df599d94
-			                                335b021d6b22fe1b760802e6759b93b04e8e87cfb88213cd4d437c7fb1449370e04cbb5f5e3af9857a6f53ffefb&pst=1564575984&rmtc=t
-		   
-		Step 6:   GET http://www.urldelivery.com/watch.1175268688682.js?key=e39001666425730d94257dc9a2a18e09&kw=%5B%5D&refer=http%3A%2F%2Fwww.phanivadrevu.com%2Ffiles%2Fscratch_2.html%3Forigin_team%3DTHGU1E6UE&tz=5.75&de       ev=r&re…
-		       ← 200 text/html 2.28k 269ms
-
-		       Response Code as above example
-		       Resolved IP: 213.196.5.3
-		   
-		Step 7:   GET http://ouh3igaeb.com/fp?uuid=60ad98fa-7ccf-4b28-a888-4da02e2aa55b&eb=80f9f88845db92c5953105273b301ddc&te=4aca619cbba6960dda828827b41e058a&ua=Mozilla%2F5.0%20(Macintosh%3B%20Intel%20Mac%20OS%20X%2010       0_14_5)…
-		       ← 200 text/plain 2b 665ms
-
-		       		GET http://ouh3igaeb.com/fp?          
-					        id:    60ad98fa-7ccf-4b28-a888-4da02e2aa55b
-					        eb:      80f9f88845db92c5953105273b301ddc
-					        te:      4aca619cbba6960dda828827b41e058a
-					        ua:      Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36
-					        dev:     r
-					        res:     4.31
-					        b_frame: 0
-					        pk:      27a43b8438454dd86d9518c8a3ddeea7
+			                        Resolved IP: 213.196.5.3:80
 
 
-					        Resolved IP: 198.134.112.241:80
-		   
-		Step 8:   GET http://0byv9mgbn0.com/v41mvce1?spacv=99&refer=http%3A%2F%2Fwww.phanivadrevu.com%2Ffiles%2Fscratch_2.html%3Forigin_team%3DTHGU1E6UE&kw=%5B%5D&key=27a43b8438454dd86d9518c8a3ddeea7&scrWidth=1440&scrHei       ight=90…
-		       ← 200 text/html 1.32k 651ms
+			                        Redirected:
+			                        http://www.urldelivery.com/watch.1175268688682.js?key=e39001666425730d94257dc9a2a18e09&kw=%5B%5D&refer=http%3A%2F%2Fwww.phanivadrevu.com%2Ffiles%2Fscratch_2.html%3Forigin_team%3DTHGU1E6UE&tz=5.75&dev=r&res=4.31&uuid=60ad98fa-7ccf-4b28-a888-4da02e2aa55b%3A2%3A1&shu=623a5e53a5b5e269b85daa2f5168c3233015656fe42381cc92bac5aac451e6c50f4df599d94
+			                                                                335b021d6b22fe1b760802e6759b93b04e8e87cfb88213cd4d437c7fb1449370e04cbb5f5e3af9857a6f53ffefb&pst=1564575984&rmtc=t
+		     
+		Step 6:     GET http://www.urldelivery.com/watch.1175268688682.js?key=e39001666425730d94257dc9a2a18e09&kw=%5B%5D&refer=http%3A%2F%2Fwww.phanivadrevu.com%2Ffiles%2Fscratch_2.html%3Forigin_team%3DTHGU1E6UE&tz=5.75&de             ev=r&re…
+		             ← 200 text/html 2.28k 269ms
 
-	       				<html>
+		             Response Code as above example
+		             Resolved IP: 213.196.5.3
+		     
+		Step 7:     GET http://ouh3igaeb.com/fp?uuid=60ad98fa-7ccf-4b28-a888-4da02e2aa55b&eb=80f9f88845db92c5953105273b301ddc&te=4aca619cbba6960dda828827b41e058a&ua=Mozilla%2F5.0%20(Macintosh%3B%20Intel%20Mac%20OS%20X%2010             0_14_5)…
+		             ← 200 text/plain 2b 665ms
+
+		                 GET http://ouh3igaeb.com/fp?                    
+					                id:        60ad98fa-7ccf-4b28-a888-4da02e2aa55b
+					                eb:            80f9f88845db92c5953105273b301ddc
+					                te:            4aca619cbba6960dda828827b41e058a
+					                ua:            Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36
+					                dev:         r
+					                res:         4.31
+					                b_frame: 0
+					                pk:            27a43b8438454dd86d9518c8a3ddeea7
+
+
+					                Resolved IP: 198.134.112.241:80
+		     
+		Step 8:     GET http://0byv9mgbn0.com/v41mvce1?spacv=99&refer=http%3A%2F%2Fwww.phanivadrevu.com%2Ffiles%2Fscratch_2.html%3Forigin_team%3DTHGU1E6UE&kw=%5B%5D&key=27a43b8438454dd86d9518c8a3ddeea7&scrWidth=1440&scrHei             ight=90…
+		             ← 200 text/html 1.32k 651ms
+
+	                     <html>
 								<head>
-								  <meta charset="utf-8" />
+								    <meta charset="utf-8" />
 								</head>
 								<body>
-								  <script type="text/javascript">
-								    (function (d, w, h) {
-								                    var reverseUrl = '//' + location.host + '/v41mvce1?key=0f22c1fd609f13cb7947c8cabfe1a90d&psid=14375064';
-								                    h.pushState(null, document.title, reverseUrl);
-								        h.pushState(null, document.title, reverseUrl);
-								    })(document, window, history);
-								  </script>
-								  <form action="/v41mvce1" method="get" id="submit-form">
-								    <input type="hidden" name="shu" value="8546461dbac6c34caf06a1402f772d7cd2400c4cce6f4444bf613acf84c4f5c2c81c5e33aad7f17f819246111efbe9bf6d59d6323ea09d661613c5a117436063d22d0a01f4a72680"/>
-								    <input type="hidden" name="pst" value="1564575988"/>
-								    <input type="hidden" name="rmtc" value="t"/>
-								    <input type="hidden" name="uuid" value=""/>
-								    <input type="hidden" name="pii" value=""/>
-								    <input type="hidden" name="in" value=""/>
-								    <input type="hidden" name="refer" value="http://www.phanivadrevu.com/files/scratch_2.html?origin_team=THGU1E6UE"/>
-								    <input type="hidden" name="key" value="27a43b8438454dd86d9518c8a3ddeea7"/>
-								    <input type="hidden" name="scrHeight" value="900"/>
-								    <input type="hidden" name="ship" value=""/>
-								    <input type="hidden" name="res" value="5.31"/>
-								    <input type="hidden" name="dev" value="r"/>
-								    <input type="hidden" name="adb" value="n"/>
-								    <input type="hidden" name="kw" value="[]"/>
-								    <input type="hidden" name="scrWidth" value="1440"/>
-								    <input type="hidden" name="tz" value="5.75"/>
-								    <input type="hidden" name="spacv" value="99"/>
-								  </form>
-								  <script type="text/javascript">
-								    try{
-								            if (window.opener !=null){
-								              if (window.opener.opener !=null){
-								                window.opener.opener = null;
-								              }
-								              window.opener = null;
-								           }
-								            if (parent.window.opener != null){
-								              parent.window.opener = null;
-								            }
-								          }
-
-								      catch(_e){}
-								                function now() {
-								                    try {
-								                        return Date.now();
-								                    } catch (ex) {
-								                        return (new Date()).getTime();
+								    <script type="text/javascript">
+								        (function (d, w, h) {
+								                                        var reverseUrl = '//' + location.host + '/v41mvce1?key=0f22c1fd609f13cb7947c8cabfe1a90d&psid=14375064';
+								                                        h.pushState(null, document.title, reverseUrl);
+								                h.pushState(null, document.title, reverseUrl);
+								        })(document, window, history);
+								    </script>
+								    <form action="/v41mvce1" method="get" id="submit-form">
+								        <input type="hidden" name="shu" value="8546461dbac6c34caf06a1402f772d7cd2400c4cce6f4444bf613acf84c4f5c2c81c5e33aad7f17f819246111efbe9bf6d59d6323ea09d661613c5a117436063d22d0a01f4a72680"/>
+								        <input type="hidden" name="pst" value="1564575988"/>
+								        <input type="hidden" name="rmtc" value="t"/>
+								        <input type="hidden" name="uuid" value=""/>
+								        <input type="hidden" name="pii" value=""/>
+								        <input type="hidden" name="in" value=""/>
+								        <input type="hidden" name="refer" value="http://www.phanivadrevu.com/files/scratch_2.html?origin_team=THGU1E6UE"/>
+								        <input type="hidden" name="key" value="27a43b8438454dd86d9518c8a3ddeea7"/>
+								        <input type="hidden" name="scrHeight" value="900"/>
+								        <input type="hidden" name="ship" value=""/>
+								        <input type="hidden" name="res" value="5.31"/>
+								        <input type="hidden" name="dev" value="r"/>
+								        <input type="hidden" name="adb" value="n"/>
+								        <input type="hidden" name="kw" value="[]"/>
+								        <input type="hidden" name="scrWidth" value="1440"/>
+								        <input type="hidden" name="tz" value="5.75"/>
+								        <input type="hidden" name="spacv" value="99"/>
+								    </form>
+								    <script type="text/javascript">
+								        try{
+								                        if (window.opener !=null){
+								                            if (window.opener.opener !=null){
+								                                window.opener.opener = null;
+								                            }
+								                            window.opener = null;
+								                     }
+								                        if (parent.window.opener != null){
+								                            parent.window.opener = null;
+								                        }
 								                    }
-								                }
-								        function set(name, value) {document.forms[ 0 ][ "" + name ].value = value;}
 
-								                function submit(incognito) {
-								                    set("in", incognito);
+								            catch(_e){}
+								                                function now() {
+								                                        try {
+								                                                return Date.now();
+								                                        } catch (ex) {
+								                                                return (new Date()).getTime();
+								                                        }
+								                                }
+								                function set(name, value) {document.forms[ 0 ][ "" + name ].value = value;}
 
-								                    document.forms[0].submit();
-								                }
+								                                function submit(incognito) {
+								                                        set("in", incognito);
 
-								                function redirect() { submit("false"); }
+								                                        document.forms[0].submit();
+								                                }
 
-								                var date = new Date(now() + 15 * 1000),
-								                    cookies = document.cookie,
-								                    start = cookies.indexOf("uid_id2="),
-								                    isPopunder = true;
+								                                function redirect() { submit("false"); }
 
-								                document.cookie = "cjs=t; path=/; expires=" + date.toUTCString();
-								                isPopunder && window !== top && set("pii", "true");
+								                                var date = new Date(now() + 15 * 1000),
+								                                        cookies = document.cookie,
+								                                        start = cookies.indexOf("uid_id2="),
+								                                        isPopunder = true;
 
-								                if (start === 0 || (start > 0 && (cookies.charAt(start - 1) === ';' || cookies.charAt(start - 1) === ' '))) {
-								                    var finish = cookies.indexOf(';', start);
-								                    set("uuid", cookies.substring(start + 8, finish === -1 ? void 0 : finish));
-								                    redirect();
-								                } else {
-								                    try {
-								                        var request = new XMLHttpRequest(),
-								                            timeout = setTimeout(function() {request.abort();}, 1000);
-								                        request.withCredentials = true;
-								                        request.open("GET", "//r.remarketingpixel.com/stats");
-								    request.setRequestHeader("Referer", "http://www.phanivadrevu.com");
-								                        request.onload = function() {
-								                            clearTimeout(timeout);
-								                            set("uuid", request.responseText);
-								                            redirect();
-								                        };
-								                        request.onerror = request.onabort = redirect;
-								                        request.send();
-								                    } catch (error) {
-								                        redirect();
-								                    }
-								                }
-								              </script>
-				           </body>
-				           </html>   
+								                                document.cookie = "cjs=t; path=/; expires=" + date.toUTCString();
+								                                isPopunder && window !== top && set("pii", "true");
 
-		   
-		Step 9:   GET http://0byv9mgbn0.com/v41mvce1?shu=8546461dbac6c34caf06a1402f772d7cd2400c4cce6f4444bf613acf84c4f5c2c81c5e33aad7f17f819246111efbe9bf6d59d6323ea09d661613c5a117436063d22d0a01f4a72680&pst=1564575988&rmt       tc=t&uu…
-		       ← 302 text/html [no content] 510ms
+								                                if (start === 0 || (start > 0 && (cookies.charAt(start - 1) === ';' || cookies.charAt(start - 1) === ' '))) {
+								                                        var finish = cookies.indexOf(';', start);
+								                                        set("uuid", cookies.substring(start + 8, finish === -1 ? void 0 : finish));
+								                                        redirect();
+								                                } else {
+								                                        try {
+								                                                var request = new XMLHttpRequest(),
+								                                                        timeout = setTimeout(function() {request.abort();}, 1000);
+								                                                request.withCredentials = true;
+								                                                request.open("GET", "//r.remarketingpixel.com/stats");
+								        request.setRequestHeader("Referer", "http://www.phanivadrevu.com");
+								                                                request.onload = function() {
+								                                                        clearTimeout(timeout);
+								                                                        set("uuid", request.responseText);
+								                                                        redirect();
+								                                                };
+								                                                request.onerror = request.onabort = redirect;
+								                                                request.send();
+								                                        } catch (error) {
+								                                                redirect();
+								                                        }
+								                                }
+								                            </script>
+				                     </body>
+				                     </html>     
 
-		       	http://0byv9mgbn0.com/v41mvce1?
-			        shu:       8546461dbac6c34caf06a1402f772d7cd2400c4cce6f4444bf613acf84c4f5c2c81c5e33aad7f17f819246111efbe9bf6d59d6323ea09d661613c5a117436063d22d0a01f4a72680
-			        pst:       1564575988
-			        rmtc:      t
-			        uuid:      60ad98fa-7ccf-4b28-a888-4da02e2aa55b:2:1
-			        pii:       
-			        in:        false
-			        refer:     http://www.phanivadrevu.com/files/scratch_2.html?origin_team=THGU1E6UE
-			        key:       27a43b8438454dd86d9518c8a3ddeea7
-			        scrHeight: 900
-			        ship:      
-			        res:       5.31
-			        dev:       r
-			        adb:       n
-			        kw:        []
-			        scrWidth:  1440
-			        tz:        5.75
-			        spacv:     99
+		     
+		Step 9:     GET http://0byv9mgbn0.com/v41mvce1?shu=8546461dbac6c34caf06a1402f772d7cd2400c4cce6f4444bf613acf84c4f5c2c81c5e33aad7f17f819246111efbe9bf6d59d6323ea09d661613c5a117436063d22d0a01f4a72680&pst=1564575988&rmt             tc=t&uu…
+		             ← 302 text/html [no content] 510ms
 
-
-			        Resolved IP: 198.134.112.242:80
-
-		   
-		Step 10:   GET https://tracking.blue/f817c807-3a67-4aa9-9093-17364d54aa8a?PLACEMENT_ID=14375064&LANDING_ID=1919907&COUNTRY_CODE=NP&CAMPAIGN_ID=246554&externalid=cf6b2fa23c8f81b9fa236c4746cfe463
-		       ← 302 [no content] 107ms
-
-		       		GET https://tracking.blue/f817c807-3a67-4aa9-9093-17364d54aa8a?
-				            PLACEMENT_ID: 14375064
-				            LANDING_ID:   1919907
-				            COUNTRY_CODE: NP
-				            CAMPAIGN_ID:  246554
-				            externalid:   cf6b2fa23c8f81b9fa236c4746cfe463
-
-				            Resolved IP: 13.228.56.149:443
-
-		   
-		Step 11:   GET http://www.apple.com-shield.live/redirect/?ip=27.34.70.88&campid=f817c807-3a67-4aa9-9093-17364d54aa8a&zn=14375064&sc=5542fa6a-4b32-43e2-b2cf-d62aeabb4957&browser=Chrome&browserversion=Chrome%2075&ci       ity=Lal…
-
-						GET www.apple.com-shield.live/redirect/?                                                                                                                                            
-						        ip:             27.34.70.88
-						        campid:         f817c807-3a67-4aa9-9093-17364d54aa8a
-						        zn:             14375064
-						        sc:             5542fa6a-4b32-43e2-b2cf-d62aeabb4957
-						        browser:        Chrome
-						        browserversion: Chrome 75
-						        city:           Lalitpur
-						        os:             MacOS
-						        osv:            MacOS 10.14 Mojave
-						        model:          Desktop
-						        td:             tracking.blue
-						        ua:             Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36
-						        language:       en
-						        connection:     BROADBAND
-						        isp:            Worldlink Communications Pvt ltd
-						        carrier:        
-						        country:        NP
-						        cep:            Is9cQ4aCvN49Am2dZ0qxhWF7smFj-HAON7guK5l-S4FqSYn9Rbr5vWYzSXJQKXzQ8NE9m6OlV4pkkATR1mLuAXUeLEw6Q8HsI7Cv5gCq58xQzFXYzCe9JF9sKSV_CXvPrOSATqE8JXrJPK5IYLc3Cu7NniyYf02RmsMO7Vc-cnuTCRELLKES6EeTRdnz
-						        nvMUJeDYmGVehWyHqLCEA9o_Jy4ymSbqMndD8dVt-Xmhdxg6Qu-xnvKlVvBbfahL3Wc7_p4pubpJXiR34dCyjibfTGvgAphzXoxFJ2fYwzfrwcDBZ9M92QjSLXS1jOnREJORFMz9_K_WTu0sAwmGQlK2Piit3Hf2xuV8C42HAQx9duxOLOOTmXLJlKWjNXSWPmDX
-						        lptoken:        15e364df570c770229f7
-						        PLACEMENT_ID:   14375064
-						        LANDING_ID:     1919907
-						        COUNTRY_CODE:   NP
-						        CAMPAIGN_ID:    246554
-						        externalid:     cf6b2fa23c8f81b9fa236c4746cfe463
+		               http://0byv9mgbn0.com/v41mvce1?
+			                shu:             8546461dbac6c34caf06a1402f772d7cd2400c4cce6f4444bf613acf84c4f5c2c81c5e33aad7f17f819246111efbe9bf6d59d6323ea09d661613c5a117436063d22d0a01f4a72680
+			                pst:             1564575988
+			                rmtc:            t
+			                uuid:            60ad98fa-7ccf-4b28-a888-4da02e2aa55b:2:1
+			                pii:             
+			                in:                false
+			                refer:         http://www.phanivadrevu.com/files/scratch_2.html?origin_team=THGU1E6UE
+			                key:             27a43b8438454dd86d9518c8a3ddeea7
+			                scrHeight: 900
+			                ship:            
+			                res:             5.31
+			                dev:             r
+			                adb:             n
+			                kw:                []
+			                scrWidth:    1440
+			                tz:                5.75
+			                spacv:         99
 
 
-						        Response: (add view-source: as prefix to the url)
+			                Resolved IP: 198.134.112.242:80
 
-						        Resolved IP: 95.179.146.120:80
+		     
+		Step 10:     GET https://tracking.blue/f817c807-3a67-4aa9-9093-17364d54aa8a?PLACEMENT_ID=14375064&LANDING_ID=1919907&COUNTRY_CODE=NP&CAMPAIGN_ID=246554&externalid=cf6b2fa23c8f81b9fa236c4746cfe463
+		             ← 302 [no content] 107ms
+
+		                 GET https://tracking.blue/f817c807-3a67-4aa9-9093-17364d54aa8a?
+				                        PLACEMENT_ID: 14375064
+				                        LANDING_ID:     1919907
+				                        COUNTRY_CODE: NP
+				                        CAMPAIGN_ID:    246554
+				                        externalid:     cf6b2fa23c8f81b9fa236c4746cfe463
+
+				                        Resolved IP: 13.228.56.149:443
+
+		     
+		Step 11:     GET http://www.apple.com-shield.live/redirect/?ip=27.34.70.88&campid=f817c807-3a67-4aa9-9093-17364d54aa8a&zn=14375064&sc=5542fa6a-4b32-43e2-b2cf-d62aeabb4957&browser=Chrome&browserversion=Chrome%2075&ci             ity=Lal…
+
+						GET www.apple.com-shield.live/redirect/?                                                                                                                                                                                                                                                                                        
+						                ip:                         27.34.70.88
+						                campid:                 f817c807-3a67-4aa9-9093-17364d54aa8a
+						                zn:                         14375064
+						                sc:                         5542fa6a-4b32-43e2-b2cf-d62aeabb4957
+						                browser:                Chrome
+						                browserversion: Chrome 75
+						                city:                     Lalitpur
+						                os:                         MacOS
+						                osv:                        MacOS 10.14 Mojave
+						                model:                    Desktop
+						                td:                         tracking.blue
+						                ua:                         Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36
+						                language:             en
+						                connection:         BROADBAND
+						                isp:                        Worldlink Communications Pvt ltd
+						                carrier:                
+						                country:                NP
+						                cep:                        Is9cQ4aCvN49Am2dZ0qxhWF7smFj-HAON7guK5l-S4FqSYn9Rbr5vWYzSXJQKXzQ8NE9m6OlV4pkkATR1mLuAXUeLEw6Q8HsI7Cv5gCq58xQzFXYzCe9JF9sKSV_CXvPrOSATqE8JXrJPK5IYLc3Cu7NniyYf02RmsMO7Vc-cnuTCRELLKES6EeTRdnz
+						                nvMUJeDYmGVehWyHqLCEA9o_Jy4ymSbqMndD8dVt-Xmhdxg6Qu-xnvKlVvBbfahL3Wc7_p4pubpJXiR34dCyjibfTGvgAphzXoxFJ2fYwzfrwcDBZ9M92QjSLXS1jOnREJORFMz9_K_WTu0sAwmGQlK2Piit3Hf2xuV8C42HAQx9duxOLOOTmXLJlKWjNXSWPmDX
+						                lptoken:                15e364df570c770229f7
+						                PLACEMENT_ID:     14375064
+						                LANDING_ID:         1919907
+						                COUNTRY_CODE:     NP
+						                CAMPAIGN_ID:        246554
+						                externalid:         cf6b2fa23c8f81b9fa236c4746cfe463
+
+
+						                Response: (add view-source: as prefix to the url)
+
+						                Resolved IP: 95.179.146.120:80
 
 
 
