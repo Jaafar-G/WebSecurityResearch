@@ -1,0 +1,133 @@
+
+----------------------
+Adsterra Flow of Urls
+----------------------
+
+Before click of ad
+
+pl14475563.pvclouds.com				213.196.2.1
+bcloudhost.com						213.196.2.1
+ie8eamus.com						172.64.193.25
+urldelivery.com						213.196.5.3
+ouh3igaeb.com						198.134.112.241
+
+After click of ad		
+
+urldelivery.com						213.196.5.3
+3.securefinds1.com					173.192.101.27
+gotoapp8.com						104.27.188.26
+gsafe.getawesome2.com				172.64.131.15
+cherami-cloud.com					104.27.142.196
+movie.splendidsearch.com			104.27.177.208
+
+------------------------------------------------------------------------
+
+
+pl14475563.pvclouds.com						213.196.2.1
+	Domain Not found							1000+ Domains resolved
+
+
+bcloudhost.com								213.196.2.1
+	IP Resolutions								1000+ Domains resolved
+		213.196.2.1
+		213.196.2.2
+		213.196.5.3
+		213.196.5.4
+
+ie8eamus.com								172.64.193.25
+	IP Resolutions								618ii.com
+		www.ie8eamus.com						99a22.com
+		alpha.ie8eamus.com						adbreak.ch (+42 other domains)
+
+
+urldelivery.com								213.196.5.3
+	IP Resolutions								youvidtube.com
+		198.134.112.232							www.youvidtube.com
+		198.134.112.241							www.vidcpm.com
+		198.134.112.242							www.delivery.com
+		198.134.112.243							wwww.pixelsrvdmn.com
+		198.134.112.244							www.hqzjz7fncd.com
+		213.196.5.3								www.bcloudhost.com
+		213.196.5.4								ww.urldelivery.com
+		67.55.66.180							vidsdelivery.com
+		69.42.65.36								vod7delivery.com
+		69.42.65.40								pixelsrvdmn.com
+		69.42.65.41								httpswww.urldelivery.com
+		69.42.65.45								bcloudhost.com
+	Subdomains									datadbs.com 135.25.130.11www.bcloudhost.com
+		{www, hwww, ww, httpswww, ip}			
+		.urldelivery.com
+
+
+ouh3igaeb.com								198.134.112.241
+	IP Resolutions								1000+ Domains resolved
+		198.134.112.241					
+		198.134.112.242
+		198.134.112.243
+		198.134.112.244
+
+3.securefinds1.com							173.192.101.27
+	Domain Siblings								340+ Domains resolved
+		1.securefinds1.com
+		2.securefinds1.com
+		6.securefinds1.com
+		7.securefinds1.com
+		8.securefinds1.com
+		www.securefinds1.com
+
+gotoapp8.com								104.27.188.26
+												1000+ Domains resolved
+
+
+gsafe.getawesome2.com						172.64.131.15
+	IP Resolutions 								68 domains
+		104.28.6.17
+		104.31.90.99
+		172.64.130.15
+		172.64.160.7
+		172.64.174.6
+		172.64.204.17
+		172.64.175.6
+		184.173.189.211
+		184.173.189.235
+		50.22.137.11
+		50.22.179.15
+		50.22.185.234
+	Domain Siblings
+		www.getawesome2.com
+		privacy.getawesome2.com
+		afe.getawesome2.com
+		music.getawesome2.com
+		www.gsafe.getawesome2.com
+		www.music.getawesome2.com
+	Subdomains
+		www.gsafe.getawesome2.com
+
+
+cherami-cloud.com							104.27.142.196
+	IP Resolutions								1000+ Domains resolved
+		104.27.142.196
+		104.27.143.196
+		104.28.24.254
+		104.28.25.254
+		172.64.102.37
+		172.64.140.27
+		172.64.141.27
+		172.64.166.37
+		172.64.167.37
+		172.64.168.37
+		172.64.169.37
+		172.64.196.3
+		172.64.197.3
+	Subdomains
+		www.cherami-cloud.com
+
+
+movie.splendidsearch.com					104.27.177.208
+	Domain Siblings								1000+ Domains resolved
+		games.splendidsearch.com
+		sport.splendidsearch.com
+		music.splendidsearch.com
+		sug.splendidsearch.com
+		video.splendidsearch.com	
+

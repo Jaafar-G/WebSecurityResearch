@@ -1,0 +1,141 @@
+
+// -----------------------------------------------------
+	
+	PopAds.net
+	quickwebchecker.com/html-tricks.html
+
+	This ad has pop up at the beginner of the page load 
+
+	When page loads, it loads an iframe of ads that is 
+	embedded on the bottom left of the page
+
+// ------------------------------------------------------
+
+   GET http://c.adsco.re/
+       ← 304 [no content] 53ms				(Resolved IP: 104.17.166.186)
+   
+   GET http://6.adsco.re/					(Resolved IP: 104.17.166.186)
+       ← 200 text/plain [no content] 53ms
+   POST http://adsco.re/t
+        ← 200 text/html 130b 369ms			(Resolved IP: 162.252.214.5)
+   
+   GET http://serve.popads.net/c?_=BAYAXUUHCwFdRQy2gAGBAcAAIJZdG00ctRz5HtIbG7szRGlyEs57RIWQlEznIa69f6wLwQAg4_djOHlSmUqgwz9vl0b94nWVwq4VJ2OrDO
+       wdqLfIt…
+       ← 200 application/javascript 1.17k 743ms		(Resolved IP: 216.21.13.16)
+       												(attached serve-popads.js)
+       		Has a refer url 
+
+   GET https://onfwv.bemobtrk.com/favicon.ico
+       ← 404 text/html 180b 125ms					(Resolved IP: 13.232.114.105)
+       	Error page
+
+   GET https://serve.popads.net/s?cid=6070631&iuid=942634609&ts=1564806327&ps=455231076&pw=385&pl=%216qfyQVoFmA041uvSrUz8dtgtFCXx1wGEFNNNtF0b
+       2XWL4Ci…
+       ← 200 text/html 188b 311ms					(Resolved IP: 216.21.13.16)
+       												(attached serve-html.html)
+
+       		Has a window.replace of php file for impressions
+
+   GET https://handicap-asiatic.net/promos/impression.php?c=NP&d=d HTTP/2.0
+       ← 200 text/html 842b 423ms					(Resolved IP: 104.18.46.190)
+       												(attached iframe-popads.html)
+
+       		This is the loader iframe html response file
+       		open /Users/bacharya/Desktop/research/adnetwork/popads/serve-html.html
+
+   GET https://www.bet365.com/dl/~offer?affiliate=365_848526
+       ← 302 text/html 81b 387ms
+       		XML Output to redirect					(Resolved IP: 5.226.176.16)
+
+			<a href="https://www.bet365.com/?forcelp=1&amp;affiliate=365_848526">Found</a>
+
+   GET https://www.bet365.com/?forcelp=1&affiliate=365_848526
+       ← 302 text/html 178b 401ms					(Resolved IP: 5.226.176.16)
+       			(Redirected to)
+       			<a href="https://www.bet365.com/en/?forcelp=1&amp;affiliate=365_848526">here</a>
+
+
+   GET https://www.bet365.com/en/?forcelp=1&affiliate=365_848526
+       ← 200 text/html 5.76k 475ms
+       												(Resolved IP: 5.226.176.16)
+       				(HTML File)						(loadedfile.html)
+       				This file is the redirected file what that will be displayed as landing file.
+       				Final Url: https://www.bet365.com/en/?forcelp=1&affiliate=365_848573
+
+   GET https://members.bet365.com/Members/Helpers/DefaultAff.aspx?forcelp=1&affiliate=365_848526
+       ← 200 text/html 177b 497ms
+       												(Resolved IP: 5.226.176.7)
+       				(HTML File)
+       					Has content <body> bet365.members</body>
+
+
+
+
+      NOTE: Another attempt to reload ads - Had a different experience
+
+      to the loaded site
+
+
+     //---------------------------------------------------
+     		DETECTING ADS OPENED BY PUBLISHER
+     //---------------------------------------------------
+
+     When I kept loading page - about 10-15 time (not exact): I came to see the page which
+     mentions ads are blocked to the publisher.
+
+     This is an experience I could see a restrict page being only opened to firefox.
+     For firefox, a new tab is opened.
+     However, I did not see this page in Chrome. The publisher page simply did not show the ads.
+
+     Added html file (publisher-ad-restrict.html)
+
+     The flows below is a newly opened tab with the publisher link loaded.
+
+    GET http://c.adsco.re/
+       ← 304 [no content] 45ms
+       			Page not Found  				(IP Resolved: 104.17.167.186)
+   				
+   	
+   	POST http://adsco.re/t
+        ← 200 text/html 132b 373ms				(IP Resolved: 162.252.214.5)
+
+        	Request:
+
+				0000000000 22 0a 23 14 74 41 40 05 5f 41 2e 5c 4b 10 bc 40   ".#.tA@._A.\K..@
+				0000000010 90 00 40 01 a0 09 24 5e 23 30 3f 30 60 28 21 63   ..@...$^#0?0`(!c
+				0000000020 21 4a 22 34 24 30 33 70 3b 20 26 00 21 0c f8 2d   !J"4$03p; &.!..-
+				0000000030 8a 0d 9c 42 20 67 80 06 80 01 84 07 e1 0f 20 14   ...B g........ .
+				0000000040 20 00  
+   
+			Response:
+				The decoded gzip XML
+
+					BAYAXUUabQFdRRwHgAGBAcAAINFK5KdYziK92MpUfvQHEf9OMSjUs7mdUq4ME0fvSHrTwQAg-Pjysr0BOFyHyApccWxmElGxwCDd05Vt8P7DaH-p0uo
+
+
+
+   GET http://serve.popads.net/c?_=BAYAXUUabQFdRRwHgAGBAcAAINFK5KdYziK92MpUfvQHEf9OMSjUs7mdUq4ME0fvSHrTwQAg-Pjysr0BOFyHyApcc
+       WxmElGx…
+       ← 200 application/javascript 119b 499ms					(IP Resolved: 216.21.13.16)
+
+       		Request:
+       					http://serve.popads.net/c?
+       						_:               BAYAXUUabQFdRRwHgAGBAcAAINFK5KdYziK92MpUfvQHEf9OMSjUs7mdUq4ME0fvSHrTwQAg-Pjysr0BOFyHyApccWxmElGxwCDd05Vt8P7DaH-p0uo
+							v:                4
+							siteId:           3473131
+							minBid:           
+							popundersPerIP:   200
+							blockedCountries: 
+							documentRef:      
+							s:                1440,900,2,2880,1800
+
+
+       		Response (JS Script)
+				window._pao.parse( {
+				  'result': 1, 'url': 'http://www.popads.net/default.html#', 'type': 'popunder', 'antiacid': 0
+				}
+				);
+
+		The final url opened as new tab is - https://www.popads.net/default.html#
+
+

@@ -1,0 +1,53 @@
+<head>
+  <title>PopMyAds Redirecting...</title>
+</head>
+<body>
+  <a href='https://popmyads.com/pop_essentials.php' style='display:none;'></a>
+  <div style="display:none">
+    <img src="https://whos.amung.us/swidget/popmyads.png">
+  </div>
+  <script>
+    var wAJuwnd = 'MTU2NDczODQ2MEpvWFNzVDZ3bUtIQU1vemlsbGEvNS4wIChNYWNpbnRvc2g7IEludGVsIE1hYyBPUyBY
+IDEwXzE0XzUpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS83NS4wLjM3NzAuMTQyIFNhZmF
+yaS81MzcuMzY=';
+
+var cvDFgdf = '{"weburl":"aHR0cDovL3F1aWNrd2ViY2hlY2tlci5jb20vY3NzLXRyaWNrcy5odG1s","hash":"cG8
+1Y3lhZHM1ODQxOTNhNGI2NzU=","uid":"54707","wid":"51556","adblock":"0","screenresolution":"1440x900",
+"realbrowser":"1","website_refferal":"http:\/\/quickwebchecker.com\/css-tricks.html"}';
+    var xxxccc = 0;
+
+    var temp = (JSON.parse(cvDFgdf));
+    if (xxxccc === 0) {
+      temp.screenresolution =  screen.width + "x" + screen.height;
+    }
+    temp.memory = "unknown";
+    temp.hardwareconcurrency = "unknown";
+    if (navigator.deviceMemory) {
+      temp.memory = navigator.deviceMemory;
+    }
+    if (navigator.hardwareConcurrency) {
+      temp.hardwareconcurrency = navigator.hardwareConcurrency;
+    }
+    cvDFgdf = JSON.stringify(temp);
+
+    var form = document.createElement("form");
+    form.setAttribute("method", "POST");
+    form.setAttribute("action", "/go");
+
+    var h1 = document.createElement("input");
+    h1.setAttribute("type", "hidden");
+    h1.setAttribute("name", "data");
+    h1.setAttribute("value", cvDFgdf);
+    form.appendChild(h1);
+
+    var h2 = document.createElement("input");
+    h2.setAttribute("type", "hidden");
+    h2.setAttribute("name", "token");
+    h2.setAttribute("value", wAJuwnd);
+    form.appendChild(h2);
+
+    document.body.appendChild(form);
+    form.submit();
+  </script>
+</body>
+</html>

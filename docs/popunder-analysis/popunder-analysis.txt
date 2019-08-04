@@ -1,0 +1,108 @@
+We were able to decipher the licensing code of popunderjs from one of the adult site client. From the actual hosted js client code, we were able to create popunders for any domains based on the licensing hack. We found out that licensing followed the basic XOR cipher operations.
+
+The following basic steps were performed by author in order to create licensing work.
+
+Step 1. Create an input string of domain (s) "toEncode" which must be passed through encodeURI() function. The encodeURI() function encodes a Uniform Resource Identifier (URI) [reference]. 
+
+   var toEncode = encodeURI(" domains~|.object~|.192.168.1.99~|./~|.quickwebchecker.com~|..local~|.127.0.0.1~|.popunderjs.com~|..dev~|.localhost~|. expires~|.use strict");
+
+In the above toEncode variable, we replaced the acutal client domains with "quickwebchecker.com" and rest other variables were kept as it was. 
+
+Step 2. These encodedURI is passed through decodeURI() function. The decodeURI() function is a generic convention of spaces and meta character replacements function. The deocdeURI() function creates a cipher XOR'ed text in a loop. This input code is created in attacker's world and not shown to the client code base.
+
+The next step that attacker follows is to add the cipher text to the client code base. These text will be predefined for validating if the client code is for the domain that is hosted.
+
+
+Following is hack codebase for creating the input string for the cipher text.
+
+var toEncode = encodeURI(" domains~|.object~|.192.168.1.99~|./~|.quickwebchecker.com~|..local~|.127.0.0.1~|.popunderjs.com~|..dev~|.localhost~|. expires~|.use strict");
+var decodedURI = decodeURI(toEncode);
+var inputStr = "KW3HMW";
+var authorOutputStr = '';
+var decodeURITraverseCounter = 0;
+var inputLengthCounter = 0;
+
+var i = 0;
+
+for(i=0; i < decodedURI.length; i++) {
+	if(inputLengthCounter === inputStr.length) {
+		inputLengthCounter = 0;
+	} 
+	authorOutputStr += String.fromCharCode(decodedURI.charCodeAt(decodeURITraverseCounter) ^ inputStr.charCodeAt(inputLengthCounter));
+	decodeURITraverseCounter++;
+	inputLengthCounter++;
+}
+
+console.log(authorOutputStr);
+
+
+We verified that above code is same from the below XOR'ed cipher creation. We created the cipher text matching attacker's input string.
+
+Following is the matching code for verification to recreate the early provided domain (s) as shown in the variable named toEncode array.
+
+var decodedURI = authorOutputStr;
+var inputStr = "KW3HMW";
+var outputStr = '';
+var decodeURITraverseCounter = 0;
+var inputLengthCounter = 0;
+
+var i = 0;
+
+for(i=0; i < decodedURI.length; i++) {
+	if(inputLengthCounter === inputStr.length) {
+		inputLengthCounter = 0;
+	} 
+	outputStr += String.fromCharCode(decodedURI.charCodeAt(decodeURITraverseCounter) ^ inputStr.charCodeAt(inputLengthCounter));
+
+	decodeURITraverseCounter++;
+	inputLengthCounter++;
+}
+
+console.log(outputStr.split('~|.'));
+
+
+Step 3. The next step is computing the hash for the domain (s) that is related to the client code. We found out that each variable in the domains has 4 different associated hash code that were computed with basic operations. These hashes were later check in script.js before firing the popunders. Attacker had the first sixth hashes as constants. They could be made any value as long as their computation matches later in the script.js. The hashes checked in script.js was of sixth, twelveth and eighteenth position and their incremental. Since we only needed to change the domain name of actual client to our test domain, we only needed to change the test domain hashes. We computed the domain hashes in following manner. 
+
+Following is the hack codebase that we created to get the hashes for the test domains. 
+
+ // creating hashes of input domains
+
+    var domains = ["quickwebchecker.com", ".dev", ".local", "127.0.0.1", "localhost", "192.168.1.99"];
+    var domainLength = domains.length;
+    var hashOfDomains = Array(23);
+
+    // Preset values
+    
+    hashOfDomains[0] = 119;
+    hashOfDomains[1] = 179;
+    hashOfDomains[2] = 180;
+    hashOfDomains[3] = 156;
+    hashOfDomains[4] = 192;
+    hashOfDomains[5] = 155;
+
+    for(var count = 0; count < domainLength; count++) {
+       var str = domains[count];
+       var a = str.charCodeAt(0) * hashOfDomains[count] + count + 1;
+       var b = str.charCodeAt(str.length -1) * 2 * hashOfDomains[count];
+       var c = str.length * 3 * hashOfDomains[count];
+
+       sixthIndex = domainLength + count;
+       twelfthIndex = 2 * domainLength + count;
+       eighteenthIndex = 3 * domainLength + count;
+
+       hashOfDomains[sixthIndex] = a;
+       hashOfDomains[twelfthIndex] = b;
+       hashOfDomains[eighteenthIndex] = c;
+    }
+//
+
+Methodology
+
+We created a server blocks for test domain(s) in local nginx server. The /etc/hosts was edited to redirect the test domain (s) to the localhost. When requested to open such test domain (s) on browser, these test domains were simply redirected by server blocks to  to specified code folder. These test domains would have created toEncode domain names, and hashes. So, we were able to verify that our code hacks for each test domains on licensing would work.  
+
+
+
+
+
+
+

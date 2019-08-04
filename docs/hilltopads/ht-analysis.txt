@@ -1,0 +1,172 @@
+// -------------------------------------------
+
+	Before Clicking the Ad -- The loader part
+	quickwebchecker.com/index.html
+
+// -------------------------------------------
+
+
+Step 1:
+
+Site source given in the script tag of hosting which loads the JS. This is  static js source url.
+This is provided to the publisher during the time of ad code generation. This is headed at head of the publisher html file.
+
+
+		s.src = "\/\/finized.co\/c.DB9p6Ob\/2q5ulxSxWMQD9\/NBDTE_xOMHTzMtzkO\/Cx0\/0SMZTHENxBM\/zJMs5o";
+
+		finized.co/c.DB9p6Ob/2q5ulxSxWMQD9/NBDTE_xOMHTzMtzkO/Cx0/0SMZTHENxBM/zJMs5o
+
+		Note:
+		a) The JS file has info for referrer at the bottom of the page.
+		b) The JSON object has PopUnderJS (BetterJSPop) as the pop under library : https://www.reberr.pro/dfd604/lszipbvljhtv.js
+
+
+{
+    "bdVar": "TRQuYZYIgi",
+    "counters": {
+        "dailySeq": "kadDS",
+        "domain": "kadPD",
+        "iframePage": "kadPIP",
+        "lastPageTimer": "kadLPT",
+        "lastTimer": "kadLT",
+        "max": "kadPM",
+        "page": "kadPP",
+        "schemeClicks": "kadSC",
+        "schemeSeq": "kadSS"
+    },
+    "freq": {
+        "context": "domain",
+        "distance": 60,
+        "distances": "",
+        "max": 0,
+        "pagelim": 0,
+        "period": 3600,
+        "qty": 3,
+        "scheme": "time",
+        "session": false,
+        "sessionExpiration": 3600,
+        "sessionKeepAliveTime": 0
+    },
+    "misc": {
+        "coverTags": "iframe",
+        "newTab": true,
+        "under": false
+    },
+    "names": {
+        "clickedElement": "ce",
+        "dailySeq": "dseq",
+        "iabc": "iabc",
+        "schemeSeq": "sseq"
+    },
+    "popns": "dfd604",
+    "revert": false,
+    "script": "https://www.reberr.pro/dfd604/lszipbvljhtv.js",
+    "scriptSrc": "/c.DB9p6Ob/2q5ulxSxWMQD9/NBDTE_xOMHTzMtzkO/Cx0/0SMZTHENxBM/zJMs5o",
+    "window": {
+        "url": "http://finized.co/br3sVt0uPv2wlxjyPzXABBzCJDmE9F0GPHUI5JEKRLXMhNNOVPEQ1R6STT0UNVRWeXEY5ZUaWbTcBdOeefkgEhxiTjXkplBmMn0oppFqNrVsFtKuRv0wpx5yYzjAJBGCaD1ElFtGRHnIVJaKQL1MFNrOZPDQIR5SeTWUJVHWUXnYNZhaVbzcVdyeSfUgdhOidjmkJlXmMnToFpiqbrWsxtquWvVwhxSyczGAIByCNDXEpFJGSHEIIJyKZLEMNNROePEQ5RESSTmU1VOWaXlYUZ0aWbVcRdVeefEg5htiTjTkJlPmRn0oZprqTrjsJtZuMvlwlxqyaz3ApBNCaDmEdF3GTH1IRJjKMLVMlNqOTPmQtRNSZTyU0VtWJXnYZZ0aPbTcEd1eNfjgQh3iMjDkUlzmMnDocptqMrzsQt2uMvTwlxjyYzTAEB0CZDDEhFlGNHDIgJ4KZLWMVNkOZPTQhRjSOTTUEV3WYXTYZZmaObDcIdweZfGgIh"
+    },
+    "zh": "530389e24eb43608609c0c32957fa0f6"
+}
+
+
+In above: The window url and the json data mapping is computed dynamically from the server response.
+
+
+// Digging Deeper
+
+finized.co/c.DB9p6Ob/2q5ulxSxWMQD9/NBDTE_xOMHTzMtzkO/Cx0/0SMZTHENxBM/zJMs5o
+			
+			Response: JS Script (Refer to file zJms50.js in the location)
+			Resolved IP : 88.85.94.232:80
+
+This weburl redirects to another Url:
+
+finized.co/dmp?
+	05: 4111388
+	uId: hash (key of the publisher)
+	b1:  hash
+	d6: window info
+	ay: 10258
+	c0: 0.21
+	c1: false
+	c2: Infinity
+	c3: 3900
+	da: 27.34.70.7
+	dc : "List of bunch of fonts name separated by comma"
+	dd: hash
+	00: hash 
+	01: ontimeout
+	02: hash
+
+		Resolved IP: 88.85.94.232:80
+
+This site does multiple redirection and display a landing site. In our the the landing site is adult site most of the time. 
+
+Example:
+
+	https://tsyndicate.com/api/v1/direct/52a5c70403b646758f1a73b4b537b8b5?categories=Adult&subid=D6II6GAK0U
+
+	Resolved IP: 104.17.47.101:443
+
+	Response (302) url:
+
+	https://crptgate.com/pu/?psid=ed_tsrmntt3&site=jsm&target=rttr&utm_medium=partner&utm_source=TS&category=girl&ms_notrack=1
+
+	Resolved IP: 93.93.51.223:443
+
+	The response code is HTML that redirects to another site (see crypgate.html file)
+
+	As you can see from attached crypgate.html it redirects to https://cradver.livejasmin.com :
+
+			https://cradver.livejasmin.com/pu/fsrnd?
+					ms_rnd:     1564711794.22125
+					pstool:     300_20
+					psid:       ed_tsrmntt3
+					site:       jsm
+					utm_medium: partner
+					utm_source: TS
+					category:   girl
+					origin:     finized.co
+
+	Resolved IP: 93.93.51.191:443
+
+
+	The response part is interesting. It has adblock code  but not much info ... (attached cradver.js)
+	
+	The above code loads one of the JS code which has adblock JS file
+	url: 
+	http://pt-static2.jsmstat.com/_common/script/adblock/advertisement-v857235.js
+
+	The response is Javascript: ( On below script)
+		var noBlocker = true; 
+
+	Resolved IP: 93.93.51.200:443
+
+
+	Also, One of the the script is hosted in cloudfront (AWS)
+		Url: https://d31qbv1cthcecs.cloudfront.net/atrk.js
+
+		Resolved IP: 52.222.176.239:443
+
+This is the final landing page..
+
+		It pulls up adult videos via other different sites:
+
+			galleryn1.awemwh.com
+
+			*.awemwh.com
+
+			They all resolved to 93.93.51.190:443
+
+
+
+
+
+
+
+
+
+
+
+
+

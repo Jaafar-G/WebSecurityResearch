@@ -1,0 +1,77 @@
+----------------------
+PopMyAds Flow of Urls
+----------------------
+
+Before click of ad
+
+popmyads.com							104.24.126.152
+imzahrwl.xyz							104.27.140.223
+
+After ad is clicked
+
+tracking.marketing						139.229.6.134
+www.apple.com-scan-mac.live				52.29.39.28
+cpacdn.ourcdn77.xyz						139.59.35.10
+
+------------------------------------------------------------------------
+
+
+popmyads.com							104.24.126.152
+	Subdomains								0kvi.cn
+		cdn.popmyads.com 					10reviewers.fr
+		poptest.popmyads.com 				1697866.com
+		login.popmyads.com 					1726562.com
+        dev.popmyads.com 					1qumqbooks.ml
+        www.popmyads.com 					1xbet-espana.es
+    IP Resolutions 							2-qq.cn
+    	104.18.36.101                       2349957.com
+    	104.18.36.251 						366nb.space
+    	104.18.37.101						36squared.com
+    	104.18.37.251						4204484.com
+    	104.18.44.251						44dd.vip
+    	104.18.45.251						52zidian.com
+    	104.24.102.10						53556117.cn
+    	104.24.103.10 						56513710.cn
+    	104.24.104.166						5dyxdgvz.tw
+    	104.24.105.166						5waid.loan
+    	104.24.106.166						6007786.top
+    		+ 133 MORE IPs						+ 1000 MORE DOMAINS
+
+imzahrwl.xyz							104.27.140.223
+	Sudomains
+		www.imzahrwl.xyz
+
+tracking.marketing						139.229.6.134
+	Subdomains								Association not found
+		r3.tracking.marketing
+		www.tracking.marketing
+		r2.tracking.marketing
+		r1.tracking.marketing
+		r.tracking.marketing
+		cd.tracking.marketing
+	IP Resolutions
+		13.56.25.109
+		18.153.1.84
+		18.153.1.85
+		18.153.1.86
+		18.184.38.55
+			+ 32 MORE IPs
+
+www.apple.com-scan-mac.live				52.29.39.28
+	Domain Siblings							apple.com-clean-os.live
+		apple.com-scan-mac.live				apple.com-cleaning-os.live
+		webmail.com-scan-mac.live			apple.com-clear.live
+		mail.com-scan-mac.live				apple.com-fixing.live
+	IP Resolutions							apple.com-mac-booster.live
+		52.29.39.28							apple.com-mac-boosting.live
+		94.237.87.169						apple.com-macos-clean-systems.live
+												+ 505 MORE DOMAINS 
+
+cpacdn.ourcdn77.xyz						139.59.35.10
+	Domain Siblings							1stmainstreetarchitects.com
+		google.ourcdn77.xyz					2tctc2.com
+		windows.ourcdn77.xyz				5tftf5.com
+		macos.ourcdn77.xyz					aare2013.com.au
+	IP Resolutions							accypnconf.org.au
+		89.187.181.19						aceda.org.au
+												+ 91 MORE DOMAINS
