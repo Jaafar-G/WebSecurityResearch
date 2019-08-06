@@ -7,8 +7,8 @@
         2) The similarity flow among different ad network, when ad is clicked
         3) Adblocker / Pop up Blocker analysis in Chrome in both incognito and 
             non-incognito browser experience
-            
-//-----------------------------------------------------
+
+//----------------------------------------------------------------------------
 
 AdNetwork That Uses PopUnderJS (BetterJSCode) 
 
@@ -16,7 +16,8 @@ AdNetwork That Uses PopUnderJS (BetterJSCode)
     => PopCash.Net (about-us.html)
     => HilltopAds (index.html)
 
-    Note: Revenue Hits (js-tricks.html) : This script looks similar construction to popunder JS but is different. The idea of computing the initial set up was similar for least
+    Note: Revenue Hits (js-tricks.html) : This script looks similar construction to popunder JS but is different. 
+    The idea of computing the initial set up was similar for least
 
 
 Ad behaviour Same 
@@ -25,9 +26,12 @@ Ad behaviour Same
 
 Plugin Used:
 
-    I came to find Adblock Plus seems to have no effect over any of these code. Adblock Plus is one of the highest rated extension for blocking ads. 
+    I came to find Adblock Plus seems to have no effect over any of these code. Adblock Plus is one of the highest 
+    rated extension for blocking ads. 
 
-    Since, we are more concerned with Popup blocker, added an extension named Popup blocker, one of the highest rated (https://poperblocker.com/) specific for pop up blocker. Poper Blocker is an extension to chrome which automatically removes all ad pop ups, pop unders, and overlays for a cleaner browsing experience. 
+    Since, we are more concerned with Popup blocker, added an extension named Popup blocker, one of the highest rated 
+    (https://poperblocker.com/) specific for pop up blocker. Poper Blocker is an extension to chrome which automatically 
+    removes all ad pop ups, pop unders, and overlays for a cleaner browsing experience. 
 
     1) Poper blocker : Blocking experience analysis on the basis of the browser mode for tab under
 
@@ -70,4 +74,5 @@ Plugin Used:
             Opens both tab under and pop under 
             The feature POP UNDER is created which is not created in NEITHER incognito NOR any of the other Ad Network.
 
-        Note: PopAds.net was the only Adnetwork that we analyzed for BANNER that had an overlay banner which created both tab under and pop under.
+        Note: PopAds.net was the only Adnetwork that we analyzed for BANNER that had an overlay banner which created 
+        both tab under and pop under.
