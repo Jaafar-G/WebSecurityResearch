@@ -23,6 +23,16 @@
                         Response 302 URL
                         https://ratresperheto.pros?a=4308230481191892803&b=265922580799                                                    
 
+                        This is where the multiple domain 302 redirection differs:
+
+                        Instead of ratresperheto: I came to see
+
+                        https://secure.adnxs.com/getuid?
+                            https://teronemerom.info/s?a: $UID
+                            b: 227721720494
+
+                                The teronemerom resolved to 104.18.31.25
+
      GET http://d1b0fk9ns6n0w9.cloudfront.net/rMDFMWXZTXiI/SURYKGRBCQZ6YUEWWz82GEAMPiE9YXkPABp5QzwOJwUXOCMSDQRibkMWXS03EQ0XKTc
              VDQBqOB…
              ← 200                                  (Resolved IP: 52.84.225.21)
@@ -47,7 +57,7 @@
 
 
 
-        // ---------------------------------------------------------
+    // ---------------------------------------------------------
     // When the page is clicked the following response is shown
     // ---------------------------------------------------------
 

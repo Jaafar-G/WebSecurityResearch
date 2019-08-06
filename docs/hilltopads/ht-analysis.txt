@@ -8,8 +8,8 @@
 
 Step 1:
 
-Site source given in the script tag of hosting which loads the JS. This is    static js source url.
-This is provided to the publisher during the time of ad code generation. This is headed at head of the publisher html file.
+Site source given in the script tag of hosting which loads the JS. This is  static js source url.
+This is provided to the publisher during the time of ad code generation. This is added at head of the publisher html file.
 
 
         s.src = "\/\/finized.co\/c.DB9p6Ob\/2q5ulxSxWMQD9\/NBDTE_xOMHTzMtzkO\/Cx0\/0SMZTHENxBM\/zJMs5o";

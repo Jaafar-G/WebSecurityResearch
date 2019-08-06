@@ -1,0 +1,73 @@
+
+
+//----------------------------------------------------------------------------
+
+    In this section we will be analyzing the following features.
+        1) Code similarity among ad networks
+        2) The similarity flow among different ad network, when ad is clicked
+        3) Adblocker / Pop up Blocker analysis in Chrome in both incognito and 
+            non-incognito browser experience
+            
+//-----------------------------------------------------
+
+AdNetwork That Uses PopUnderJS (BetterJSCode) 
+
+    => PopMyAds.com (css-tricks.html)
+    => PopCash.Net (about-us.html)
+    => HilltopAds (index.html)
+
+    Note: Revenue Hits (js-tricks.html) : This script looks similar construction to popunder JS but is different. The idea of computing the initial set up was similar for least
+
+
+Ad behaviour Same 
+    => Revenue Hits and Asterra ads upon clicked redirected via "gotoapp8.com"
+    => PopMyAds and Adsterra ads upon clicked redirected via "tracking.marketing" 
+
+Plugin Used:
+
+    I came to find Adblock Plus seems to have no effect over any of these code. Adblock Plus is one of the highest rated extension for blocking ads. 
+
+    Since, we are more concerned with Popup blocker, added an extension named Popup blocker, one of the highest rated (https://poperblocker.com/) specific for pop up blocker. Poper Blocker is an extension to chrome which automatically removes all ad pop ups, pop unders, and overlays for a cleaner browsing experience. 
+
+    1) Poper blocker : Blocking experience analysis on the basis of the browser mode for tab under
+
+        NonIncognito:
+
+            1) Hilltop (index.html) - blocked occasionally, plugin not consistent 
+            2) Admaven  (events.html) - blocked occasionally, plugin not consistent 
+            3) PopMyAds (css-tricks.html) - blocked occasionally, plugin not consistent 
+            4) PopAds (html-tricks.html)
+                    a) Overlay banner is produced
+                    b) BUT Tab under is opened upon clicked
+            5) Revenue hits (js-tricks.html) - Always blocked
+            6) Adsterra (phani-vadrevu@site) - Always blocked
+
+        Incognito:
+
+            Popunders (Tab under) are created for following Ad networks.
+
+            1) Adsterra (phani-vadrevu@site)
+            2) Hilltop (index.html)
+            3) PopMyAds (css-tricks.html) 
+            4) Revenue hits (js-tricks.html)
+            5) Admaven  (events.html)
+            6) For PopAds (html-tricks.html) both tab under and pop under are created
+
+        Note: PopCash (about-us.html) blocked for Nepal. Tried with Tor without adblocker and was able to produce tab under. 
+
+    2) Poper blocker : Blocking experience analysis on the basis of the browser mode for overlay banner
+
+        PopAds.net (html-tricks.com) has pop up overlay which upon clicked opens a new tab for chrome.
+
+        Noticed different experience having pop up blocker for chrome.
+
+        Incognito:
+            Does not display over lay banner
+            Opens a new tab ad upon clicked anywhere
+
+        Non-incognito: 
+            Opens over lay banner
+            Opens both tab under and pop under 
+            The feature POP UNDER is created which is not created in NEITHER incognito NOR any of the other Ad Network.
+
+        Note: PopAds.net was the only Adnetwork that we analyzed for BANNER that had an overlay banner which created both tab under and pop under.
