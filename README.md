@@ -46,7 +46,8 @@ Find any collection info
 > db.requestHeader.find()
 
 Find last insert
-> db.requestHeader.find().sort({$natural:-1}).limit(1).pretty()
+> db.requestHeader.find().sort({$natural:-1}).limit(1).pretty() # last entry in collection requestHeader
+> db.passiveDNS.find().sort({$natural:-1}).limit(1).pretty() # last entry in collection passiveDNS
 
 Total count
 > db.requestHeader.find().count()
