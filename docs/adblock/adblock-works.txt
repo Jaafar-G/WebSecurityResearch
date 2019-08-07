@@ -1,0 +1,91 @@
+Before jumping into how advertisers fool or by pass adblock, it is important to 
+know
+
+    1. How adblock works?
+    2. How advertisers find ad block are present 
+
+Following two sections explains about adblock 2 bulleted points with a reference plugin.
+
+###############################################################
+How adblock works? AND How advertisers find adblock is present
+###############################################################
+
+[http://qnimate.com/how-to-detect-if-adblock-is-present-or-not/] Link has a very good information on how adblock works and how advertisers find out that adblock is present.
+
+While the website talks about in surface, we analyzed that the varieties of check are
+performed by adblock to check for any present.
+
+
+###############################
+How adblockPlus Plugins works? 
+###############################
+
+Refer to code section for more detail [adblockPlus-Code.js]
+
+The flow / trejectory of adblock to check are:
+
+    1. Has an event listener "load" which checks for any loaded script / iframe
+
+        Example request to load iframe in the JS file : triggers the addEventListener
+
+            List of type checker for the loaded document type (Line # 576)
+
+            const typeMap = new Map([
+              ["img", "IMAGE"],
+              ["input", "IMAGE"],
+              ["picture", "IMAGE"],
+              ["audio", "MEDIA"],
+              ["video", "MEDIA"],
+              ["frame", "SUBDOCUMENT"],
+              ["iframe", "SUBDOCUMENT"],
+              ["object", "OBJECT"],
+              ["embed", "OBJECT"]
+            ]);
+
+                  document.addEventListener("load", event =>
+                  {
+                    let element = event.target;
+                    if (/^i?frame$/.test(element.localName))
+                      checkCollapse(element);
+                  }, true);
+                }
+
+                window.checkCollapse = checkCollapse;
+                window.contentFiltering = contentFiltering;
+                window.typeMap = typeMap;
+                window.getURLsFromElement = getURLsFromElement;
+
+
+    2. Finds selectors for element (Ex. frame, video, audio etc)
+
+    3. Hides an element found
+
+                function hideElement(element)
+                {
+                  function doHide()
+                  {
+                    let propertyName = "display";
+                    let propertyValue = "none";
+                    if (element.localName == "frame")
+                    {
+                      propertyName = "visibility";
+                      propertyValue = "hidden";
+                    }
+
+                    if (element.style.getPropertyValue(propertyName) != propertyValue ||
+                        element.style.getPropertyPriority(propertyName) != "important")
+                      element.style.setProperty(propertyName, propertyValue, "important");
+                  }
+
+                  doHide();
+
+                  new MutationObserver(doHide).observe(
+                    element, {
+                      attributes: true,
+                      attributeFilter: ["style"]
+                    }
+                  );
+                }
+
+        # In the above code runs the mutation observer in the background till the set property is with visibility as hidden.
+

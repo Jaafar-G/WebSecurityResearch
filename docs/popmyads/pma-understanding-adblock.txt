@@ -1,0 +1,249 @@
+
+In this section we will analyze how pop ups are blocked via 2 plugins: Adblock Plus and Poper blocker for PopMyAds ad network
+
+
+#####################
+Plugin Adblock Plus
+####################
+
+JS Code which has tag: fuckAdLoad
+    https://imzahrwl.xyz/y/96571
+
+
+Note: This URL is the constant url which is located at the config _0x5ed4[3] on the head tag of the publisher account.
+
+The above JS code redirects to the bottom code which has adblock is present or not.
+
+This part of the code request brings a response as adblock as true:
+
+https://imzahrwl.xyz/serve/54707/51556/cG83ZHlhZHM2NzYxMzFiMWIzZmQ=/aHR0cDovL3F1aWNrd2ViY2hlY2tlci5jb20vY3NzLXRyaWNrcy
+                        5odG1s/1/1440x900/1
+
+
+      // This has the following response.
+
+        <html>
+        <head>
+          <title>PopMyAds Redirecting...</title>
+        </head>
+        <body>
+          <a href='https://popmyads.com/pop_essentials.php' style='display:none;'></a>
+          <div style="display:none">
+            <img src="https://whos.amung.us/swidget/popmyads.png">
+          </div>
+          <script>
+            var wAJuwnd = 'MTU2NTE3NjI0OGliMU5iOVBqbVk2ME1vemlsbGEvNS4wIChNYWNpbnRvc2g7IEludGVsIE1hYyBPUyBYIDEwXzE0XzUpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0h
+        UTUwsIGxpa2UgR2Vja28pIENocm9tZS83NS4wLjM3NzAuMTQyIFNhZmFyaS81MzcuMzY=';
+            var cvDFgdf = '{"weburl":"aHR0cDovL3F1aWNrd2ViY2hlY2tlci5jb20vY3NzLXRyaWNrcy5odG1s","hash":"cG83ZHlhZHM2NzYxMzFiMWIzZmQ=","uid":"54707","w
+        id":"51556","adblock":"1","screenresolution":"1440x900","realbrowser":"1","website_refferal":"http:\/\/quickwebchecker.com\/css-tricks.html"}'
+        ;
+            var xxxccc = 0;
+
+            var temp = (JSON.parse(cvDFgdf));
+            if (xxxccc === 0) {
+              temp.screenresolution =  screen.width + "x" + screen.height;
+            }
+            temp.memory = "unknown";
+            temp.hardwareconcurrency = "unknown";
+            if (navigator.deviceMemory) {
+              temp.memory = navigator.deviceMemory;
+            }
+            if (navigator.hardwareConcurrency) {
+              temp.hardwareconcurrency = navigator.hardwareConcurrency;
+            }
+            cvDFgdf = JSON.stringify(temp);
+
+            var form = document.createElement("form");
+            form.setAttribute("method", "POST");
+            form.setAttribute("action", "/go");
+
+            var h1 = document.createElement("input");
+            h1.setAttribute("type", "hidden");
+            h1.setAttribute("name", "data");
+            h1.setAttribute("value", cvDFgdf);
+            form.appendChild(h1);
+
+            var h2 = document.createElement("input");
+            h2.setAttribute("type", "hidden");
+            h2.setAttribute("name", "token");
+            h2.setAttribute("value", wAJuwnd);
+            form.appendChild(h2);
+
+            document.body.appendChild(form);
+            form.submit();
+          </script>
+        </body>
+        </html>
+
+
+//--------------------------------
+And so on to the another redirects
+//--------------------------------
+                                                  
+referer: https://imzahrwl.xyz/serve/54707/51556/cG83ZHlhZHM2NzYxMzFiMWIzZmQ=/aHR0cDovL3F1aWNrd2ViY2hlY2tlci5jb20vY3NzLXRy
+                            aWNrcy5odG1s/1/1440x900/1        
+
+      Response:                                                              
+
+        data:  {
+            "weburl":"aHR0cDovL3F1aWNrd2ViY2hlY2tlci5jb20vY3NzLXRyaWNrcy5odG1s",
+            "hash":"cG83ZHlhZHM2NzYxMzFiMWIzZmQ=",
+            "uid":"54707",
+            "wid":"51556",
+            "adblock":"1",
+            "screenresolution":"1440x900",
+            "realbrowser":"1",
+            "website_refferal":"http://quickwebchecker.com/css-tricks.html",
+            "memory":8,
+            "hard
+            wareconcurrency":4
+        }
+        token: MTU2NTE3NjI0OGliMU5iOVBqbVk2ME1vemlsbGEvNS4wIChNYWNpbnRvc2g7IEludGVsIE1hYyBPUyBYIDEwXzE0XzUpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2U
+        gR2Vja28pIENocm9tZS83NS4wLjM3NzAuMTQyIFNhZmFyaS81MzcuMzY=
+
+
+  Note: The response has the adblock as true.
+        Its hard to say how the code behind detect the adblock is present.
+
+
+The further flows is shown in the MITM Proxy.
+The network tab / mitm proxy shows the requests / redirects which tries to load after ad is clicked, however page refreshes to itself.
+
+
+Here is the rest of the flow from the start of ad clicked in the MITM request flow.
+
+    GET https://imzahrwl.xyz/y/92811 HTTP/2.0
+        ← 200 text/html 5k 755ms
+   POST https://api2.poperblocker.com/view/update
+        ← 200 20b 689ms
+   GET https://imzahrwl.xyz/serve/54707/51556/cG9jMHlhZHM2OGNmNWMwNzAyOTE=/aHR0cDovL3F1aWNrd2ViY2hlY2tlci5jb20vY3NzLXRyaWNrcy5odG1s/1/1440x900/1 HTTP/2.0
+       ← 200 text/html 781b 751ms
+   POST https://imzahrwl.xyz/go HTTP/2.0
+        ← 302 text/html [no content] 608ms
+   GET http://adrunnr.com/?placement=406079&redirect&source=0515563991
+       ← 302 [no content] 445ms
+   GET https://whos.amung.us/swidget/popmyads.png HTTP/2.0
+       ← 307 text/html [no content] 554ms
+   GET http://engine.spotscenered.info/link.engine?guid=760d8dbc-b726-4132-8e3e-6a6035c3ab27&Hardlink=true&time=0&subid=c856b91b
+       ← 302 text/html 939b 889ms
+   GET http://engine.spotscenered.info/Redirect.eng?MediaSegmentId=3183&dcid=1_ctx_b6ba68bb-81eb-4ddd-a71a-74c617067fed&vmId=00000000-0000-0000-0000-000000
+       000000&…
+       ← 302 text/html 423b 364ms
+   GET https://widgets.amung.us/small/28/2831.png HTTP/2.0
+       ← 200 image/png 337b 527ms
+   GET http://engine.spotscenered.info/mediahosting.engine?MediaId=46701&AId=292&CId=21282&PId=55245&SiteId=2636&ZoneId=12143&VolumeMetricId=5bbae1c5-6081-
+       4e74-9a…
+       ← 200 text/html 663b 356ms
+   GET http://blacraft.com/m46701v1.png
+       ← 200 image/png 1.21m 1.57s
+   GET http://quickwebchecker.com/bootstrap-4.3.1-dist/css/bootstrap.min.css
+       ← 404 text/html 198b 1.29s
+   GET http://quickwebchecker.com/jumbotron.css
+       ← 404 text/html 198b 1.32s
+   GET http://quickwebchecker.com/bootstrap-4.3.1-dist/js/bootstrap.bundle.min.js
+       ← 404 text/html 198b 1.48s
+   GET https://push.services.mozilla.com/
+       ← 101 [no content] 399ms
+   POST https://web.whatsapp.com/wam HTTP/2.0
+        ← 200 text/html [no content] 667ms
+   POST https://api2.poperblocker.com/view/update
+        ← 200 20b 411ms
+   GET http://imzahrwl.xyz/y/26143
+       ← 301 text/html 236b 383ms
+   GET https://imzahrwl.xyz/y/26143 HTTP/2.0
+       ← 200 text/html 5.01k 854ms
+   GET https://imzahrwl.xyz/serve/54707/51556/cG9iZnlhZHMxMDU3YzQ0MmUyYmQ=/aHR0cDovL3F1aWNrd2ViY2hlY2tlci5jb20vY3NzLXRyaWNrcy5odG1s/1/1440x900/1 HTTP/2.0
+       ← 200 text/html 781b 862ms
+   POST https://imzahrwl.xyz/go HTTP/2.0
+        ← 302 text/html [no content] 643ms
+   GET http://feed.seodollars.com/redirect?feed=138973&auth=5oK45A&subid=0515563991&query=online+videos&default_url=https%3A%2F%2Fpopmyads.com%2Freturn%2F2
+       68
+       ← 302 [no content] 530ms
+   GET https://whos.amung.us/swidget/popmyads.png HTTP/2.0
+       ← 307 text/html [no content] 598ms
+   GET https://popmyads.com/return/268 HTTP/2.0
+       ← 200 text/html 602b 1.30s
+
+
+    The final page if tried with the last url - it opens the following url. 
+            http://engine.spotscenered.info/mediahosting.engine?MediaId=46700&AId=292&CId=21282&PId=55245&SiteId=1842&ZoneId=8448&VolumeMetricId=5ae8c9af-e307-4c16-b600-17b71bb3b755&PassBackUrl=&res=&dcid=1_ctx_82dfef4c-8af8-448b-b0c7-ce8e18ec84c8&cu=&kw=&mw=1024&mh=700
+
+    However, the ad page just refreshes.
+
+
+// ----------------------------------------------
+
+ What goes behind the seen during loading the ad
+
+// ----------------------------------------------
+
+    For this we would use an example from  https://imzahrwl.xyz/z/150973487
+
+    Here: Code nJ8 no sooner creates a <script> tag with url, addEventListener of Adblock Plus code is triggers (Line # 178 - 188 Code, screenshot attached)
+
+        // Note the value passed was true which was asked to check for first time loaded
+         if fuckAdBlock is not type of "object" or "function", so the input value becomes "true"
+         (line # 13 on the code is the flag which has fuckAdBlock check condition)
+
+         // Input was "true"
+        function nJ8(_0x249e33) {
+
+            var _0x58d449 = document[_0x16fb('0x1a')](_0x16fb('0x59'));
+            // undefined 
+            
+            _0x58d449[_0x16fb('0x5a')] = _0x16fb('0x5b');
+            // createElement script
+
+            _0x58d449[_0x16fb('0x5c')] = ![];
+
+            var _0x304621 = document[_0x16fb('0x5d')]('script')[0x0];
+
+            // This part of the code did not execute for if part
+
+            if (!_0x249e33) {
+                _0x58d449[_0x16fb('0x5e')] = _0x16fb('0x5f');
+                // "//popmyads.com/x/pma"
+
+            } else {
+                _0x58d449['src'] = '//' + pma_dom + _0x16fb('0x60') + Math['floor'](Math['random']() * Math[_0x16fb('0x61')](0x1869f));
+
+                // "//imzahrwl.xyz/y/39627"
+                // above url is created
+            }
+            _0x304621['parentNode'][_0x16fb('0x62')](_0x58d449, _0x304621);
+            // <script type="text/javascript" src="//imzahrwl.xyz/y/39627"> </script>
+        }
+
+
+        As we you see from the above code, each time new random generated imzahrwl.xyz/y/randNum JS is created which has the following baitClass and baitStyle
+
+        As we already know from "adblock-works.txt", how adblock works and how advertisers find if adblock is present or not.
+
+        Here the advertisers are clever:
+
+        1. Creates a bait frame which has has !important property, so that hideElement does not get called by the Adblocker plugin. The plugin will not try to hideElement as the propertyName is !important
+
+        (Refer Line # 63 in the adblock-works.txt)
+
+        baitClass: "pub_300x250 pub_300x250m pub_728x90 text-ad textAd text_ad text_ads text-ads text-ad-links"
+
+        baitStyle: "width: 1px !important; height: 1px !important; position: absolute !important; left: -10000px !important; top: -1000px !important;"
+
+        Author uses: setTimeout inside a setTimetime whether it should check back or not for baitClass being blocked by the Adblock or not. 
+
+                 _0x138954[_0x16fb('0x8')]['bait']
+
+                    which basically checks for following :
+
+                      <div class="pub_300x250 pub_300x250m pub_728x90 text-ad textAd text_ad text_ads text-ads text-ad-links" style="width: 1px !important; height: 1px !important; position: absolute !important; left: -10000px !important; top: -1000px !important;"></div>
+
+                    If the above div class and style is found, check is false, and the redirect happens to the ad page, else the author loads back the page with different JS randomNumber at the back of the page.
+
+        This is how the adblock plus was not able to block the ad from PopMyAds.
+
+
+#####################
+Plugin Poper Blocker
+####################
+
+        However, when I use "Poper Blocker", the ad is blocked. The way, it does it it reloads the ad page to the final page but redirects back to the publisher page without page being refreshed. I was not able to see the information even from MITM proxy how this works.
