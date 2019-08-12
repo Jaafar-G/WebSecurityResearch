@@ -76,3 +76,14 @@ Plugin Used:
 
         Note: PopAds.net was the only Adnetwork that we analyzed for BANNER that had an overlay banner which created 
         both tab under and pop under.
+
+     3) Brave Browser - Brave browser is the adblocker, privacy focused, and TOR enabled browser. Following is the blocking experience in brave browser.
+
+        1) Adsterra (phani-vadrevu@site) - Banner blocked, and Ad blocked
+        2) Hilltop (index.html) - Ad not blocked
+        3) PopMyAds (css-tricks.html) - Ad blocked
+        4) Revenue hits (js-tricks.html) - Ad not blocked
+        5) Admaven  (events.html) -  Ad not blocked
+        6) For PopAds (html-tricks.html) - Ad blocked
+        
+

@@ -3,6 +3,11 @@
     quickwebchecker.com/events.html
 // -------------------------------------------
 
+    // Script in the head added
+
+        <script data-cfasync="false" src="//d1b0fk9ns6n0w9.cloudfront.net/?nkfbd=797687"></script>
+
+    // Flow start
 
      GET http://d1b0fk9ns6n0w9.cloudfront.net/?nkfbd=797687
              ← 200 36.82k                           (Resolved IP: 52.84.225.21)
@@ -173,5 +178,6 @@
 
 
 
+           https://nanolinglacci.info/TEJNQWEtICA1
 
 
