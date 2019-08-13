@@ -84,7 +84,7 @@ $ip_err = "Please enter IP";
                             <label>Search by IP Address </label> <br />
 			    <input type="radio" name="store" value="yes"> Display and Store Data <br>
                             <input type="radio" name="store" value="no"> Display Only Data <br> <br />
-                            <input type="ip" name="ip" class="form-control">
+                            <input type="text" name="ip" class="form-control">
                         </div>
                         <div class="form-group">
                             <input type="submit" class="btn btn-primary" value="submit">

@@ -97,12 +97,12 @@
 		$result=curl_exec ($ch);
 		$status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 		echo '<p align="center">status = '.$status_code.'</p>';
+		$json = '';
 		if ($status_code == 200) { // OK
 	  		$json = json_decode($result, true);
-			$store = json_encode($json, JSON_PRETTY_PRINT);
 			echo '<pre>'.json_encode($json, JSON_PRETTY_PRINT).'</pre>';
 		} else {  // Error occured
-			$json = json_decode($result);
+			$json = json_decode($result, true);
 			echo '<pre>'.json_encode($json, JSON_PRETTY_PRINT).'</pre>';
 		}
 		curl_close ($ch);
@@ -120,14 +120,15 @@
 		if ($type == 'domain') {
 		   $doc =[
 	                '_id' => new MongoDB\BSON\ObjectID,
-			'domain' => $_POST['domain'],
-                        'domainInfo' => $store
+			'domain' => mysql_escape_string($_POST['domain']),
+                        'domainInfo' => $json
                    ];
+		
                 } else if ($type == 'ip') {
 			$doc = [
             		'_id' => new MongoDB\BSON\ObjectID,
                         'ip' => $_POST['ip'],
-            		'ipInfo' => $store
+            		'ipInfo' => $json
           		];
 		}
     		$bulk->insert($doc);
