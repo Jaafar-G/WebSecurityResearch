@@ -130,3 +130,95 @@ movie.splendidsearch.com                    104.27.177.208
         sug.splendidsearch.com
         video.splendidsearch.com    
 
+
+
+// Analysis
+
+
+// Adsterra 4 Ips resolved: 198.134.112.241, 198.134.112.242, 198.134.112.243, 198.134.112.244
+
+// All these domains are under Webair Internet Development Company Inc 
+
+// The site webair.com is a hosting/cloud services company and has 4 different data centers: 
+    NewYork
+    Lost Angeles
+    Amsterdam
+    Montreal
+
+// Loaded script via 2 main domains
+    pl14475563.pvclouds.com             213.196.2.1
+    bcloudhost.com                      213.196.2.1
+
+    These IP addresses belong to servers.com. This is a hosting/cloud management company located at Amsterdam, Netherlands
+    
+// while loading the above script a new script "http://ie8eamus.com/sfp.js" is loaded. 
+   Note: This script is from the config variable that is on the first JS file "http://pl14475563.pvclouds.com/27/a4/3b/27a43b8438454dd86d9518c8a3ddeea7.js"
+
+    Looked into the mapping IP resolution and found that 172.64.193.25 had different targeted domains for ads purpose.
+        Example:
+                gibberish domain names used for adult site. Example: cdn.xvidzz.com, y4xy4x.com
+                Politics, Celebrity, New, Media targeted - emisorasunidas.com, www.wnd.com
+                security, network and web - supremesecurityteam.com
+                bitcoin, money - portaldobitcoin.com
+
+    Point here: Cheap adnetwork are themselves advertisers [Donot know how much percentage .. ]
+                We can calculate percentage by finding the refer=DOMAIN_NAME from VT or Public search of the code embded
+
+// These all domains are resolved to above adsterra IPs 198.134.112.241, *.242, *.243, *.244.
+
+    Question ??
+        Expire property 7 days (604800 / 86400 = 7)
+
+    http://myornamenti.com/
+    http://cjl58f3agc.com/
+    http://bnsjb1ab1e.com/
+    http://l6b587txj1.com/
+    http://65vk1fba34.com/
+    http://susm0q6jys.com/
+    http://yr9n47004g.com/
+    http://0byv9mgbn0.com/
+
+    Similary: urldelivery.com, and ouh3igaeb.com are associated to the adsterra's IP resolutions
+
+
+    3.securefinds1.com          173.192.101.27
+        When I use dig for 173.192.101.27 it shows as softlayer.com
+        softlayer.com           This is a cloud service hosting company
+
+     gotoapp8.com - registered location to Panama
+     gotoapp8.com                        104.27.188.26
+     gsafe.getawesome2.com               172.64.131.15
+     cherami-cloud.com                   104.27.142.196
+     movie.splendidsearch.com            104.27.177.208
+
+     The above IPs are related to Cloudflare.com
+     The domain names (goto*, gsage.getawesome*) got registered via namecheap.com, Panama City, Panama 
+     These above 4 domains seems in relation to each other with the pattern 104.27** and 172.64*
+
+    
+    # Analysing number of domains resolved with respect to months wise for a period of 1 year    
+
+    Date resolved                          Count
+    "last_resolved": "2019-08-*             404              
+    "last_resolved": "2019-07-*             167
+    "last_resolved": "2019-06-*             29
+    "last_resolved": "2019-05-*             14
+    "last_resolved": "2019-04-*             23
+    "last_resolved": "2019-03-*             28
+    "last_resolved": "2019-02-*             35
+    "last_resolved": "2019-01-*             17
+    "last_resolved": "2018-12-*             20
+    "last_resolved": "2018-11-*             23
+    "last_resolved": "2018-10-*             80
+    "last_resolved": "2018-09-*             22
+    "last_resolved": "2018-08-*             62
+
+    Comparison of last year, the domain resoltion is higher esp for July and August 2019
+
+    Note:
+        It would be interesting to find the relationship of numbers increase
+        I see some domain names are associated with Election, holiday or target time basis Ex. Black fridays, Chritsmas etc ..
+
+    // 18 days before abstract submission
+    // 25 days before paper submission
+

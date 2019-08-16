@@ -198,7 +198,7 @@ The sample template of the MAC User with alert message.
 
                                  runTests: function() {
 
-                                     # feature is the above list of AddTestParams. In our case it has only fals points assigned with some digit. The 
+                                     # feature is the above list of AddTestParams. In our case it has only false points assigned with some digit. The 
                                      true points are empty.
                                                         # initial resultsBit is zero, and featureIdx is assigned digit to each addParamTests
                                                         # featureIdx is the counter (incremental counter for the loop)
@@ -537,7 +537,6 @@ Step 9: https://3.securefinds1.com/adServer/aff?
                   aes:             1
 
 
-
 Step 9. http://wwww.gotoapp8.com/static/wi/?
 
                   tp:                iw
@@ -588,7 +587,10 @@ Response [HTML Code]:
             </script>
             </html>
 
-            
+            // www.givemeofferlnk.com, www.gettheapplinkff.com
+            // www.gotoapp1.com
+            // www.privatelycenter.net
+            // gsafe.getawesome2.com
 
 
 Step 10: https://gsafe.getawesome2.com/wim/static/wi/main.html?
@@ -806,8 +808,6 @@ Step 13: https://www.cherami-cloud.com
 Final ad: 
 
 https://gsafe.getawesome2.com/wim/static/wi/main.html?tp=iw&cid=8319&v=14&gnum=1&clickid=00138709p074553032446&cachecode=%2FWUWW%2B41H6pwflS1YSBfmw%3D%3D%3AZmVkY2JhOTg3NjU0MzIxMA%3D%3D&ctag=14375955&aes=1
-
-
 
         // Clicking again after page is loaded on the same ad
 

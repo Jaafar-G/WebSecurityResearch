@@ -35,7 +35,7 @@ Plugin Used:
 
     1) Poper blocker : Blocking experience analysis on the basis of the browser mode for tab under
 
-        NonIncognito:
+        Normal:
 
             1) Hilltop (index.html) - blocked occasionally, plugin not consistent 
             2) Admaven  (events.html) - blocked occasionally, plugin not consistent 
@@ -85,5 +85,5 @@ Plugin Used:
         4) Revenue hits (js-tricks.html) - Ad not blocked
         5) Admaven  (events.html) -  Ad not blocked
         6) For PopAds (html-tricks.html) - Ad blocked
-        
+
 

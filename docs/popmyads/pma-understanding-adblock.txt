@@ -16,8 +16,7 @@ The above JS code redirects to the bottom code which has adblock is present or n
 
 This part of the code request brings a response as adblock as true:
 
-https://imzahrwl.xyz/serve/54707/51556/cG83ZHlhZHM2NzYxMzFiMWIzZmQ=/aHR0cDovL3F1aWNrd2ViY2hlY2tlci5jb20vY3NzLXRyaWNrcy
-                        5odG1s/1/1440x900/1
+https://imzahrwl.xyzserve/54707/51556/cG83ZHlhZHM2NzYxMzFiMWIzZmQ=/aHR0cDovL3F1aWNrd2ViY2hlY2tlci5jb20vY3NzLXRyaWNrcy5odG1s/1/1440x900/1
 
 
       // This has the following response.
