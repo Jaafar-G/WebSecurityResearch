@@ -168,3 +168,84 @@ members.bet365.com                      5.226.176.7
     IP Resolutions
         178.237.172.39
         5.226.176.7
+
+
+
+
+
+----------------------
+ Fake Software (1)
+----------------------
+
+PopAds.net
+    - IP resolved 216.21.13.13, 216.21.13.12
+    - Total Uptime Technologies, LLC, US (https://totaluptime.com/), Cloud Services
+    - Registered and operated as Tomksoft S.A., Company established in Costa Rica and has offices in Poland and USA
+    - Has a bad reputation and repitive attacks history : http://stopmalvertising.com/malvertisements/is-trafficrevenue.net-a-victim-or-not.html
+    - Article on PopAds being one of the adnetwork that filters out proxy, and bot supporting 100 different countries, and one of the oldest ad network (2010) : https://www.mobidea.com/academy/popads-review/
+    - Apparently, it is not able to filter to filer MITM Proxy ??
+
+-------------
+Before Click
+-------------
+
+[304] c.adsco.re                                104.17.166.186
+                                                    cdn77.com, Content Delivery Network
+
+[200] adsco.re                                  162.252.214.5
+                                                    Totaluptime.com
+
+[200] serve.popads.net                          216.21.13.17
+                                                    Totaluptime.com
+
+[404] click.expmediadirect.com                  198.134.116.30
+                                                    Webair Internet Development Company Inc.
+
+[200] serve.popads.net                          216.21.13.17
+
+[200] handicap.asiatic.net                      104.18.47.190
+                                                    Cloudflare
+
+[302] www.bet365.com                            5.226.176.16
+                                                    Hillside New Media Net
+                                                    16 resolutions
+                                                        bet33335.com
+                                                        bet33338.com
+                                                        bet365.com
+                                                        bet365affiliates.com
+                                                        extra.bet365.com
+                                                        responsiblegambling.bet365.com
+                                                        ....
+
+[302] members.bet365.com                        5.226.176.7
+                                                    Hillside New Media Net
+
+
+------------                                                   
+After Click
+------------
+
+
+[200] serve.popads.net
+[302] click.expmediadirect.com                 198.134.116.30
+[302] kromtech.net                             52.200.131.123
+
+[302] assets.kromtech.net                      52.54.161.129
+                                                    AWS
+[302] kromtech.net                             52.200.131.123
+[200] app7.kromtech.net                         
+                    Note: The subdomains of kromtech and mackpeer seems associated ..  
+
+[200] static.mackeeper.com                     54.192.151.86
+
+[200] my.rtmark.net                            188.42.160.69
+                                                    Belongs to webzilla.com, Hosting company
+[200] assets.kromtech.net                      52.54.161.129
+[200] static.mackeeper.com                     54.192.151.86
+[200] event.mackeeper.com                      34.225.31.41
+
+
+
+ 
+
+

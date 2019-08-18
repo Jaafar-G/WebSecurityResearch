@@ -71,3 +71,134 @@ fides-pol.apple.com                         17.253.83.205
         17.253.113.203
         17.253.113.204
             +34 MORE IPs
+
+
+
+------------------------------------------------
+Scareware (2) Flows - Revenue Hits Flow of Urls
+------------------------------------------------
+
+Revenue Hits - Dr. Web not recommended site
+whois based on Isreal
+
+Subdomains
+    xml.revenuehits.com
+    www.revenuehits.com
+    blog.revenuehits.com
+    support.revenuehits.com
+    filter.revenuehits.com
+    jira.revenuehits.com
+
+(revenuehits.com) IP Resolved and the respective IPs other resolved Domains depth
+
+    173.193.189.118                     ns2.ns4.ns3.ns4.ns3.www.madunixxx.ru
+                                        pinchoo.com
+                                        ppcbully.com
+                                        reports.clkoffers.com
+                                        revenuehits.com
+                                        revenuevids.com
+                                        selfadvertiser.com
+                                        theresulter.com
+                                        www.revenuehits.com
+                                        www.revenuevids.com
+    
+    192.155.195.189                     same as 173.193.189.118 
+
+
+    209.62.109.200                      myadwise.com
+                                        revenuehits.com
+                                        www.revenuehits.com
+
+    75.126.223.165                      app.selfadvertiser.com
+                                        pinchoo.com
+                                        revenuehits.com
+                                        the-bidder.com
+                                        www.pinchoo.com
+                                        www.revenuehits.com
+                                        www.revenuehits.com.
+
+
+---------------
+Flows Analysis
+---------------
+
+
+------------
+Before click
+------------
+
+[200] mybestdc.com                          108.168.193.183 (1000+ domains resolved, Revenue Hits Domains for Ads serving)
+                                                *.mybestdc.com (417 domains resolved)
+                                                *.imageshack.host (649 domains resolved)
+                                                *.apendit.com (16 domains resolved)
+                                                *.apexcdn.com (6 domains resolved)
+
+                                            108.168.193.185 (291 domains resolved, Revenue Hits Domains for Ads serving)
+                                                *.cdaz.icu 
+                                                *.vacroz.xyz 
+                                                notif.club
+
+
+                                            Note: The above domains are used for redirects with parameters such as bannerId, tagId and hybridPop tag 
+
+
+------------
+After click
+------------
+
+[302] p359246.mybestdc.com                108.168.193.183 (Revenue Hits Domains for Ads serving)
+[302] click.expmediadirect.com            198.134.116.30 (78 domains resolved, Related to ExploreAds adnetwork)
+                                                ad-maven.xml.ak-is.net (?? Why named as Admaven ??, I did dig on this found following IPs, they are all realted to LeaseWeb, Netherlands, hosting, dedicated server)
+                                                        dig ad-maven.xml.ak-is.net. 60  IN  A   85.17.31.122
+                                                        ad-maven.xml.ak-is.net. 60  IN  A   178.162.203.202
+                                                        ad-maven.xml.ak-is.net. 60  IN  A   178.162.203.211
+                                                        ad-maven.xml.ak-is.net. 60  IN  A   178.162.203.226
+                                                        ad-maven.xml.ak-is.net. 60  IN  A   178.162.217.107
+                                                        ad-maven.xml.ak-is.net. 60  IN  A   5.79.71.205
+                                                        ad-maven.xml.ak-is.net. 60  IN  A   5.79.71.225
+                                                        ad-maven.xml.ak-is.net. 60  IN  A   85.17.31.82
+                                                ad-maven.xml.ak-is2.net
+                                                bestpprofile.com
+                                                explorads.xml.ak-is2.net 
+                                                filter.hotmaracas.com
+
+                                            When I look up "click.expmediadirect.com", it loads a different adnetwork called "ExploreAds"
+
+                                            The url that opens is : https://www.explorads.media
+
+                                            When I open the sign up for explorads, it shows powered by adkernel (adkernel.com)
+  
+                                            subdomain of adkernel -> display.adkernel.com
+                                            dig display.adkernel.com (took to login page, gave me the following IP)
+                                            whois 174.137.155.141 (Webair Internet Development Company Inc.)
+
+                                            I looked in several subdomains of adkernel.com, it took me to 
+                                                dig redmine.adkernel.com
+                                                    > 95.211.106.236
+                                                whois 95.211.106.236
+                                                    LEASEWEB, Netherlands
+                                                dig beta.adkernel.com
+                                                    > 173.239.53.66
+                                                whois 173.239.53.66
+                                                    >  Webair Internet Development Company Inc
+
+                                            Similary, ExploreAds resolved to Webair Internet Development Company.
+
+                                            whois 198.134.116.30
+                                                > Webair Internet Development Company Inc.
+
+
+[302] usd.svarog-jez.com                  54.85.5.91 (Amazon AWS)
+[302] tracking.marketing                  13.229.6.134 (Amazon AWS)
+                                            whois tracking.marketing
+                                                > Organisation name Donuts Inc (https://donuts.domains/)
+
+[200] www.apple.com-scan-mac.live         52.29.39.28 (Amazon AWS)
+
+
+
+
+
+
+
+
