@@ -136,7 +136,35 @@ galleryn1.awemwh.com                    93.93.51.190
 
 ----------------------------------------------------------
 Brolock, Fake mouse, Authentication required Window Attack
-Final landed url : https://nomsuperris.ml/31stauggomicrosoftfwlinkLinkId518345/XXCall-Windows-Support99xx/
+Final landed urls : 
+    https://limited664.ga/XXCall-Windows-SupportFIRIE18664910292/
+    https://nomsuperris.ml/31stauggomicrosoftfwlinkLinkId518345/XXCall-Windows-Support99xx/
+File: *4.txt
 ----------------------------------------------------------
 
+
+[200] finized.co                                  74.117.183.163
+[200] limited664.ga                               104.18.63.25
+
+
+
+Whois 74.117.183.163  
+    WZ Communications Inc. (webazilla.com,  webhostinggeeks.com)
+
+dig limited664.ga 
+    It has 2 IPS: 104.18.62.25
+                  10.18.63.25
+
+whois 104.18.62.25 (Cloudfare)
+whois 104.18.63.25 (Cloudfare)
+
+dig nomsuperris.ml
+    108.167.146.132 (Websitewelcome.com, TX)
+    68.65.122.44     (Namecheap.com hosting)
+
+
+How ad is served?
+------------------
+In the above flow, finized.co requests has a file which has meta http-equiv to refresh with content url. 
+It has a history.pushstate with the url to redirect which fetches the final landing page.
 
