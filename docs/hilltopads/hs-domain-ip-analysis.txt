@@ -2,6 +2,11 @@
 Hilltopsads Flow of Urls
 -------------------------
 
+---------------------------
+Benign Adult Site Analysis
+---------------------------
+
+
 finized.co                              88.85.94.232
 tsyndicate                              104.17.47.101
 crptgate.com                            93.93.51.223
@@ -126,3 +131,12 @@ galleryn1.awemwh.com                    93.93.51.190
                                             gaslleryn2.awemwh.com
                                             gaslleryn3.awemwh.com
                                             www.awemwh.com
+
+
+
+----------------------------------------------------------
+Brolock, Fake mouse, Authentication required Window Attack
+Final landed url : https://nomsuperris.ml/31stauggomicrosoftfwlinkLinkId518345/XXCall-Windows-Support99xx/
+----------------------------------------------------------
+
+
