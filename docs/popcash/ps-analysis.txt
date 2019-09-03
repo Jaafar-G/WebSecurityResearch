@@ -155,6 +155,8 @@ For other examples:
 
 https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_loc_replace
 https://stackoverflow.com/questions/3332756/difference-between-window-location-href-and-top-location-href
+Also, refer to Slack Thread topic "Articles: Forced Redirects" for more info
+
 
 
 
