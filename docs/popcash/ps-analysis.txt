@@ -66,6 +66,95 @@ cdn.ywxi.net 						143.204.158.123 (Amazon)
 										143.204.158.41
 
 
+----------------------------------------------
+Ways that AdNetwork do for chains of redirect
+----------------------------------------------
+
+----------------
+1. Meta refresh
+-----------------
+ <meta http-equiv="refresh" content="1;url=https://kingsofpush.com/gw2?sub=kUS25QDN0000341007LJ136K905I87WF0TPC1AFa499J08LQ05I8700&sub2=182535&sub3=uAwz8RsPPrUhD09wCc3k
+&url=https%3A%2F%2Fmobi.raddrat.com%2Fdesk%2Ff6612a1d516725be822f3424f22fe64f%2Fe3513143202a282b3c89436ac2877991%2F3ecc53b1-8178ea3d-4ccc2ad9-9a5c-52dd%2F%3FSubid%3D579%26sub_
+pubid%3D182535%26externalid%3Dbmconv_20190903135940_8bb451db_7454_467f_9beb_78e1341939c2&vId=bmconv_20190903135940_8bb451db_7454_467f_9beb_78e1341939c2&hash=12951695aa65a83b39
+92&ete=true&pn=true" />
+
+---------------------
+2. History pushState
+---------------------
+
+    try {
+                history.pushState({page: 1}, "Loading...",
+"/MB45H/b-cm/evY1/Oa9nMggva6VIkIDwEp1B2oKI6uPNAlGkHpA8DHYvA2DpYzHoSbA/PeZkYww3PvQalYr2T5hY2bdWoQ8Q5hk?ori=6x&ex=2&pbi=5d6e55aaaea069.085517591");
+                history.pushState({page: 2}, "Loading...",
+"/MB45H/b-cm/evY1/Oa9nMggva6VIkIDwEp1B2oKI6uPNAlGkHpA8DHYvA2DpYzHoSbA/PeZkYww3PvQalYr2T5hY2bdWoQ8Q5hk?ori=6x&ex=3&pbi=5d6e55aaaea069.085517592");
+                history.pushState({page: 3}, "Loading...",
+"/MB45H/b-cm/evY1/Oa9nMggva6VIkIDwEp1B2oKI6uPNAlGkHpA8DHYvA2DpYzHoSbA/PeZkYww3PvQalYr2T5hY2bdWoQ8Q5hk?ori=6x&ex=4&pbi=5d6e55aaaea069.085517593");
+                history.pushState({page: 4}, "Loading...",
+"/MB45H/b-cm/evY1/Oa9nMggva6VIkIDwEp1B2oKI6uPNAlGkHpA8DHYvA2DpYzHoSbA/PeZkYww3PvQalYr2T5hY2bdWoQ8Q5hk?ori=6x&ex=5&pbi=5d6e55aaaea069.085517594");
+                history.pushState({page: 5}, "Loading...",
+"/MB45H/b-cm/evY1/Oa9nMggva6VIkIDwEp1B2oKI6uPNAlGkHpA8DHYvA2DpYzHoSbA/PeZkYww3PvQalYr2T5hY2bdWoQ8Q5hk?ori=6x&ex=6&pbi=5d6e55aaaea069.085517595");
+                history.go(5);
+    }
+    catch (i) {
+    }
+
+----------------
+ 3) Settime out
+-----------------
+
+ <!DOCTYPE html>
+ <html lang='en'>
+ <head>
+   <title>Landing</title>
+   <meta name='referrer' content='no-referrer'>
+   <script>
+     function re(){
+         window.location.href = 'https://www.onlinecleanern.icu/lp/gsmob/?fd=xps&x-context=M2019090311-326dd657c1afcc258c3e53af3810c5db&utm_source=wgsmbi&utm_campaign=wgsmbi&pxl=WGS4619_WGS4521_RUNT&utm_pubid=579&override=1';
+     }
+   </script>
+
+ </head>
+ <body onload='setTimeout(re, 295);'>
+   <a href='http://mobi.raddrat.com/track?txId=M2019090311-326dd657c1afcc258c3e53af3810c5db&traffic_source_id=3ecc53b1-8178ea3d-4ccc2ad9-9a5c-52dd&sub_id=579&offer_id=39e8699e-ee8be289-f5b348b4-7183-c83c&type_traffic=1'>
+     <img src='http://mobi.raddrat.com/offer.png' alt='tracking'/>
+   </a>
+ </body>
+ </html>
+
+--------------------
+4) Form submit (JS)
+---------------------
+
+Dynamically create form and submit
+Example: 
+https://stackoverflow.com/questions/133925/javascript-post-request-like-a-form-submit
+
+Note: Need to find the similar one, could not remember as of now
+TODO to see the exisiting other MITM flows
+
+---------------------------------
+5) Location replace (usually top)
+----------------------------------
+
+<script type="text/javascript">
+  x=window.innerWidth||0;
+  y=window.innerHeight||0;
+  if (typeof document.documentElement != 'undefined') {
+  ?x=document.documentElement.clientWidth;
+  ?y=document.documentElement.clientHeight;
+  }
+  if (document.body !== null) {
+  ?x=document.body.clientWidth;
+  ?y=document.body.clientHeight;
+  }
+  top.location.href=("/ad/ad?p=244802&w=503759&t=c95a44befcaa8d2f&r=aHR0cCUzQS8vcXVpY2t3ZWJjaGVja2VyLmNvbS9hYm91dC11cy5odG1s&vw="+x+"&vh="+y).replace(/\/$/, "");
+</script>
 
 
-										
+For other examples:
+
+https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_loc_replace
+https://stackoverflow.com/questions/3332756/difference-between-window-location-href-and-top-location-href
+
+
+
