@@ -23,3 +23,49 @@ Final Ad Landing Page upon clicked the page:
         https://dopor.info/?directlink=1&code_type=1&sid=869855&subid=863942#pc187152&echck=165933.7554264
 
         This page blank.
+
+
+------------------------------------
+ Analysis from US 
+ Fakesoftware-popcash-us-ie-window-1*
+------------------------------------
+
+Before
+------
+cdn.popcash.net 					94.31.29.128 (PopunderJS code fetch)
+										Zayo UK - IP Engineering
+dcba.popcash.net 					54.210.200.95
+	Domain Siblings
+		cdn.popcash.net
+		www.popcash.net
+		ps.popcash.net
+		sp.popcash.net
+		members.popcash.net
+		static.popcash.net
+		push.popcash.net
+		pushads.popcash.net
+		cdn-alt.popcash.net
+		redirector.popcash.net
+		cdn2.popcash.net
+		tb.popcash.net
+		web1.popcash.net
+
+After
+-----
+
+ps.popcash.net 						34.201.158.191
+rkzvytnovi.flameceramic.com			198.101.128.181 (Rackspace)
+fixmaintaindeal-restclicks.icu 		34.233.15.214  (Level 3 Parent, LLC, Data Center, Current CenturyLink)
+										100.24.228.132  (Amazon EC2)
+
+click.bounceads.net 				104.16.188.5 (Cloudflare)
+appsimpleonline.com 				104.25.100.108 (Cloudflare)
+cdn.ywxi.net 						143.204.158.123 (Amazon)
+										143.204.158.101 
+										143.204.158.15
+										143.204.158.41
+
+
+
+
+										
