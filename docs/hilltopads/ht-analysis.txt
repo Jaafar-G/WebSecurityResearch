@@ -131,7 +131,7 @@ Example:
     Resolved IP: 93.93.51.191:443
 
 
-    The response part is interesting. It has adblock code    but not much info ... (attached cradver.js)
+    The response part is interesting. It has adblock code but not much info ... (attached cradver.js)
     
     The above code loads one of the JS code which has adblock JS file
     url: 

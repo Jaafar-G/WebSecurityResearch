@@ -17,7 +17,7 @@ urls = [
 	"http://quickwebchecker.com/css-tricks.html",
         "http://quickwebchecker.com/js-tricks.html", 
         "http://quickwebchecker.com/search.html",
-	"http://quickwebchecker.com/terms-and-conditions.html"
+	"http://quickwebchecker.com/terms-and-conditions.html",
 	"http://quickwebchecker.com/events.html"
 	]
 
@@ -61,6 +61,21 @@ cmd4 = ["xdotool", "getactivewindow"]
 cmd5 = ["xdotool", "key", "End"]
 
 
+
+#close browser and start a clean slate
+def close(browser):
+   # go to the browser window containing name
+   cmd6 = ["wmctrl", "-a", browser]
+  # send keystore to browser to close current tab 
+   cmd7 = ["xdotool", "key", "Ctrl+w"]
+  # share a window with a title that contains the 'browser word name' 
+   cmd8 = ["wmctrl", "-r", browser, "-b", "add,shaded"]
+   cmd9 = ["pkill", "-f", browser]
+   closecmds = [cmd6, cmd7, cmd8, cmd9]
+   for cmd in closecmds:
+     run(cmd)
+  
+
 # For each urls visit the page and make a click
 for url in urls:
    browserState = run_browser(browser, url)
@@ -68,3 +83,6 @@ for url in urls:
      run(cmd)
      time.sleep(1)
    run(cmd3)
+   time.sleep(5)
+   close(browser)
+
