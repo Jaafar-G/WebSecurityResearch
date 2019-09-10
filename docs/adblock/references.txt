@@ -85,5 +85,9 @@ https://adblockplus.org/acceptable-ads#revenue
 [Ublock Origin, AdBlock and AdblockPlus can apply filters are collected by volunteers]
 
 
+[Filter Lists of Filter Lists Maintained as All In One Customized Adblock Lists] 
 
+It has 121 filter lists from different others.
+
+https://github.com/hl2guide/All-in-One-Customized-Adblock-List
 
