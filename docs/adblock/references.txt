@@ -1,0 +1,89 @@
+[Difference between Adblock and Adblock Plus]
+
+Adblock is specific for Malware protection
+Adblock Plus is for blocking intrusive ads.
+
+https://help.getadblock.com/support/solutions/articles/6000087894-what-s-the-difference-between-adblock-and-adblock-plus-abp-
+
+What's different?
+
+    AdBlock comes with the Malware Protection filter list already enabled. Right out of the box, so to speak, AdBlock is serving as a second line of defense against malware.
+    While both AdBlock and ABP get most of their ad-blocking mojo from EasyList, AdBlock also uses a custom list with additional filters that, among other things, block ads that other filter lists don't care about.
+    AdBlock offers several additional filter lists right in the options, including lists that protect you from trackers and remove annoyances other than ads.
+    You can disable AdBlock on individual pages. (In Firefox, ABP can also be disabled on individual pages. In Chrome, however, ABP is either on or off for the entire site.)
+    In AdBlock's advanced mode, you can see all the resources (ads and other page elements) it's blocking, hiding, and letting through.
+    AdBlock allows you to whitelist specific YouTube channels you want to support. (True fact: AdBlock is the only ad blocker that allows this.)
+    The user interface (UI). In other words, AdBlock and ABP just plain look different.
+
+
+What's the same?
+
+    You can see the number of ads blocked on a page and the total number of ads blocked since you installed AdBlock or ABP.
+    You can show the number of page ads blocked on the button in the extensions bar.
+    Both AdBlock and ABP use EasyList as their primary source of filter rules. (But refer to the note above for a major difference.)
+
+[How to add custom filter lists in Adblock]
+https://help.getadblock.com/support/solutions/articles/6000165012-how-to-create-your-own-personal-filter-list
+
+[Adblock Plus Filters Explained - Cheatsheet]
+https://adblockplus.org/filter-cheatsheet
+
+[Adblock Plus - How to write filter]
+https://help.eyeo.com/en/adblockplus/how-to-write-filters
+
+[How to use custom filter]
+https://help.getadblock.com/support/solutions/articles/6000161377-how-to-use-custom-filters
+
+[Filter lists that are built into Adblock] 
+Adblock Filter Lists
+ -- Easy List : primary list of ad-blocking filters that all ad blockers use
+ -- AdBlock Custom : cleans up a few troublesome filters from EasyList and other filters that break specific sites, and adds blocks for ad providers EasyList doesn't care about.
+
+-- Anti-Circumvention : blocks some particularly stubborn types of ads that are designed to circumvent ad blockers.
+
+See more on different filter lists at (https://help.getadblock.com/support/solutions/articles/6000066909-which-filter-lists-should-i-use-)
+
+Ex: Antisocial, Fanboy's, Malware Protection etc. 
+
+
+[Adblock Subscriptions of FilterLists : List of all filter lists]
+https://adblockplus.org/subscriptions
+
+[Link of filters and contact info]
+https://help.getadblock.com/support/solutions/articles/6000067137-how-can-i-contact-the-filter-list-maintainers-to-report-unblocked-ads-or-a-list-problem-
+
+[Adblocking behind scenes]
+https://blog.getadblock.com/a-how-to-guide-to-ad-blocking-be452ed5ed6f
+
+[What is EasyList Lite?] 
+
+EasyList Lite is new in AdBlock for Microsoft Edge and Mozilla Firefox. It's a subset of EasyList. EasyList Lite includes only the filters that actually block and hide ads on the websites people visit most. This makes it several thousand filters smaller than EasyList, and that enables AdBlock to work faster on those sites.
+
+Note: You are automatically subscribed to EasyList Lite when you install AdBlock for Microsoft Edge (Windows) or Firefox (Windows, MacOS, and Android).  
+
+https://help.getadblock.com/support/solutions/articles/6000142821-what-is-easylist-lite-
+
+[Why does AdBlock allow "non-intrusive" ads?]
+AdBlock is not involved in running the Acceptable Ads program or deciding what advertisers are allowed in. We do not get a cut of the fees large advertisers pay to join.
+
+Adblock Plus earns a significant part of its revenue from large companies that pay to be included in the Acceptable Ads whitelist. The fees large companies pay subsidize smaller companies, which can join the whitelist for free. No company can pay to whitelist ads that don't meet the criteria.
+
+Accetable Ads Criteria: (https://acceptableads.com/en/about/criteria)
+
+    Are not annoying.
+    Do not disrupt or distort the page content we're trying to read
+    Are transparent with us about being an ad
+    Are effective without shouting at us
+    Are appropriate to the site that we are on
+
+
+https://help.getadblock.com/support/solutions/articles/6000092027-why-am-i-suddenly-seeing-taboola-outbrain-and-google-ads-
+https://acceptableads.com/
+https://adblockplus.org/acceptable-ads#revenue
+
+
+[Ublock Origin, AdBlock and AdblockPlus can apply filters are collected by volunteers]
+
+
+
+
