@@ -91,3 +91,5 @@ It has 121 filter lists from different others.
 
 https://github.com/hl2guide/All-in-One-Customized-Adblock-List
 
+[How to add filter lists]
+https://github.com/hl2guide/All-in-One-Customized-Adblock-List/wiki/How-to
