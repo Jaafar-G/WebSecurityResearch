@@ -93,3 +93,15 @@ https://github.com/hl2guide/All-in-One-Customized-Adblock-List
 
 [How to add filter lists]
 https://github.com/hl2guide/All-in-One-Customized-Adblock-List/wiki/How-to
+
+[Add on to AdBlockers]
+https://github.com/hl2guide/All-in-One-Customized-Adblock-List/wiki/Recommendations
+
+	I am writing down just an info as we were suggested on WISIWIG paper that we must want to explore Ghostery and Brave browser.
+
+	Following are the complimentary addons/extensions that is recommended with Adblocker Plugins.
+
+    HTTPS Everywhere - Redirects insecure connections to secure ones, if available
+    Privacy Badger OR Ghostery - Blocks more trackers and nonsense
+    Decentraleyes - Loads JavaScript libraries from local storage
+    Emsisoft Browser Security - Blocks low reputation websites
