@@ -40,7 +40,7 @@ Ads Type Analyzed:
     3) Invisible (hidden) ads that triggers when text, link or any co-ordinate 
     of the ad page is clicked. 
 
-The ads that we analyzed were intrustive kinds. 
+The ads that we analyzed were intrusive kinds. 
 
 Conclusions:
 
