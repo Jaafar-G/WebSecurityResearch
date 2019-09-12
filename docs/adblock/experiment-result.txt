@@ -4,77 +4,82 @@ Experiment Set up:
 
 AdNetwork Tested: 
 
-	1) Admaven
-	2) Adsterra
-	3) Hilltop
-	4) PopAds
-	5) PopCash
-	6) PopMyAds
-	7) Propeller and 
-	8) Revenue Hits
+    1) Admaven
+    2) Adsterra
+    3) Hilltop
+    4) PopAds
+    5) PopCash
+    6) PopMyAds
+    7) Propeller and 
+    8) Revenue Hits
 
 Plugins used: 
-	1) Adblock
-	2) Adblock Plus
-	3) uBlock Origin
-	4) Popup Blocker and 
-	5) Ghostery
+    1) Adblock
+    2) Adblock Plus
+    3) uBlock Origin
+    4) Popup Blocker and 
+    5) Ghostery
 
 Browsers in-built adblocker used
-	1) Brave and 
-	2) Vivaldi
+    1) Brave and 
+    2) Vivaldi
 
 Platform Tested with respective to browser and plugins:
-	1) Window 10 : Edge
-	2) MacOS: Firefox, Chrome and Safari with plugins
+    1) Window 10 : Edge
+    2) MacOS: Firefox, Chrome and Safari with plugins
 
 
 Test run with fresh browser slate for each adnetwork
-	For each run in browsers clean slate private mode was turned on and 
-	tested different for each adnetwork.
+    For each run in browsers clean slate private mode was turned on and 
+    tested different for each adnetwork.
 
 Ads Type Analyzed:
-	1) Static Banner with fixed length X x Y in the page 
-	2) Popup banners that loads a banner when a page is loaded on the bottom 
-	left part of the page
-	3) Invisible (hidden) ads that triggers when text, link or any co-ordinate 
-	of the ad page is clicked. 
+    1) Static Banner with fixed length X x Y in the page 
+    2) Popup banners that loads a banner when a page is loaded on the bottom 
+    left part of the page
+    3) Invisible (hidden) ads that triggers when text, link or any co-ordinate 
+    of the ad page is clicked. 
 
 The ads that we analyzed were intrustive kinds. 
 
 Conclusions:
 
-	1) Extensions inconsistency over browsers and platfor on adblocking mechanism
-	
-	2) Safari extensions overall performance on blocking intrustive ads was   overall poor compared to same extensions for firefox, chrome and Edge
-	
-	3) Out of 5 most downloaded plugins from browsers extensions: Ghostery 
-	plugins was able to block 100% intrustive ads for firefox, chrome and Edge.
-	For safari browser Ghostery plugin was not effective with efficiency of 2/8
-	over adnetwork.
-	
-	4) Browsers such as Brave and Vivaldi which has inbuilt adblocking extensions
-	were also analyzed. Brave blocked 5/8 adnetwork where as Vivaldi was 100% 
-	ineffective in blocking any intrustive ads.  
-	
-	5) The plugins that we analyzed were effective to disable part #1 and part #2
-	of the "Ads Type Analyzed" category. For #3, most of the plugins as shown in
-	the table were not able to block. When user clicks on any text/link, the page 
-    opened either tab under/ tab over/ popunders of intrusive ads. 
+    1) Extensions inconsistency over browsers and platfor on adblocking mechanism
+    
+    2) Safari extensions overall performance on blocking intrustive ads was
+        overall poor compared to same extensions for firefox, chrome and Edge
+    
+    3) Out of 5 most downloaded plugins from browsers extensions: Ghostery 
+        plugins was able to block 100% intrustive ads for firefox, chrome and Edge.
+        For safari browser Ghostery plugin was not effective with efficiency of 2/8
+        over adnetwork.
+    
+    4) Browsers such as Brave and Vivaldi which has inbuilt adblocking extensions
+        were also analyzed. Brave blocked 5/8 adnetwork where as Vivaldi was 100% 
+        ineffective in blocking any intrustive ads.  
+    
+    5) The plugins that we analyzed were effective to disable part #1 and part #2
+        of the "Ads Type Analyzed" category. For #3, most of the plugins as shown in
+        the table were not able to block. When user clicks on any text/link, the page 
+        opened either tab under/ tab over/ popunders of intrusive ads. 
     
     6) Some adNetwork such as Adblock and Adblock were in "Acceptable Ads Program".
-    When advertisers agree to ensure their ads meet certain criteria. This is where
-    the adNetwork charge hefty price for large number of companies as part of white listing client under acceptable ads criteria. 
-    The critera for acceptable ads are:
+        When advertisers agree to ensure their ads meet certain criteria. This is where
+        the adNetwork charge hefty price for large number of companies as part of white 
+        listing client under acceptable ads criteria. 
+        
+        The critera for acceptable ads are:
 
-    	A) Are not annoying
-    	B) Do not disrupt or distor the page content while trying to read content
-    	C) Are effective without shouting at us
-    	D) Are transparent with us about being an ad
-    	E) Are appropriate to the site that we are on
+        A) Are not annoying
+        B) Do not disrupt or distor the page content while trying to read content
+        C) Are effective without shouting at us
+        D) Are transparent with us about being an ad
+        E) Are appropriate to the site that we are on
 
-    	The adNetwork that we analyzed had an intrustive ads. The #3 category of 
-    	"Ads Type Analyzed" clearly violates being transparent and being an appropriate to the site with techsupport scam, download software, notification etc. inorder to continue.  These were not only annoying but 
-    	also were disrupted. So, these ads clearly violated all the criteria 
-    	and both plugin were not able to block those ads.
+        The adNetwork that we analyzed had an intrustive ads. The #3 category of 
+        "Ads Type Analyzed" clearly violates being transparent and being an appropriate to 
+        the site with techsupport scam, download software, notification etc. inorder to continue. 
+        These were not only annoying but 
+        also were disrupted. So, these ads clearly violated all the criteria 
+        and both plugin were not able to block those ads.
 
