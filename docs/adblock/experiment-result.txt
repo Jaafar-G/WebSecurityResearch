@@ -44,7 +44,7 @@ The ads that we analyzed were intrustive kinds.
 
 Conclusions:
 
-    1) Extensions inconsistency over browsers and platfor on adblocking mechanism
+    1) Extensions inconsistency over browsers and platform on adblocking mechanism
     
     2) Safari extensions overall performance on blocking intrustive ads was
         overall poor compared to same extensions for firefox, chrome and Edge
