@@ -74,7 +74,7 @@ This has been hosted in our "terms-and-conditions.html" page.
 RevenueHits
 ===========
 
-RevenueHits has 8 ads different ads published in following pages. The mobile ones were not added for quickwebchecker. 
+RevenueHits has 8 different ad type published in the following pages. The mobile ones were not added for quickwebchecker. 
 
 Types of ads selection and their respective hosted page:
 
@@ -107,7 +107,7 @@ Types of Ads available:
     6. Native Banner
 
 
-This summarizes we have 20 pages of ads being published from 8 different as network 
+This summarizes we have 20 pages of ad being published from 8 different as network 
 as of Sep 13, 2019 of following types:
 
     1. Banner
