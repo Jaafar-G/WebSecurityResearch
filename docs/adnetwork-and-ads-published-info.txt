@@ -115,3 +115,50 @@ as of Sep 13, 2019 of following types:
     3. Webpush
  
 
+============================================
+Classifying pages based on the types of ads:
+============================================
+
+The following ads type were tested on the respective page.
+
+
+Banner
+======
+ml-libraries.html (Hilltop)
+aws-tutorial.html (RevenueHits)
+backward-propagation.html (RevenueHits - Floating Banner)
+
+
+Web Push
+========
+ml-intro.html (Admaven)
+
+Not working Hilltop's web push:
+ml-types.html (Hilltop - External Push)
+numpy-intro.html (Hilltop - Native Push)
+
+
+Shadow Box
+===========
+image-classification.html (RevenueHits)
+
+
+158 x 21 Button
+===============
+convolution-neural-network.html (Revenue Hits)
+
+
+Slider
+======
+linear-classification.html (RevenueHits)
+
+
+Topbar
+======
+modeling-neuron.html (RevenueHits)
+
+
+Popunders
+=========
+Rest pages which are not from above categories. 
+TO be written here (being lazy :P)
