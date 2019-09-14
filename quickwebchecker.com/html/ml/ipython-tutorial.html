@@ -1,0 +1,188 @@
+<html class="gr__quickwebchecker_com" lang="en"><head>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <title>Quick Web Checker - A guide to learning web development</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/jumbotron/">
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  </head>
+  <body data-gr-c-s-loaded="true">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+
+  <div class="navbar-header">
+      <a class="navbar-left" href="index.html">
+          <img src="QWC_fav2.png" alt="QWC" height="40px">
+      </a>
+  </div>
+
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="about-us.html">About Us</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Topics</a>
+        <div class="dropdown-menu" aria-labelledby="dropdown01">
+          <a class="dropdown-item" href="html-tricks.html">HTML</a>
+          <a class="dropdown-item" href="css-tricks.html">CSS</a>
+          <a class="dropdown-item" href="js-tricks.html">JavaScript</a>
+        </div>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+<main role="main">
+
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+  <div class="jumbotron">
+    <div class="container">
+      <h1 class="display-5" style="color: #009cff; font-family: Raleway"> iPython Tutorial </h1>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- Example row of columns -->
+
+    <div class="container-fluid">
+
+      <! Content goes here -->
+
+            <div class="page-content">
+              <div class="wrap">
+              <div class="post">
+
+          <header class="post-header">
+            <h1>IPython Tutorial</h1>
+          </header>
+
+          <article class="post-content">
+          <p><strong><em>(Note: some of the screenshots here may be out-of-date. However, this should still prove
+        useful as a quick intro, and for the general menu layout, etc.)</em></strong></p>
+
+        <p>In this class, we will use IPython notebooks (more recently known as 
+        <a href="https://jupyter.org/">Jupyter notebooks</a>) for the programming assignments. 
+        An IPython notebook lets you write and execute Python code in your web browser. 
+        IPython notebooks make it very easy to tinker with code and execute it in bits 
+        and pieces; for this reason IPython notebooks are widely used in scientific 
+        computing.</p>
+
+        <p><em>(Note: if your virtual environment installed correctly (as per the assignment handouts),
+        then you shouldn’t have to install from the install instructions on the website. Just
+        remember to run <code class="highlighter-rouge">source .env/bin/activate</code> in your assignment folder.)</em></p>
+
+        <!---
+        Once you have it [installed](http://jupyter.org/install.html), start it with this command:
+        --->
+
+        <p>Once you have it installed, start it with this command:</p>
+
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jupyter notebook
+        </code></pre></div></div>
+
+        <p>Once your notebook server is running, point your web browser at http://localhost:8888 to
+        start using your notebooks. If everything worked correctly, you should
+        see a screen like this, showing all available IPython notebooks in the current
+        directory:</p>
+
+        <div class="fig figcenter">
+          <img src="http://cs231n.github.io/assets/ipython-tutorial/file-browser.png" />
+        </div>
+
+        <p>If you click through to a notebook file, you will see a screen like this:</p>
+
+        <div class="fig figcenter">
+          <img src="http://cs231n.github.io/assets/ipython-tutorial/notebook-1.png" />
+        </div>
+
+        <p>An IPython notebook is made up of a number of <strong>cells</strong>. Each cell can contain
+        Python code. You can execute a cell by clicking on it and pressing <code class="highlighter-rouge">Shift-Enter</code>.
+        When you do so, the code in the cell will run, and the output of the cell
+        will be displayed beneath the cell. For example, after running the first cell
+        the notebook looks like this:</p>
+
+        <div class="fig figcenter">
+          <img src="http://cs231n.github.io/assets/ipython-tutorial/notebook-2.png" />
+        </div>
+
+        <p>Global variables are shared between cells. Executing the second cell thus gives
+        the following result:</p>
+
+        <div class="fig figcenter">
+          <img src="http://cs231n.github.io/assets/ipython-tutorial/notebook-3.png" />
+        </div>
+
+        <p>By convention, IPython notebooks are expected to be run from top to bottom.
+        Failing to execute some cells or executing cells out of order can result in
+        errors:</p>
+
+        <div class="fig figcenter">
+          <img src="http://cs231n.github.io/assets/ipython-tutorial/notebook-error.png" />
+        </div>
+
+        <p>After you have modified an IPython notebook for one of the assignments by
+        modifying or executing some of its cells, remember to <strong>save your changes!</strong></p>
+
+        <div class="fig figcenter">
+          <img src="http://cs231n.github.io/assets/ipython-tutorial/save-notebook.png" />
+        </div>
+
+        <p>This has only been a brief introduction to IPython notebooks, but it should
+        be enough to get you up and running on the assignments for this course.</p>
+
+          </article>
+
+        </div>
+
+       <! end of the content --> 
+
+
+    </div> <!-- end of container fluid -->
+
+    <hr>
+
+  </div> <!-- /container -->
+
+</main>
+
+<footer class="container">
+	<p>© QuickWebChecker Team - 2019 | <a style="color:black" href="terms-and-conditions.html"> Terms and Conditions </a> | </p>
+</footer>
+
+ <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script
+          src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script><script src="bootstrap-4.3.1-dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
+
+
+</body></html>
+

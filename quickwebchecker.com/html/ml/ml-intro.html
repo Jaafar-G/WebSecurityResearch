@@ -1,0 +1,248 @@
+<html class="gr__quickwebchecker_com" lang="en"><head>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <title>Quick Web Checker - A guide to learning</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/jumbotron/">
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  </head>
+  <body data-gr-c-s-loaded="true">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+
+  <div class="navbar-header">
+      <a class="navbar-left" href="index.html">
+          <img src="QWC_fav2.png" alt="QWC" height="40px">
+      </a>
+  </div>
+
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="about-us.html">About Us</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Topics</a>
+        <div class="dropdown-menu" aria-labelledby="dropdown01">
+          <a class="dropdown-item" href="html-tricks.html">HTML</a>
+          <a class="dropdown-item" href="css-tricks.html">CSS</a>
+          <a class="dropdown-item" href="js-tricks.html">JavaScript</a>
+        </div>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+<main role="main">
+
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+  <div class="jumbotron">
+    <div class="container">
+      <h1 class="display-5" style="color: #009cff; font-family: Raleway"> Machine Learning with Python</h1>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- Example row of columns -->
+
+    <div class="container-fluid">
+
+      <! Content goes here -->
+
+            <div class="entry-content">
+                  <p>Machine learning is a type of artificial intelligence (AI) that provides computers with the ability to learn without being explicitly programmed. Machine learning focuses on the development of Computer Programs that can change when exposed to new data. In this article, we&#8217;ll see basics of Machine Learning, and implementation of a simple machine learning algorithm using python.</p>
+            <p align="center"><strong>Setting up the environment</p>
+            <p></strong>Python community has developed many modules to help programmers implement machine learning. In this article, we will be using numpy, scipy and scikit-learn modules. We can install them using cmd command:</p>
+            <pre>pip install numpy scipy scikit-learn </pre>
+            <p>A better option would be downloading miniconda or anaconda packages for python, which come prebundled with these packages. Follow the instructions given <a href="https://docs.continuum.io/" target="_blank">here</a> to use anaconda. </p>
+            <p align="center"><strong>Machine Learning overview</strong></p>
+            <p>Machine learning involves computer to get trained using a given data set, and use this training to predict the properties of a given new data. For example, we can train computer by feeding it 1000 images of cats and 1000 more images which are not of a cat, and tell each time to computer whether a picture is cat or not. Then if we show the computer a new image, then from the above training, computer should be able to tell whether this new image is cat or not.<br />
+            Process of training and prediction involves use of specialized algorithms. We feed the training data to an algorithm, and the algorithm uses this training data to give predictions on a new test data. One such algorithm is <a href="https://www.geeksforgeeks.org/k-nearest-neighbours/">K-Nearest-Neighbor</a> classification (KNN classification). It takes a test data, and finds k nearest data values to this data from test data set. Then it  selects the neighbor of maximum frequency and gives its properties as the prediction result. For example if the training set is:</p>
+            <table border="2">
+            <tr>
+            <th>petal_size</th>
+            <th>flower_type</th>
+            </tr>
+            <tr>
+            <td>1</td>
+            <td>a</td>
+            </tr>
+            <tr>
+            <td>2</td>
+            <td>b</td>
+            </tr>
+            <tr>
+            <td>1</td>
+            <td>a</td>
+            </tr>
+            <tr>
+            <td>2</td>
+            <td>b</td>
+            </tr>
+            <tr>
+            <td>3</td>
+            <td>c</td>
+            </tr>
+            <tr>
+            <td>4</td>
+            <td>d</td>
+            </tr>
+            <tr>
+            <td>3</td>
+            <td>c</td>
+            </tr>
+            <tr>
+            <td>2</td>
+            <td>b</td>
+            </tr>
+            <tr>
+            <td>5</td>
+            <td>a</td>
+            </tr>
+            </table>
+            <p>
+            Now we want to predict flower type for petal of size 2.5 cm. So if we decide no. of neighbors (K)=3, we see that the 3 nearest neighbors of 2.5 are 1, 2 and 3. Their frequencies are 2, 3 and 2 respectively. Therefore the neighbor of maximum frequency is 2 and flower type corresponding to it is b. So for a petal of size 2.5, the prediction will be flower type b.</p>
+            <p align="center"><strong>Implementing KNN- classification algorithm using Python on IRIS dataset</strong></p>
+            </h2>
+            <p>Here is a python script which demonstrates knn classification algorithm. Here we use the famous iris flower dataset to train the computer, and then give a new value to the computer to make predictions about it. The data set consists of 50 samples from each of three species of Iris (Iris setosa, Iris virginica and Iris versicolor). Four features are measured from each sample: The length and Width of Sepals &amp; Petals, in centimeters.<br />
+            We train our program using this dataset, and then use this training to predict species of a iris flower with given measurements. </p>
+            <p>Note that this program might not run on Geeksforgeeks IDE, but it can run easily on your local python interpreter, provided, you have installed the required libraries.</p>
+            <div class="code-block">
+            <div class="code-gutter">
+            <div class="editor-buttons-container">
+            <div class="editor-buttons">
+            <div class="editor-buttons-div" title="Run and Edit">
+                                                <i id="copy-code-button" title="Copy Code" class="material-icons code-sidebar-button copy-code-button">filter_none</i></p>
+            <div  id = "run-and-edit-loader" class="ring-load"></div>
+            <p>                                    <i id="run-and-edit-button" title="Edit Code" lang="python"  class="material-icons code-sidebar-button">edit</i><br />
+                                                <i id="close-code-editor-button" title="Close Editor" class="material-icons code-sidebar-button close-code-editor-button">close</i></p>
+            <div id = "run-code-loader" class="ring-load"></div>
+            <p>                                    <i id="run-code-button" lang="python" title="Run Code and See Output" class="material-icons code-sidebar-button">play_arrow</i></p>
+            <div  id = "generate-url-loader" class="ring-load"></div>
+            <p>                                    <i id="generate-url-and-run-button" title="Run Code and Generate IDE URL" lang="python"  class="material-icons code-sidebar-button generate-url-and-run-button">link</i><br />
+                                                <i title="Dark Mode" class="material-icons code-sidebar-button dark-editor-button">brightness_4</i><br />
+                                                <i id = "edit-on-ide-button" title="Edit on IDE"  lang="python" class="material-icons code-sidebar-button edit-on-ide-button">code</i>
+                                            </div>
+            </p></div>
+            </p></div>
+            </p></div>
+            <div class= "code-container">
+            <div id="highlighter_203413" class="syntaxhighlighter nogutter  ">
+            <table border="0" cellpadding="0" cellspacing="0">
+            <tbody>
+            <tr>
+            <td class="code">
+            <div class="container">
+            <div class="line number1 index0 alt2"><code class="comments"># Python program to demonstrate </code></div>
+            <div class="line number2 index1 alt1"><code class="comments"># KNN classification algorithm </code></div>
+            <div class="line number3 index2 alt2"><code class="comments"># on IRIS dataser </code></div>
+            <div class="line number4 index3 alt1"><code class="undefined spaces">&nbsp;</code>&nbsp;</div>
+            <div class="line number5 index4 alt2"><code class="keyword">from</code> <code class="plain">sklearn.datasets </code><code class="keyword">import</code> <code class="plain">load_iris </code></div>
+            <div class="line number6 index5 alt1"><code class="keyword">from</code> <code class="plain">sklearn.neighbors </code><code class="keyword">import</code> <code class="plain">KNeighborsClassifier </code></div>
+            <div class="line number7 index6 alt2"><code class="keyword">import</code> <code class="plain">numpy as np </code></div>
+            <div class="line number8 index7 alt1"><code class="keyword">from</code> <code class="plain">sklearn.model_selection </code><code class="keyword">import</code> <code class="plain">train_test_split </code></div>
+            <div class="line number9 index8 alt2"><code class="undefined spaces">&nbsp;</code>&nbsp;</div>
+            <div class="line number10 index9 alt1"><code class="plain">iris_dataset</code><code class="keyword">=</code><code class="plain">load_iris() </code></div>
+            <div class="line number11 index10 alt2"><code class="undefined spaces">&nbsp;</code>&nbsp;</div>
+            <div class="line number12 index11 alt1"><code class="plain">X_train, X_test, y_train, y_test </code><code class="keyword">=</code> <code class="plain">train_test_split(iris_dataset[</code><code class="string">"data"</code><code class="plain">], iris_dataset[</code><code class="string">"target"</code><code class="plain">], random_state</code><code class="keyword">=</code><code class="value">0</code><code class="plain">) </code></div>
+            <div class="line number13 index12 alt2"><code class="undefined spaces">&nbsp;</code>&nbsp;</div>
+            <div class="line number14 index13 alt1"><code class="plain">kn </code><code class="keyword">=</code> <code class="plain">KNeighborsClassifier(n_neighbors</code><code class="keyword">=</code><code class="value">1</code><code class="plain">) </code></div>
+            <div class="line number15 index14 alt2"><code class="plain">kn.fit(X_train, y_train) </code></div>
+            <div class="line number16 index15 alt1"><code class="undefined spaces">&nbsp;</code>&nbsp;</div>
+            <div class="line number17 index16 alt2"><code class="plain">x_new </code><code class="keyword">=</code> <code class="plain">np.array([[</code><code class="value">5</code><code class="plain">, </code><code class="value">2.9</code><code class="plain">, </code><code class="value">1</code><code class="plain">, </code><code class="value">0.2</code><code class="plain">]]) </code></div>
+            <div class="line number18 index17 alt1"><code class="plain">prediction </code><code class="keyword">=</code> <code class="plain">kn.predict(x_new) </code></div>
+            <div class="line number19 index18 alt2"><code class="undefined spaces">&nbsp;</code>&nbsp;</div>
+            <div class="line number20 index19 alt1"><code class="functions">print</code><code class="plain">(</code><code class="string">"Predicted target value: {}\n"</code><code class="plain">.</code><code class="functions">format</code><code class="plain">(prediction)) </code></div>
+            <div class="line number21 index20 alt2"><code class="keyword">print</code><code class="plain">(</code><code class="string">"Predicted feature name: {}\n"</code><code class="plain">.</code><code class="functions">format</code></div>
+            <div class="line number22 index21 alt1"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">(iris_dataset[</code><code class="string">"target_names"</code><code class="plain">][prediction])) </code></div>
+            <div class="line number23 index22 alt2"><code class="keyword">print</code><code class="plain">(</code><code class="string">"Test score: {:.2f}"</code><code class="plain">.</code><code class="functions">format</code><code class="plain">(kn.score(X_test, y_test))) </code></div>
+            </div>
+            </td>
+            </tr>
+            </tbody>
+            </table>
+            </div></div>
+            <div class="code-editor-container"></div>
+            </p></div>
+            <div class="code-output-container">
+            <div class = "output-block">
+                                    <i id="output-icon" title="Output" class="material-icons code-sidebar-button output-icon">chevron_right</i></p>
+            <pre class="output-pre"></pre>
+            </p></div>
+            <div class = "ide-link-div">
+                                    <i id="copy-url-button" title="Copy Generated Ide URL" class="material-icons code-sidebar-button copy-url-button">filter_none</i></p>
+            <pre id="ide-url"></pre>
+            </p></div>
+            </p></div>
+            <p><B>Output: </B></p>
+            <pre>Predicted target name: [0]<br>Predicted feature name: ['setosa']<br>Test score: 0.97<br></pre>
+            <p><strong>Explanation of the program:<br />
+            </strong></p>
+            <p align="center"><strong>Training the Dataset</strong></p>
+            <ul>
+            <li> The first line imports iris data set which is already predefined in sklearn module. Iris data set is basically a table which contains information about various varieties of iris flowers. </li>
+            <li>We import kNeighborsClassifier algorithm and train_test_split class from sklearn and numpy module for use in this program.</li>
+            <li>Then we encapsulate load_iris() method in iris_dataset variable. Further we divide the dataset into training data and test data using train_test_split method. The X prefix in variable denotes the feature values (eg. petal length etc) and y prefix denotes target values (eg. 0 for setosa, 1 for virginica and 2 for versicolor). </li>
+            <li>This method divides dataset into training and test data randomly in ratio of  75:25. Then we encapsulate KNeighborsClassifier method in kn variable while keeping value of k=1. This method contains K Nearest Neighbor algorithm in it.</li>
+            <li> In the next line, we fit our training data into this algorithm so that computer can get trained using this data. Now the training part is complete.</li>
+            </ul>
+            <p align="center"><strong>Testing the Dataset</strong></p>
+            <ul>
+            <li>Now we have dimensions of a new flower in a numpy array called x_new and we want to predict the species of this flower. We do this using the predict method which takes this array as input and spits out predicted target value as output.</li>
+            <li>So the predicted target value comes out to be 0 which stands for setosa. So this flower has good chances to be of setosa species. </li>
+            <li>Finally we find the test score which is the ratio of  no. of predictions found correct and total predictions made. We do this using the score method which basically compares the actual values of the test set with the predicted values.
+                </li>
+            </ul>
+            <p>Thus, we saw how machine learning works and developed a basic program to implement it using scikit-learn module in python.</p>
+
+
+
+      <! end of the content --> 
+
+
+    </div> <!-- end of container fluid -->
+
+    <hr>
+
+  </div> <!-- /container -->
+
+</main>
+
+<footer class="container">
+	<p>© QuickWebChecker Team - 2019 | <a style="color:black" href="terms-and-conditions.html"> Terms and Conditions </a> | </p>
+</footer>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script
+          src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script><script src="bootstrap-4.3.1-dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
+
+
+</body></html>
+

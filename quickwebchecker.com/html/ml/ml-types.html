@@ -1,0 +1,176 @@
+<html class="gr__quickwebchecker_com" lang="en"><head>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <title>Quick Web Checker - A guide to learning web development</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/jumbotron/">
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  </head>
+  <body data-gr-c-s-loaded="true">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+
+  <div class="navbar-header">
+      <a class="navbar-left" href="index.html">
+          <img src="QWC_fav2.png" alt="QWC" height="40px">
+      </a>
+  </div>
+
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="about-us.html">About Us</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Topics</a>
+        <div class="dropdown-menu" aria-labelledby="dropdown01">
+          <a class="dropdown-item" href="html-tricks.html">HTML</a>
+          <a class="dropdown-item" href="css-tricks.html">CSS</a>
+          <a class="dropdown-item" href="js-tricks.html">JavaScript</a>
+        </div>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+<main role="main">
+
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+  <div class="jumbotron">
+    <div class="container">
+      <h1 class="display-5" style="color: #009cff; font-family: Raleway"> Machine Learning Types </h1>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- Example row of columns -->
+
+    <div class="container-fluid">
+          In this post I’m going to explain the types of machine learning algorithms and when you should use each of them. I particularly think that getting to know the types of Machine learning algorithms is like getting to see the Big Picture of AI and what is the goal of all the things that are being done in the field and put you in a better position to break down a real problem and design a machine learning system. <br /> <br />
+
+          Terms frequently used in this post: <br /> <br />
+
+              Labeled data: Data consisting of a set of training examples, where each example is a pair consisting of an input and a desired output value (also called the supervisory signal, labels, etc) <br /> <br />
+              Classification: The goal is to predict discrete values, e.g. {1,0}, {True, False}, {spam, not spam}. <br /> <br />
+              Regression: The goal is to predict continuous values, e.g. home prices. <br /> <br />
+
+          Types of machine learning Algorithms <br /> <br />
+
+          There some variations of how to define the types of Machine Learning Algorithms but commonly they can be divided into categories according to their purpose and the main categories are the following: <br /> <br />
+
+              Supervised learning <br />
+              Unsupervised Learning <br />
+              Semi-supervised Learning <br />
+              Reinforcement Learning <br />
+
+          Supervised Learning <br /><br />
+
+              I like to think of supervised learning with the concept of function approximation, where basically we train an algorithm and in the end of the process we pick the function that best describes the input data, the one that for a given X makes the best estimation of y (X -> y). Most of the time we are not able to figure out the true function that always make the correct predictions and other reason is that the algorithm rely upon an assumption made by humans about how the computer should learn and this assumptions introduce a bias, Bias is topic I’ll explain in another post.
+              Here the human experts acts as the teacher where we feed the computer with training data containing the input/predictors and we show it the correct answers (output) and from the data the computer should be able to learn the patterns. <br /><br />
+              Supervised learning algorithms try to model relationships and dependencies between the target prediction output and the input features such that we can predict the output values for new data based on those relationships which it learned from the previous data sets. <br /><br />
+
+          Draft <br /><br />
+
+              Predictive Model <br />
+              we have labeled data <br />
+              The main types of supervised learning problems include regression and classification problems <br />
+
+          List of Common Algorithms <br /><br />
+
+              Nearest Neighbor <br />
+              Naive Bayes <br />
+              Decision Trees <br />
+              Linear Regression <br />
+              Support Vector Machines (SVM) <br />
+              Neural Networks <br />
+
+          Unsupervised Learning <br /><br />
+
+              The computer is trained with unlabeled data. <br /><br />
+              Here there’s no teacher at all, actually the computer might be able to teach you new things after it learns patterns in data, these algorithms a particularly useful in cases where the human expert doesn’t know what to look for in the data. <br /><br />
+              are the family of machine learning algorithms which are mainly used in pattern detection and descriptive modeling. However, there are no output categories or labels here based on which the algorithm can try to model relationships. These algorithms try to use techniques on the input data to mine for rules, detect patterns, and summarize and group the data points which help in deriving meaningful insights and describe the data better to the users. <br /><br />
+
+          Draft <br /><br />
+
+              Descriptive Model <br />
+              The main types of unsupervised learning algorithms include Clustering algorithms and  <br />Association rule learning algorithms. <br /> 
+
+          List of Common Algorithms <br /><br />
+
+              k-means clustering, Association Rules <br />
+
+          Semi-supervised Learning <br /><br />
+
+          In the previous two types, either there are no labels for all the observation in the dataset or labels are present for all the observations. Semi-supervised learning falls in between these two. In many practical situations, the cost to label is quite high, since it requires skilled human experts to do that. So, in the absence of labels in the majority of the observations but present in few, semi-supervised algorithms are the best candidates for the model building. These methods exploit the idea that even though the group memberships of the unlabeled data are unknown, this data carries important information about the group parameters. <br /><br />
+          Reinforcement Learning<br /><br />
+
+          method aims at using observations gathered from the interaction with the environment to take actions that would maximize the reward or minimize the risk. Reinforcement learning algorithm (called the agent) continuously learns from the environment in an iterative fashion. In the process, the agent learns from its experiences of the environment until it explores the full range of possible states. <br /><br />
+
+          Reinforcement Learning is a type of Machine Learning, and thereby also a branch of Artificial Intelligence. It allows machines and software agents to automatically determine the ideal behavior within a specific context, in order to maximize its performance. Simple reward feedback is required for the agent to learn its behavior; this is known as the reinforcement signal.<br /><br />
+
+          There are many different algorithms that tackle this issue. As a matter of fact, Reinforcement Learning is defined by a specific type of problem, and all its solutions are classed as Reinforcement Learning algorithms. In the problem, an agent is supposed decide the best action to select based on his current state. When this step is repeated, the problem is known as a Markov Decision Process. <br /><br />
+
+          In order to produce intelligent programs (also called agents), reinforcement learning goes through the following steps: <br /><br />
+
+              Input state is observed by the agent. <br />
+              Decision making function is used to make the agent perform an action. <br />
+              After the action is performed, the agent receives reward or reinforcement from the environment.
+              The state-action pair information about the reward is stored. <br />
+
+          List of Common Algorithms <br /><br />
+
+              Q-Learning <br />
+              Temporal Difference (TD) <br />
+              Deep Adversarial Networks <br />
+
+          Use cases: <br />
+
+          Some applications of the reinforcement learning algorithms are computer played board games (Chess, Go), robotic hands, and self-driving cars. <br /><br />
+
+
+    </div> <!-- end of container fluid -->
+
+    <hr>
+
+  </div> <!-- /container -->
+
+</main>
+
+<footer class="container">
+	<p>© QuickWebChecker Team - 2019 | <a style="color:black" href="terms-and-conditions.html"> Terms and Conditions </a> | </p>
+</footer>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script
+          src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script><script src="bootstrap-4.3.1-dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
+
+
+</body></html>
+
