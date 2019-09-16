@@ -133,9 +133,8 @@ Web Push
 ========
 ml-intro.html (Admaven)
 
-Not working Hilltop's web push:
 ml-types.html (Hilltop - External Push)
-numpy-intro.html (Hilltop - Native Push)
+numpy-intro.html (Hilltop - Native Push, Not working, For HTTPS only?)
 
 
 Shadow Box
