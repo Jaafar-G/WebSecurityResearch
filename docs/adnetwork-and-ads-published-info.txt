@@ -1,0 +1,163 @@
+
+Admaven
+=======
+
+Admaven has 2 ads published in following pages:
+    
+    1. Pop : events.html
+    
+    2. Push in Page: ml-intro.html
+
+    Though there are following options available - We are being asked to further contact
+    with support team via skype, email or wait for future invitation for other types.
+
+
+    Types of ad available:
+        1. Pop: New window or new tab under or on top of your site (Popup, NewTab, Popunder, 
+                New Tabunder)
+        2. Push in Page: A push notification ad-model that is compatible for both https and
+           http. A 2 click ad model that can also be used as a player banner
+        3. Banner VPN
+        4. Push in Page Browser: A push notification model that is compatible for both http and 
+           https sites. A 2 click ad model that can also be used as a player banner and a download
+           banner
+        5. Adblock Bypass Solution: Unique adblock bypass solution offers the publisher ad
+           exposure for 100% of his traffic - offering up to 30% revenue increase
+        6. Light box : iframe lightbox window in your site
+        7. Interstitial: Redirect ad(Url shortner like) that redirects from click->ad->original
+           target)
+        8. Content blocker :  Enable your users to watch the content on your site after they
+           register to your push notifications
+
+
+PopMyAds
+========
+PopMyAds has only one kind of ads that is standard.
+It has been hosted in css-tricks.html
+
+
+Hilltop
+=======
+Hilltop has 4 ads published in following pages.
+    1. Popunder: index.html
+    2. Banner : ml-libraries.html
+    3. Push:
+        A. Exernal Push : ml-types.html
+        B. Native Push: numpy-intro.html (Did not have restriction to non-HTTPS)
+
+
+PopCash
+=======
+PopCash has only one kind of ads that is standard.
+It has been hosted in about-us.html
+
+
+PopAds
+========
+
+PopAds has 2 ads published in following pages.
+
+Adnetwork provided only 2 types of ad.
+
+    1. Standard ad: html-tricks.html
+    2. Anti-adblock Adcode: ipython-tutorial.html
+
+
+Propeller
+=========
+
+I came to see as of today (Sep 13, 2019) that it has been cancelled with some policy issue. 
+
+This has been hosted in our "terms-and-conditions.html" page.
+
+
+RevenueHits
+===========
+
+RevenueHits has 8 different ad type published in the following pages. The mobile ones were not added for quickwebchecker. 
+
+Types of ads selection and their respective hosted page:
+
+    1. Banner : aws-tutorial.html
+    2. Popunder: js-tricks.html
+    3. 158 x 21 Button: convolution-neural-network.html
+    4. Footer: 2d-neural-network.html
+    5. Floating Banner: backward-propagation.html
+    6. Mobile Interstitial: N/A (Not added because of mobile use case)
+    7. Shadwow Box: image-classification.html
+    8. Slider : linear-classification.html
+    9. Topbar: modeling-neuron.html
+    10. Mobile Dialogue: N/A (Not added because of mobile use case)
+
+
+Adsterra
+========
+
+Adsterra allows one domain per ad selection. User can select multiple checkbox options for following ad types during ad type creation. However,it does not have edit option later.
+This means, we have only Popunder ad type that is being allowed for Adsterra. So, I am 
+not allowed to edit to check other following options. I am thinking to email them and see if 
+they will allow us.
+
+Types of Ads available:
+    1. Popunder : search.html
+    2. Direct Link
+    3. Different sizes of banner: 468 x 60 Px ....
+    4. Web Push
+    5. Vast
+    6. Native Banner
+
+
+This summarizes we have 20 pages of ad being published from 8 different as network 
+as of Sep 13, 2019 of following types:
+
+    1. Banner
+    2. Popunder
+    3. Webpush
+ 
+
+============================================
+Classifying pages based on the types of ads:
+============================================
+
+The following ads type were tested on the respective page.
+
+
+Banner
+======
+ml-libraries.html (Hilltop)
+aws-tutorial.html (RevenueHits)
+backward-propagation.html (RevenueHits - Floating Banner)
+
+
+Web Push
+========
+ml-intro.html (Admaven)
+
+ml-types.html (Hilltop - External Push)
+numpy-intro.html (Hilltop - Native Push, Not working, For HTTPS only?)
+
+
+Shadow Box
+===========
+image-classification.html (RevenueHits)
+
+
+158 x 21 Button
+===============
+convolution-neural-network.html (Revenue Hits)
+
+
+Slider
+======
+linear-classification.html (RevenueHits)
+
+
+Topbar
+======
+modeling-neuron.html (RevenueHits)
+
+
+Popunders
+=========
+Rest pages which are not from above categories. 
+TO be written here (being lazy :P)
