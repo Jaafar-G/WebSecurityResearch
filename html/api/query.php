@@ -56,19 +56,22 @@ $ip_err = "Please enter IP";
 	<br /> <br /> 
 	<br /> <br />
 
-        <p align="center"><b> API Access </b></p>
+	<hr />
+        <p align="center"><b> Virus Total API Access </b></p>
+	<hr />
+
 	<br /> <br />
 
     <table align="center">
         <tr>
             <td>
                 <div>
-                    <form action="api.php" method="post">
+                    <form action="vt.php" method="post">
                         <div class="form-group">
                             <label>Search by Domain Name </label> <br />
 			    <input type="radio" name="store" value="yes"> Display and Store Data <br>
                             <input type="radio" name="store" value="no"> Display Only Data <br> <br />
-                            <input type="text" name="domain" class="form-control">
+                            <input type="text" name="vt-domain" class="form-control">
                         </div>
                         <div class="form-group">
                             <input type="submit" class="btn btn-primary" value="submit">
@@ -79,12 +82,12 @@ $ip_err = "Please enter IP";
 
             <td>
                 <div>
-                        <form action="api.php" method="post">
+                        <form action="vt.php" method="post">
                         <div class="form-group">
                             <label>Search by IP Address </label> <br />
 			    <input type="radio" name="store" value="yes"> Display and Store Data <br>
                             <input type="radio" name="store" value="no"> Display Only Data <br> <br />
-                            <input type="text" name="ip" class="form-control">
+                            <input type="text" name="vt-ip" class="form-control">
                         </div>
                         <div class="form-group">
                             <input type="submit" class="btn btn-primary" value="submit">
@@ -93,8 +96,48 @@ $ip_err = "Please enter IP";
                 </div>
             </td>
         </tr>
+   </table>
 
+	<br /> <br />
+	<br /> <br />
 
+	<hr />
+        <p align="center"><b> Public www API Access </b></p>
+	<hr />
+
+	<br /> <br />
+
+    <table align="center">
+        <tr>
+            <td>
+                <div>
+                    <form action="p3w.php" method="post">
+                        <div class="form-group">
+                            <label>Search and display</label> <br />
+                            <input type="text" name="display" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-primary" value="submit">
+                        </div>
+                    </form>
+                </div>
+            </td>
+
+            <td>
+                <div>
+                        <form action="p3w.php" method="post">
+                        <div class="form-group">
+                            <label>Search and download </label> <br />
+                            <input type="text" name="download" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-primary" value="submit">
+                        </div>
+                        </form>
+                </div>
+            </td>
+        </tr>
+</table>
 
 </body>
 </html>

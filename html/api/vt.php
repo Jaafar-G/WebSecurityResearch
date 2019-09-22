@@ -57,14 +57,14 @@
 	$toFetch = '';
         $type = '';
 
-	if (isset($_POST["domain"]) && !empty($_POST["domain"])) { 
-		$toFetch = $_POST["domain"];
-                $type = "domain";
+	if (isset($_POST["vt-domain"]) && !empty($_POST["vt-domain"])) { 
+		$toFetch = $_POST["vt-domain"];
+                $type = "vt-domain";
 	}
 
-	if (isset($_POST["ip"]) && !empty($_POST["ip"])) { 
-		$toFetch = $_POST["ip"];
-                $type = "ip";
+	if (isset($_POST["vt-ip"]) && !empty($_POST["vt-ip"])) { 
+		$toFetch = $_POST["vt-ip"];
+                $type = "vt-ip";
 	}
 
        echo '<p align="center"><center>Request Query to check : '.$toFetch.'</center></p>';
@@ -73,11 +73,11 @@
        echo "\n";
 
 		switch($type) {
-			case "domain" :
+			case "vt-domain" :
 				$data = array('apikey' => $api_key,'domain'=> $toFetch);
 				$url = 'https://www.virustotal.com/vtapi/v2/domain/report?';
 		        	break;
-			case "ip":
+			case "vt-ip":
 				$data = array('apikey' => $api_key,'ip'=> $toFetch);
 				$url = 'https://www.virustotal.com/vtapi/v2/ip-address/report?';
 				break;
@@ -117,17 +117,17 @@
              try {
     		$m = new MongoDB\Driver\Manager("mongodb://${username}:${password}@localhost/$dbName");
     		$bulk = new MongoDB\Driver\BulkWrite;
-		if ($type == 'domain') {
+		if ($type == 'vt-domain') {
 		   $doc =[
 	                '_id' => new MongoDB\BSON\ObjectID,
-			'domain' => mysql_escape_string($_POST['domain']),
+			'domain' => mysql_escape_string($_POST['vt-domain']),
                         'domainInfo' => $json
                    ];
 		
                 } else if ($type == 'ip') {
 			$doc = [
             		'_id' => new MongoDB\BSON\ObjectID,
-                        'ip' => $_POST['ip'],
+                        'ip' => $_POST['vt-ip'],
             		'ipInfo' => $json
           		];
 		}
