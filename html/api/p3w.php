@@ -38,14 +38,10 @@
         <p align="center"> | <a href="query.php"> Query More Data </a> | <a href="logout.php"> logout </a> | </p>
 	<br />
         <br />
-        <p align="center"><center>Displaying Information from Virus Total</center></p>
+        <p align="center"><center> Displaying Information from PublicWWW Service </center></p>
         <br />
 
 <?php
-
-ini_set('display_startup_errors', 1);
-ini_set('display_errors', 1);
-error_reporting(1);
 
 	// Initialize the session
 	session_start();
@@ -56,7 +52,7 @@ error_reporting(1);
     		exit;
 	}
 
-	$api_key = getenv('PUBLICWWW_API_KEY') ? getenv('PUBLICWWW_API_KEY'):'c8083f0bb52ab8f07030a3f40865ecc0';
+	$api_key = getenv('key') ? getenv('key'):'c8083f0bb52ab8f07030a3f40865ecc0';
 
 	$toFetch = '';
         $type = '';
@@ -80,7 +76,6 @@ error_reporting(1);
 		switch($type) {
 			case "display" :
 				$data = array('key' => $api_key, $toFetch);
-				$url = "https://publicwww.com/websites/";
 		        	break;
 			case "download":
 				$data = array('key' => $api_key, 'export' => 'csvu');
@@ -91,23 +86,36 @@ error_reporting(1);
 		}
 
 
-		$ch = curl_init();
-		$url .= http_build_query($data); // append query params
+		$url = 'https://publicwww.com/websites/%22'.$toFetch.'%22/?export=csvu&key=c183767cafa211d5125550136cd8ead5';
+	        $ch = curl_init();
 		curl_setopt($ch, CURLOPT_URL, $url);
-		//curl_setopt($ch, CURLOPT_VERBOSE, 1); // remove this if your not debugging
-		//curl_setopt($ch, CURLOPT_ENCODING, 'gzip,deflate'); // please compress data
-		//curl_setopt($ch, CURLOPT_USERAGENT, "gzip, My php curl client");
-		//curl_setopt($ch, CURLOPT_RETURNTRANSFER ,True);
-
-		$result=curl_exec ($ch);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER ,TRUE);
+                curl_setopt($ch, CURLOPT_TIMEOUT, 5000);
+                curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5000);
+                
+                $result=curl_exec ($ch);
+		$toArr = explode("\n", $result);		
 		$status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
 		echo '<p align="center">status = '.$status_code.'</p>';
+                echo '<h5> <center> Searched query <b> <i>'.$toFetch.' </b> </i>result found : '.count($toArr).' </center></h5>';
+
 		$json = '';
+                           
+                foreach($toArr as $val) {
+                   $toRow = explode(";", $val);
+	           $link = $toRow[0];
+                   $rank = $toRow[1];
+                   $json->$rank=$link;   
+                   
+                }
+
+
 		if ($status_code == 200) { // OK
-	  		$json = json_decode($result, true);
+	  		$toDecode = json_decode($toArr, true);
 			echo '<pre>'.json_encode($json, JSON_PRETTY_PRINT).'</pre>';
 		} else {  // Error occured
-			$json = json_decode($result, true);
+			$toDecode = json_decode($toArr, true);
 			echo '<pre>'.json_encode($json, JSON_PRETTY_PRINT).'</pre>';
 		}
 		curl_close ($ch);

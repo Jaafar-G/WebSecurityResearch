@@ -66,14 +66,14 @@ $ip_err = "Please enter IP";
         <tr>
             <td>
                 <div>
-                    <form action="vt.php" method="post">
+                    <form action="vt.php" method="post" align="center">
                         <div class="form-group">
                             <label>Search by Domain Name </label> <br />
 			    <input type="radio" name="store" value="yes"> Display and Store Data <br>
                             <input type="radio" name="store" value="no"> Display Only Data <br> <br />
                             <input type="text" name="vt-domain" class="form-control">
                         </div>
-                        <div class="form-group">
+                        <div class="form-group" align="center">
                             <input type="submit" class="btn btn-primary" value="submit">
                         </div>
                     </form>
@@ -89,7 +89,7 @@ $ip_err = "Please enter IP";
                             <input type="radio" name="store" value="no"> Display Only Data <br> <br />
                             <input type="text" name="vt-ip" class="form-control">
                         </div>
-                        <div class="form-group">
+                        <div class="form-group" align="center">
                             <input type="submit" class="btn btn-primary" value="submit">
                         </div>
                         </form>
@@ -114,30 +114,19 @@ $ip_err = "Please enter IP";
                     <form action="p3w.php" method="post">
                         <div class="form-group">
                             <label>Search and display</label> <br />
+			    <input type="radio" name="store" value="yes"> Display and Store Data <br>
+                            <input type="radio" name="store" value="no"> Display Only Data <br> <br />
                             <input type="text" name="display" class="form-control">
                         </div>
-                        <div class="form-group">
+                        <div class="form-group" align="center">
                             <input type="submit" class="btn btn-primary" value="submit">
                         </div>
                     </form>
                 </div>
             </td>
-
-            <td>
-                <div>
-                        <form action="p3w.php" method="post">
-                        <div class="form-group">
-                            <label>Search and download </label> <br />
-                            <input type="text" name="download" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <input type="submit" class="btn btn-primary" value="submit">
-                        </div>
-                        </form>
-                </div>
-            </td>
-        </tr>
+	</tr>
 </table>
+	<hr />
 
 </body>
 </html>
