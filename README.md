@@ -15,6 +15,15 @@
 
 <a href = "https://www.php.net/manual/en/book.geoip.php"> GeoIP Docs </a>
 
+## NGNIX Service Start
+
+Ensure apache is not running: sudo /etc/init.d/apache2 stop
+
+sudo fuser -k 80/tcp (For first time to open the port)
+
+sudo systemctl enable nginx.service
+
+sudo systemctl start nginx.service
 
 ## Mongo Info:
 
