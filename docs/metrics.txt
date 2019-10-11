@@ -1,0 +1,82 @@
+   Note: The data used as input was First Millionth ranking domains from
+   Domcomp. The Public WWW, results  
+
+    analysis.public_www_only.domains : These are the domains that are found from
+    search keyword and only belongs to P3W and not found in Domcomp
+
+    analysis.public_www_only.found_domains : These are the domains that are not
+    common to the scraped sites but found in DomComp under 3 Mil or 10 Mil Data
+    
+    analysis.public_www_only.not_found_domains : These are the domains that are
+    not common to the scraped sites and are not found in DomComp under 10 Mil
+    
+    Data analysis.public_www_only.total_found: Total number of found Domains
+    that were not common to scraped sites but found from Public 3W
+    
+    analysis.public_www_only.total_found_above_3_and_under_10_mil: Domains that
+    were not common and found between 3 Mil and 10 Mil Domain rank 
+    
+    analysis.public_www_only.total_found_under_3_mil : Domains that were not
+    common and found under 3 Mil Domain rank 
+
+    analysis.scraped_only: The Domains that were found in Domcomp but not in Public3W  
+
+    analysis.total_common: Total number of common domains found in both Public3W and Domcomp  
+
+    common: The common domains and their rank {'Doman': name.com, rank: 1} 
+
+    Description: Data description public_www_domains: The result returned by Public 3W 
+    after searching for tag 
+
+    scraped_domains: The total domains and their found after scraping Domcomp data 
+
+    search_tag: Tag used for searching the keyword in both Domcomp scraped data and 
+    Public wwww
+
+
+    Case I: 
+
+    Ananlysis on analysis.public_www_only.not_found_domains  
+    Tag search:
+    function(_htas) Adnetwork: Hilltop 
+
+    Public3W False Positive: 13/48 = 27.08%
+
+    The false positive result includes those sites which are either unreacheable
+    at momement or tag not present.
+
+    Among the false positives sites: For some sites such as "desbie.com" and
+    "nepaliputi.com" which were unreachable, was tracked snapshot back to Feb
+    5th, 2015 for "desbie" and June 1st, 2007 for "nepaliputi" did not find any
+    snapshot with search tag.  Similarly, sites such as "fbcinema.com" and
+    "kinobas.net" had tag some time past. For fbcinema the last snapshot with
+    search tag was found in March 20th, 2019 where as for "kinobas.net", it was
+    not found in web archieve. 
+
+
+    Case II: 
+
+    Analysis on analysis.public_www_only.found_domains 
+    Tag search:
+    function(__htas) Adnetwork: Hilltop
+
+    Public3W False Positive: 6/16, where 16 is only Public wwww found domains
+    with tag but not common or in any DomComp data
+ 
+
+    Case III: 
+
+    Overall False Positive in Public WWW Data result: 
+
+    Public3W False Positive: 6 + 13 / 67 = 19/67 = 28%, out of all Public WWWW 
+    results returned of first 3 millionth ranks
+
+    The sites in false positives are expired and unreachable domains.
+
+    Case IV: Analysis on common
+
+    The common domains rank does not match and differs with large distance in
+    ranking 
+
+
+
