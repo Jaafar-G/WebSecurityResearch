@@ -1,0 +1,53 @@
+
+uBlock origin uses  Easylist, Easy Privacy, Peter Lowe's ad /malware/malware servers, malware sites and own filter lists.
+
+I looked at each of them and found one that has tag admaven.js  that is on blocking list on Easylist
+
+Peter lowe's filter list maintains the top level ad server hostnames and IP addresses since 2000. It maps the IP addresses or hostname to 127.0.0.1 or custom IP address to be added in /etct/hosts For browsers plugins or extension: these lists are added to Proxies setting of the browsers
+
+I found Peter Lowe would be a great resources for finding what top level ad servers / IP addresses of ad servers. Link - "https://pgl.yoyo.org/as/" 
+
+Sample domain name mapped to localhost - https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&startdate%5Bday%5D=18&startdate%5Bmonth%5D=10&startdate%5Byear%5D=1999&useip=127.0.0.1 
+
+The Peter Lowe had a link refer to blogzilla Plugin (http://www.deftone.com/blogzilla/archives/ad_blocking.html) which is another adblocker for Mozilla. The link had an interesting link and materials that talks about blocking bookmarklets (removes underlines from links, images, and all iframes). Similary, the article also talks about Banner Blind extension which blocks ads based on banner sizes and a cookperm.txt (http://slack.net/~ads/) which tracks back to year  2002 url's that is to be added in computer host life. I think this will give us some history materials to talk about in paper. Similarly, bookmarklets has been a new kind of ad display that was recently used.
+
+But the weakness of Peter Lowe site it is not often maintained and contains outdated infos.
+
+Malware Domain List (https://www.malwaredomainlist.com/) and Malware Domains (http://www.malwaredomains.com) - This is another filter list that uBlock Origin uses. The site "Malware Domain List" has list of malware domains, associated ip, reverse lookup and asn.  The Malware Domain List site seems to stop updating since end of 2017. They have a result till Dec 2017.  They seem to maintain about 2400 Domains since 2009.  However, Malware Domain site seems to update frequently (http://www.malwaredomains.com/?page_id=29). The latest data is seen for October 2019 (https://mirror.cedia.org.ec/malwaredomains/)
+
+EasyList (https://easylist.to/easylist/easylist.txt) - While analyzing easylist,  I do not see a strong blocking mechanism for complex adnetwork strings such as Admaven discussed above. It has set of blocking based on 1) Block Text (ads, adserver etc), 2) Block Dimensions ( X x Y),  3) Hide Text (Class, Ids, Divs, etc) 4) Whitelist to supported third party vendors and sites. I came to find that even though these third party sites that are whitelisted in EasyList and are part of uBlock origin is blocked by uOrigin. Similary, easylist whitelisted popup and third party script loading from 1008 general Ad Servers, 1299 whitelisted domains of third party enable from Adult Adservers. Similary, Easy Privacy has filters for trackers. (https://easylist.to/easylist/easyprivacy.txt)
+
+Besides above filter lists, uBlock Origin uses it's own filter list. The following types are the categorization of different ad filter that being used.
+
+aanoyances - Uses fanboy's (https://easylist.to/easylist/fanboy-annoyance.txt) and Adguard's annoynaces (https://kb.adguard.com/en/general/adguard-ad-filters) combined and optimized list. This is mainly for blocking social media content, in page pop ups and other annoyances. 
+ref - https://github.com/uBlockOrigin/uAssets/blob/master/filters/annoyances.txt
+
+Badware - Includes sites documented to put users at risk of installing adware/crapware. 
+ref - https://github.com/uBlockOrigin/uAssets/blob/master/filters/badware.txt
+
+experimental - Inclides experimental filters. Presently, targeting to block google analytics and doubleclikc related ads filters that were not blocked by EasyList
+ref - https://github.com/uBlockOrigin/uAssets/blob/master/filters/experimental.txt
+
+
+Filter - Uses easylist's optimized and most updated version [4 days expiry period]
+ref - https://github.com/uBlockOrigin/uAssets/blob/master/filters/filters.txt
+
+Legacy - fixes earlier issues with uBlock origin
+ref - https://github.com/uBlockOrigin/uAssets/blob/master/filters/legacy.txt
+
+Privacy - The author is not clear on where does this privacy list comes from. But they look similar to EasyPrivacy.
+ref - https://github.com/uBlockOrigin/uAssets/blob/master/filters/privacy.txt
+
+Resource-abuse - Potentially absing CPU/bandwidth rresources. Author is not clear on where the filters are obtained. 
+ref - https://github.com/uBlockOrigin/uAssets/blob/master/filters/resource-abuse.txt
+
+Resources - Includes vivid types of filters such as token mime-type, audio, video related application such as noopmp3, noopmp4, cookie remover, fuckadblock Defuser (anti adblocker detection code), Adbypasser etc.  
+ref - https://github.com/uBlockOrigin/uAssets/blob/master/filters/resources.txt
+
+Unbreak - Filter lists includes to unbreak sites broken because of blocking 3rd party filter lists enabled
+ref - https://github.com/uBlockOrigin/uAssets/blob/master/filters/unbreak.txt
+
+Please note in all filter lists, the expiry time is 4 days except for legacy. So, they keep updated frequently.
+
+
+This seems clear from above that why uBlock origin performs better than any plugins. uBlock origin does not distinguish "unintrustive" and intrustive ads to display ads. It disables any script that is third party. Any filter options such as script, images, xmlhttprequest, websocket, webrtc, elemhide, generic hide are blocked by disabled. (https://help.eyeo.com/en/adblockplus/how-to-write-filters) Similary, the malware domain list site which are updated frequently along with proxy added domain list from Peter lowe are definitely a compliment to existing ad blocking mechanism. Comparing to other adblocker such as Adblock Plus (has whitelisted, and intrusive domain add program) and Ghostery (Privacy specific), Popup Blocker (mainly for pop up), uBlock origin has indepth add-on for multiple filter lists.
