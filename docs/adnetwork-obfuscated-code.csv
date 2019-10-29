@@ -1,0 +1,21 @@
+Page, Ad Network, Has Obfuscated Code, Can be deobfuscate by DE4JS
+quickwebchecker.com/index.html, Hilltop Ads, No, N/A
+quickwebchecker.com/html-tricks.html, PopAds.net, Yes, Yes
+quickwebchecker.com/js-tricks.html, Revenue Hits, No, N/A
+quickwebchecker.com/css-tricks.html, PopMyAds, Yes, Yes
+quickwebchecker.com/search.html, Adsterra, No, N/A
+quickwebchecker.com/aboutus.html, PopCash, No, N/A
+quickwebchecker.com/terms-and-conditions.html, Propeller, No, N/A
+quickwebchecker.com/events.html, Admaven, No, N/A
+quickwebchecker.com/ml/ml-intro.html, Admaven, No, N/A
+quickwebchecker.com/ml/ml-libraries.html, Hilltop Ads, No, N/A
+quickwebchecker.com/ml/ml-types.html, Hilltop Ads, No, N/A
+quickwebchecker.com/ml/numpy-intro.html, Hilltop Ads, No, N/A
+quickwebchecker.com/ml/ipython-tutorial.html, PopMyAds, Yes, Yes
+quickwebchecker.com/ml/aws-tutorial.html, Revenue Hits, No, N/A
+quickwebchecker.com/ml/convolution-neural-networks.html, Revenue Hits, No, N/A
+quickwebchecker.com/ml/backward-propagation.html, Revenue Hits, No, N/A
+quickwebchecker.com/ml/image-classification.html, Revenue Hits, No, N/A
+quickwebchecker.com/ml/linear-classification.html, Revenue Hits, No, N/A
+quickwebchecker.com/ml/modeling-neuron.html, Revenue Hits, No, N/A
+
