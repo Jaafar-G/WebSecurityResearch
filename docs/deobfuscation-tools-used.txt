@@ -1,0 +1,7 @@
+Tool:
+https://github.com/mindedsecurity/JStillery
+
+
+Supports CMD / API call for input as js file and get the deofuscation
+
+
