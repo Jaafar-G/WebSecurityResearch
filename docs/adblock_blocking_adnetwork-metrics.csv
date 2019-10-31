@@ -1,0 +1,20 @@
+
+Adnetwork, Page, AdType, Adblock Filter List, Filter list, Blocked Type
+Hilltop, http://quickwebchecker.com, Popunder, N/A, N/A, N/A
+PopMyAds, http;//quickwebchecker.com/css-tricks.html, Generic Adtype, N/A, N/A, N/A
+Revenue Hits, http://quickwebchecker.com/js-tricks.html, Popunder, /adserve/*, Easylist, Script
+PopAds, http://quickwebchecker.com/html-tricks.html, Generic Ad, ||popads.net^$third-party ||meinlnim.com^$third-party  ||qeivncvk.com^$third-party, EasyList, Script
+Admaven, http://quickwebchecker.com/events.html,Popunder, /popunder. \n ##.horizontalAd, Easylist, Image  \n ElEMHIDE
+Propeller Ads, http://quickwebchecker.com/terms-and-conditions.html, Generic, ||deloplen.com^$third-party \n ||graivaik.com^$third-party \n ||fethungi.com^$third-party, EasyList, Script \n Subdocument \n Stylesheet \n Image \n XMLRequest
+Popcash, http://http://quickwebchecker.com/about-us.html, Generic, ||popcash.net^$third-party, EasyList, Script
+Admaven, http://quickwebchecker.com/ml/ml-intro.html, Generic Ad, /popuner. \n ##.contentAd \n ##.googleAdSense \n contentad, Easylist, Image \n ElemHide
+Hilltop, http://quickwebchecker.com/ml/ml-libraries.html, Banner, N/A, N/A, N/A
+Hilltop, http://quickwebchecker.com/ml/ml-types.html, Push, N/A, N/A, N/A
+PopAds, http://quickwebchecker.com/ml/ipython-tutorial.html, Generic, ||popads.net^$third-party \n ||rrpjunmcv.com^$third-party \n ||oviwtvswp.com^$third-party, Easylist, Script
+Revenue Hits, http://quickwebchecker.com/ml/aws-tutorial.html, Banner, /adserve/*, Easylist, Script
+Revenue Hits, http://quickwebchecker.com/ml/convolution-neural-networks.html, Download, /adserve/*, Easylist, Script
+Revenue Hits, http://quickwebchecker.com/ml/linear-classification.html, Download, /adserve/*, Easylist, Script
+Revenue Hits, http://quickwebchecker.com/ml/2d-neural-network.html, Download, /adserve/*, Easylist, Script
+Revenue Hits, http://quickwebchecker.com/ml/backward-propagation.html, Download, /adserve/*, Easylist, Script
+Revenue Hits, http://quickwebchecker.com/ml/image-classificaiton.html, Download, /adserve/*, Easylist, Script
+Revenue Hits, http://quickwebchecker.com/ml/modeling-neuron.html, Download, /adserve/*, Easylist, Script
