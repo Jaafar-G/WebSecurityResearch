@@ -3,7 +3,7 @@ Adnetwork, Page, AdType, Adblock Plus Filter List, Filter list, Blocked Type
 Hilltop, http://quickwebchecker.com, Popunder, N/A, N/A, N/A
 PopMyAds, http;//quickwebchecker.com/css-tricks.html, Generic Adtype, N/A, N/A, N/A
 Revenue Hits, http://quickwebchecker.com/js-tricks.html, Popunder, N/A, N/A, N/A
-PopAds, http://quickwebchecker.com/html-tricks.html, Generic Ad, ||popads.net^$third-party \n ||meinlnim.com^$third-party \n ||qeivncvk.com^$third-party, EasyList, Script
+PopAds, http://quickwebchecker.com/html-tricks.html, Generic Ad, ||popads.net^$third-party ||meinlnim.com^$third-party  ||qeivncvk.com^$third-party, EasyList, Script
 Admaven, http://quickwebchecker.com/events.html,Popunder, /popunder. \n ##.header-ad-wrapper, Easylist, Image \n ElEMHIDE
 Propeller Ads, http://quickwebchecker.com/terms-and-conditions.html, Generic, ||deloplen.com^$third-party \n ||graivaik.com^$third-party \n ||fethungi.com^$third-party, EasyList Script \n Subdocument \n Stylesheet \n Image \n XMLRequest
 Popcash, http://http://quickwebchecker.com/about-us.html, Generic, ||popcash.net^$third-party, EasyList, Script
