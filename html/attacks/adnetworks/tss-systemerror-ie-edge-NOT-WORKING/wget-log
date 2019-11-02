@@ -1,10 +1,0 @@
---2019-11-01 16:44:59--  http://157.245.174.165/systemerror-ie-edge/?phone=+1-(888)-964-1380
-Connecting to 157.245.174.165:80... connected.
-HTTP request sent, awaiting response... 200 OK
-Length: 30920 (30K) [text/html]
-Saving to: ‘index.html?phone=+1-(888)-964-1380’
-
-              index.html?ph   0%[                                         ]       0  --.-KB/s               index.html?phone=+1-(888)-9 100%[========================================>]  30.20K   182KB/s    in 0.2s    
-
-2019-11-01 16:44:59 (182 KB/s) - ‘index.html?phone=+1-(888)-964-1380’ saved [30920/30920]
-
