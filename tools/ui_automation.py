@@ -54,12 +54,12 @@ def run_browser(browser, url):
 
 
 cmd1 = ["xdotool", "windowsize", browserState, "100%", "100%"]
-cmd2 = ["xdotool", "mousemove", str(xmouse), str(ymouse)]
+cmd2 = ["xdotool", "mousemove", str(xmouse), str(ymouse), "click", "1"]
 cmd3 = ["xdotool", "click", "1"]
 
 cmd4 = ["xdotool", "getactivewindow"] 
 cmd5 = ["xdotool", "key", "End"]
-
+cmd6 = ["xdotool", "getactivewindow"]
 
 
 #close browser and start a clean slate
@@ -81,8 +81,10 @@ for url in urls:
    browserState = run_browser(browser, url)
    for cmd in [cmd2]:
      run(cmd)
-     time.sleep(1)
+     time.sleep(5)
+   run(cmd4)  
+   run(cmd3)
    run(cmd3)
    time.sleep(5)
-   close(browser)
+   #close(browser)
 
