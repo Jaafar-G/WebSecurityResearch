@@ -10,21 +10,21 @@ browserState = ''
 
 
 # List of the urls to open 
-urls = [ 
-	"http://quickwebchecker.com", 
-	"http://quickwebchecker.com/about-us.html",
-        "http://quickwebchecker.com/html-tricks.html",
-	"http://quickwebchecker.com/css-tricks.html",
-        "http://quickwebchecker.com/js-tricks.html", 
-        "http://quickwebchecker.com/search.html",
-	"http://quickwebchecker.com/terms-and-conditions.html",
-	"http://quickwebchecker.com/events.html"
-	]
+def getUrls():
+  urls = []
+  filePath = 'urls.txt'
+  with open(filePath, 'r') as f:
+    for url in f:
+      urls.append(url)
+  return urls
 
+urls = getUrls()
+
+print(urls)
 
 # Co-ordinate to click 
-xmouse = 1500; 
-ymouse = 1500
+xmouse = 4500; 
+ymouse = 500
 
 
 # Generic process command
@@ -34,23 +34,24 @@ def run(cmd):
 
 
 def get(cmd):
-    return subprocess.check_output(cmd).decode("utf-8").strip()
+  subprocess.Popen(cmd)
 
 # Runs requested browser
 def run_browser(browser, url):
     fetchOptions = [browser, url]
-    run(fetchOptions)
-    while True:
-        time.sleep(1)
-        try:
-            pid = get(["pgrep", browser])
-        except subprocess.CalledProcessError:
-            pass
-        else:
-            time.sleep(0.1)
-            w = [l.split()[0] for l in get(["wmctrl", "-lp"]).splitlines() if pid in l][0]
-            break
-    return browserState
+    cmd = "/home/bacharya/chromium/src/out/Builder/chrome --no-sandbox " + str(url)
+    prcs = subprocess.Popen(cmd, stdout=None, shell=True, stdin=None, close_fds=None)
+    # while True:
+    #     time.sleep(1)
+    #     try:
+    #         pid = get(["pgrep", browser])
+    #     except subprocess.CalledProcessError:
+    #         pass
+    #     else:
+    #         time.sleep(0.1)
+    #         w = [l.split()[0] for l in get(["wmctrl", "-lp"]).splitlines() if pid in l][0]
+    #         break
+    # return browserState
 
 
 cmd1 = ["xdotool", "windowsize", browserState, "100%", "100%"]
@@ -78,7 +79,7 @@ def close(browser):
 
 # For each urls visit the page and make a click
 for url in urls:
-   browserState = run_browser(browser, url)
+   run_browser(browser, url)
    for cmd in [cmd2]:
      run(cmd)
      time.sleep(5)
@@ -86,5 +87,5 @@ for url in urls:
    run(cmd3)
    run(cmd3)
    time.sleep(5)
-   #close(browser)
+   close(browser)
 
