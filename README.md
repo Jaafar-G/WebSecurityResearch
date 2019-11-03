@@ -41,6 +41,7 @@ sudo netstat -tulpn | grep :27017
 
 sudo kill -9 <pid>
 
+Sometime, it does not still let you login, in that case just run "sudo mongod --auth" from another terminal and login. Essentially the problem is in nohup script that does not perform the "sudo mongod --auth"
 
 
 ## Queries Example:
