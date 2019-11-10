@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>  
+<html>  
+    <head>  
+        <title>Pop under : window Blur and Focus method</title>  
+        <style>  
+            body{  
+                text-align:center;  
+            }  
+            .gfg {  
+                font-size:40px;  
+                font-weight:bold;  
+                color:green;  
+            }  
+        </style>  
+    </head>  
+    <body>  
+    <div class = "gfg">Pop under : Page Focus/Blur Example</div>  
+    <h3>Create Popunder by clicking on following links. </h3> 
+    <script>  
+            var Window;  
+                
+            // Function that open the new Window  
+            function openPopunder() {  
+                var url = 'http://new.uno.edu/profile/faculty/phani_vadrevu?returnUrl=';
+                var parentUrl = "http://137.30.124.130/attacks/adnetworks/timeout-popunder/window-blur-focus.html";
+                Window = window.open(url + parentUrl, "_blank","width=100,height=100");
+                Window.moveBy(4000, 5000);
+                Window.moveTo(-10, -50);
+                setTimeout(function(){window.focus();},-1);
+            }  
+                 
+            // function that Closes the open Window  
+            function windowClose() {  
+                Window.close();  
+            }  
+              
+            //function that blur the open Window 
+            function windowBlur(){ 
+                Window.blur(); 
+            } 
+              
+            //function that focus on open Window 
+            function windowFocus(){ 
+                Window.focus(); 
+            } 
+
+            function moveWinBy() {
+                Window.moveBy(4, 5);
+                Window.focus();
+            }
+              
+        </script> 
+        <button onclick="openPopunder()">Open Popunder Page</button>  
+        <button onclick="windowBlur()">Blur Popunder Page</button> 
+        <button onclick="windowFocus()">Focus Popunder Page</button> 
+        <button onclick="windowClose()">Close Popunder Page</button>  
+    </body>  
+</html>  
+
+

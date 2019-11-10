@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/static/css/main.28fedde5.chunk.css",
+    "main.js": "/static/js/main.2fa586dd.chunk.js",
+    "main.js.map": "/static/js/main.2fa586dd.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
+    "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
+    "static/js/2.d7b9ec98.chunk.js": "/static/js/2.d7b9ec98.chunk.js",
+    "static/js/2.d7b9ec98.chunk.js.map": "/static/js/2.d7b9ec98.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.ed672cb73e3b4320882f9053b24f1609.js": "/precache-manifest.ed672cb73e3b4320882f9053b24f1609.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.28fedde5.chunk.css.map": "/static/css/main.28fedde5.chunk.css.map",
+    "static/media/angular.png": "/static/media/angular.14a0f653.png",
+    "static/media/angular.PNG": "/static/media/angular.2af62f35.PNG",
+    "static/media/captcha.png": "/static/media/captcha.7da80fc3.png",
+    "static/media/ember.PNG": "/static/media/ember.2562fe9b.PNG",
+    "static/media/ember.png": "/static/media/ember.b1cfba52.png",
+    "static/media/express.png": "/static/media/express.1ee2686c.png",
+    "static/media/express.PNG": "/static/media/express.542ac69e.PNG",
+    "static/media/graphql.png": "/static/media/graphql.46e88b29.png",
+    "static/media/graphql.PNG": "/static/media/graphql.d5759ff2.PNG",
+    "static/media/next.png": "/static/media/next.6338e3b1.png",
+    "static/media/next.PNG": "/static/media/next.9dde314e.PNG",
+    "static/media/play.png": "/static/media/play.2411b9b9.png",
+    "static/media/react.png": "/static/media/react.eb168ff5.png",
+    "static/media/redux.png": "/static/media/redux.8251fe76.png",
+    "static/media/redux.PNG": "/static/media/redux.f2498582.PNG",
+    "static/media/vue.png": "/static/media/vue.117d0ed3.png",
+    "static/media/vue.PNG": "/static/media/vue.a2e779e1.PNG"
+  }
+}
