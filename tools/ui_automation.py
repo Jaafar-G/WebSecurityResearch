@@ -1,3 +1,7 @@
+# Note: The browser position matters for this ui to be clickable
+# Try several pages to move around or execute commmand click to see
+# where the click on the screen happens before simulating
+
 import subprocess
 import time
 
