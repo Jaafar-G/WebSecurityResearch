@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+
+<script> 
+
+	function callerinterval(){
+		setInterval(function(){request_pointer_lock(); }, 1);
+	}
+
+	function requestFullScreen() {
+	  var element = document.body;
+	  var request = element.requestFullScreen || element.webkitRequestFullScreen ||  element.mozRequestFullScreen
+	  request.call(element);
+	}
+
+	$(window).mouseclick(function(){
+      	var canvas = document.getElementById('mycanvas');
+      	canvas.requestPointerLock = canvas.requestPointerLock || canvas.mozRequestPointerLock || canvas.webkitRequestPointerLock;
+      	canvas.requestPointerLock();
+    });
+
+	function request_pointer_lock() {
+		$(window).mousemove(function(){
+        var canvas = document.getElementById('mycanvas');
+        canvas.requestPointerLock = canvas.requestPointerLock || canvas.mozRequestPointerLock || canvas.webkitRequestPointerLock;
+        canvas.requestPointerLock();
+        });
+	 }
+
+</script>
+</head>
+
+<body id="mycanvas">
+
+<div>
+	<input id="clickbutton" type="button" value="Click me - Pointer Lock" onclick="callerinterval()" /> <br />  
+</div>
+
+</body>
+</html>
