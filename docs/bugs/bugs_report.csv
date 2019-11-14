@@ -1,30 +1,16 @@
 #,Abuse Description, Link, Last Seen, Browser Abused, OS, Browser Bug Link, Is it still happening?
 1, TSS: A alert box with browlock that asks pass key of the user to enter, https://blog.malwarebytes.com/threat-analysis/2015/10/tech-support-scam-asks-for-passkey/,2015,IE others TBD, Window,TBD,TBD
-
 2,TSS: Impersonate Apple Technicians with Remote Sharing Assistance,https://blog.malwarebytes.com/threat-analysis/2015/10/tech-support-scammers-impersonate-apple-technicians/,2015,Safari others TBD,MAC OSx,TBD,TBD
-
 3, TSS: Legit Anti virus company `Partner Abuse` to sell their anti virus products,https://blog.malwarebytes.com/threat-analysis/2016/01/tech-support-scammers-lure-users-with-fake-norton-warnings-turn-out-to-be-symantec-reseller/,2016,IE others TBD,Window,TBD,TBD
-
-4,TSS: Infinite loop of redirects,https://blog.malwarebytes.com/threat-analysis/2016/02/tech-support-scammers-use-new-browser-trick-to-defeat-blocking/,2016,IE others TBD,Window,TBD,TBD
-
+4,TSS: Infinite loop of redirects, https://blog.malwarebytes.com/threat-analysis/2016/02/tech-support-scammers-use-new-browser-trick-to-defeat-blocking/, 2016 ,IE others TBD, Window,TBD,TBD
 5,TSS: Chrome abuse - Fake address bar display with fake Notification and fake alert box,https://blog.malwarebytes.com/cybercrime/social-engineering-cybercrime/2016/08/tech-support-scams-and-google-chrome-tricks/,2016,Chrome other TBD,Window,TBD,TBD
-
-6, TSS: Infinite URL Lengthening - abuse on HTML5 history.pushstate, https://blog.malwarebytes.com/cybercrime/social-engineering-cybercrime/2016/11/tech-support-scammers-abuse-bug-in-html5-feature-to-freeze-computers/,2016,Chrome,Window MacOSx, https://bugs.chromium.org/p/chromium/issues/detail?id=394296,Yes
-
+6, TSS: Infinite URL Lengthening - abuse on HTML5 history.pushstate, https://blog.malwarebytes.com/cybercrime/social-engineering-cybercrime/2016/11/tech-support-scammers-abuse-bug-in-html5-feature-to-freeze-computers/,2016,Chrome,Window MacOSx,https://bugs.chromium.org/p/chromium/issues/detail?id=394296,Yes
 7, TSS: Infinite Mails causing DOS on Mac OSx - abuse on HTML5 history.pushstate, https://blog.malwarebytes.com/101/mac-the-basics/2017/01/tech-support-scam-page-attempts-denial-of-service-via-mail-app/,2017,Safari others TBD,Mac OSx,Same abuse on HTML5 as #6?,TBD
-
 8,TSS: Infinite page message with TSS abuse brought after forced chrome extension installation,https://blog.malwarebytes.com/threat-analysis/2017/02/rogue-chrome-extension-pushes-tech-support-scam/,2017,Chrome,Windows Mac OSX,TBD
-
 9, TSS: Generic Abuse Description such that causes Memory - Hog with listed with usage of Event Listener on Chrome FF Edge,https://blog.malwarebytes.com/threat-analysis/2017/06/the-numeric-tech-support-scam-campaign/,2017,All browsers,All OS,TBD,TBD
-
 10,TSS: Abuse using Expired Domains and Parked Domains,https://blog.malwarebytes.com/threat-analysis/2017/09/expired-domain-names-and-malvertising/,2017,TBD,TBD,TBD,TBD
-
 11,Click Hijack,https://blog.malwarebytes.com/threat-analysis/2017/09/tech-support-scammers-abuse-native-ad-content-provider-taboola-serve-malvertising/,2017,IE others TBD,Window others TBD,TBD,TBD
-
 12,TSS: Super imposed window with full screen with pop under implementation trick,2017,Chrome,Window others TBD,TBD,TBD
-
 13,TSS: Infinite Download, https://blog.malwarebytes.com/malwarebytes-news/2018/02/tech-support-scammers-find-new-way-jam-google-chrome/  https://blog.malwarebytes.com/threat-analysis/2018/10/scammers-use-old-browser-trick-to-create-fake-virus-download/,2018,Chrome,Window MacOSx,TBD,TBD
-
 14,TSS: Large scale operating TSS attacks by Partnerstroka (General Knowledge), https://blog.malwarebytes.com/cybercrime/2018/09/partnerstroka-large-tech-support-scam-operation-features-latest-browser-locker/,2018,All browser,All OS,TBD,TBD
-
 15,TSS: Obfuscation with abuse on Encoding,https://blog.malwarebytes.com/threat-analysis/2018/11/browlock-flies-under-the-radar-with-complete-obfuscation/,2018,Chrome others TBD,Window others TBD,TBD,TBD
