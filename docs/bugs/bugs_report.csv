@@ -11,7 +11,7 @@
 
 6, TSS: Infinite URL Lengthening - abuse on HTML5 history.pushstatehttps://blog.malwarebytes.com/cybercrime/social-engineering-cybercrime/2016/11/tech-support-scammers-abuse-bug-in-html5-feature-to-freeze-computers/,2016,Chrome,Window MacOSx, https://bugs.chromium.org/p/chromium/issues/detail?id=394296,Yes
 
-7, TSS: Infinite Mails causing DOS on Mac OSx - abuse on HTML5 history.pushstate https://blog.malwarebytes.com/101/mac-the-basics/2017/01/tech-support-scam-page-attempts-denial-of-service-via-mail-app/,2017,Safari others TBD,Mac OSx,Same abuse on HTML5 as #6?,TBD
+7, TSS: Infinite Mails causing DOS on Mac OSx - abuse on HTML5 history.pushstate, https://blog.malwarebytes.com/101/mac-the-basics/2017/01/tech-support-scam-page-attempts-denial-of-service-via-mail-app/,2017,Safari others TBD,Mac OSx,Same abuse on HTML5 as #6?,TBD
 
 8,TSS: Infinite page message with TSS abuse brought after forced chrome extension installation,https://blog.malwarebytes.com/threat-analysis/2017/02/rogue-chrome-extension-pushes-tech-support-scam/,2017,Chrome,Windows Mac OSX,TBD
 
