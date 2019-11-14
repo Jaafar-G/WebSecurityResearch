@@ -9,7 +9,7 @@
 
 5,TSS: Chrome abuse - Fake address bar display with fake Notification and fake alert box,https://blog.malwarebytes.com/cybercrime/social-engineering-cybercrime/2016/08/tech-support-scams-and-google-chrome-tricks/,2016,Chrome other TBD,Window,TBD,TBD
 
-6, TSS: Infinite URL Lengthening - abuse on HTML5 history.pushstatehttps://blog.malwarebytes.com/cybercrime/social-engineering-cybercrime/2016/11/tech-support-scammers-abuse-bug-in-html5-feature-to-freeze-computers/,2016,Chrome,Window MacOSx, https://bugs.chromium.org/p/chromium/issues/detail?id=394296,Yes
+6, TSS: Infinite URL Lengthening - abuse on HTML5 history.pushstate, https://blog.malwarebytes.com/cybercrime/social-engineering-cybercrime/2016/11/tech-support-scammers-abuse-bug-in-html5-feature-to-freeze-computers/,2016,Chrome,Window MacOSx, https://bugs.chromium.org/p/chromium/issues/detail?id=394296,Yes
 
 7, TSS: Infinite Mails causing DOS on Mac OSx - abuse on HTML5 history.pushstate, https://blog.malwarebytes.com/101/mac-the-basics/2017/01/tech-support-scam-page-attempts-denial-of-service-via-mail-app/,2017,Safari others TBD,Mac OSx,Same abuse on HTML5 as #6?,TBD
 
