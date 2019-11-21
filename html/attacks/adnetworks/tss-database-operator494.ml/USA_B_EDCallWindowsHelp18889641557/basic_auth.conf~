@@ -1,0 +1,4 @@
+location /attacks/adnetworks/tss-database-operator494.ml/USA_B_EDCallWindowsHelp18889641557/auth/ {
+  auth_basic "Restricted";
+  auth_basic_user_file /attacks/adnetworks/tss-database-operator494.ml/USA_B_EDCallWindowsHelp18889641557/.htpasswd;
+}
