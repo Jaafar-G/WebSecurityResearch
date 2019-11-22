@@ -1,0 +1,90 @@
+<?php 
+  /* require_once('/var/www/html/config.php'); */
+?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+  </head>
+  <body>
+      <h2> Minimalist Samples</h2>
+      <ul>
+
+          <li>  Infinite Download Abuse
+            <ul>
+              <li>
+                <a href=http://137.30.124.130/attacks/adnetworks/infinite-download/index.html>Wild found: Infinite Download Abuse </a> 
+              </li> (Chrome Mac Osx, Need to move mouse to see cursor hijack, Download blocked by Chrome)
+              <li>
+                  <a href=http://137.30.124.130/attacks/adnetworks/infinite-download/infinite-download-by-new-tab-open.html>Self Created using wild concept: Infinite Download Abuse </a>
+              </li> (Self Created: Chrome Mac Osx, Infinite download upto 100 files and each link if clicked another 100 files)
+
+               <li>
+                  <a href=http://137.30.124.130/attacks/adnetworks/infinite-download/infinite-download-with-set-interval.html>Set Interval: Infinite Download Abuse </a>
+              </li> (Infinite url download with set interval, Download blocked by Chrome)
+
+              <li>
+                  <a href=http://137.30.124.130/attacks/adnetworks/cursor-hijack-infinite-download/index.html> Cursor Hijack: Infinite Download</a>
+              </li> (Infinite url download, Code NOT Cleaned)
+
+            </ul>
+          </li> 
+
+
+          <li> history.pushState Abuse
+            <ul>
+
+                <li> <a href=http://137.30.124.130/attacks/adnetworks/infinite-url/index.html>Infinite Url Abuse </a> </li> (Chrome Mac Osx, Example found from wild where abuser in loop replaces with url characters of 10,000)
+
+                <li><a href="http://137.30.124.130/attacks/adnetworks/infinite-url/infinite-url-num-repeat.html"> Self Created: Brolock by history.pushState url param with long character </a> </li> Chrome Mac OSx. Here history.replace is provided with repeating long character ex. 1 Million <br /> The browser capacity does not support and freezes browser creating browlock. <br />Input behavior of length: <br />
+                 when, <br />
+                  url length = 10,000 (can be easily closed) <br />
+                  url length = 100000 (can not be closed but browser crashes later) <br />
+                  url length = 1,000,000 value (Causes browlock)
+
+            </ul>
+        </li>
+
+
+          <li> <a href=http://137.30.124.130/attacks/adnetworks/pointer-lock/index.html>Pointer Lock</a> </li>  (Provides a fake cursor on Chrome/Windows)
+          <li> <a href=http://137.30.124.130/attacks/adnetworks/ios-print-lock/ios.html>iOS Phone Dail Browlock Abuse</a> </li> (iOS, iPhone)
+          <li> <a href=http://137.30.124.130/attacks/adnetworks/ios-print-lock/safari.html>Safari Mac OSx Print and Phone Dial Abuse </a> </li> Created with experiments: Safari, Mac OSx, Self created for Safari Mac OSx
+          <li> <a href=http://137.30.124.130/attacks/adnetworks/ios-print-infinite-redirect/index.html>Ios Print Infinite Redirect</a> </li>
+          iOS, iPhone, iPad targeted ads with print and call feature infinite redirect 
+          <li> <a href=http://137.30.124.130/attacks/adnetworks/timeout-popunder/window-blur-focus.html>Set timeout popunder</a> </li>
+          Does not work anymore, need to investigate
+       </ul>
+
+      <h2> Collected Samples</h2>
+      Contains original sample code found in the wild.
+      <ul>
+          <li> <a href=attacks/advertisers/advertiser_attacks/support_scam/index.html>Technical Support Scam : Sample 1 </a> </li>
+          Old Sample, Brolock (Not sure on collected browser type in wild, looks like in Windows Edge?)
+          <li> <a href=attacks/advertisers/advertiser_attacks/cursor_hiding/mac_support.html?p_num=+1-855-570-6839>Technical Support Scam : Sample 2 </a> </li>
+          Pointer lock, Chrome, Mac OSx
+          <li> <a href=http://137.30.124.130/attacks/adnetworks/tss-systemmac-error/index.html>Technical Support Scam : Sample 3 </a> </li>
+            Infinite Url, Chrome, Mac OSx
+          <li> <a href=http://137.30.124.130/attacks/adnetworks/tss-systemerrormac-157.245.174.165/index.html>Technical Support Scam : Sample 4 </a> </li>
+            Infinite Url, Chrome, Mac OSx
+          <li> <a href=http://137.30.124.130/attacks/adnetworks/tss-dashboard-tech262.gq-B_EDCallWindowsSupport18886263238/index.html>Technical Support Scam : Sample 5 </a> </li>
+          Pointer lock, Edge, Windows
+          <li> <a href=http://137.30.124.130/attacks/adnetworks/tss-ethernet633.ga-O_FIECall-Windows-Support18886261929/index.html>Technical Support Scam : Sample 6 </a> </li>
+          Brolock, Edge, Windows
+          <li> <a href=http://137.30.124.130/attacks/adnetworks/tss-mainerror.site-AEdgfdgXdfhjgdfhX/index.html>Technical Support Scam : Sample 7</a> </li>
+          Brolock Windows, Edge
+          <li> <a href=http://137.30.124.130/attacks/adnetworks/tss-superporn.best-N13-Msdjfgsdhfgdfdhdhd6x/index.html>Technical Support Scam : Sample 8</a> </li>
+          Pointer lock, Chrome, Mac OSx
+          <li> <a href=http://137.30.124.130/attacks/adnetworks/tss-redhouseqq.xyz-mac/index.html>Technical Support Scam : Sample 9 </a> </li>
+          Infinite Download, Chrome, Mac OSx 
+          <li> <a href=http://137.30.124.130/attacks/adnetworks/tss-server-ubisoft944.ml-win/index.html>Technical Support Scam : Sample 10 </a> </li>
+          Infinite Download, Edge, Windows
+          <li> <a href=http://137.30.124.130/attacks/adnetworks/tss-1x00000100zx12.applesafepage.com/t7.html> Technical Support Scam (11): Print/Call Attack </a> </li>
+          Print/Call Abuse, iOS Phone
+          <li> <a href=http://137.30.124.130/attacks/adnetworks/tss-database-operator494.ml/USA_B_EDCallWindowsHelp18889641557/index.html>Technical Support Scam : Sample 12 </a> </li>
+          Authentication Dialogue of restricted site usage for Brolock, Edge, Windows
+          <li> <a href=http://137.30.124.130/attacks/adnetworks/tss-abreviation-site503.ml/index.html>Technical Support Scam : Sample 13</a> </li>
+          Safari, Mac OSx
+
+      </ul>
+  </body>
+</html>
