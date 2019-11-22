@@ -9,6 +9,10 @@
 
 <a href= "https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-18-04"> Ngnix Set up </a>
 
+<a href= "https://tech.marksblogg.com/detect-bots-apache-nginx-logs.html"> NGNIX bot set up </a>
+
+<a href= "https://www.fullstackpython.com/nginx.html"> Ngnix Info </a>
+
 <a href= "https://www.howtoforge.com/tutorial/install-mongodb-on-ubuntu/"> MongDB Set up </a>
 
 <a href= "http://ctrtard.com/code/how-to-install-the-maxmind-geoip2-database-for-php/"> GeoIP Set up </a>
