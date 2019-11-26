@@ -115,6 +115,11 @@ as of Sep 13, 2019 of following types:
     3. Webpush
  
 
+Exoclick
+========
+Pop unders, restricted for Auto-sound, Misinformed virus, Device Enhacement types
+
+
 ============================================
 Classifying pages based on the types of ads:
 ============================================
