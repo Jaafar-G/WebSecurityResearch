@@ -8,7 +8,7 @@ grecaptcha.ready(function() {
         	data: {"secret" : "6Lesb8UUAAAAAPEmkd37LMiVseidHlELecv_ZxFm", "response" : token, "remoteip":"137.30.124.130"},
         	contentType: 'application/x-www-form-urlencoded',
         	success: function(data) { 
-            	document.getElementById("recaptcha").innerHTML = data;
+            	document.getElementById("recaptcha").innerText = data;
         	}
     	});
    });
