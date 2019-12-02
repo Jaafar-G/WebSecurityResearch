@@ -439,7 +439,7 @@ var showResults = function(audioOutput) {
     }
   }
 
-  $('#dataTable').html(htmlData);
+  $('#fingerPrintdataTable').html(htmlData);
   document.getElementById('canvas-placeholder').appendChild(window.canvasThing);
 
 

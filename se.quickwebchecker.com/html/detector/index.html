@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<?php header('Access-Control-Allow-Origin: *');  ?>
+  <head>
+    <title>Browser Fringerprint</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://www.google.com/recaptcha/api.js?render=6Lesb8UUAAAAAAg1VI34Ofi-eEnVehT6nLw4P0XN"></script>
+    <script src="./recaptcha/recaptcha.js"></script>
+    <script src="./fingerprintjs/js/jquery-2.2.4.min.js"></script>
+    <script src="./fingerprintjs/js/fingerprint2.min.js"></script>
+    <script src="./fingerprintjs/js/md5.min.js"></script>
+    <script src="./fingerprintjs/js/script.js"></script>
+    <script type="text/javascript" src="./jsdetectbot/driverdetect.js"> </script>
+    <script type="text/javascript" src="./jsdetectbot/interaction-detector.js"></script>
+    <link rel="stylesheet" type="text/css" href="fingerprintjs/css/style.css">  
+  </head>
+  <body onload="execFingerPrint()">
+    <div class="container text-center">
+      <div>
+        <h1>Yours Browser fingerprint</h1>
+      </div>
+      
+      <hr />
+      <h4> Browser Fingerprinting </h4>
+      <hr />
+
+      <table id="fingerPrintdataTable">
+          <!-- Content populator -->
+      </table>
+
+      <br /> <br />
+
+      <p id="recaptcha"> </p>
+    
+      <hr />
+      <h4> Page Interaction Tests </h4>
+      <hr />
+      <p id="interactionDetector">Checking ...</p>
+      <ul id="tests"> </ul>
+
+      <br /> <br />
+
+      <hr />    
+      <h4> Window and document detection Tests </h4>
+      <hr />
+      <p id="driverDetector"> Is controlled by webdriver ?  <script type="text/javascript"> document.write(window.driverDetection()); </script></p>
+      
+      <br /> <br />
+
+
+    </div>
+  </body>
+</html>
+

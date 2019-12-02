@@ -1,4 +1,4 @@
-runBotDetection = function () {
+function driverDetection () {
     var documentDetectionKeys = [
         "__webdriver_evaluate",
         "__selenium_evaluate",
@@ -49,3 +49,6 @@ runBotDetection = function () {
 
     return false;
 };
+
+// var result = window.driverDetection();
+// document.getElementById("driverDetector").innerHTML = result;
