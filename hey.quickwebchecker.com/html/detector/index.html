@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<?php header('Access-Control-Allow-Origin: *');  ?>
+  <head>
+    <title>Browser Fringerprint</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://www.google.com/recaptcha/api.js?render=6Lesb8UUAAAAAAg1VI34Ofi-eEnVehT6nLw4P0XN"></script>
+    <script src="./detector/recaptcha/recaptcha.js"></script>
+    <script src="./detector/fingerprintjs/js/jquery-2.2.4.min.js"></script>
+    <script src="./detector/fingerprintjs/js/fingerprint2.min.js"></script>
+    <script src="./detector/fingerprintjs/js/md5.min.js"></script>
+    <script src="./detector/fingerprintjs/js/script.js"></script>
+    <script type="text/javascript" src="./jsdetectbot/driverdetect.js"> </script>
+    <script type="text/javascript" src="./jsdetectbot/interaction-detector.js"></script>
+    <script> require('./detector/jsdetectbot/user-agent-detector.js') </script>
+    <script> require('./detector/jsdetectbot/device-detector.js') </script>
+    <link rel="stylesheet" type="text/css" href="fingerprintjs/css/style.css">  
+  </head>
+  <body onload="execFingerPrint()">
+    <div class="container text-center">
+      <div>
+        <h1>Yours Browser fingerprint</h1>
+      </div>
+      
+      <hr />
+      <h4> Browser Fingerprinting </h4>
+      <hr />
+
+      <table id="fingerPrintdataTable">
+          <!-- Content populator -->
+      </table>
+
+      <br /> <br />
+    
+      <hr />
+      <h4> Page Interaction Tests </h4>
+      <hr />
+      <p id="interactionDetector">Checking ...</p>
+      <ul id="tests"> </ul>
+
+      <br /> <br />
+
+      <hr />    
+      <h4> Window and Document Detection Tests </h4>
+      <hr />
+      <p id="driverDetector"> Is controlled by webdriver ?  <script type="text/javascript"> document.write(window.driverDetection()); </script></p>
+      
+      <br /> <br />
+
+
+
+    <!--TO Fix: Not working -->
+    <!--       
+      <p id="recaptcha"> </p>
+
+      <hr />
+      <h4> User-agent Detector </h4>
+      <hr />
+      <p id="userAgentDetector">Checking ...</p>
+
+      <br /> <br />
+
+      <hr />
+      <h4> Device Detector </h4>
+      <hr />
+      <p id="deviceDetector">Checking ...</p>
+
+      <br /> <br /> 
+    -->
+
+
+    </div>
+  </body>
+</html>
+

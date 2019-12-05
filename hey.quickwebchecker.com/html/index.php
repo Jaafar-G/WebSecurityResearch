@@ -1,6 +1,6 @@
 <?php
 
-require_once('/var/www/hey.quickwebchecker.com/html/config.php'); 
+//require_once('/var/www/hey.quickwebchecker.com/html/config.php'); 
  
 /* Redirect to a different page in the current directory that was requested */
 session_start();
@@ -18,15 +18,7 @@ function getRandomString($size) {
 }
 
 function pageContents() {
- $text = "Description
-         Niagara Falls is a city on the Niagara River, in New York State.\n
-         It’s known for the vast Niagara Falls, which straddle the Canadian border.\n
-         In Niagara Falls State Park, the Observation Tower, at Prospect Point,\n
-         juts out over Niagara Gorge for a view of all 3 waterfalls. \n
-         Trails from the Niagara Gorge Discovery Center lead to other viewpoints.
-         The Aquarium of Niagara is home to Humboldt penguins, seals and sea lions.";
-
-return $text;
+  include 'detector/index.html'
 }
 
 
