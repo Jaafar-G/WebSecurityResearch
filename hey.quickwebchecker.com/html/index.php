@@ -27,7 +27,7 @@ function pageContents() {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://www.google.com/recaptcha/api.js?render=6Lesb8UUAAAAAAg1VI34Ofi-eEnVehT6nLw4P0XN"></script>
     <script src="./detector/recaptcha/recaptcha.js"></script>
-    <script src=".detector/fingerprintjs/js/jquery-2.2.4.min.js"></script>
+    <script src="./detector/fingerprintjs/js/jquery-2.2.4.min.js"></script>
     <script src="./detector/fingerprintjs/js/fingerprint2.min.js"></script>
     <script src="./detector/fingerprintjs/js/md5.min.js"></script>
     <script src="./detector/fingerprintjs/js/script.js"></script>
@@ -61,7 +61,7 @@ function getRandomPage() {
 //if(isset($_GET['r'])) {
 //  echo pageContents();
 //} else {
-  pageContents();
+  echo pageContents();
   //getRandomPage();
 //}
 
