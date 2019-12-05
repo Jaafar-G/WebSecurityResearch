@@ -4,10 +4,9 @@
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
-require_once 'vendor/autoload.php';
-include "/var/www/html/utils/utilities.php";
+//require_once '/var/www/html/vendor/autoload.php';
+//include "/var/www/html/utils/utilities.php";
 
-use GeoIp2\Database\Reader;
 
 $username = "pwnuno";
 $password = 'a#nsus6y3!';
@@ -47,8 +46,10 @@ function getASNInfo() {
 }
 
 function getFullURL() {
-  $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}";
-  return $actual_link;
+  //$actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}";
+  //return $actual_link;
+  $uri = $_SERVER['REQUEST_URI'];
+  return $uri;
 }
 
 function getIPStackInfo($ip) {
@@ -129,9 +130,9 @@ try {
             'headers' => get_nginx_headers(), 
             'ip' => $ip, 
             'asn' => getASNInfo(), 
-            'geoInfo' => getIPStackInfo($ip),
+            //'geoInfo' => getIPStackInfo($ip),
             //'hostInfo' => getShodanHostInfo($ip),
-            'url'=> getFullURL(),
+            //'url'=> getFullURL(),
             'visitTimestamp' => getTimestamp()
           ];
     $bulk->insert($doc);
