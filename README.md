@@ -15,6 +15,8 @@
 
 <a href= "https://www.howtoforge.com/tutorial/install-mongodb-on-ubuntu/"> MongDB Set up </a>
 
+<a href = "https://websiteforstudents.com/install-mongodb-with-apache2-php-7-2-support-on-ubuntu-16-04-17-10-18-04/"> Install PHP and PHP MongoDB Driver </a> 
+
 <a href= "http://ctrtard.com/code/how-to-install-the-maxmind-geoip2-database-for-php/"> GeoIP Set up </a>
 
 <a href = "https://www.php.net/manual/en/book.geoip.php"> GeoIP Docs </a>
