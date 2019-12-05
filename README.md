@@ -77,5 +77,11 @@ Distinct entries of types
 Get Object Insertion Timestamp
 > ObjectId("5d011729289bb8bf267b2075").getTimestamp()
 
+Get timestamp of first inserted data
+> db.requestHeader.find().sort({_id:1}).limit(1).forEach(function (doc){ print(doc._id.getTimestamp()) })
+
+Get full stats of the collections
+> db.requestHeader.stats()
+
 ## Additional Reference in Tools and Set up
 <a href ="https://github.com/ba127004/detectbot/blob/master/docs/mitmproxy-setup.pdf"> Mitm Proxy Set up </a>
