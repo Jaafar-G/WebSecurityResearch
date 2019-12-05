@@ -1,6 +1,6 @@
 <?php
 
-//require_once('/var/www/hey.quickwebchecker.com/html/config.php'); 
+require_once('/var/www/hey.quickwebchecker.com/html/config.php'); 
  
 /* Redirect to a different page in the current directory that was requested */
 session_start();
@@ -18,7 +18,7 @@ function getRandomString($size) {
 }
 
 function pageContents() {
-  include 'detector/index.html'
+  include './detector/index.html';
 }
 
 
@@ -33,7 +33,7 @@ function getRandomPage() {
 //if(isset($_GET['r'])) {
 //  echo pageContents();
 //} else {
-  echo pageContents();
+  pageContents();
   //getRandomPage();
 //}
 
