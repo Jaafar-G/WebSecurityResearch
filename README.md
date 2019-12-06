@@ -52,6 +52,9 @@ Sometime, it does not still let you login, in that case just run "sudo mongod --
 
 ## Queries Example:
 
+Start mongod
+> sudo mongod --port 27017 --dbpath /data/db/
+
 Show dbs
 > show dbs
 
