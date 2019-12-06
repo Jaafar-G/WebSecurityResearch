@@ -404,8 +404,9 @@ function storeFingerprint() {
       dataList.adBlock = document.getElementById('ads') ? false : true;
       dataList.installedFontsJs = getInstalledFontsJs();
       dataList.canvasFp = getCanvasFp();
-      audioFp(showResults);
-
+      return dataList; 
+     audioFp(showResults);
+   
       var timeElapsed = performance.now() - t0;
       $('#timeElapsed').html('Time elapsed: ' + timeElapsed.toFixed(2) + 'ms');
     } catch (e) {
@@ -431,8 +432,8 @@ var showResults = function(audioOutput) {
   }
 
   for (var item in dataList) {
-    //console.log(item + ': ' + dataList[item]);
-    if(item === "canvasFp") {
+     console.log(item + ': ' + dataList[item]);
+     if(item === "canvasFp") {
       htmlData += '<tr><td>' + item + '</td><td>' + dataList[item] + '<br><div id="canvas-placeholder"></div></td></tr>';
     } else {
       htmlData += '<tr><td>' + item + '</td><td>' + dataList[item] + '</td></tr>';
@@ -442,6 +443,7 @@ var showResults = function(audioOutput) {
   $('#fingerPrintdataTable').html(htmlData);
   document.getElementById('canvas-placeholder').appendChild(window.canvasThing);
 
+ return dataList;
 
 // To Store in DB
   // $.ajax({

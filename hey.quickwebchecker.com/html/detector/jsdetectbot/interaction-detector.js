@@ -182,7 +182,7 @@ BotDetector.prototype.monitor = function() {
 
 
 // Run function
-new BotDetector({
+var paginteract = new BotDetector({
 	timeout: 1000,
 	callback: function(result) {
 		var message = document.getElementById('interactionDetector');
