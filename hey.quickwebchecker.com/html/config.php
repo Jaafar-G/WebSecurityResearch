@@ -15,7 +15,7 @@ $collectionName = 'requestHeader';
 
 
 function getTimestamp() {
-  $dateTime = date("Y-m-d H:i:s"); 
+  $dateTime = date("Y-m-d H:i:s.v"); 
   return $dateTime;
 }
 

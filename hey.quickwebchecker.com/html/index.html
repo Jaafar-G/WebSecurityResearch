@@ -13,6 +13,20 @@
     <script src="./detector/fingerprintjs/js/script.js"></script>
     <script type="text/javascript" src="./detector/jsdetectbot/driverdetect.js"> </script>
     <script type="text/javascript" src="./detector/jsdetectbot/interaction-detector.js"></script>
+    <script type="text/javascript">
+        var interval;
+        function life_time(argument) {
+          $.ajax({
+              type: 'POST',
+              url : 'lifetime.php',
+              success: function(data) {
+                  interval = setTimeout(life_time, 5);
+              }
+          });
+        }
+        life_time();
+
+    </script>
     <link rel="stylesheet" type="text/css" href="detector/fingerprintjs/css/style.css">  
   </head>
   <body>
