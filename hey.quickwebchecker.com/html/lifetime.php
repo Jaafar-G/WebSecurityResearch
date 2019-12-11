@@ -14,6 +14,14 @@ function getTimestamp() {
   return $dateTime;
 }
 
+public function getTimeToMicroseconds() {
+    $t = microtime(true);
+    $micro = sprintf("%06d", ($t - floor($t)) * 1000000);
+    $d = new DateTime(date('Y-m-d H:i:s.' . $micro, $t));
+
+    return $d->format("Y-m-d H:i:s.u"); 
+}
+
 function getFullURL() {
   $uri = $_SERVER['REQUEST_URI'];
   return $uri;
@@ -46,8 +54,7 @@ try {
     $doc = [
             '_id' => new MongoDB\BSON\ObjectID, 
             'ip' => $ip, 
-            'url'=> getFullURL(),
-            'visitTimestamp' => getTimestamp()
+            'visitTimestamp' => getTimeToMicroseconds()
           ];
     $bulk->insert($doc);
     $m->executeBulkWrite("botDetector.lifetime", $bulk);
