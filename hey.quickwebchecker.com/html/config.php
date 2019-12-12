@@ -19,7 +19,27 @@ function getTimestamp() {
   return $dateTime;
 }
 
-function getASNInfo() {
+function getcymruASNinfo() {
+  try {
+      $cymru = explode("|", exec("whois -h whois.cymru.com  -v ".get_client_ip()));
+      $json_val = null;
+      $json_val->asn  = trim($cymru[0]);
+      $json_val->ip  = trim($cymru[1]);
+      $json_val->bgpPrefix  = trim($cymru[2]);
+      $json_val->cc  = trim($cymru[3]);
+      $json_val->registry  = trim($cymru[4]);
+      $json_val->allocated  = trim($cymru[5]);
+      $json_val->whois = getwhoisInfo();
+      $format_json = json_encode($json_val);
+      return $json_val;
+  } catch(Exception $e) { 
+      print("Exception in processing");
+      return null;
+ }
+
+}
+
+function getwhoisInfo() {
    $result = shell_exec('whois '.get_client_ip());
    // remove string before result (introductory string)
    $result = strstr($result, 'NetRange'); 
@@ -129,7 +149,8 @@ try {
             '_id' => new MongoDB\BSON\ObjectID, 
             'headers' => get_nginx_headers(), 
             'ip' => $ip, 
-            'asn' => getASNInfo(), 
+            'cymru' => getcymruASNinfo(),
+            // 'whois' => getwhoisInfo(),
             //'geoInfo' => getIPStackInfo($ip),
             //'hostInfo' => getShodanHostInfo($ip),
             'url'=> getFullURL(),
