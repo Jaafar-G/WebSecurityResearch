@@ -1,5 +1,4 @@
-
-    <!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
   <head>
     <title>Browser Fringerprint</title>
@@ -20,11 +19,12 @@
               type: 'POST',
               url : 'lifetime.php',
               success: function(data) {
-                  <!-- interval = setTimeout(life_time, 5); -->
+                 <!-- interval = setTimeout(life_time, 5); -->
               }
           });
         }
-        life_time();
+
+      };
 
     </script>
     <link rel="stylesheet" type="text/css" href="detector/fingerprintjs/css/style.css">  
@@ -44,9 +44,8 @@
     </body>
     </html>
 
-
    <script type="text/javascript">
-	$(window).load(function(){ /*This allows to execute your code after the  page is rendered fully */ 
+        window.addEventListener('beforeunload', function(event) {
     		$.get("include_php.php", function(data){
  		var isWebDriver = window.driverDetection();
   		var fingerPrint = window.execFingerPrint();

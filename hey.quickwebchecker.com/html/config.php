@@ -1,13 +1,9 @@
 <?php
-
-// Debug mode set 
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
-
 //require_once '/var/www/html/vendor/autoload.php';
 //include "/var/www/html/utils/utilities.php";
 
 
+session_start();
 $username = "pwnuno";
 $password = 'a#nsus6y3!';
 $dbName = 'botDetector';
@@ -154,7 +150,8 @@ try {
             //'geoInfo' => getIPStackInfo($ip),
             //'hostInfo' => getShodanHostInfo($ip),
             'url'=> getFullURL(),
-            'visitTimestamp' => getTimestamp()
+            'queryInsertTimeStamp' => getTimestamp(), // time lags with current time, use session_first_seen time
+	    'session_id' => 'sess_'.session_id()
           ];
     $bulk->insert($doc);
     $m->executeBulkWrite("botDetector.requestHeader", $bulk);
