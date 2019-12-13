@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+    <html lang="en">
+      <head>
+            <title>Browser Fringerprint</title>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+
+            <!--
+            <script src="https://www.google.com/recaptcha/api.js?render=6Lesb8UUAAAAAAg1VI34Ofi-eEnVehT6nLw4P0XN"></script>
+            <script type="text/javascript" src="./detector/jsdetectbot/interaction-detector.js"></script>
+            <script src="./detector/recaptcha/recaptcha.js"></script> 
+            -->
+
+            <script src="./detector/fingerprintjs/js/jquery-2.2.4.min.js"></script>
+            <script type="text/javascript" src="./detector/jsdetectbot/driverdetect.js"> </script>
+
+            <script type="text/javascript" src="./detector/amiunique/PluginDetect_All.js"></script>
+            <script type="text/javascript" src="./detector/amiunique/fp.js"></script>
+            <script type="text/javascript" src="./detector/amiunique/fpMore.js"></script>
+            <script type="text/javascript" src="./detector/amiunique/audio.js"></script>
+            <script type="text/javascript" src="./detector/amiunique/sha1.js"></script>
+            <script type="text/javascript" src="./detector/amiunique/webGL.js"></script>
+            <script type="text/javascript" src="./detector/amiunique/canvas.js"></script>
+           
+
+      </head>
+    <body>
+        <p id="display-result"> </p>
+
+    </body>
+    </html>
+
+   <script type="text/javascript">
+	$(window).load(function(){ /*This allows to execute your code after the  page is rendered fully */ 
+    		$.get("include_php.php", function(data){
+
+            var result = {
+
+                platform : platform,
+                cookieEnabled : cookieEnabled,
+                doNotTrack : doNotTrack,
+                timezone : timezone,
+                plugins : plugins,
+                hardwareConcurrency : getHardwareConcurrency(),
+                screenAvailableWidth : getAvailableScreenWidth(),
+                screenAvailableHeight : getAvailableScreenHeight(),
+                screenWidth : getScreenWidth(),
+                screenHeight : getScreenHeight(),
+                screenColorDepth : getScreenColorDepth(),
+                screenColorResolution : getScreenColorResolution(),               
+                cpuClass : getNavigatorCpuClass(),
+                modernizr : testModernizr(),
+                overwrittenObjects : testOverwrittenObjects(),
+                appCodeName : getAppCodeName(),
+                oscpu : getOscpu(),
+                appName : getAppName(),
+                appVersion : getAppVersion(),
+                contentLanguage : getLanguages(),
+                mimeTypes : getMimeTypes(),
+                pluginsUsingMimeTypes : getPluginsUsingMimeTypes(),
+                product : getProduct(),
+                productSub : getProductSub(),
+                vendor : getVendor(),
+                vendorSub : getVendorSub(),
+                touchSupport : getTouchSupport(),
+                buildID : getBuildId(),
+                navigatorPrototype : getNavigatorPrototype(),
+                mathsConstants : getMathsConstants(),
+                resOverflow : generateStackOverflow(),
+                errorsGenerated : generateErrors(),
+                webGLdata : webGLData,
+                canvasData : canvasData,
+                domSessionStorage : domSessionStorage,
+                domLocalStorage : domLocalStorage,
+                ieUserData : ieUserData,
+
+
+
+               // fontsEnum : getFontsEnum(),
+               // audio : getAudio(),
+               // osMediaqueries : getOSMq()
+
+                // isWebDriver : window.driverDetection(),
+                // pageInteraction : window.paginteract
+
+            };
+
+            document.getElementById("display-result").innerHTML =
+
+                "Platform : "               + result.platform + "<br /><br />" + 
+                "Cookies Enabled : "        + result.cookieEnabled + "<br /><br />" + 
+                "Timezone Offset : "        + result.timezone + "<br /><br />" + 
+                "Content Languages : "      + result.contentLanguage + "<br /><br />" +
+                "Canvas Data: "             + result.canvasData + "<br /><br />" +
+                "Do not Track : "           + result.doNotTrack + "<br /><br />" + 
+                "Plugins : "                + result.plugins + "<br /><br />" + 
+                "Screen Available Width : " + result.screenAvailableWidth + "<br /><br />" +
+                "Screen Available Height : "+ result.screenAvailableHeight + "<br /><br />" + 
+                "Screen Width : "           + result.screenWidth + "<br /><br />" +
+                "Screen Height : "          + result.screenHeight + "<br /><br />" + 
+                "Screen Color Depth : "     + result.screenColorDepth + "<br /><br />" +
+                "Screen Color Resolution : "+ result.screenColorResolution + "<br /><br />" + 
+                "Hardware Concurrency :"    + result.hardwareConcurrency + "<br /><br />" + 
+                "CPU Class : "              + result.cpuClass + "<br /><br />" +
+                "modernizr : "              + result.modernizr + "<br /><br />" +
+                "overwrittenObjects : "     + result.overwrittenObjects + "<br /><br />" +
+                "App code name : "          + result.appCodeName + "<br /><br />" +
+                "App version : "            + result.appVersion + "<br /><br />" +
+                "Mime types : "             + result.mimeTypes + "<br /><br />" +
+                "Plugin using Mime Types :" + result.pluginsUsingMimeTypes + "<br /><br />" +
+                "Product : "                + result.product + "<br /><br />" +
+                "Product sub :"             + result.productSub + "<br /><br />" +
+                "Vendor : "                 + result.vendor + "<br /><br />" +
+                "Vendor sub :"              + result.vendorSub + "<br /><br />" +
+                "Touch support : "          + result.touchSupport + "<br /><br />" +
+                "Build ID : "               + result.buildID + "<br /><br />" +
+                "Navigator Prototype : "    + result.navigatorPrototype + "<br /><br />" +
+                "Maths constant : "         + result.mathsConstants + "<br /><br />" +
+                "Resolution over flow : "   + result.resOverflow + "<br /><br />" +
+                "Errors Generated : "       + result.errorsGenerated + "<br /><br />" +
+                "WebGL Data : "             + result.webGLdata + "<br /><br />" +
+                "Session Storage : "        + result.domSessionStorage + "<br /><br />" +
+                "Local Storage : "          + result.domLocalStorage + "<br /><br />" +
+                "ie user Data : "           + result.ieUserData;
+
+     	  });
+ 	})
+   </script>
