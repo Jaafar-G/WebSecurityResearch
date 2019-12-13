@@ -19,7 +19,7 @@ for file in files:
 	    splitter = data.split(";")
             first_seen_time = (splitter[0].split("|")[1]).split(":")[1]
             last_seen_time = (splitter[1].split("|")[1]).split(":")[1]
-            client_ip = (splitter[2].split("|")[1]).split(":")[2]
+            client_ip = ((splitter[2].split("|")[1]).split(":")[2]).replace("\"", "")
 	    client = MongoClient("mongodb://pwnuno:a#nsus6y3!@127.0.0.1:27017/?authSource=botDetector")
             db = client['botDetector']
             col = db['lifetime']
