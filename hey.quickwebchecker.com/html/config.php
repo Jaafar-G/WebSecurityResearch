@@ -25,6 +25,7 @@ function getcymruASNinfo() {
       $json_val->cc  = trim($cymru[3]);
       $json_val->registry  = trim($cymru[4]);
       $json_val->allocated  = trim($cymru[5]);
+      $json_val->asname  = trim($cymru[6]);
       $json_val->whois = getwhoisInfo();
       $format_json = json_encode($json_val);
       return $json_val;
