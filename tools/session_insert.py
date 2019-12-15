@@ -26,7 +26,8 @@ for file in files:
             #query ={"$and":[{"$and":[{"first_seen_time": {"$exists": False}}, {"last_seen_time": {"$exists": False}}]} , {"$and":[{"session_id":file}, {"ip":client_ip}]} ]}
 	    #id = col.find_one({"$and":[{"session_id":file}, {"ip":client_ip}]}).get('_id')
             #doc = col.update_one(query, {'$set' : {"ip":client_ip, "first_seen_time":first_seen_time, "last_seen_time":last_seen_time}}, upsert=True)
-            doc = col.insert_one({"ip":client_ip, "first_seen_time":first_seen_time, "last_seen_time":last_seen_time, "session_id":file})
+            diff = int(last_seen_time) - int(first_seen_time)
+            doc = col.insert_one({"ip":client_ip, "first_seen_time":first_seen_time, "last_seen_time":last_seen_time, "diff": diff, "session_id":file})
             if doc is None:
                 print("No update made: {}  {}  {} ".format(first_seen_time, last_seen_time, client_ip))
             else:

@@ -2,7 +2,8 @@
 // Debug mode set 
 error_reporting(E_ALL);
 ini_set('log_errors', TRUE);
-ini_set('error_log', '/tmp/lifetime_php_errors.log');
+ini_set('error_log', '/tmp/bfp_php_errors.log');
+error_log('debug data check - bfp \r\n', 3, '/tmp/debug_bfp_php.txt');
 
 //error_log('testing here!!');
 //error_log('i am entering here');

@@ -26,7 +26,7 @@ function getcymruASNinfo() {
       $json_val->registry  = trim($cymru[4]);
       $json_val->allocated  = trim($cymru[5]);
       $json_val->asname  = trim($cymru[6]);
-      $json_val->whois = getwhoisInfo();
+      //$json_val->whois = getwhoisInfo();
       $format_json = json_encode($json_val);
       return $json_val;
   } catch(Exception $e) { 
@@ -154,6 +154,7 @@ try {
             'queryInsertTimeStamp' => getTimestamp(), // time lags with current time, use session_first_seen time
 	    'session_id' => 'sess_'.session_id()
           ];
+    echo print_r($doc);
     $bulk->insert($doc);
     $m->executeBulkWrite("botDetector.requestHeader", $bulk);
 
