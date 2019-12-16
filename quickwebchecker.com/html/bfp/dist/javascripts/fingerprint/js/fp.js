@@ -148,7 +148,7 @@
     /******/
     /******/ // Load entry module and return exports
     /******/
-    return __webpack_require__(__webpack_require__.s = 345);
+    return __webpack_require__(__webpack_require__.s = 348);
     /******/
 })
 /************************************************************************/
@@ -1437,70 +1437,24 @@
     /* 67 */
     ,
     /* 68 */
-    /***/
-    (function(module, exports, __webpack_require__) {
-
-        // 19.1.3.1 Object.assign(target, source)
-        var $export = __webpack_require__(8);
-
-        $export($export.S + $export.F, 'Object', {
-            assign: __webpack_require__(69)
-        });
-
-
-        /***/
-    }),
+    ,
     /* 69 */
-    /***/
-    (function(module, exports, __webpack_require__) {
-
-        "use strict";
-
-        // 19.1.2.1 Object.assign(target, source, ...)
-        var getKeys = __webpack_require__(31);
-        var gOPS = __webpack_require__(43);
-        var pIE = __webpack_require__(44);
-        var toObject = __webpack_require__(58);
-        var IObject = __webpack_require__(34);
-        var $assign = Object.assign;
-
-        // should work with symbols and should have deterministic property order (V8 bug)
-        module.exports = !$assign || __webpack_require__(7)(function() {
-            var A = {};
-            var B = {};
-            // eslint-disable-next-line no-undef
-            var S = Symbol();
-            var K = 'abcdefghijklmnopqrst';
-            A[S] = 7;
-            K.split('').forEach(function(k) {
-                B[k] = k;
-            });
-            return $assign({}, A)[S] != 7 || Object.keys($assign({}, B)).join('') != K;
-        }) ? function assign(target, source) { // eslint-disable-line no-unused-vars
-            var T = toObject(target);
-            var aLen = arguments.length;
-            var index = 1;
-            var getSymbols = gOPS.f;
-            var isEnum = pIE.f;
-            while (aLen > index) {
-                var S = IObject(arguments[index++]);
-                var keys = getSymbols ? getKeys(S).concat(getSymbols(S)) : getKeys(S);
-                var length = keys.length;
-                var j = 0;
-                var key;
-                while (length > j)
-                    if (isEnum.call(S, key = keys[j++])) T[key] = S[key];
-            }
-            return T;
-        } : $assign;
-
-
-        /***/
-    }),
+    ,
     /* 70 */
     ,
     /* 71 */
-    ,
+    /***/
+    (function(module, exports) {
+
+        // 7.2.9 SameValue(x, y)
+        module.exports = Object.is || function is(x, y) {
+            // eslint-disable-next-line no-self-compare
+            return x === y ? x !== 0 || 1 / x === 1 / y : x != x && y != y;
+        };
+
+
+        /***/
+    }),
     /* 72 */
     ,
     /* 73 */
@@ -1713,37 +1667,7 @@
     /* 126 */
     ,
     /* 127 */
-    /***/
-    (function(module, exports, __webpack_require__) {
-
-        "use strict";
-
-        var $at = __webpack_require__(128)(true);
-
-        // 21.1.3.27 String.prototype[@@iterator]()
-        __webpack_require__(129)(String, 'String', function(iterated) {
-            this._t = String(iterated); // target
-            this._i = 0; // next index
-            // 21.1.5.2.1 %StringIteratorPrototype%.next()
-        }, function() {
-            var O = this._t;
-            var index = this._i;
-            var point;
-            if (index >= O.length) return {
-                value: undefined,
-                done: true
-            };
-            point = $at(O, index);
-            this._i += point.length;
-            return {
-                value: point,
-                done: false
-            };
-        });
-
-
-        /***/
-    }),
+    ,
     /* 128 */
     /***/
     (function(module, exports, __webpack_require__) {
@@ -1899,9 +1823,50 @@
     /* 132 */
     ,
     /* 133 */
-    ,
+    /***/
+    (function(module, exports, __webpack_require__) {
+
+        "use strict";
+        // 21.1.3.6 String.prototype.endsWith(searchString [, endPosition])
+
+        var $export = __webpack_require__(8);
+        var toLength = __webpack_require__(38);
+        var context = __webpack_require__(134);
+        var ENDS_WITH = 'endsWith';
+        var $endsWith = '' [ENDS_WITH];
+
+        $export($export.P + $export.F * __webpack_require__(136)(ENDS_WITH), 'String', {
+            endsWith: function endsWith(searchString /* , endPosition = @length */ ) {
+                var that = context(this, searchString, ENDS_WITH);
+                var endPosition = arguments.length > 1 ? arguments[1] : undefined;
+                var len = toLength(that.length);
+                var end = endPosition === undefined ? len : Math.min(toLength(endPosition), len);
+                var search = String(searchString);
+                return $endsWith ?
+                    $endsWith.call(that, search, end) :
+                    that.slice(end - search.length, end) === search;
+            }
+        });
+
+
+        /***/
+    }),
     /* 134 */
-    ,
+    /***/
+    (function(module, exports, __webpack_require__) {
+
+        // helper for String#{startsWith, endsWith, includes}
+        var isRegExp = __webpack_require__(135);
+        var defined = __webpack_require__(36);
+
+        module.exports = function(that, searchString, NAME) {
+            if (isRegExp(searchString)) throw TypeError('String#' + NAME + " doesn't accept regex!");
+            return String(defined(that));
+        };
+
+
+        /***/
+    }),
     /* 135 */
     /***/
     (function(module, exports, __webpack_require__) {
@@ -1919,13 +1884,76 @@
         /***/
     }),
     /* 136 */
-    ,
+    /***/
+    (function(module, exports, __webpack_require__) {
+
+        var MATCH = __webpack_require__(27)('match');
+        module.exports = function(KEY) {
+            var re = /./;
+            try {
+                '/./' [KEY](re);
+            } catch (e) {
+                try {
+                    re[MATCH] = false;
+                    return !'/./' [KEY](re);
+                } catch (f) { /* empty */ }
+            }
+            return true;
+        };
+
+
+        /***/
+    }),
     /* 137 */
-    ,
+    /***/
+    (function(module, exports, __webpack_require__) {
+
+        "use strict";
+        // 21.1.3.7 String.prototype.includes(searchString, position = 0)
+
+        var $export = __webpack_require__(8);
+        var context = __webpack_require__(134);
+        var INCLUDES = 'includes';
+
+        $export($export.P + $export.F * __webpack_require__(136)(INCLUDES), 'String', {
+            includes: function includes(searchString /* , position = 0 */ ) {
+                return !!~context(this, searchString, INCLUDES)
+                    .indexOf(searchString, arguments.length > 1 ? arguments[1] : undefined);
+            }
+        });
+
+
+        /***/
+    }),
     /* 138 */
     ,
     /* 139 */
-    ,
+    /***/
+    (function(module, exports, __webpack_require__) {
+
+        "use strict";
+        // 21.1.3.18 String.prototype.startsWith(searchString [, position ])
+
+        var $export = __webpack_require__(8);
+        var toLength = __webpack_require__(38);
+        var context = __webpack_require__(134);
+        var STARTS_WITH = 'startsWith';
+        var $startsWith = '' [STARTS_WITH];
+
+        $export($export.P + $export.F * __webpack_require__(136)(STARTS_WITH), 'String', {
+            startsWith: function startsWith(searchString /* , position = 0 */ ) {
+                var that = context(this, searchString, STARTS_WITH);
+                var index = toLength(Math.min(arguments.length > 1 ? arguments[1] : undefined, that.length));
+                var search = String(searchString);
+                return $startsWith ?
+                    $startsWith.call(that, search, index) :
+                    that.slice(index, index + search.length) === search;
+            }
+        });
+
+
+        /***/
+    }),
     /* 140 */
     ,
     /* 141 */
@@ -2101,13 +2129,77 @@
     /* 169 */
     ,
     /* 170 */
-    ,
+    /***/
+    (function(module, exports, __webpack_require__) {
+
+        "use strict";
+
+        var fails = __webpack_require__(7);
+
+        module.exports = function(method, arg) {
+            return !!method && fails(function() {
+                // eslint-disable-next-line no-useless-call
+                arg ? method.call(null, function() { /* empty */ }, 1) : method.call(null);
+            });
+        };
+
+
+        /***/
+    }),
     /* 171 */
     ,
     /* 172 */
-    ,
+    /***/
+    (function(module, exports, __webpack_require__) {
+
+        "use strict";
+
+        var $export = __webpack_require__(8);
+        var aFunction = __webpack_require__(24);
+        var toObject = __webpack_require__(58);
+        var fails = __webpack_require__(7);
+        var $sort = [].sort;
+        var test = [1, 2, 3];
+
+        $export($export.P + $export.F * (fails(function() {
+            // IE8-
+            test.sort(undefined);
+        }) || !fails(function() {
+            // V8 bug
+            test.sort(null);
+            // Old WebKit
+        }) || !__webpack_require__(170)($sort)), 'Array', {
+            // 22.1.3.25 Array.prototype.sort(comparefn)
+            sort: function sort(comparefn) {
+                return comparefn === undefined ?
+                    $sort.call(toObject(this)) :
+                    $sort.call(toObject(this), aFunction(comparefn));
+            }
+        });
+
+
+        /***/
+    }),
     /* 173 */
-    ,
+    /***/
+    (function(module, exports, __webpack_require__) {
+
+        "use strict";
+
+        var $export = __webpack_require__(8);
+        var $forEach = __webpack_require__(174)(0);
+        var STRICT = __webpack_require__(170)([].forEach, true);
+
+        $export($export.P + $export.F * !STRICT, 'Array', {
+            // 22.1.3.10 / 15.4.4.18 Array.prototype.forEach(callbackfn [, thisArg])
+            forEach: function forEach(callbackfn /* , thisArg */ ) {
+                return $forEach(this, callbackfn, arguments[1]);
+            }
+        });
+
+
+        /***/
+    }),
     /* 174 */
     /***/
     (function(module, exports, __webpack_require__) {
@@ -2219,7 +2311,30 @@
     /* 183 */
     ,
     /* 184 */
-    ,
+    /***/
+    (function(module, exports, __webpack_require__) {
+
+        "use strict";
+
+        var $export = __webpack_require__(8);
+        var $indexOf = __webpack_require__(37)(false);
+        var $native = [].indexOf;
+        var NEGATIVE_ZERO = !!$native && 1 / [1].indexOf(1, -0) < 0;
+
+        $export($export.P + $export.F * (NEGATIVE_ZERO || !__webpack_require__(170)($native)), 'Array', {
+            // 22.1.3.11 / 15.4.4.14 Array.prototype.indexOf(searchElement [, fromIndex])
+            indexOf: function indexOf(searchElement /* , fromIndex = 0 */ ) {
+                return NEGATIVE_ZERO
+                    // convert -0 to +0
+                    ?
+                    $native.apply(this, arguments) || 0 :
+                    $indexOf(this, searchElement, arguments[1]);
+            }
+        });
+
+
+        /***/
+    }),
     /* 185 */
     ,
     /* 186 */
@@ -2550,7 +2665,54 @@
         /***/
     }),
     /* 203 */
-    ,
+    /***/
+    (function(module, exports, __webpack_require__) {
+
+        "use strict";
+
+
+        var anObject = __webpack_require__(12);
+        var toLength = __webpack_require__(38);
+        var advanceStringIndex = __webpack_require__(204);
+        var regExpExec = __webpack_require__(205);
+
+        // @@match logic
+        __webpack_require__(206)('match', 1, function(defined, MATCH, $match, maybeCallNative) {
+            return [
+                // `String.prototype.match` method
+                // https://tc39.github.io/ecma262/#sec-string.prototype.match
+                function match(regexp) {
+                    var O = defined(this);
+                    var fn = regexp == undefined ? undefined : regexp[MATCH];
+                    return fn !== undefined ? fn.call(regexp, O) : new RegExp(regexp)[MATCH](String(O));
+                },
+                // `RegExp.prototype[@@match]` method
+                // https://tc39.github.io/ecma262/#sec-regexp.prototype-@@match
+                function(regexp) {
+                    var res = maybeCallNative($match, regexp, this);
+                    if (res.done) return res.value;
+                    var rx = anObject(regexp);
+                    var S = String(this);
+                    if (!rx.global) return regExpExec(rx, S);
+                    var fullUnicode = rx.unicode;
+                    rx.lastIndex = 0;
+                    var A = [];
+                    var n = 0;
+                    var result;
+                    while ((result = regExpExec(rx, S)) !== null) {
+                        var matchStr = String(result[0]);
+                        A[n] = matchStr;
+                        if (matchStr === '') rx.lastIndex = advanceStringIndex(S, toLength(rx.lastIndex), fullUnicode);
+                        n++;
+                    }
+                    return n === 0 ? null : A;
+                }
+            ];
+        });
+
+
+        /***/
+    }),
     /* 204 */
     /***/
     (function(module, exports, __webpack_require__) {
@@ -2859,7 +3021,45 @@
         /***/
     }),
     /* 208 */
-    ,
+    /***/
+    (function(module, exports, __webpack_require__) {
+
+        "use strict";
+
+
+        var anObject = __webpack_require__(12);
+        var sameValue = __webpack_require__(71);
+        var regExpExec = __webpack_require__(205);
+
+        // @@search logic
+        __webpack_require__(206)('search', 1, function(defined, SEARCH, $search, maybeCallNative) {
+            return [
+                // `String.prototype.search` method
+                // https://tc39.github.io/ecma262/#sec-string.prototype.search
+                function search(regexp) {
+                    var O = defined(this);
+                    var fn = regexp == undefined ? undefined : regexp[SEARCH];
+                    return fn !== undefined ? fn.call(regexp, O) : new RegExp(regexp)[SEARCH](String(O));
+                },
+                // `RegExp.prototype[@@search]` method
+                // https://tc39.github.io/ecma262/#sec-regexp.prototype-@@search
+                function(regexp) {
+                    var res = maybeCallNative($search, regexp, this);
+                    if (res.done) return res.value;
+                    var rx = anObject(regexp);
+                    var S = String(this);
+                    var previousLastIndex = rx.lastIndex;
+                    if (!sameValue(previousLastIndex, 0)) rx.lastIndex = 0;
+                    var result = regExpExec(rx, S);
+                    if (!sameValue(rx.lastIndex, previousLastIndex)) rx.lastIndex = previousLastIndex;
+                    return result === null ? -1 : result.index;
+                }
+            ];
+        });
+
+
+        /***/
+    }),
     /* 209 */
     /***/
     (function(module, exports, __webpack_require__) {
@@ -4541,18 +4741,7 @@
         /***/
     }),
     /* 236 */
-    /***/
-    (function(module, exports, __webpack_require__) {
-
-        __webpack_require__(235)('Uint8', 1, function(init) {
-            return function Uint8Array(data, byteOffset, length) {
-                return init(this, data, byteOffset, length);
-            };
-        });
-
-
-        /***/
-    }),
+    ,
     /* 237 */
     ,
     /* 238 */
@@ -4564,7 +4753,18 @@
     /* 241 */
     ,
     /* 242 */
-    ,
+    /***/
+    (function(module, exports, __webpack_require__) {
+
+        __webpack_require__(235)('Float32', 4, function(init) {
+            return function Float32Array(data, byteOffset, length) {
+                return init(this, data, byteOffset, length);
+            };
+        });
+
+
+        /***/
+    }),
     /* 243 */
     ,
     /* 244 */
@@ -4598,7 +4798,26 @@
     /* 258 */
     ,
     /* 259 */
-    ,
+    /***/
+    (function(module, exports, __webpack_require__) {
+
+        "use strict";
+
+        // https://github.com/tc39/Array.prototype.includes
+        var $export = __webpack_require__(8);
+        var $includes = __webpack_require__(37)(true);
+
+        $export($export.P, 'Array', {
+            includes: function includes(el /* , fromIndex = 0 */ ) {
+                return $includes(this, el, arguments.length > 1 ? arguments[1] : undefined);
+            }
+        });
+
+        __webpack_require__(188)('includes');
+
+
+        /***/
+    }),
     /* 260 */
     ,
     /* 261 */
@@ -5600,36 +5819,523 @@
     /* 344 */
     ,
     /* 345 */
+    ,
+    /* 346 */
+    ,
+    /* 347 */
+    ,
+    /* 348 */
     /***/
     (function(module, exports, __webpack_require__) {
 
-        __webpack_require__(68);
+        __webpack_require__(349);
+        __webpack_require__(350);
+        __webpack_require__(351);
+        __webpack_require__(352);
+        __webpack_require__(353);
+        __webpack_require__(354);
+        __webpack_require__(355);
+        __webpack_require__(356);
+        __webpack_require__(357);
+        __webpack_require__(358);
+        __webpack_require__(359);
+        __webpack_require__(360);
+        __webpack_require__(361);
+        __webpack_require__(362);
+        __webpack_require__(363);
+        __webpack_require__(364);
+        __webpack_require__(365);
+        __webpack_require__(366);
+        __webpack_require__(367);
+        __webpack_require__(368);
+        __webpack_require__(369);
+        __webpack_require__(370);
+        __webpack_require__(371);
+        __webpack_require__(372);
+        __webpack_require__(373);
+        module.exports = __webpack_require__(374);
 
-        __webpack_require__(209);
 
-        __webpack_require__(270);
+        /***/
+    }),
+    /* 349 */
+    /***/
+    (function(module, exports) {
 
-        __webpack_require__(3);
+        (function() {
+            api.register('ad', function() {
+                // throw new Error('Test Error');
+                var result;
 
-        __webpack_require__(60);
+                if (!('ab' in window)) {
+                    window.ab = true;
+                }
 
-        __webpack_require__(236);
+                if (window.ab == true) {
+                    result = 'yes';
+                } else {
+                    result = 'no';
+                }
 
-        __webpack_require__(201);
+                return result;
+            });
+        })();
 
-        __webpack_require__(158);
-
-        __webpack_require__(207);
-
-        __webpack_require__(161);
+        /***/
+    }),
+    /* 350 */
+    /***/
+    (function(module, exports, __webpack_require__) {
 
         __webpack_require__(327);
 
         __webpack_require__(195);
 
-        __webpack_require__(127);
+        __webpack_require__(60);
 
-        __webpack_require__(79);
+        __webpack_require__(133);
+
+        __webpack_require__(139);
+
+        __webpack_require__(242);
+
+        __webpack_require__(201);
+
+        __webpack_require__(158);
+
+        __webpack_require__(211);
+
+        __webpack_require__(74);
+
+        __webpack_require__(173);
+
+        __webpack_require__(203);
+
+        __webpack_require__(259);
+
+        __webpack_require__(137);
+
+        __webpack_require__(341);
+
+        function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
+            try {
+                var info = gen[key](arg);
+                var value = info.value;
+            } catch (error) {
+                reject(error);
+                return;
+            }
+            if (info.done) {
+                resolve(value);
+            } else {
+                Promise.resolve(value).then(_next, _throw);
+            }
+        }
+
+        function _asyncToGenerator(fn) {
+            return function() {
+                var self = this,
+                    args = arguments;
+                return new Promise(function(resolve, reject) {
+                    var gen = fn.apply(self, args);
+
+                    function _next(value) {
+                        asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);
+                    }
+
+                    function _throw(err) {
+                        asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);
+                    }
+                    _next(undefined);
+                });
+            };
+        }
+
+        (function() {
+            api.register(['audioFormats', 'audioContext', 'analyserNode', 'audioData'], _asyncToGenerator(
+                /*#__PURE__*/
+                regeneratorRuntime.mark(function _callee() {
+                    return regeneratorRuntime.wrap(function _callee$(_context) {
+                        while (1) {
+                            switch (_context.prev = _context.next) {
+                                case 0:
+                                    _context.t0 = getAudioFormats();
+                                    _context.t1 = getAudioContext();
+                                    _context.t2 = getAnalyserNode();
+
+                                    if (!(navigator.userAgent.includes('Chrome') || navigator.userAgent.match(/OS 11.+Version\/11.+Safari/))) {
+                                        _context.next = 7;
+                                        break;
+                                    }
+
+                                    _context.t3 = window.amiunique_not_supported;
+                                    _context.next = 10;
+                                    break;
+
+                                case 7:
+                                    _context.next = 9;
+                                    return getAudioData();
+
+                                case 9:
+                                    _context.t3 = _context.sent;
+
+                                case 10:
+                                    _context.t4 = _context.t3;
+                                    return _context.abrupt("return", {
+                                        audioFormats: _context.t0,
+                                        audioContext: _context.t1,
+                                        analyserNode: _context.t2,
+                                        audioData: _context.t4
+                                    });
+
+                                case 12:
+                                case "end":
+                                    return _context.stop();
+                            }
+                        }
+                    }, _callee);
+                })));
+        })();
+
+        function getAudioFormats() {
+            var audioFormats = {};
+
+            try {
+                var formatNames = ['audio/3gpp', 'audio/3gpp2', 'audio/AMR-NB', 'audio/AMR-WB', 'audio/GSM', 'audio/aac', 'audio/basic', 'audio/flac', 'audio/midi', 'audio/mpeg', 'audio/mp4; codecs="mp4a.40.2"', 'audio/mp4; codecs="ac-3"', 'audio/mp4; codecs="ec-3"', 'audio/ogg; codecs="flac"', 'audio/ogg; codecs="vorbis"', 'audio/ogg; codecs="opus"', 'audio/wav; codecs="1"', 'audio/webm; codecs="vorbis"', 'audio/webm; codecs="opus"', 'audio/x-aiff', 'audio/x-mpegurl'];
+                var element = document.createElement('audio');
+                formatNames.forEach(function(format) {
+                    audioFormats[format] = !!element.canPlayType && element.canPlayType(format);
+                });
+            } catch (e) {
+                console.log('getAudioFormats');
+                return window.amiunique_not_supported;
+            }
+
+            return audioFormats;
+        }
+
+        getAudioContext = function getAudioContext() {
+            var audioContext = {};
+
+            try {
+                ac = new window.AudioContext();
+                audioContext['channelCount'] = ac.destination.channelCount;
+                audioContext['channelCountMode'] = ac.destination.channelCountMode;
+                audioContext['channelInterpretation'] = ac.destination.channelInterpretation;
+                audioContext['maxChannelCount'] = ac.destination.maxChannelCount;
+                audioContext['numberOfInputs'] = ac.destination.numberOfInputs;
+                audioContext['numberOfOutputs'] = ac.destination.numberOfOutputs;
+                audioContext['sampleRate'] = ac.sampleRate;
+                audioContext['state'] = ac.state;
+            } catch (e) {
+                return window.amiunique_not_supported;
+            }
+
+            return audioContext;
+        };
+
+        getAnalyserNode = function getAnalyserNode() {
+            var analyserNode = {};
+
+            try {
+                ac = new window.AudioContext();
+                an = ac.createAnalyser();
+                analyserNode['channelCount'] = an.channelCount;
+                analyserNode['channelCountMode'] = an.channelCountMode;
+                analyserNode['channelInterpretation'] = an.channelInterpretation;
+                analyserNode['fftSize'] = an.fftSize;
+                analyserNode['frequencyBinCount'] = an.frequencyBinCount;
+                analyserNode['maxDecibels'] = an.maxDecibels;
+                analyserNode['minDecibels'] = an.minDecibels;
+                analyserNode['numberOfInputs'] = an.numberOfInputs;
+                analyserNode['numberOfOutputs'] = an.numberOfOutputs;
+                analyserNode['smoothingTimeConstant'] = an.smoothingTimeConstant;
+            } catch (e) {
+                console.log('getAnalyserNode');
+                return window.amiunique_not_supported;
+            }
+
+            return analyserNode;
+        };
+
+        getAudioData = function() {
+            var _ref2 = _asyncToGenerator(
+                /*#__PURE__*/
+                regeneratorRuntime.mark(function _callee2() {
+                    return regeneratorRuntime.wrap(function _callee2$(_context2) {
+                        while (1) {
+                            switch (_context2.prev = _context2.next) {
+                                case 0:
+                                    _context2.prev = 0;
+                                    _context2.next = 3;
+                                    return run_cc_fp();
+
+                                case 3:
+                                    _context2.t0 = _context2.sent;
+                                    _context2.next = 6;
+                                    return run_hybrid_fp();
+
+                                case 6:
+                                    _context2.t1 = _context2.sent;
+                                    return _context2.abrupt("return", {
+                                        'cc': _context2.t0,
+                                        'hybrid': _context2.t1
+                                    });
+
+                                case 10:
+                                    _context2.prev = 10;
+                                    _context2.t2 = _context2["catch"](0);
+                                    console.log('getAudioData');
+                                    return _context2.abrupt("return", window.amiunique_not_supported);
+
+                                case 14:
+                                case "end":
+                                    return _context2.stop();
+                            }
+                        }
+                    }, _callee2, null, [
+                        [0, 10]
+                    ]);
+                }));
+
+            return function getAudioData() {
+                return _ref2.apply(this, arguments);
+            };
+        }(); // Performs fingerprint as found in https://client.a.pxi.pub/PXmssU3ZQ0/main.min.js
+        // Sum of buffer values
+
+
+        run_pxi_fp = function run_pxi_fp() {
+            return new Promise(function(resolve, reject) {
+                try {
+                    if (context = new(window.OfflineAudioContext || window.webkitOfflineAudioContext)(1, 44100, 44100), !context) {
+                        resolve(0);
+                    } // Create oscillator
+
+
+                    pxi_oscillator = context.createOscillator();
+                    pxi_oscillator.type = 'triangle';
+                    pxi_oscillator.frequency.value = 1e4; // Create and configure compressor
+
+                    pxi_compressor = context.createDynamicsCompressor();
+                    pxi_compressor.threshold && (pxi_compressor.threshold.value = -50);
+                    pxi_compressor.knee && (pxi_compressor.knee.value = 40);
+                    pxi_compressor.ratio && (pxi_compressor.ratio.value = 12);
+                    pxi_compressor.reduction && (pxi_compressor.reduction.value = -20);
+                    pxi_compressor.attack && (pxi_compressor.attack.value = 0);
+                    pxi_compressor.release && (pxi_compressor.release.value = .25); // Connect nodes
+
+                    pxi_oscillator.connect(pxi_compressor);
+                    pxi_compressor.connect(context.destination); // Start audio processing
+
+                    pxi_oscillator.start(0);
+                    context.startRendering();
+
+                    context.oncomplete = function(evnt) {
+                        pxi_output = 0;
+                        var sha1 = CryptoJS.algo.SHA1.create();
+
+                        for (var i = 0; i < evnt.renderedBuffer.length; i++) {
+                            sha1.update(evnt.renderedBuffer.getChannelData(0)[i].toString());
+                        }
+
+                        hash = sha1.finalize();
+                        console.log('hash.toString(CryptoJS.enc.Hex);');
+                        console.log(hash.toString(CryptoJS.enc.Hex));
+
+                        for (var i = 4500; 5e3 > i; i++) {
+                            pxi_output += Math.abs(evnt.renderedBuffer.getChannelData(0)[i]);
+                        }
+
+                        pxi_compressor.disconnect();
+                        resolve(pxi_output);
+                    };
+                } catch (u) {
+                    resolve(0);
+                }
+            });
+        }; // End PXI fingerprint
+        // Performs fingerprint as found in https://www.cdn-net.com/cc.js
+
+
+        run_cc_fp = function run_cc_fp() {
+            return new Promise(function(resolve, reject) {
+                cc_output = [];
+                var audioCtx = new(window.AudioContext || window.webkitAudioContext)();
+                var oscillator = audioCtx.createOscillator();
+                var analyser = audioCtx.createAnalyser();
+                var gain = audioCtx.createGain();
+                var scriptProcessor = audioCtx.createScriptProcessor(4096, 1, 1);
+                gain.gain.value = 0; // Disable volume
+
+                oscillator.type = 'triangle'; // Set oscillator to output triangle wave
+
+                oscillator.connect(analyser); // Connect oscillator output to analyser input
+
+                analyser.connect(scriptProcessor); // Connect analyser output to scriptProcessor input
+
+                scriptProcessor.connect(gain); // Connect scriptProcessor output to gain input
+
+                gain.connect(audioCtx.destination); // Connect gain output to audiocontext destination
+
+                scriptProcessor.onaudioprocess = function(bins) {
+                    bins = new Float32Array(analyser.frequencyBinCount);
+                    analyser.getFloatFrequencyData(bins);
+
+                    for (var _i = 0; _i < bins.length; _i = _i + 1) {
+                        cc_output.push(bins[_i]);
+                    }
+
+                    analyser.disconnect();
+                    scriptProcessor.disconnect();
+                    gain.disconnect();
+                    resolve(cc_output.slice(0, 100));
+                };
+
+                oscillator.start(0);
+            });
+        }; // Performs a hybrid of cc/pxi methods found above
+
+
+        run_hybrid_fp = function run_hybrid_fp() {
+            return new Promise(function(resolve, reject) {
+                hybrid_output = [];
+                var audioCtx = new(window.AudioContext || window.webkitAudioContext)();
+                var oscillator = audioCtx.createOscillator();
+                var analyser = audioCtx.createAnalyser();
+                var gain = audioCtx.createGain();
+                var scriptProcessor = audioCtx.createScriptProcessor(4096, 1, 1); // Create and configure compressor
+
+                compressor = audioCtx.createDynamicsCompressor();
+                compressor.threshold && (compressor.threshold.value = -50);
+                compressor.knee && (compressor.knee.value = 40);
+                compressor.ratio && (compressor.ratio.value = 12);
+                compressor.reduction && (compressor.reduction.value = -20);
+                compressor.attack && (compressor.attack.value = 0);
+                compressor.release && (compressor.release.value = .25);
+                gain.gain.value = 0; // Disable volume
+
+                oscillator.type = 'triangle'; // Set oscillator to output triangle wave
+
+                oscillator.connect(compressor); // Connect oscillator output to dynamic compressor
+
+                compressor.connect(analyser); // Connect compressor to analyser
+
+                analyser.connect(scriptProcessor); // Connect analyser output to scriptProcessor input
+
+                scriptProcessor.connect(gain); // Connect scriptProcessor output to gain input
+
+                gain.connect(audioCtx.destination); // Connect gain output to audiocontext destination
+
+                scriptProcessor.onaudioprocess = function(bins) {
+                    bins = new Float32Array(analyser.frequencyBinCount);
+                    analyser.getFloatFrequencyData(bins);
+
+                    for (var _i2 = 0; _i2 < bins.length; _i2 = _i2 + 1) {
+                        hybrid_output.push(bins[_i2]);
+                    }
+
+                    analyser.disconnect();
+                    scriptProcessor.disconnect();
+                    gain.disconnect();
+                    resolve(hybrid_output.slice(0, 100));
+                };
+
+                oscillator.start(0);
+            });
+        };
+
+        window.amiunique_display['audioFormats'] = function(cell, audioFormats) {
+            // cell, values, separator, number
+            displayMap(cell, audioFormats, '\n', 10);
+        };
+
+        window.amiunique_display['audioContext'] = function(cell, audioContext) {
+            // cell, values, separator, number
+            displayMap(cell, audioContext, '\n', 10);
+        };
+
+        window.amiunique_display['analyserNode'] = function(cell, analyserNode) {
+            // cell, values, separator, number
+            displayMap(cell, analyserNode, '\n', 10);
+        };
+
+        window.amiunique_display['audioData'] = function(cell, audioData) {
+            if (audioData === window.amiunique_not_supported) {
+                cell.innerText = window.amiunique_not_supported;
+                return;
+            }
+
+            if (audioData === window.amiunique_no_js || audioData === window.amiunique_nojs) {
+                cell.innerText = audioData;
+                return;
+            }
+
+            if (audioData === 'No value') {
+                cell.innerText = 'No value';
+                return;
+            }
+
+            if (typeof audioData === 'string' && audioData.startsWith('{') && audioData.endsWith('}')) {
+                audioData = JSON.parse(audioData);
+            }
+
+            var numberFp = '';
+
+            if (cell.attributes.hasOwnProperty('numberfp')) {
+                numberFp = cell.getAttribute('numberfp');
+            }
+
+            var div = createElementWithAttributes('div', ['id', 'style'], ['audioChartContainer-' + numberFp, 'height: 200px; width: 100%']);
+
+            if (cell.firstChild) {
+                cell.removeChild(cell.firstChild);
+            }
+
+            cell.appendChild(div);
+
+            function formatDataPoints(audioData) {
+                data = [];
+                var keys = Object.keys(audioData);
+
+                for (i in keys) {
+                    var key = keys[i];
+                    points = [];
+
+                    for (j in audioData[key]) {
+                        points.push({
+                            y: audioData[key][j]
+                        });
+                    }
+
+                    data.push({
+                        type: 'line',
+                        dataPoints: points
+                    });
+                }
+
+                return data;
+            }
+
+            var dataPoints = formatDataPoints(audioData);
+            var chart = new CanvasJS.Chart('audioChartContainer-' + numberFp, {
+                width: 300,
+                height: 200,
+                animationEnabled: false,
+                theme: 'light2',
+                axisY: {
+                    includeZero: false
+                },
+                data: dataPoints
+            });
+            chart.render();
+        };
+
+        /***/
+    }),
+    /* 351 */
+    /***/
+    (function(module, exports, __webpack_require__) {
 
         __webpack_require__(341);
 
@@ -5671,644 +6377,2561 @@
             };
         }
 
-        //  Global variable for compatibility with older browsers
-        window.attributes = [];
-        window.api = {}; // Const
+        (function() {
+            api.register('battery', function() {
+                return new Promise(function() {
+                    var _ref = _asyncToGenerator(
+                        /*#__PURE__*/
+                        regeneratorRuntime.mark(function _callee(resolve, reject) {
+                            return regeneratorRuntime.wrap(function _callee$(_context) {
+                                while (1) {
+                                    switch (_context.prev = _context.next) {
+                                        case 0:
+                                            _context.prev = 0;
+                                            battery = {};
+                                            _context.next = 4;
+                                            return navigator.getBattery();
 
-        window.amiunique_not_supported = 'Not supported';
-        window.amiunique_undefined = 'Undefined';
-        window.amiunique_visible = 'Visible';
-        window.amiunique_invisible = 'Invisible';
-        window.amiunique_timeout = 'Timeout';
-        window.amiunique_other = 'Other';
-        window.amiunique_display = {};
-        window.amiunique_display_diff = {};
-        /**
-         * Function that adds the couple (name of the attribute, code to get the value)
-         * to the attributes' array
-         * @param {String}name the name of the attribute
-         * @param {function} code the code for getting the value
-         */
+                                        case 4:
+                                            b = _context.sent;
+                                            battery['charging'] = b.charging;
+                                            battery['chargingTime'] = b.chargingTime;
+                                            battery['dischargingTime'] = b.charging;
+                                            battery['level'] = b.level;
+                                            resolve(battery);
+                                            _context.next = 15;
+                                            break;
 
-        timeoutCollectAttribute = new Promise(function(resolve, reject) {
-            setTimeout(resolve, 5000, 'Timeout');
-        });
+                                        case 12:
+                                            _context.prev = 12;
+                                            _context.t0 = _context["catch"](0);
+                                            resolve(window.amiunique_not_supported);
 
-        api.register = function(name, code) {
-            attributes.push({
-                'name': name,
-                'code': code
-            });
-        };
-        /**
-         * Function that execute the code from attribute array for creating
-         * the javascript part of the fingerprint
-         * @return {Object} the client side fingerprint
-         */
-
-
-        api.run = _asyncToGenerator(
-            /*#__PURE__*/
-            regeneratorRuntime.mark(function _callee() {
-                var promises, i, name, results, jsAttributes, _i, _name, j;
-
-                return regeneratorRuntime.wrap(function _callee$(_context) {
-                    while (1) {
-                        switch (_context.prev = _context.next) {
-                            case 0:
-                                promises = [];
-
-                                for (i = 0; i < attributes.length; i++) {
-                                    name = attributes[i].name;
-
-                                    try {
-                                        promises.push(Promise.race([attributes[i].code(), timeoutCollectAttribute]));
-                                    } catch (e) {
-                                        console.log(e);
+                                        case 15:
+                                        case "end":
+                                            return _context.stop();
                                     }
                                 }
+                            }, _callee, null, [
+                                [0, 12]
+                            ]);
+                        }));
 
-                                _context.next = 4;
-                                return Promise.all(promises);
+                    return function(_x, _x2) {
+                        return _ref.apply(this, arguments);
+                    };
+                }());
+            });
+        })();
 
-                            case 4:
-                                results = _context.sent;
-                                jsAttributes = {};
+        window.amiunique_display['battery'] = function(cell, batteryObject) {
+            displayMap(cell, batteryObject, '\n', 4);
+        };
 
-                                for (_i = 0; _i < results.length; _i++) {
-                                    _name = attributes[_i].name;
+        /***/
+    }),
+    /* 352 */
+    /***/
+    (function(module, exports) {
 
-                                    if (Array.isArray(_name)) {
-                                        for (j = 0; j < _name.length; j++) {
-                                            if (!(typeof results[_i][_name[j]] === 'undefined')) {
-                                                jsAttributes[_name[j]] = results[_i][_name[j]];
-                                            } else {
-                                                jsAttributes[_name[j]] = 'undefined';
+        (function() {
+            api.register('buildID', function() {
+                var res = window.navigator.buildID;
+
+                if (res === undefined || typeof res === 'undefined') {
+                    res = 'undefined';
+                }
+
+                return res;
+            });
+        })();
+
+        /***/
+    }),
+    /* 353 */
+    /***/
+    (function(module, exports, __webpack_require__) {
+
+        __webpack_require__(209);
+
+        (function() {
+            api.register('canvas', function() {
+                var canvasData;
+
+                var time_taken = Date.now() - window.global_start_time;
+                console.log("Canvas begin time: " + time_taken); 
+                try {
+                    var canvas = document.createElement('canvas');
+                    canvas.height = 60;
+                    canvas.width = 400;
+                    var canvasContext = canvas.getContext('2d');
+                    canvas.style.display = 'inline';
+                    canvasContext.textBaseline = 'alphabetic';
+                    canvasContext.fillStyle = '#f60';
+                    canvasContext.fillRect(125, 1, 62, 20);
+                    canvasContext.fillStyle = '#069';
+                    canvasContext.font = '11pt no-real-font-123';
+                    canvasContext.fillText("Cwm fjordbank glyphs vext quiz, \uD83D\uDE03", 2, 15);
+                    canvasContext.fillStyle = 'rgba(102, 204, 0, 0.7)';
+                    canvasContext.font = '18pt Arial';
+                    canvasContext.fillText("Cwm fjordbank glyphs vext quiz, \uD83D\uDE03", 4, 45);
+                    canvasData = canvas.toDataURL();
+                } catch (e) {
+                    canvasData = 'Not supported';
+                }
+
+                time_taken = Date.now() - window.global_start_time;
+                console.log("Canvas end time: " + time_taken); 
+                return canvasData;
+            });
+        })();
+
+        window.amiunique_display['canvas'] = function(cell, canvasData) {
+            // Split with § is necessary due to compatibility with first version of AmIUnique (need to stay because of displaying old data through extension)
+            if (cell.firstChild) {
+                if (cell.firstChild.tagName === 'DIV') {
+                    if (cell.firstChild.firstChild) {
+                        if (cell.firstChild.firstChild.tagName === 'IMG') {
+                            return;
+                        }
+                    }
+                } else if (cell.firstChild.tagName === 'IMG') {
+                    return;
+                }
+            }
+            /*  if (cell.firstChild.tagName === 'DIV' && cell.firstChild.firstChild.tagName === 'IMG' || cell.firstChild.tagName === 'IMG' ) {
+              return;
+            }*/
+
+
+            canvasData = canvasData.split('§')[0];
+
+            if (canvasData === window.amiunique_not_supported) {
+                cell.innerText = canvasData;
+                return;
+            }
+
+            if (canvasData === window.amiunique_no_value) {
+                cell.innerText = canvasData;
+                return;
+            }
+
+            if (canvasData === window.amiunique_no_js || canvasData === window.amiunique_nojs) {
+                cell.innerText = canvasData;
+                return;
+            }
+
+            var img = new Image();
+            img.src = canvasData;
+
+            img.onload = function() {
+                img.drawImage;
+            };
+
+            if (cell.firstChild) {
+                cell.removeChild(cell.firstChild);
+            }
+
+            cell.appendChild(img);
+        };
+
+        /***/
+    }),
+    /* 354 */
+    /***/
+    (function(module, exports) {
+
+        (function() {
+            api.register('connection-js', function() {
+                try {
+                    connection = {};
+                    c = navigator.connection;
+                    connection["downlink"] = c.downlink;
+                    connection["downlinkMax"] = c.downlinkMax;
+                    connection["effectiveType"] = c.effectiveType;
+                    connection["rtt"] = c.rtt;
+                    connection["saveData"] = c.saveData;
+                    connection["type"] = c.type;
+                } catch (e) {
+                    return window.amiunique_not_supported;
+                }
+
+                return connection;
+            });
+        })();
+
+        window.amiunique_display['connection-js'] = function(cell, connection) {
+            displayMap(cell, connection, '\n', 6);
+        };
+
+        /***/
+    }),
+    /* 355 */
+    /***/
+    (function(module, exports) {
+
+        (function() {
+            api.register("cookies", function() {
+                return window.navigator.cookieEnabled ? "yes" : "no";
+            });
+        })();
+
+        /***/
+    }),
+    /* 356 */
+    /***/
+    (function(module, exports) {
+
+        (function() {
+            var doNotTrack = '';
+
+            if (window.navigator.doNotTrack != null && window.navigator.doNotTrack != 'unspecified') {
+                if (window.navigator.doNotTrack == '1' || window.navigator.doNotTrack == 'yes') {
+                    doNotTrack = 'yes';
+                } else {
+                    doNotTrack = 'no';
+                }
+            } else {
+                doNotTrack = 'NC';
+            }
+
+            api.register('doNotTrack', function() {
+                return doNotTrack;
+            });
+        })();
+
+        /***/
+    }),
+    /* 357 */
+    /***/
+    (function(module, exports, __webpack_require__) {
+
+        __webpack_require__(270);
+
+        __webpack_require__(3);
+
+        __webpack_require__(172);
+
+        __webpack_require__(79);
+
+        __webpack_require__(184);
+
+        __webpack_require__(208);
+
+        __webpack_require__(201);
+
+        __webpack_require__(158);
+
+        __webpack_require__(74);
+
+        __webpack_require__(209);
+
+        __webpack_require__(207);
+
+        function _typeof(obj) {
+            if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+                _typeof = function _typeof(obj) {
+                    return typeof obj;
+                };
+            } else {
+                _typeof = function _typeof(obj) {
+                    return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+                };
+            }
+            return _typeof(obj);
+        }
+
+        (function() {
+            api.register(['font-flash', 'resolution-flash', 'language-flash', 'platform-flash'], function() {
+                var time_taken = Date.now() - window.global_start_time;
+                console.log("Flash stuff begin time: " + time_taken); 
+                var swfobject = function() {
+                    var D = "undefined",
+                        r = "object",
+                        S = "Shockwave Flash",
+                        W = "ShockwaveFlash.ShockwaveFlash",
+                        q = "application/x-shockwave-flash",
+                        R = "SWFObjectExprInst",
+                        x = "onreadystatechange",
+                        O = window,
+                        j = document,
+                        t = navigator,
+                        T = false,
+                        U = [h],
+                        o = [],
+                        N = [],
+                        I = [],
+                        l,
+                        Q,
+                        E,
+                        B,
+                        J = false,
+                        a = false,
+                        n,
+                        G,
+                        m = true,
+                        M = function() {
+                            var aa = _typeof(j.getElementById) != D && _typeof(j.getElementsByTagName) != D && _typeof(j.createElement) != D,
+                                ah = t.userAgent.toLowerCase(),
+                                Y = t.platform.toLowerCase(),
+                                ae = Y ? /win/.test(Y) : /win/.test(ah),
+                                ac = Y ? /mac/.test(Y) : /mac/.test(ah),
+                                af = /webkit/.test(ah) ? parseFloat(ah.replace(/^.*webkit\/(\d+(\.\d+)?).*$/, "$1")) : false,
+                                X = !+"\v1",
+                                ag = [0, 0, 0],
+                                ab = null;
+
+                            if (_typeof(t.plugins) != D && _typeof(t.plugins[S]) == r) {
+                                ab = t.plugins[S].description;
+
+                                if (ab && !(_typeof(t.mimeTypes) != D && t.mimeTypes[q] && !t.mimeTypes[q].enabledPlugin)) {
+                                    T = true;
+                                    X = false;
+                                    ab = ab.replace(/^.*\s+(\S+\s+\S+$)/, "$1");
+                                    ag[0] = parseInt(ab.replace(/^(.*)\..*$/, "$1"), 10);
+                                    ag[1] = parseInt(ab.replace(/^.*\.(.*)\s.*$/, "$1"), 10);
+                                    ag[2] = /[a-zA-Z]/.test(ab) ? parseInt(ab.replace(/^.*[a-zA-Z]+(.*)$/, "$1"), 10) : 0;
+                                }
+                            } else {
+                                if (_typeof(O.ActiveXObject) != D) {
+                                    try {
+                                        var ad = new ActiveXObject(W);
+
+                                        if (ad) {
+                                            ab = ad.GetVariable("$version");
+
+                                            if (ab) {
+                                                X = true;
+                                                ab = ab.split(" ")[1].split(",");
+                                                ag = [parseInt(ab[0], 10), parseInt(ab[1], 10), parseInt(ab[2], 10)];
                                             }
                                         }
-                                    } else {
-                                        jsAttributes[_name] = results[_i];
+                                    } catch (Z) {}
+                                }
+                            }
+
+                            return {
+                                w3: aa,
+                                pv: ag,
+                                wk: af,
+                                ie: X,
+                                win: ae,
+                                mac: ac
+                            };
+                        }(),
+                        k = function() {
+                            if (!M.w3) {
+                                return;
+                            }
+
+                            if (_typeof(j.readyState) != D && j.readyState == "complete" || _typeof(j.readyState) == D && (j.getElementsByTagName("body")[0] || j.body)) {
+                                f();
+                            }
+
+                            if (!J) {
+                                if (_typeof(j.addEventListener) != D) {
+                                    j.addEventListener("DOMContentLoaded", f, false);
+                                }
+
+                                if (M.ie && M.win) {
+                                    j.attachEvent(x, function() {
+                                        if (j.readyState == "complete") {
+                                            j.detachEvent(x, arguments.callee);
+                                            f();
+                                        }
+                                    });
+
+                                    if (O == top) {
+                                        (function() {
+                                            if (J) {
+                                                return;
+                                            }
+
+                                            try {
+                                                j.documentElement.doScroll("left");
+                                            } catch (X) {
+                                                setTimeout(arguments.callee, 0);
+                                                return;
+                                            }
+
+                                            f();
+                                        })();
                                     }
                                 }
 
-                                return _context.abrupt("return", jsAttributes);
+                                if (M.wk) {
+                                    (function() {
+                                        if (J) {
+                                            return;
+                                        }
 
-                            case 8:
-                            case "end":
-                                return _context.stop();
+                                        if (!/loaded|complete/.test(j.readyState)) {
+                                            setTimeout(arguments.callee, 0);
+                                            return;
+                                        }
+
+                                        f();
+                                    })();
+                                }
+
+                                s(f);
+                            }
+                        }();
+
+                    function f() {
+                        if (J) {
+                            return;
+                        }
+
+                        try {
+                            var Z = j.getElementsByTagName("body")[0].appendChild(C("span"));
+                            Z.parentNode.removeChild(Z);
+                        } catch (aa) {
+                            return;
+                        }
+
+                        J = true;
+                        var X = U.length;
+
+                        for (var Y = 0; Y < X; Y++) {
+                            U[Y]();
                         }
                     }
-                }, _callee);
-            }));
-        /**
-         * Create an uuid for the user with the crypto lib
-         * @return {*} the uuid
-         */
 
-        function uuidv4() {
-            try {
-                return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, function(c) {
-                    return (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16);
-                });
-            } catch (e) {
-                /**
-                 * Function that calcul an uuid with common function for old browser support
-                 * @param {*}a
-                 * @return {string}
-                 */
-                var b = function b(a) {
-                    return a ? (a ^ Math.random() * 16 >> a / 4).toString(16) : ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, b);
-                };
-
-                return b(a);
-            }
-        }
-        /**
-         * Get the data of the page for the tmp cookie
-         * @return {Object} the data of the page
-         */
-
-
-        function createCookieContent(fp, summary, stat) {
-            var fpData = {};
-            fpData['fp'] = fp;
-            fpData['summary'] = summary;
-            fpData['stat'] = stat;
-            return JSON.stringify(fpData);
-        }
-        /**
-         * Function that put the value of each javascript attribute to the html table
-         * @param {Object}js the js part of the fingerprint
-         */
-
-
-        api.display = function(js) {
-            // put the value of the timezone on the summary
-            var map = Object.keys(js);
-
-            for (var i = 0; i < map.length; i++) {
-                var id = map[i];
-                var cell = document.getElementById(id); // Attributes canvas and webgldata are images
-
-                if (cell !== null) {
-                    if (js[id] === window.amiunique_timeout) {
-                        cell.innerText = window.amiunique_timeout;
-                    } else if (typeof window.amiunique_display[id] === 'function') {
-                        window.amiunique_display[id](cell, js[id]);
-                    } else {
-                        cell.innerText = js[id];
+                    function K(X) {
+                        if (J) {
+                            X();
+                        } else {
+                            U[U.length] = X;
+                        }
                     }
-                }
-            }
-        };
-        /**
-         * Put the stat value for each element
-         * @param {Object}stat
-         * @param {String} statsName
-         */
 
+                    function s(Y) {
+                        if (_typeof(O.addEventListener) != D) {
+                            O.addEventListener("load", Y, false);
+                        } else {
+                            if (_typeof(j.addEventListener) != D) {
+                                j.addEventListener("load", Y, false);
+                            } else {
+                                if (_typeof(O.attachEvent) != D) {
+                                    i(O, "onload", Y);
+                                } else {
+                                    if (typeof O.onload == "function") {
+                                        var X = O.onload;
 
-        api.displayStat = function(stat, statsName) {
-            var badgeNameH = createElementWithAttributes('span', ['class', 'style'], ['badge badge-info', 'font-size:1rem;margin:5px']);
-            badgeNameH.innerText = statsName;
-            var badgeNameJ = createElementWithAttributes('span', ['class', 'style'], ['badge badge-info', 'font-size:1rem;margin:5px']);
-            badgeNameJ.innerText = statsName;
-            var badgeNameP = createElementWithAttributes('span', ['class', 'style'], ['badge badge-info', 'font-size:1rem;margin:5px']);
-            badgeNameP.innerText = statsName;
-            var ratioH = document.getElementById('headerRatio');
-
-            if (ratioH.querySelector('span.badge.badge-info')) {
-                ratioH.removeChild(ratioH.lastChild);
-            }
-
-            var ratioJ = document.getElementById('jsRatio');
-
-            if (ratioJ.querySelector('span.badge.badge-info')) {
-                ratioJ.removeChild(ratioJ.lastChild);
-            }
-
-            var ratioP = document.getElementById('pluginsRatio');
-
-            if (ratioP !== null) {
-                if (ratioP.querySelector('span.badge.badge-info')) {
-                    ratioP.removeChild(ratioP.lastChild);
-                }
-
-                ratioP.appendChild(badgeNameP);
-            }
-
-            ratioH.appendChild(badgeNameH);
-            ratioJ.appendChild(badgeNameJ);
-            var attributes = Object.keys(stat);
-
-            for (var i = 0; i < attributes.length; i++) {
-                var attribute = attributes[i];
-
-                if (attribute !== 'cookieId') {
-                    try {
-                        var cell = document.getElementById(attribute + '-stats');
-                        cell.setAttribute('data-order', stat[attribute]);
-                        var badge = createBadgeWithThreshold(stat[attribute]);
-                        replaceChild(attribute + '-stats', badge); //      cell.appendChild(badge);
-                    } catch (e) {}
-                }
-            }
-
-            var elementWithSpinner = document.querySelectorAll('.fa.fa-spinner');
-
-            for (var _i2 = 0; _i2 < elementWithSpinner.length; _i2++) {
-                var element = elementWithSpinner[_i2];
-                var parentNode = element.parentNode;
-                parentNode.removeChild(element);
-                var span = createElementWithAttributes('span', ['class'], ['badge badge-info']);
-                span.innerText = 'NA';
-                parentNode.appendChild(span);
-            }
-        };
-        /**
-         * Replace childs of a node by a new one
-         * @param {String}id
-         * @param {Node}child
-         */
-
-
-        function replaceChild(id, child) {
-            var node = document.getElementById(id);
-
-            while (node.hasChildNodes()) {
-                node.removeChild(node.firstChild);
-            }
-
-            node.appendChild(child);
-        }
-        /**
-         * Display the value of summary of the fp.
-         * The value can be some statistics or full content (for example for uniqueness)
-         * @param {Object}summarySet
-         * @param {String} period
-         * @param {String} statsName
-         */
-
-
-        api.displaySummary = function(summarySet, period, statsName) {
-            var summary = summarySet[period];
-
-            if (document.getElementById('badgeMajor').innerText === 'Version undefined') {
-                document.getElementById('badgeMajor').innerText = summary['majorUndefined'];
-            }
-
-            var spanRes = createElementWithAttributes('span', ['style'], ['color:' + summary['color']]);
-            spanRes.innerText = statsName + ' : ' + summary['res'] + '\n'; // document.getElementById('summaryRes').appendChild(spanRes);
-
-            replaceChild('summaryRes', spanRes);
-            var spanUnique = document.createElement('span');
-            spanUnique.innerText = statsName + ' : ' + summary['unique'] + '\n';
-            replaceChild('unique', spanUnique); // document.getElementById('unique').appendChild(spanUnique);
-
-            replaceChild('osPercentage', createPeriodBadge(summary['os'], statsName));
-            replaceChild('browserPercentage', createPeriodBadge(summary['browser'], statsName));
-            replaceChild('majorPercentage', createPeriodBadge(summary['major'], statsName));
-            replaceChild('timezonePercentage', createPeriodBadge(summary['timezone'], statsName));
-            replaceChild('languagePercentage', createPeriodBadge(summary['lang'], statsName));
-        };
-        /**
-         * Function that send the new fingerprint to the server.
-         * After sending, the function run others operations like displaying stat
-         * and summary content and creation of cookies.
-         * @param {Object} fp
-         */
-
-
-        api.store = function(fp) {
-            var xhr1 = new XMLHttpRequest();
-            var url1 = '/bfp/debug.php';
-            xhr1.open('POST', url1, true);
-            xhr1.send("ready POST here");
-            console.log("Here's the end time: " + Date.now());
-            //var xhr = getXMLHttpRequest();
-
-            //xhr.onreadystatechange = function() {
-                //if (xhr.readyState === 4 && (xhr.status === 200 || xhr.status === 0)) {
-                    //var data = JSON.parse(xhr.responseText);
-                    //window.fpData = data;
-                    //api.changeStat(5);
-                    //var cookieData = createCookieContent(fp, data.summary, data.stat); // because we put local and session as storages mechanism, we can put undefined for the days value
-
-                    //setCustomStorages('currentFp', cookieData, undefined, ['local', 'session']); // 5 minutes = 1 / 24 / 60 * 5
-
-                    //setCookie('fpTime', 1, 0.003472222);
-                //}
-
-                ////$('body').css('cursor', 'default');
-            //};
-
-            ////var url = 'https://cors-anywhere.herokuapp.com/https://amiunique.org/fp';
-            //var url = '/bfp/bfp.php';
-            //xhr.open('POST', url, true);
-            //xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
-            ////xhr.send(JSON.stringify(fp));
-            //xhr.send("abcdefghijklmnopqrstuvwxyz");
-
-            var data = JSON.stringify(fp);
-            xhr1 = new XMLHttpRequest();
-            url1 = '/bfp/debug.php';
-            xhr1.open('POST', url1, true);
-            xhr1.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
-            xhr1.send("POST done here: "  + data.length);
-
-            var data_subset = data.slice(0,2000)
-            xhr1 = new XMLHttpRequest();
-            url1 = '/bfp/debug.php';
-            xhr1.open('POST', url1, true);
-            xhr1.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
-            xhr1.send("2000 done " + data_subset);
-
-            data_subset = data.slice(2000,4000)
-            xhr1 = new XMLHttpRequest();
-            url1 = '/bfp/debug.php';
-            xhr1.open('POST', url1, true);
-            xhr1.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
-            xhr1.send("2k-4k " + data_subset);
-
-            data_subset = data.slice(4000,6000)
-            xhr1 = new XMLHttpRequest();
-            url1 = '/bfp/debug.php';
-            xhr1.open('POST', url1, true);
-            xhr1.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
-            xhr1.send("4k-6k" + data_subset);
-
-            data_subset = data.slice(6000,8000)
-            xhr1 = new XMLHttpRequest();
-            url1 = '/bfp/debug.php';
-            xhr1.open('POST', url1, true);
-            xhr1.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
-            xhr1.send("6k-8k" + data_subset);
-
-            data_subset = data.slice(8000,10000)
-            xhr1 = new XMLHttpRequest();
-            url1 = '/bfp/debug.php';
-            xhr1.open('POST', url1, true);
-            xhr1.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
-            xhr1.send("8k-10k" + data_subset);
-
-            try {
-            xhr1 = new XMLHttpRequest();
-            url1 = '/bfp/debug.php';
-            xhr1.open('POST', url1, true);
-            xhr1.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
-            xhr1.send("all data" + data);
-            }
-            catch(error) {
-                xhr1 = new XMLHttpRequest();
-                url1 = '/bfp/debug.php';
-                xhr1.open('POST', url1, true);
-                xhr1.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
-                xhr1.send("got error in shipping data: " + error);
-           }
-        };
-        /**
-         * Function  that display the content of the page saved in local storage.
-         * Function uses when an user return in less than 5 minutes on the page.
-         * @param {Object} data
-         */
-
-
-        function displayDataCookie(data) {
-            window.fpData = data;
-            api.addSummary();
-            api.display(data.fp);
-            api.changeStat(5);
-            /*  api.displaySummary(data.summary, 'stats', statsName[4]);
-              api.displayStat(data['stat']['stats'], statsName[4]);
-              api.dataTable();*/
-        }
-
-        function getPeriodName() {
-            window.statsName = [];
-            var labels = document.querySelectorAll('label.form-check-label');
-            var _iteratorNormalCompletion = true;
-            var _didIteratorError = false;
-            var _iteratorError = undefined;
-
-            try {
-                for (var _iterator = labels[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-                    label = _step.value;
-                    window.statsName.push(label.innerText);
-                }
-            } catch (err) {
-                _didIteratorError = true;
-                _iteratorError = err;
-            } finally {
-                try {
-                    if (!_iteratorNormalCompletion && _iterator.return != null) {
-                        _iterator.return();
+                                        O.onload = function() {
+                                            X();
+                                            Y();
+                                        };
+                                    } else {
+                                        O.onload = Y;
+                                    }
+                                }
+                            }
+                        }
                     }
-                } finally {
-                    if (_didIteratorError) {
-                        throw _iteratorError;
+
+                    function h() {
+                        if (T) {
+                            V();
+                        } else {
+                            H();
+                        }
                     }
-                }
-            }
-        }
-        /**
-         * Function that get the id of user from an existing cookie or create a new one
-         * @return {Promise<any>}
-         */
 
+                    function V() {
+                        var X = j.getElementsByTagName("body")[0];
+                        var aa = C(r);
+                        aa.setAttribute("type", q);
+                        var Z = X.appendChild(aa);
 
-        function getIdCookie() {
-            return new Promise(function(resolve, reject) {
-                var cookieId = getEvercookie('AmIUniqueId');
+                        if (Z) {
+                            var Y = 0;
 
-                if (cookieId === undefined) {
-                    cookieId = uuidv4();
-                }
+                            (function() {
+                                if (_typeof(Z.GetVariable) != D) {
+                                    var ab = Z.GetVariable("$version");
 
-                setEvercookie('AmIUniqueId', cookieId, 120);
-                resolve(cookieId);
-            });
-        }
-        /**
-         * Put value from user-agent to the summary like browser/major name and os name.
-         */
+                                    if (ab) {
+                                        ab = ab.split(" ")[1].split(",");
+                                        M.pv = [parseInt(ab[0], 10), parseInt(ab[1], 10), parseInt(ab[2], 10)];
+                                    }
+                                } else {
+                                    if (Y < 10) {
+                                        Y++;
+                                        setTimeout(arguments.callee, 10);
+                                        return;
+                                    }
+                                }
 
+                                X.removeChild(aa);
+                                Z = null;
+                                H();
+                            })();
+                        } else {
+                            H();
+                        }
+                    }
 
-        api.addSummary = function() {
-            var parser = new UAParser();
-            var uaParsed = parser.getResult();
+                    function H() {
+                        var ag = o.length;
 
-            if (uaParsed['browser']['name'] === undefined) {
-                uaParsed['browser']['name'] = window.amiunique_other;
-            }
+                        if (ag > 0) {
+                            for (var af = 0; af < ag; af++) {
+                                var Y = o[af].id;
+                                var ab = o[af].callbackFn;
+                                var aa = {
+                                    success: false,
+                                    id: Y
+                                };
 
-            if (uaParsed['os']['name'] === undefined) {
-                uaParsed['os']['name'] = window.amiunique_other;
-            }
+                                if (M.pv[0] > 0) {
+                                    var ae = c(Y);
 
-            if (uaParsed['browser']['major'] === undefined) {
-                uaParsed['browser']['major'] = window.amiunique_undefined;
-            }
+                                    if (ae) {
+                                        if (F(o[af].swfVersion) && !(M.wk && M.wk < 312)) {
+                                            w(Y, true);
 
-            var browserDiv = document.getElementById('browserValue');
-            var imgBrowser = createElementWithAttributes('img', ['id', 'class', 'style', 'src'], ['browserImg', 'img-fluid', 'width:100px;height:auto', '/images/summary/' + uaParsed['browser']['name'].toString().toLowerCase() + '.png']);
+                                            if (ab) {
+                                                aa.success = true;
+                                                aa.ref = z(Y);
+                                                ab(aa);
+                                            }
+                                        } else {
+                                            if (o[af].expressInstall && A()) {
+                                                var ai = {};
+                                                ai.data = o[af].expressInstall;
+                                                ai.width = ae.getAttribute("width") || "0";
+                                                ai.height = ae.getAttribute("height") || "0";
 
-            imgBrowser.onload = function() {
-                this.drawImage;
-                browserDiv.appendChild(imgBrowser);
-            };
+                                                if (ae.getAttribute("class")) {
+                                                    ai.styleclass = ae.getAttribute("class");
+                                                }
 
-            imgBrowser.onerror = function() {
-                var browserBadge = createElementWithAttributes('span', ['class', 'style'], ['badge badge-info', 'font-size:1.5rem;']);
-                browserBadge.innerText = uaParsed['browser']['name'];
-                browserDiv.appendChild(browserBadge);
-            };
+                                                if (ae.getAttribute("align")) {
+                                                    ai.align = ae.getAttribute("align");
+                                                }
 
-            var majorDiv = document.getElementById('majorValue');
-            var badgeMajor = createElementWithAttributes('span', ['id', 'class', 'style'], ['badgeMajor', 'badge badge-info', 'font-size:1.5rem;']);
-            badgeMajor.innerText = 'Version ' + uaParsed['browser']['major'];
-            majorDiv.appendChild(badgeMajor);
-            var osDiv = document.getElementById('osValue');
-            var imgOs = createElementWithAttributes('img', ['src', 'class', 'style'], ['/images/summary/' + uaParsed['os']['name'].toString().toLowerCase() + '.png', 'img-fluid', 'width:100px;height:auto']);
+                                                var ah = {};
+                                                var X = ae.getElementsByTagName("param");
+                                                var ac = X.length;
 
-            imgOs.onload = function() {
-                this.drawImage;
-                osDiv.appendChild(imgOs);
-            };
+                                                for (var ad = 0; ad < ac; ad++) {
+                                                    if (X[ad].getAttribute("name").toLowerCase() != "movie") {
+                                                        ah[X[ad].getAttribute("name")] = X[ad].getAttribute("value");
+                                                    }
+                                                }
 
-            imgOs.onerror = function() {
-                var osBadge = createElementWithAttributes('span', ['class', 'style'], ['badge badge-info', 'font-size:1.5rem;']);
-                osBadge.innerText = uaParsed['os']['name'];
-                osDiv.appendChild(osBadge);
-            };
+                                                P(ai, ah, Y, ab);
+                                            } else {
+                                                p(ae);
 
-            var timezoneDiv = document.getElementById('timezoneValue');
-            var badgeTime = createElementWithAttributes('span', ['class', 'style'], ['badge badge-info', 'font-size:1.5rem;']);
-            var tz = new Date().getTimezoneOffset();
+                                                if (ab) {
+                                                    ab(aa);
+                                                }
+                                            }
+                                        }
+                                    }
+                                } else {
+                                    w(Y, true);
 
-            if (tz / -60 > 0) {
-                badgeTime.innerText = 'UTC+' + tz / -60;
-            } else {
-                badgeTime.innerText = 'UTC' + tz / -60;
-            }
+                                    if (ab) {
+                                        var Z = z(Y);
 
-            timezoneDiv.appendChild(badgeTime);
-            var languageDiv = document.getElementById('languageValue');
-            var badgeLanguage = createElementWithAttributes('span', ['class', 'style'], ['badge badge-info', 'font-size:1.5rem;']);
-            badgeLanguage.innerText = navigator.language.split('-')[0];
-            languageDiv.appendChild(badgeLanguage);
-        };
+                                        if (Z && _typeof(Z.SetVariable) != D) {
+                                            aa.success = true;
+                                            aa.ref = Z;
+                                        }
 
-        api.dataTable = function() {
-            $(document).ready(function() {
-                var options = {
-                    columnDefs: [{
-                        targets: 3,
-                        visible: false
-                    }, {
-                        type: 'html-num-fmt',
-                        targets: [1]
-                    }],
-                    paging: false,
-                    order: [
-                        [3, 'asc']
-                    ]
-                };
+                                        ab(aa);
+                                    }
+                                }
+                            }
+                        }
+                    }
 
-                if (navigator.language.substring(0, 2) === 'fr') {
-                    options['language'] = {
-                        'sProcessing': 'Traitement en cours...',
-                        'sSearch': 'Rechercher&nbsp;:',
-                        'sLengthMenu': 'Afficher _MENU_ &eacute;l&eacute;ments',
-                        'sInfo': 'Affichage de l\'&eacute;l&eacute;ment _START_ &agrave; _END_ sur _TOTAL_ &eacute;l&eacute;ments',
-                        'sInfoEmpty': 'Affichage de l\'&eacute;l&eacute;ment 0 &agrave; 0 sur 0 &eacute;l&eacute;ment',
-                        'sInfoFiltered': '(filtr&eacute; de _MAX_ &eacute;l&eacute;ments au total)',
-                        'sInfoPostFix': '',
-                        'sLoadingRecords': 'Chargement en cours...',
-                        'sZeroRecords': 'Aucun &eacute;l&eacute;ment &agrave; afficher',
-                        'sEmptyTable': 'Aucune donn&eacute;e disponible dans le tableau',
-                        'oPaginate': {
-                            'sFirst': 'Premier',
-                            'sPrevious': 'Pr&eacute;c&eacute;dent',
-                            'sNext': 'Suivant',
-                            'sLast': 'Dernier'
+                    function z(aa) {
+                        var X = null;
+                        var Y = c(aa);
+
+                        if (Y && Y.nodeName == "OBJECT") {
+                            if (_typeof(Y.SetVariable) != D) {
+                                X = Y;
+                            } else {
+                                var Z = Y.getElementsByTagName(r)[0];
+
+                                if (Z) {
+                                    X = Z;
+                                }
+                            }
+                        }
+
+                        return X;
+                    }
+
+                    function A() {
+                        return !a && F("6.0.65") && (M.win || M.mac) && !(M.wk && M.wk < 312);
+                    }
+
+                    function P(aa, ab, X, Z) {
+                        a = true;
+                        E = Z || null;
+                        B = {
+                            success: false,
+                            id: X
+                        };
+                        var ae = c(X);
+
+                        if (ae) {
+                            if (ae.nodeName == "OBJECT") {
+                                l = g(ae);
+                                Q = null;
+                            } else {
+                                l = ae;
+                                Q = X;
+                            }
+
+                            aa.id = R;
+
+                            if (_typeof(aa.width) == D || !/%$/.test(aa.width) && parseInt(aa.width, 10) < 310) {
+                                aa.width = "310";
+                            }
+
+                            if (_typeof(aa.height) == D || !/%$/.test(aa.height) && parseInt(aa.height, 10) < 137) {
+                                aa.height = "137";
+                            }
+
+                            j.title = j.title.slice(0, 47) + " - Flash Player Installation";
+                            var ad = M.ie && M.win ? "ActiveX" : "PlugIn",
+                                ac = "MMredirectURL=" + O.location.toString().replace(/&/g, "%26") + "&MMplayerType=" + ad + "&MMdoctitle=" + j.title;
+
+                            if (_typeof(ab.flashvars) != D) {
+                                ab.flashvars += "&" + ac;
+                            } else {
+                                ab.flashvars = ac;
+                            }
+
+                            if (M.ie && M.win && ae.readyState != 4) {
+                                var Y = C("div");
+                                X += "SWFObjectNew";
+                                Y.setAttribute("id", X);
+                                ae.parentNode.insertBefore(Y, ae);
+                                ae.style.display = "none";
+
+                                (function() {
+                                    if (ae.readyState == 4) {
+                                        ae.parentNode.removeChild(ae);
+                                    } else {
+                                        setTimeout(arguments.callee, 10);
+                                    }
+                                })();
+                            }
+
+                            u(aa, ab, X);
+                        }
+                    }
+
+                    function p(Y) {
+                        if (M.ie && M.win && Y.readyState != 4) {
+                            var X = C("div");
+                            Y.parentNode.insertBefore(X, Y);
+                            X.parentNode.replaceChild(g(Y), X);
+                            Y.style.display = "none";
+
+                            (function() {
+                                if (Y.readyState == 4) {
+                                    Y.parentNode.removeChild(Y);
+                                } else {
+                                    setTimeout(arguments.callee, 10);
+                                }
+                            })();
+                        } else {
+                            Y.parentNode.replaceChild(g(Y), Y);
+                        }
+                    }
+
+                    function g(ab) {
+                        var aa = C("div");
+
+                        if (M.win && M.ie) {
+                            aa.innerHTML = ab.innerHTML;
+                        } else {
+                            var Y = ab.getElementsByTagName(r)[0];
+
+                            if (Y) {
+                                var ad = Y.childNodes;
+
+                                if (ad) {
+                                    var X = ad.length;
+
+                                    for (var Z = 0; Z < X; Z++) {
+                                        if (!(ad[Z].nodeType == 1 && ad[Z].nodeName == "PARAM") && !(ad[Z].nodeType == 8)) {
+                                            aa.appendChild(ad[Z].cloneNode(true));
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        return aa;
+                    }
+
+                    function u(ai, ag, Y) {
+                        var X,
+                            aa = c(Y);
+
+                        if (M.wk && M.wk < 312) {
+                            return X;
+                        }
+
+                        if (aa) {
+                            if (_typeof(ai.id) == D) {
+                                ai.id = Y;
+                            }
+
+                            if (M.ie && M.win) {
+                                var ah = "";
+
+                                for (var ae in ai) {
+                                    if (ai[ae] != Object.prototype[ae]) {
+                                        if (ae.toLowerCase() == "data") {
+                                            ag.movie = ai[ae];
+                                        } else {
+                                            if (ae.toLowerCase() == "styleclass") {
+                                                ah += ' class="' + ai[ae] + '"';
+                                            } else {
+                                                if (ae.toLowerCase() != "classid") {
+                                                    ah += " " + ae + '="' + ai[ae] + '"';
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+                                var af = "";
+
+                                for (var ad in ag) {
+                                    if (ag[ad] != Object.prototype[ad]) {
+                                        af += '<param name="' + ad + '" value="' + ag[ad] + '" />';
+                                    }
+                                }
+
+                                aa.outerHTML = '<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"' + ah + ">" + af + "</object>";
+                                N[N.length] = ai.id;
+                                X = c(ai.id);
+                            } else {
+                                var Z = C(r);
+                                Z.setAttribute("type", q);
+
+                                for (var ac in ai) {
+                                    if (ai[ac] != Object.prototype[ac]) {
+                                        if (ac.toLowerCase() == "styleclass") {
+                                            Z.setAttribute("class", ai[ac]);
+                                        } else {
+                                            if (ac.toLowerCase() != "classid") {
+                                                Z.setAttribute(ac, ai[ac]);
+                                            }
+                                        }
+                                    }
+                                }
+
+                                for (var ab in ag) {
+                                    if (ag[ab] != Object.prototype[ab] && ab.toLowerCase() != "movie") {
+                                        e(Z, ab, ag[ab]);
+                                    }
+                                }
+
+                                aa.parentNode.replaceChild(Z, aa);
+                                X = Z;
+                            }
+                        }
+
+                        return X;
+                    }
+
+                    function e(Z, X, Y) {
+                        var aa = C("param");
+                        aa.setAttribute("name", X);
+                        aa.setAttribute("value", Y);
+                        Z.appendChild(aa);
+                    }
+
+                    function y(Y) {
+                        var X = c(Y);
+
+                        if (X && X.nodeName == "OBJECT") {
+                            if (M.ie && M.win) {
+                                X.style.display = "none";
+
+                                (function() {
+                                    if (X.readyState == 4) {
+                                        b(Y);
+                                    } else {
+                                        setTimeout(arguments.callee, 10);
+                                    }
+                                })();
+                            } else {
+                                X.parentNode.removeChild(X);
+                            }
+                        }
+                    }
+
+                    function b(Z) {
+                        var Y = c(Z);
+
+                        if (Y) {
+                            for (var X in Y) {
+                                if (typeof Y[X] == "function") {
+                                    Y[X] = null;
+                                }
+                            }
+
+                            Y.parentNode.removeChild(Y);
+                        }
+                    }
+
+                    function c(Z) {
+                        var X = null;
+
+                        try {
+                            X = j.getElementById(Z);
+                        } catch (Y) {}
+
+                        return X;
+                    }
+
+                    function C(X) {
+                        return j.createElement(X);
+                    }
+
+                    function i(Z, X, Y) {
+                        Z.attachEvent(X, Y);
+                        I[I.length] = [Z, X, Y];
+                    }
+
+                    function F(Z) {
+                        var Y = M.pv,
+                            X = Z.split(".");
+                        X[0] = parseInt(X[0], 10);
+                        X[1] = parseInt(X[1], 10) || 0;
+                        X[2] = parseInt(X[2], 10) || 0;
+                        return Y[0] > X[0] || Y[0] == X[0] && Y[1] > X[1] || Y[0] == X[0] && Y[1] == X[1] && Y[2] >= X[2] ? true : false;
+                    }
+
+                    function v(ac, Y, ad, ab) {
+                        if (M.ie && M.mac) {
+                            return;
+                        }
+
+                        var aa = j.getElementsByTagName("head")[0];
+
+                        if (!aa) {
+                            return;
+                        }
+
+                        var X = ad && typeof ad == "string" ? ad : "screen";
+
+                        if (ab) {
+                            n = null;
+                            G = null;
+                        }
+
+                        if (!n || G != X) {
+                            var Z = C("style");
+                            Z.setAttribute("type", "text/css");
+                            Z.setAttribute("media", X);
+                            n = aa.appendChild(Z);
+
+                            if (M.ie && M.win && _typeof(j.styleSheets) != D && j.styleSheets.length > 0) {
+                                n = j.styleSheets[j.styleSheets.length - 1];
+                            }
+
+                            G = X;
+                        }
+
+                        if (M.ie && M.win) {
+                            if (n && _typeof(n.addRule) == r) {
+                                n.addRule(ac, Y);
+                            }
+                        } else {
+                            if (n && _typeof(j.createTextNode) != D) {
+                                n.appendChild(j.createTextNode(ac + " {" + Y + "}"));
+                            }
+                        }
+                    }
+
+                    function w(Z, X) {
+                        if (!m) {
+                            return;
+                        }
+
+                        var Y = X ? "visible" : "hidden";
+
+                        if (J && c(Z)) {
+                            c(Z).style.visibility = Y;
+                        } else {
+                            v("#" + Z, "visibility:" + Y);
+                        }
+                    }
+
+                    function L(Y) {
+                        var Z = /[\\\"<>\.;]/;
+                        var X = Z.exec(Y) != null;
+                        return X && (typeof encodeURIComponent === "undefined" ? "undefined" : _typeof(encodeURIComponent)) != D ? encodeURIComponent(Y) : Y;
+                    }
+
+                    var d = function() {
+                        if (M.ie && M.win) {
+                            window.attachEvent("onunload", function() {
+                                var ac = I.length;
+
+                                for (var ab = 0; ab < ac; ab++) {
+                                    I[ab][0].detachEvent(I[ab][1], I[ab][2]);
+                                }
+
+                                var Z = N.length;
+
+                                for (var aa = 0; aa < Z; aa++) {
+                                    y(N[aa]);
+                                }
+
+                                for (var Y in M) {
+                                    M[Y] = null;
+                                }
+
+                                M = null;
+
+                                for (var X in swfobject) {
+                                    swfobject[X] = null;
+                                }
+
+                                swfobject = null;
+                            });
+                        }
+                    }();
+
+                    return {
+                        registerObject: function registerObject(ab, X, aa, Z) {
+                            if (M.w3 && ab && X) {
+                                var Y = {};
+                                Y.id = ab;
+                                Y.swfVersion = X;
+                                Y.expressInstall = aa;
+                                Y.callbackFn = Z;
+                                o[o.length] = Y;
+                                w(ab, false);
+                            } else {
+                                if (Z) {
+                                    Z({
+                                        success: false,
+                                        id: ab
+                                    });
+                                }
+                            }
                         },
-                        'oAria': {
-                            'sSortAscending': ': activer pour trier la colonne par ordre croissant',
-                            'sSortDescending': ': activer pour trier la colonne par ordre d&eacute;croissant'
+                        getObjectById: function getObjectById(X) {
+                            if (M.w3) {
+                                return z(X);
+                            }
+                        },
+                        embedSWF: function embedSWF(ab, ah, ae, ag, Y, aa, Z, ad, af, ac) {
+                            var X = {
+                                success: false,
+                                id: ah
+                            };
+
+                            if (M.w3 && !(M.wk && M.wk < 312) && ab && ah && ae && ag && Y) {
+                                w(ah, false);
+                                K(function() {
+                                    ae += "";
+                                    ag += "";
+                                    var aj = {};
+
+                                    if (af && _typeof(af) === r) {
+                                        for (var al in af) {
+                                            aj[al] = af[al];
+                                        }
+                                    }
+
+                                    aj.data = ab;
+                                    aj.width = ae;
+                                    aj.height = ag;
+                                    var am = {};
+
+                                    if (ad && _typeof(ad) === r) {
+                                        for (var ak in ad) {
+                                            am[ak] = ad[ak];
+                                        }
+                                    }
+
+                                    if (Z && _typeof(Z) === r) {
+                                        for (var ai in Z) {
+                                            if (_typeof(am.flashvars) != D) {
+                                                am.flashvars += "&" + ai + "=" + Z[ai];
+                                            } else {
+                                                am.flashvars = ai + "=" + Z[ai];
+                                            }
+                                        }
+                                    }
+
+                                    if (F(Y)) {
+                                        var an = u(aj, am, ah);
+
+                                        if (aj.id == ah) {
+                                            w(ah, true);
+                                        }
+
+                                        X.success = true;
+                                        X.ref = an;
+                                    } else {
+                                        if (aa && A()) {
+                                            aj.data = aa;
+                                            P(aj, am, ah, ac);
+                                            return;
+                                        } else {
+                                            w(ah, true);
+                                        }
+                                    }
+
+                                    if (ac) {
+                                        ac(X);
+                                    }
+                                });
+                            } else {
+                                if (ac) {
+                                    ac(X);
+                                }
+                            }
+                        },
+                        switchOffAutoHideShow: function switchOffAutoHideShow() {
+                            m = false;
+                        },
+                        ua: M,
+                        getFlashPlayerVersion: function getFlashPlayerVersion() {
+                            return {
+                                major: M.pv[0],
+                                minor: M.pv[1],
+                                release: M.pv[2]
+                            };
+                        },
+                        hasFlashPlayerVersion: F,
+                        createSWF: function createSWF(Z, Y, X) {
+                            if (M.w3) {
+                                return u(Z, Y, X);
+                            } else {
+                                return undefined;
+                            }
+                        },
+                        showExpressInstall: function showExpressInstall(Z, aa, X, Y) {
+                            if (M.w3 && A()) {
+                                P(Z, aa, X, Y);
+                            }
+                        },
+                        removeSWF: function removeSWF(X) {
+                            if (M.w3) {
+                                y(X);
+                            }
+                        },
+                        createCSS: function createCSS(aa, Z, Y, X) {
+                            if (M.w3) {
+                                v(aa, Z, Y, X);
+                            }
+                        },
+                        addDomLoadEvent: K,
+                        addLoadEvent: s,
+                        getQueryParamValue: function getQueryParamValue(aa) {
+                            var Z = j.location.search || j.location.hash;
+
+                            if (Z) {
+                                if (/\?/.test(Z)) {
+                                    Z = Z.split("?")[1];
+                                }
+
+                                if (aa == null) {
+                                    return L(Z);
+                                }
+
+                                var Y = Z.split("&");
+
+                                for (var X = 0; X < Y.length; X++) {
+                                    if (Y[X].substring(0, Y[X].indexOf("=")) == aa) {
+                                        return L(Y[X].substring(Y[X].indexOf("=") + 1));
+                                    }
+                                }
+                            }
+
+                            return "";
+                        },
+                        expressInstallCallback: function expressInstallCallback() {
+                            if (a) {
+                                var X = c(R);
+
+                                if (X && l) {
+                                    X.parentNode.replaceChild(l, X);
+
+                                    if (Q) {
+                                        w(Q, true);
+
+                                        if (M.ie && M.win) {
+                                            l.style.display = "block";
+                                        }
+                                    }
+
+                                    if (E) {
+                                        E(B);
+                                    }
+                                }
+
+                                a = false;
+                            }
                         }
+                    };
+                }();
+
+                swfobject.embedSWF('/flash/OSData.swf', 'OSData', '0', '0', '9.0.0');
+                var fontsFlash, resolutionFlash, languageFlash, platformFlash;
+                var plugins = '';
+
+                if (PluginDetect.browser.isIE) {
+                    var nbPlugins = 1;
+                    var pluginsList = ['QuickTime', 'Java', 'DevalVR', 'Flash', 'Shockwave', 'WindowsMediaPlayer', 'Silverlight', 'VLC', 'AdobeReader', 'PDFReader', 'RealPlayer', 'PDFjs'];
+                    PluginDetect.getVersion('.');
+
+                    for (i = 0; i < pluginsList.length; i++) {
+                        var ver = PluginDetect.getVersion(pluginsList[i]);
+
+                        if (ver != null) {
+                            plugins += 'Plugin ' + nbPlugins + ': ' + pluginsList[i] + ' ' + ver + '; ';
+                            nbPlugins++;
+                        }
+                    }
+                } else {
+                    var np = window.navigator.plugins;
+                    var plist = new Array();
+
+                    for (var i = 0; i < np.length; i++) {
+                        plist[i] = np[i].name + '; ';
+                        plist[i] += np[i].description + '; ';
+                        plist[i] += np[i].filename;
+                        plist[i] += '. ';
+                    }
+
+                    plist.sort();
+
+                    for (i = 0; i < np.length; i++) {
+                        plugins += 'Plugin ' + i + ': ' + plist[i];
+                    }
+                }
+
+                ;
+
+                if (plugins.indexOf('flash') > -1 || plugins.indexOf('Flash') > -1) {
+                    var fl = document.getElementById('OSData');
+
+                    if (fl == null) {
+                        fontsFlash = resolutionFlash = languageFlash = platformFlash = 'Flash detected but blocked by an extension';
+                    } else if (typeof fl.getOS != 'undefined' || typeof flashAvailable == 'boolean') {
+                        fontsFlash = fl.getFonts().join().replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, '_');
+                        resolutionFlash = fl.getResolution().join('x');
+                        languageFlash = fl.getLanguage();
+                        platformFlash = fl.getOS();
+                    } else {
+                        fontsFlash = resolutionFlash = languageFlash = platformFlash = 'Flash detected but not activated (click-to-play)';
+                    }
+                } else {
+                    fontsFlash = resolutionFlash = languageFlash = platformFlash = 'Flash not detected';
+                }
+
+                ;
+                time_taken = Date.now() - window.global_start_time;
+                console.log("Flash stuff end time: " + time_taken); 
+                return {
+                    'font-flash': fontsFlash,
+                    'resolution-flash': resolutionFlash,
+                    'language-flash': languageFlash,
+                    'platform-flash': platformFlash
+                };
+            });
+        })();
+
+        /***/
+    }),
+    /* 358 */
+    /***/
+    (function(module, exports) {
+
+        (function() {
+            api.register('font-js', function() {
+                var time_taken = Date.now() - window.global_start_time;
+                console.log("Font begin fingerprinting: " + time_taken); 
+                // If you insert a new font, please sort the list
+                var fonts = ['.Aqua Kana', '.Helvetica LT MM', '.Times LT MM', '18thCentury', '8514oem', 'AR BERKLEY', 'AR JULIAN', 'AR PL UKai CN', 'AR PL UMing CN', 'AR PL UMing HK', 'AR PL UMing TW', 'AR PL UMing TW MBE', 'Aakar', 'Abadi MT Condensed Extra Bold', 'Abadi MT Condensed Light', 'Abyssinica SIL', 'AcmeFont', 'Adobe Arabic', 'Agency FB', 'Aharoni', 'Aharoni Bold', 'Al Bayan', 'Al Bayan Bold', 'Al Bayan Plain', 'Al Nile', 'Al Tarikh', 'Aldhabi', 'Alfredo', 'Algerian', 'Alien Encounters', 'Almonte Snow', 'American Typewriter', 'American Typewriter Bold', 'American Typewriter Condensed', 'American Typewriter Light', 'Amethyst', 'Andale Mono', 'Andale Mono Version', 'Andalus', 'Angsana New', 'AngsanaUPC', 'Ani', 'AnjaliOldLipi', 'Aparajita', 'Apple Braille', 'Apple Braille Outline 6 Dot', 'Apple Braille Outline 8 Dot', 'Apple Braille Pinpoint 6 Dot', 'Apple Braille Pinpoint 8 Dot', 'Apple Chancery', 'Apple Color Emoji', 'Apple LiGothic Medium', 'Apple LiSung Light', 'Apple SD Gothic Neo', 'Apple SD Gothic Neo Regular', 'Apple SD GothicNeo ExtraBold', 'Apple Symbols', 'AppleGothic', 'AppleGothic Regular', 'AppleMyungjo', 'AppleMyungjo Regular', 'AquaKana', 'Arabic Transparent', 'Arabic Typesetting', 'Arial', 'Arial Baltic', 'Arial Black', 'Arial Bold', 'Arial Bold Italic', 'Arial CE', 'Arial CYR', 'Arial Greek', 'Arial Hebrew', 'Arial Hebrew Bold', 'Arial Italic', 'Arial Narrow', 'Arial Narrow Bold', 'Arial Narrow Bold Italic', 'Arial Narrow Italic', 'Arial Rounded Bold', 'Arial Rounded MT Bold', 'Arial TUR', 'Arial Unicode MS', 'ArialHB', 'Arimo', 'Asimov', 'Autumn', 'Avenir', 'Avenir Black', 'Avenir Book', 'Avenir Next', 'Avenir Next Bold', 'Avenir Next Condensed', 'Avenir Next Condensed Bold', 'Avenir Next Demi Bold', 'Avenir Next Heavy', 'Avenir Next Regular', 'Avenir Roman', 'Ayuthaya', 'BN Jinx', 'BN Machine', 'BOUTON International Symbols', 'Baby Kruffy', 'Baghdad', 'Bahnschrift', 'Balthazar', 'Bangla MN', 'Bangla MN Bold', 'Bangla Sangam MN', 'Bangla Sangam MN Bold', 'Baskerville', 'Baskerville Bold', 'Baskerville Bold Italic', 'Baskerville Old Face', 'Baskerville SemiBold', 'Baskerville SemiBold Italic', 'Bastion', 'Batang', 'BatangChe', 'Bauhaus 93', 'Beirut', 'Bell MT', 'Bell MT Bold', 'Bell MT Italic', 'Bellerose', 'Berlin Sans FB', 'Berlin Sans FB Demi', 'Bernard MT Condensed', 'BiauKai', 'Big Caslon', 'Big Caslon Medium', 'Birch Std', 'Bitstream Charter', 'Bitstream Vera Sans', 'Blackadder ITC', 'Blackoak Std', 'Bobcat', 'Bodoni 72', 'Bodoni MT', 'Bodoni MT Black', 'Bodoni MT Poster Compressed', 'Bodoni Ornaments', 'BolsterBold', 'Book Antiqua', 'Book Antiqua Bold', 'Bookman Old Style', 'Bookman Old Style Bold', 'Bookshelf Symbol 7', 'Borealis', 'Bradley Hand', 'Bradley Hand ITC', 'Braggadocio', 'Brandish', 'Britannic Bold', 'Broadway', 'Browallia New', 'BrowalliaUPC', 'Brush Script', 'Brush Script MT', 'Brush Script MT Italic', 'Brush Script Std', 'Brussels', 'Calibri', 'Calibri Bold', 'Calibri Light', 'Californian FB', 'Calisto MT', 'Calisto MT Bold', 'Calligraphic', 'Calvin', 'Cambria', 'Cambria Bold', 'Cambria Math', 'Candara', 'Candara Bold', 'Candles', 'Carrois Gothic SC', 'Castellar', 'Centaur', 'Century', 'Century Gothic', 'Century Gothic Bold', 'Century Schoolbook', 'Century Schoolbook Bold', 'Century Schoolbook L', 'Chalkboard', 'Chalkboard Bold', 'Chalkboard SE', 'Chalkboard SE Bold', 'ChalkboardBold', 'Chalkduster', 'Chandas', 'Chaparral Pro', 'Chaparral Pro Light', 'Charlemagne Std', 'Charter', 'Chilanka', 'Chiller', 'Chinyen', 'Clarendon', 'Cochin', 'Cochin Bold', 'Colbert', 'Colonna MT', 'Comic Sans MS', 'Comic Sans MS Bold', 'Commons', 'Consolas', 'Consolas Bold', 'Constantia', 'Constantia Bold', 'Coolsville', 'Cooper Black', 'Cooper Std Black', 'Copperplate', 'Copperplate Bold', 'Copperplate Gothic Bold', 'Copperplate Light', 'Corbel', 'Corbel Bold', 'Cordia New', 'CordiaUPC', 'Corporate', 'Corsiva', 'Corsiva Hebrew', 'Corsiva Hebrew Bold', 'Courier', 'Courier 10 Pitch', 'Courier Bold', 'Courier New', 'Courier New Baltic', 'Courier New Bold', 'Courier New CE', 'Courier New Italic', 'Courier Oblique', 'Cracked Johnnie', 'Creepygirl', 'Curlz MT', 'Cursor', 'Cutive Mono', 'DFKai-SB', 'DIN Alternate', 'DIN Condensed', 'Damascus', 'Damascus Bold', 'Dancing Script', 'DaunPenh', 'David', 'Dayton', 'DecoType Naskh', 'Deja Vu', 'DejaVu LGC Sans', 'DejaVu Sans', 'DejaVu Sans Mono', 'DejaVu Serif', 'Deneane', 'Desdemona', 'Detente', 'Devanagari MT', 'Devanagari MT Bold', 'Devanagari Sangam MN', 'Didot', 'Didot Bold', 'Digifit', 'DilleniaUPC', 'Dingbats', 'Distant Galaxy', 'Diwan Kufi', 'Diwan Kufi Regular', 'Diwan Thuluth', 'Diwan Thuluth Regular', 'DokChampa', 'Dominican', 'Dotum', 'DotumChe', 'Droid Sans', 'Droid Sans Fallback', 'Droid Sans Mono', 'Dyuthi', 'Ebrima', 'Edwardian Script ITC', 'Elephant', 'Emmett', 'Engravers MT', 'Engravers MT Bold', 'Enliven', 'Eras Bold ITC', 'Estrangelo Edessa', 'Ethnocentric', 'EucrosiaUPC', 'Euphemia', 'Euphemia UCAS', 'Euphemia UCAS Bold', 'Eurostile', 'Eurostile Bold', 'Expressway Rg', 'FangSong', 'Farah', 'Farisi', 'Felix Titling', 'Fingerpop', 'Fixedsys', 'Flubber', 'Footlight MT Light', 'Forte', 'FrankRuehl', 'Frankfurter Venetian TT', 'Franklin Gothic Book', 'Franklin Gothic Book Italic', 'Franklin Gothic Medium', 'Franklin Gothic Medium Cond', 'Franklin Gothic Medium Italic', 'FreeMono', 'FreeSans', 'FreeSerif', 'FreesiaUPC', 'Freestyle Script', 'French Script MT', 'Futura', 'Futura Condensed ExtraBold', 'Futura Medium', 'GB18030 Bitmap', 'Gabriola', 'Gadugi', 'Garamond', 'Garamond Bold', 'Gargi', 'Garuda', 'Gautami', 'Gazzarelli', 'Geeza Pro', 'Geeza Pro Bold', 'Geneva', 'GenevaCY', 'Gentium', 'Gentium Basic', 'Gentium Book Basic', 'GentiumAlt', 'Georgia', 'Georgia Bold', 'Geotype TT', 'Giddyup Std', 'Gigi', 'Gill', 'Gill Sans', 'Gill Sans Bold', 'Gill Sans MT', 'Gill Sans MT Bold', 'Gill Sans MT Condensed', 'Gill Sans MT Ext Condensed Bold', 'Gill Sans MT Italic', 'Gill Sans Ultra Bold', 'Gill Sans Ultra Bold Condensed', 'Gisha', 'Glockenspiel', 'Gloucester MT Extra Condensed', 'Good Times', 'Goudy', 'Goudy Old Style', 'Goudy Old Style Bold', 'Goudy Stout', 'Greek Diner Inline TT', 'Gubbi', 'Gujarati MT', 'Gujarati MT Bold', 'Gujarati Sangam MN', 'Gujarati Sangam MN Bold', 'Gulim', 'GulimChe', 'GungSeo Regular', 'Gungseouche', 'Gungsuh', 'GungsuhChe', 'Gurmukhi', 'Gurmukhi MN', 'Gurmukhi MN Bold', 'Gurmukhi MT', 'Gurmukhi Sangam MN', 'Gurmukhi Sangam MN Bold', 'Haettenschweiler', 'Hand Me Down S (BRK)', 'Hansen', 'Harlow Solid Italic', 'Harrington', 'Harvest', 'HarvestItal', 'Haxton Logos TT', 'HeadLineA Regular', 'HeadlineA', 'Heavy Heap', 'Hei', 'Hei Regular', 'Heiti SC', 'Heiti SC Light', 'Heiti SC Medium', 'Heiti TC', 'Heiti TC Light', 'Heiti TC Medium', 'Helvetica', 'Helvetica Bold', 'Helvetica CY Bold', 'Helvetica CY Plain', 'Helvetica LT Std', 'Helvetica Light', 'Helvetica Neue', 'Helvetica Neue Bold', 'Helvetica Neue Medium', 'Helvetica Oblique', 'HelveticaCY', 'HelveticaNeueLT Com 107 XBlkCn', 'Herculanum', 'High Tower Text', 'Highboot', 'Hiragino Kaku Gothic Pro W3', 'Hiragino Kaku Gothic Pro W6', 'Hiragino Kaku Gothic ProN W3', 'Hiragino Kaku Gothic ProN W6', 'Hiragino Kaku Gothic Std W8', 'Hiragino Kaku Gothic StdN W8', 'Hiragino Maru Gothic Pro W4', 'Hiragino Maru Gothic ProN W4', 'Hiragino Mincho Pro W3', 'Hiragino Mincho Pro W6', 'Hiragino Mincho ProN W3', 'Hiragino Mincho ProN W6', 'Hiragino Sans GB W3', 'Hiragino Sans GB W6', 'Hiragino Sans W0', 'Hiragino Sans W1', 'Hiragino Sans W2', 'Hiragino Sans W3', 'Hiragino Sans W4', 'Hiragino Sans W5', 'Hiragino Sans W6', 'Hiragino Sans W7', 'Hiragino Sans W8', 'Hiragino Sans W9', 'Hobo Std', 'Hoefler Text', 'Hoefler Text Black', 'Hoefler Text Ornaments', 'Hollywood Hills', 'Hombre', 'Huxley Titling', 'ITC Stone Serif', 'ITF Devanagari', 'ITF Devanagari Marathi', 'ITF Devanagari Medium', 'Impact', 'Imprint MT Shadow', 'InaiMathi', 'Induction', 'Informal Roman', 'Ink Free', 'IrisUPC', 'Iskoola Pota', 'Italianate', 'Jamrul', 'JasmineUPC', 'Javanese Text', 'Jokerman', 'Juice ITC', 'KacstArt', 'KacstBook', 'KacstDecorative', 'KacstDigital', 'KacstFarsi', 'KacstLetter', 'KacstNaskh', 'KacstOffice', 'KacstOne', 'KacstPen', 'KacstPoster', 'KacstQurn', 'KacstScreen', 'KacstTitle', 'KacstTitleL', 'Kai', 'Kai Regular', 'KaiTi', 'Kailasa', 'Kailasa Regular', 'Kaiti SC', 'Kaiti SC Black', 'Kalapi', 'Kalimati', 'Kalinga', 'Kannada MN', 'Kannada MN Bold', 'Kannada Sangam MN', 'Kannada Sangam MN Bold', 'Kartika', 'Karumbi', 'Kedage', 'Kefa', 'Kefa Bold', 'Keraleeyam', 'Keyboard', 'Khmer MN', 'Khmer MN Bold', 'Khmer OS', 'Khmer OS System', 'Khmer Sangam MN', 'Khmer UI', 'Kinnari', 'Kino MT', 'KodchiangUPC', 'Kohinoor Bangla', 'Kohinoor Devanagari', 'Kohinoor Telugu', 'Kokila', 'Kokonor', 'Kokonor Regular', 'Kozuka Gothic Pr6N B', 'Kristen ITC', 'Krungthep', 'KufiStandardGK', 'KufiStandardGK Regular', 'Kunstler Script', 'Laksaman', 'Lao MN', 'Lao Sangam MN', 'Lao UI', 'LastResort', 'Latha', 'Leelawadee', 'Letter Gothic Std', 'LetterOMatic!', 'Levenim MT', 'LiHei Pro', 'LiSong Pro', 'Liberation Mono', 'Liberation Sans', 'Liberation Sans Narrow', 'Liberation Serif', 'Likhan', 'LilyUPC', 'Limousine', 'Lithos Pro Regular', 'LittleLordFontleroy', 'Lohit Assamese', 'Lohit Bengali', 'Lohit Devanagari', 'Lohit Gujarati', 'Lohit Gurmukhi', 'Lohit Hindi', 'Lohit Kannada', 'Lohit Malayalam', 'Lohit Odia', 'Lohit Punjabi', 'Lohit Tamil', 'Lohit Tamil Classical', 'Lohit Telugu', 'Loma', 'Lucida Blackletter', 'Lucida Bright', 'Lucida Bright Demibold', 'Lucida Bright Demibold Italic', 'Lucida Bright Italic', 'Lucida Calligraphy', 'Lucida Calligraphy Italic', 'Lucida Console', 'Lucida Fax', 'Lucida Fax Demibold', 'Lucida Fax Regular', 'Lucida Grande', 'Lucida Grande Bold', 'Lucida Handwriting', 'Lucida Handwriting Italic', 'Lucida Sans', 'Lucida Sans Demibold Italic', 'Lucida Sans Typewriter', 'Lucida Sans Typewriter Bold', 'Lucida Sans Unicode', 'Luminari', 'Luxi Mono', 'MS Gothic', 'MS Mincho', 'MS Outlook', 'MS PGothic', 'MS PMincho', 'MS Reference Sans Serif', 'MS Reference Specialty', 'MS Sans Serif', 'MS Serif', 'MS UI Gothic', 'MT Extra', 'MV Boli', 'Mael', 'Magneto', 'Maiandra GD', 'Malayalam MN', 'Malayalam MN Bold', 'Malayalam Sangam MN', 'Malayalam Sangam MN Bold', 'Malgun Gothic', 'Mallige', 'Mangal', 'Manorly', 'Marion', 'Marion Bold', 'Marker Felt', 'Marker Felt Thin', 'Marlett', 'Martina', 'Matura MT Script Capitals', 'Meera', 'Meiryo', 'Meiryo Bold', 'Meiryo UI', 'MelodBold', 'Menlo', 'Menlo Bold', 'Mesquite Std', 'Microsoft', 'Microsoft Himalaya', 'Microsoft JhengHei', 'Microsoft JhengHei UI', 'Microsoft New Tai Lue', 'Microsoft PhagsPa', 'Microsoft Sans Serif', 'Microsoft Tai Le', 'Microsoft Tai Le Bold', 'Microsoft Uighur', 'Microsoft YaHei', 'Microsoft YaHei UI', 'Microsoft Yi Baiti', 'Minerva', 'MingLiU', 'MingLiU-ExtB', 'MingLiU_HKSCS', 'Minion Pro', 'Miriam', 'Mishafi', 'Mishafi Gold', 'Mistral', 'Modern', 'Modern No. 20', 'Monaco', 'Mongolian Baiti', 'Monospace', 'Monotype Corsiva', 'Monotype Sorts', 'MoolBoran', 'Moonbeam', 'MotoyaLMaru', 'Mshtakan', 'Mshtakan Bold', 'Mukti Narrow', 'Muna', 'Myanmar MN', 'Myanmar MN Bold', 'Myanmar Sangam MN', 'Myanmar Text', 'Mycalc', 'Myriad Arabic', 'Myriad Hebrew', 'Myriad Pro', 'NISC18030', 'NSimSun', 'Nadeem', 'Nadeem Regular', 'Nakula', 'Nanum Barun Gothic', 'Nanum Gothic', 'Nanum Myeongjo', 'NanumBarunGothic', 'NanumGothic', 'NanumGothic Bold', 'NanumGothicCoding', 'NanumMyeongjo', 'NanumMyeongjo Bold', 'Narkisim', 'Nasalization', 'Navilu', 'Neon Lights', 'New Peninim MT', 'New Peninim MT Bold', 'News Gothic MT', 'News Gothic MT Bold', 'Niagara Engraved', 'Niagara Solid', 'Nimbus Mono L', 'Nimbus Roman No9 L', 'Nimbus Sans L', 'Nimbus Sans L Condensed', 'Nina', 'Nirmala UI', 'Nirmala.ttf', 'Norasi', 'Noteworthy', 'Noteworthy Bold', 'Noto Color Emoji', 'Noto Emoji', 'Noto Mono', 'Noto Naskh Arabic', 'Noto Nastaliq Urdu', 'Noto Sans', 'Noto Sans Armenian', 'Noto Sans Bengali', 'Noto Sans CJK', 'Noto Sans Canadian Aboriginal', 'Noto Sans Cherokee', 'Noto Sans Devanagari', 'Noto Sans Ethiopic', 'Noto Sans Georgian', 'Noto Sans Gujarati', 'Noto Sans Gurmukhi', 'Noto Sans Hebrew', 'Noto Sans JP', 'Noto Sans KR', 'Noto Sans Kannada', 'Noto Sans Khmer', 'Noto Sans Lao', 'Noto Sans Malayalam', 'Noto Sans Myanmar', 'Noto Sans Oriya', 'Noto Sans SC', 'Noto Sans Sinhala', 'Noto Sans Symbols', 'Noto Sans TC', 'Noto Sans Tamil', 'Noto Sans Telugu', 'Noto Sans Thai', 'Noto Sans Yi', 'Noto Serif', 'Notram', 'November', 'Nueva Std', 'Nueva Std Cond', 'Nyala', 'OCR A Extended', 'OCR A Std', 'Old English Text MT', 'OldeEnglish', 'Onyx', 'OpenSymbol', 'OpineHeavy', 'Optima', 'Optima Bold', 'Optima Regular', 'Orator Std', 'Oriya MN', 'Oriya MN Bold', 'Oriya Sangam MN', 'Oriya Sangam MN Bold', 'Osaka', 'Osaka-Mono', 'OsakaMono', 'PCMyungjo Regular', 'PCmyoungjo', 'PMingLiU', 'PMingLiU-ExtB', 'PR Celtic Narrow', 'PT Mono', 'PT Sans', 'PT Sans Bold', 'PT Sans Caption Bold', 'PT Sans Narrow Bold', 'PT Serif', 'Padauk', 'Padauk Book', 'Padmaa', 'Pagul', 'Palace Script MT', 'Palatino', 'Palatino Bold', 'Palatino Linotype', 'Palatino Linotype Bold', 'Papyrus', 'Papyrus Condensed', 'Parchment', 'Parry Hotter', 'PenultimateLight', 'Perpetua', 'Perpetua Bold', 'Perpetua Titling MT', 'Perpetua Titling MT Bold', 'Phetsarath OT', 'Phosphate', 'Phosphate Inline', 'Phosphate Solid', 'PhrasticMedium', 'PilGi Regular', 'Pilgiche', 'PingFang HK', 'PingFang SC', 'PingFang TC', 'Pirate', 'Plantagenet Cherokee', 'Playbill', 'Poor Richard', 'Poplar Std', 'Pothana2000', 'Prestige Elite Std', 'Pristina', 'Purisa', 'QuiverItal', 'Raanana', 'Raanana Bold', 'Raavi', 'Rachana', 'Rage Italic', 'RaghuMalayalam', 'Ravie', 'Rekha', 'Roboto', 'Rockwell', 'Rockwell Bold', 'Rockwell Condensed', 'Rockwell Extra Bold', 'Rockwell Italic', 'Rod', 'Roland', 'Rondalo', 'Rosewood Std Regular', 'RowdyHeavy', 'Russel Write TT', 'SF Movie Poster', 'STFangsong', 'STHeiti', 'STIXGeneral', 'STIXGeneral-Bold', 'STIXGeneral-Regular', 'STIXIntegralsD', 'STIXIntegralsD-Bold', 'STIXIntegralsSm', 'STIXIntegralsSm-Bold', 'STIXIntegralsUp', 'STIXIntegralsUp-Bold', 'STIXIntegralsUp-Regular', 'STIXIntegralsUpD', 'STIXIntegralsUpD-Bold', 'STIXIntegralsUpD-Regular', 'STIXIntegralsUpSm', 'STIXIntegralsUpSm-Bold', 'STIXNonUnicode', 'STIXNonUnicode-Bold', 'STIXSizeFiveSym', 'STIXSizeFiveSym-Regular', 'STIXSizeFourSym', 'STIXSizeFourSym-Bold', 'STIXSizeOneSym', 'STIXSizeOneSym-Bold', 'STIXSizeThreeSym', 'STIXSizeThreeSym-Bold', 'STIXSizeTwoSym', 'STIXSizeTwoSym-Bold', 'STIXVariants', 'STIXVariants-Bold', 'STKaiti', 'STSong', 'STXihei', 'SWGamekeys MT', 'Saab', 'Sahadeva', 'Sakkal Majalla', 'Salina', 'Samanata', 'Samyak Devanagari', 'Samyak Gujarati', 'Samyak Malayalam', 'Samyak Tamil', 'Sana', 'Sana Regular', 'Sans', 'Sarai', 'Sathu', 'Savoye LET Plain:1.0', 'Sawasdee', 'Script', 'Script MT Bold', 'Segoe MDL2 Assets', 'Segoe Print', 'Segoe Pseudo', 'Segoe Script', 'Segoe UI', 'Segoe UI Emoji', 'Segoe UI Historic', 'Segoe UI Semilight', 'Segoe UI Symbol', 'Serif', 'Shonar Bangla', 'Showcard Gothic', 'Shree Devanagari 714', 'Shruti', 'SignPainter-HouseScript', 'Silom', 'SimHei', 'SimSun', 'SimSun-ExtB', 'Simplified Arabic', 'Simplified Arabic Fixed', 'Sinhala MN', 'Sinhala MN Bold', 'Sinhala Sangam MN', 'Sinhala Sangam MN Bold', 'Sitka', 'Skia', 'Skia Regular', 'Skinny', 'Small Fonts', 'Snap ITC', 'Snell Roundhand', 'Snowdrift', 'Songti SC', 'Songti SC Black', 'Songti TC', 'Source Code Pro', 'Splash', 'Standard Symbols L', 'Stencil', 'Stencil Std', 'Stephen', 'Sukhumvit Set', 'Suruma', 'Sylfaen', 'Symbol', 'Symbole', 'System', 'System Font', 'TAMu_Kadambri', 'TAMu_Kalyani', 'TAMu_Maduram', 'TSCu_Comic', 'TSCu_Paranar', 'TSCu_Times', 'Tahoma', 'Tahoma Negreta', 'TakaoExGothic', 'TakaoExMincho', 'TakaoGothic', 'TakaoMincho', 'TakaoPGothic', 'TakaoPMincho', 'Tamil MN', 'Tamil MN Bold', 'Tamil Sangam MN', 'Tamil Sangam MN Bold', 'Tarzan', 'Tekton Pro', 'Tekton Pro Cond', 'Tekton Pro Ext', 'Telugu MN', 'Telugu MN Bold', 'Telugu Sangam MN', 'Telugu Sangam MN Bold', 'Tempus Sans ITC', 'Terminal', 'Terminator Two', 'Thonburi', 'Thonburi Bold', 'Tibetan Machine Uni', 'Times', 'Times Bold', 'Times New Roman', 'Times New Roman Baltic', 'Times New Roman Bold', 'Times New Roman Italic', 'Times Roman', 'Tlwg Mono', 'Tlwg Typewriter', 'Tlwg Typist', 'Tlwg Typo', 'TlwgMono', 'TlwgTypewriter', 'Toledo', 'Traditional Arabic', 'Trajan Pro', 'Trattatello', 'Trebuchet MS', 'Trebuchet MS Bold', 'Tunga', 'Tw Cen MT', 'Tw Cen MT Bold', 'Tw Cen MT Italic', 'URW Bookman L', 'URW Chancery L', 'URW Gothic L', 'URW Palladio L', 'Ubuntu', 'Ubuntu Condensed', 'Ubuntu Mono', 'Ukai', 'Ume Gothic', 'Ume Mincho', 'Ume P Gothic', 'Ume P Mincho', 'Ume UI Gothic', 'Uming', 'Umpush', 'UnBatang', 'UnDinaru', 'UnDotum', 'UnGraphic', 'UnGungseo', 'UnPilgi', 'Untitled1', 'Urdu Typesetting', 'Uroob', 'Utkal', 'Utopia', 'Utsaah', 'Valken', 'Vani', 'Vemana2000', 'Verdana', 'Verdana Bold', 'Vijaya', 'Viner Hand ITC', 'Vivaldi', 'Vivian', 'Vladimir Script', 'Vrinda', 'Waree', 'Waseem', 'Waverly', 'Webdings', 'WenQuanYi Bitmap Song', 'WenQuanYi Micro Hei', 'WenQuanYi Micro Hei Mono', 'WenQuanYi Zen Hei', 'Whimsy TT', 'Wide Latin', 'Wingdings', 'Wingdings 2', 'Wingdings 3', 'Woodcut', 'X-Files', 'Year supply of fairy cakes', 'Yu Gothic', 'Yu Mincho', 'Yuppy SC', 'Yuppy SC Regular', 'Yuppy TC', 'Yuppy TC Regular', 'Zapf Dingbats', 'Zapfino', 'Zawgyi-One', 'gargi', 'lklug', 'mry_KacstQurn', 'ori1Uni']; //  		var fonts = ["Times", "Times New Roman", "tata", "toto"];
+
+                var baseFonts = ['serif', 'sans-serif', 'monospace'];
+                var testSize = '72px';
+                var testChar = 'A';
+                var h = document.getElementById('font'); // const h = document.body;
+                // create a SPAN in the document to get the width of the text we use to test
+
+                var s = document.createElement('span');
+                s.style.fontSize = testSize;
+                s.innerText = testChar;
+                var defaultFonts = {};
+
+                for (var indexBaseFonts in baseFonts) {
+                    baseFont = baseFonts[indexBaseFonts];
+                    s.style.fontFamily = baseFont;
+
+                    if (h) {
+                        h.appendChild(s);
+                        defaultFonts[baseFont] = {};
+                        defaultFonts[baseFont]['offsetWidth'] = s.offsetWidth;
+                        defaultFonts[baseFont]['offsetHeight'] = s.offsetHeight;
+                        h.removeChild(s);
+                    }
+                }
+
+                var before = new Date();
+                fontsDetected = {};
+
+                for (var indexFont in fonts) {
+                    font = fonts[indexFont];
+                    detected = false;
+                    fontStyle = '"' + font + '"';
+
+                    for (var indexBaseFonts in baseFonts) {
+                        baseFont = baseFonts[indexBaseFonts];
+                        s.style.fontFamily = fontStyle + ',' + baseFont; // name of the font along with the base font for fallback.
+
+                        if (h) {
+                            h.appendChild(s);
+                            var match = s.offsetWidth != defaultFonts[baseFont]['offsetWidth'] || s.offsetHeight != defaultFonts[baseFont]['offsetHeight'];
+                            h.removeChild(s);
+                            detected = detected || match;
+                        }
+                    }
+
+                    fontsDetected[font] = detected;
+                }
+
+                var timeTaken = new Date() - before;
+                time_taken = Date.now() - window.global_start_time;
+                console.log("Font end fingerprinting: " + time_taken); 
+                return fontsDetected;
+            });
+        })();
+
+        window.amiunique_display['font-js'] = function(cell, fonts) {
+            // cell, values, separator, number
+            displayMap(cell, fonts, ', ', 10);
+        };
+
+        /***/
+    }),
+    /* 359 */
+    /***/
+    (function(module, exports, __webpack_require__) {
+
+        __webpack_require__(173);
+
+        __webpack_require__(211);
+
+        __webpack_require__(74);
+
+        (function() {
+            api.register('keyboard', function() {
+                return new Promise(function(resolve, reject) {
+                    try {
+                        navigator.keyboard.getLayoutMap().then(function(keyboard) {
+                            var keyboard_result = {};
+                            keyboard.forEach(function(key, v) {
+                                keyboard_result[v] = key;
+                            });
+                            resolve(keyboard_result);
+                        });
+                    } catch (e) {
+                        resolve(window.amiunique_not_supported);
+                    }
+                });
+            });
+        })();
+
+        window.amiunique_display['keyboard'] = function(cell, keyboardObject) {
+            if (keyboardObject === window.amiunique_nojs) {
+                cell.innerText = window.amiunique_no_js;
+                return;
+            }
+
+            if (keyboardObject === window.amiunique_not_supported) {
+                cell.innerText = window.amiunique_not_supported;
+                return;
+            }
+
+            known_keyboards = {};
+            known_keyboards['Azerty'] = {
+                'KeyQ': 'a',
+                'KeyW': 'z',
+                'KeyE': 'e',
+                'KeyR': 'r',
+                'KeyT': 't',
+                'KeyY': 'y'
+            };
+            known_keyboards['Qwerty'] = {
+                'KeyQ': 'q',
+                'KeyW': 'w',
+                'KeyE': 'e',
+                'KeyR': 'r',
+                'KeyT': 't',
+                'KeyY': 'y'
+            };
+            known_keyboards['Dvorak'] = {
+                'KeyQ': '\'',
+                'KeyW': ',',
+                'KeyE': '.',
+                'KeyR': 'p',
+                'KeyT': 'y',
+                'KeyY': 'f'
+            };
+            known_keyboards['Bepo'] = {
+                'KeyQ': 'b',
+                'KeyW': 'é',
+                'KeyE': 'p',
+                'KeyR': 'o',
+                'KeyT': 'è',
+                'KeyY': '!'
+            };
+            known_keyboards['Qwertz'] = {
+                'KeyQ': 'q',
+                'KeyW': 'w',
+                'KeyE': 'e',
+                'KeyR': 'r',
+                'KeyT': 't',
+                'KeyY': 'z'
+            };
+            known_keyboards['Colemak'] = {
+                'KeyQ': 'q',
+                'KeyW': 'w',
+                'KeyE': 'f',
+                'KeyR': 'p',
+                'KeyT': 'g',
+                'KeyY': 'j'
+            };
+
+            for (keyboard_name in known_keyboards) {
+                keyboard = known_keyboards[keyboard_name];
+                registered_keyboard = true;
+
+                for (key in keyboard) {
+                    if (!keyboardObject.hasOwnProperty(key) || keyboardObject[key] != keyboard[key]) {
+                        registered_keyboard = false;
+                    }
+                }
+
+                if (registered_keyboard) {
+                    cell.innerText = keyboard_name;
+                    return;
+                }
+            }
+
+            cell.innerText = 'Other';
+        };
+
+        /***/
+    }),
+    /* 360 */
+    /***/
+    (function(module, exports) {
+
+        (function() {
+            api.register('languages-js', function() {
+                var lang = window.navigator.languages || window.navigator.userLanguage;
+
+                if (typeof lang === 'string') {
+                    return lang;
+                } else {
+                    return lang.join();
+                }
+            });
+        })();
+
+        /***/
+    }),
+    /* 361 */
+    /***/
+    (function(module, exports, __webpack_require__) {
+
+        __webpack_require__(270);
+
+        __webpack_require__(3);
+
+        __webpack_require__(327);
+
+        __webpack_require__(195);
+
+        __webpack_require__(60);
+
+        __webpack_require__(161);
+
+        __webpack_require__(173);
+
+        __webpack_require__(133);
+
+        __webpack_require__(139);
+
+        __webpack_require__(341);
+
+        __webpack_require__(211);
+
+        __webpack_require__(74);
+
+        function _typeof(obj) {
+            if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+                _typeof = function _typeof(obj) {
+                    return typeof obj;
+                };
+            } else {
+                _typeof = function _typeof(obj) {
+                    return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+                };
+            }
+            return _typeof(obj);
+        }
+
+        function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
+            try {
+                var info = gen[key](arg);
+                var value = info.value;
+            } catch (error) {
+                reject(error);
+                return;
+            }
+            if (info.done) {
+                resolve(value);
+            } else {
+                Promise.resolve(value).then(_next, _throw);
+            }
+        }
+
+        function _asyncToGenerator(fn) {
+            return function() {
+                var self = this,
+                    args = arguments;
+                return new Promise(function(resolve, reject) {
+                    var gen = fn.apply(self, args);
+
+                    function _next(value) {
+                        asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);
+                    }
+
+                    function _throw(err) {
+                        asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);
+                    }
+                    _next(undefined);
+                });
+            };
+        }
+
+        (function() {
+            api.register('mediaDevices', function() {
+                return new Promise(function() {
+                    var _ref = _asyncToGenerator(
+                        /*#__PURE__*/
+                        regeneratorRuntime.mark(function _callee(resolve, reject) {
+                            return regeneratorRuntime.wrap(function _callee$(_context) {
+                                while (1) {
+                                    switch (_context.prev = _context.next) {
+                                        case 0:
+                                            _context.prev = 0;
+                                            _context.next = 3;
+                                            return window.navigator.mediaDevices.enumerateDevices();
+
+                                        case 3:
+                                            connection = _context.sent;
+                                            resolve(connection);
+                                            _context.next = 10;
+                                            break;
+
+                                        case 7:
+                                            _context.prev = 7;
+                                            _context.t0 = _context["catch"](0);
+                                            resolve(window.amiunique_not_supported);
+
+                                        case 10:
+                                        case "end":
+                                            return _context.stop();
+                                    }
+                                }
+                            }, _callee, null, [
+                                [0, 7]
+                            ]);
+                        }));
+
+                    return function(_x, _x2) {
+                        return _ref.apply(this, arguments);
+                    };
+                }());
+            });
+        })();
+
+        window.amiunique_display['mediaDevices'] = function(cell, mediaDevices) {
+            if (mediaDevices === window.amiunique_not_supported) {
+                cell.innerText = window.amiunique_not_supported;
+                return;
+            }
+
+            if (mediaDevices === window.amiunique_no_js || mediaDevices === window.amiunique_nojs) {
+                cell.innerText = mediaDevices;
+                return;
+            }
+
+            if (mediaDevices === 'No value') {
+                cell.innerText = 'No value';
+                return;
+            }
+
+            if (cell.firstChild) {
+                cell.removeChild(cell.firstChild);
+            }
+
+            cell.inerText = '';
+
+            if (typeof mediaDevices === 'string' && mediaDevices.startsWith('[{') && mediaDevices.endsWith('}]')) {
+                mediaDevices = JSON.parse(mediaDevices);
+            }
+
+            var res = '';
+
+            for (i in mediaDevices) {
+                var value = mediaDevices[i];
+
+                if (value.label !== undefined && value.label !== '') {
+                    res += value.kind + ' (' + value.label + ') : ' + value.deviceId + '\n';
+                } else {
+                    res += value.kind + ' : ' + value.deviceId + '\n';
+                }
+            } // remove last \n
+
+
+            cell.innerText = res;
+        };
+
+        window.amiunique_display_diff['mediaDevices'] = function(diff, diffString) {
+            if (diff[0].hasOwnProperty('added') || diff[0].hasOwnProperty('removed')) {
+                diff.forEach(function(part) {
+                    var color = part.added ? 'green' : part.removed ? 'red' : 'black';
+
+                    if (color === 'green') {
+                        diffString += "<span style=\"color: ".concat(color, "; text-decoration: underline\">");
+                    } else if (color === 'red') {
+                        diffString += "<span style=\"color: ".concat(color, "; text-decoration: line-through\">");
+                    } else {
+                        diffString += "<span style=\"color: ".concat(color, "\">");
+                    }
+
+                    if (_typeof(part.value) === 'object' && !Array.isArray(part.value)) {
+                        diffString += "".concat(JSON.stringify(part.value), "</span>");
+                    } else if (Array.isArray(part.value) && _typeof(part.value[0]) === 'object') {
+                        diffString += "".concat(JSON.stringify(part.value), "</span>");
+                    } else {
+                        diffString += "".concat(part.value, "</span>");
+                    }
+                });
+                return diffString;
+            }
+
+            if (Array.isArray(diff)) {
+                diff.forEach(function(part) {
+                    if (_typeof(part) === 'object') {
+                        var keys = Object.keys(part);
+
+                        for (var _i = 0; _i < keys.length; _i++) {
+                            var key = keys[_i];
+                            diffString += "<span>".concat(key, ": </span>");
+                            var value = part[key];
+
+                            if (Array.isArray(value)) {
+                                value.forEach(function(partValue) {
+                                    var color = partValue.added ? 'green' : partValue.removed ? 'red' : 'black';
+
+                                    if (color === 'green') {
+                                        diffString += "<span style=\"color: ".concat(color, "; text-decoration: underline\">");
+                                    } else if (color === 'red') {
+                                        diffString += "<span style=\"color: ".concat(color, "; text-decoration: line-through\">");
+                                    } else {
+                                        diffString += "<span style=\"color: ".concat(color, "\">");
+                                    }
+
+                                    if (_typeof(partValue.value) === 'object' && !Array.isArray(partValue.value)) {
+                                        diffString += "".concat(JSON.stringify(partValue.value), "</span>");
+                                    } else if (Array.isArray(partValue.value) && _typeof(partValue.value[0]) === 'object') {
+                                        diffString += "".concat(JSON.stringify(partValue.value), "</span>");
+                                    } else {
+                                        diffString += "".concat(partValue.value, "</span>");
+                                    }
+                                });
+                            }
+                        }
+                    }
+                });
+            }
+
+            return diffString;
+        };
+
+        /***/
+    }),
+    /* 362 */
+    /***/
+    (function(module, exports, __webpack_require__) {
+
+        __webpack_require__(209);
+
+        (function() {
+            api.register(['navigator_properties', 'product', 'productSub', 'vendor', 'vendorSub', 'hardwareConcurrency', 'javaEnabled', 'deviceMemory'], function() {
+                navigator_properties = [];
+
+                for (var property in navigator) {
+                    navigator_properties.push(property);
+                }
+
+                return {
+                    'navigator_properties': navigator_properties,
+                    'product': navigator.product,
+                    'productSub': navigator.productSub,
+                    'vendor': navigator.vendor,
+                    'vendorSub': navigator.vendorSub,
+                    'hardwareConcurrency': navigator.hardwareConcurrency,
+                    'javaEnabled': navigator.javaEnabled(),
+                    'deviceMemory': navigator.deviceMemory
+                };
+            });
+        })();
+
+        window.amiunique_display['navigator_properties'] = function(cell, navigator_properties) {
+            if (navigator_properties === window.amiunique_no_js || navigator_properties === window.amiunique_nojs) {
+                cell.innerText = navigator_properties;
+                return;
+            }
+
+            if (navigator_properties === 'No value') {
+                cell.innerText = 'No value';
+                return;
+            }
+
+            if (typeof navigator_properties === 'string') {
+                navigator_properties = navigator_properties.split(',');
+            }
+
+            cell.innerText = navigator_properties.length + ' properties in navigator object';
+        };
+
+        /***/
+    }),
+    /* 363 */
+    /***/
+    (function(module, exports, __webpack_require__) {
+
+        __webpack_require__(133);
+
+        __webpack_require__(139);
+
+        __webpack_require__(327);
+
+        __webpack_require__(195);
+
+        __webpack_require__(341);
+
+        __webpack_require__(211);
+
+        __webpack_require__(74);
+
+        function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
+            try {
+                var info = gen[key](arg);
+                var value = info.value;
+            } catch (error) {
+                reject(error);
+                return;
+            }
+            if (info.done) {
+                resolve(value);
+            } else {
+                Promise.resolve(value).then(_next, _throw);
+            }
+        }
+
+        function _asyncToGenerator(fn) {
+            return function() {
+                var self = this,
+                    args = arguments;
+                return new Promise(function(resolve, reject) {
+                    var gen = fn.apply(self, args);
+
+                    function _next(value) {
+                        asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);
+                    }
+
+                    function _throw(err) {
+                        asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);
+                    }
+                    _next(undefined);
+                });
+            };
+        }
+
+        (function() {
+            api.register("permissions", function() {
+                return new Promise(function() {
+                    var _ref = _asyncToGenerator(
+                        /*#__PURE__*/
+                        regeneratorRuntime.mark(function _callee(resolve, reject) {
+                            return regeneratorRuntime.wrap(function _callee$(_context) {
+                                while (1) {
+                                    switch (_context.prev = _context.next) {
+                                        case 0:
+                                            permissions_to_query = ['accelerometer', 'accessibility', 'ambient-light-sensor', 'camera', 'clipboard-read', 'clipboard-write', 'geolocation', 'background-sync', 'magnetometer', 'microphone', 'midi', 'notifications', 'payment-handler', 'persistent-storage', 'push'];
+                                            permissions = {};
+                                            _context.t0 = regeneratorRuntime.keys(permissions_to_query);
+
+                                        case 3:
+                                            if ((_context.t1 = _context.t0()).done) {
+                                                _context.next = 18;
+                                                break;
+                                            }
+
+                                            i = _context.t1.value;
+                                            _context.prev = 5;
+                                            permission_to_query = permissions_to_query[i];
+                                            _context.next = 9;
+                                            return navigator.permissions.query({
+                                                name: permission_to_query
+                                            });
+
+                                        case 9:
+                                            result = _context.sent;
+                                            permissions[permission_to_query] = result.state;
+                                            _context.next = 16;
+                                            break;
+
+                                        case 13:
+                                            _context.prev = 13;
+                                            _context.t2 = _context["catch"](5);
+                                            permissions[permission_to_query] = _context.t2.message;
+
+                                        case 16:
+                                            _context.next = 3;
+                                            break;
+
+                                        case 18:
+                                            resolve(permissions);
+
+                                        case 19:
+                                        case "end":
+                                            return _context.stop();
+                                    }
+                                }
+                            }, _callee, null, [
+                                [5, 13]
+                            ]);
+                        }));
+
+                    return function(_x, _x2) {
+                        return _ref.apply(this, arguments);
+                    };
+                }());
+            });
+        })();
+
+        window.amiunique_display['permissions'] = function(cell, permissions) {
+            if (permissions === window.amiunique_not_supported) {
+                cell.innerText = window.amiunique_not_supported;
+                return;
+            }
+
+            if (permissions === window.amiunique_no_js || permissions === window.amiunique_nojs) {
+                cell.innerText = permissions;
+                return;
+            }
+
+            if (permissions === 'No value') {
+                cell.innerText = 'No value';
+                return;
+            }
+
+            if (typeof permissions === "string" && permissions.startsWith('{') && permissions.endsWith('}')) {
+                permissions = JSON.parse(permissions);
+            }
+
+            if (cell.firstChild) {
+                cell.removeChild(cell.firstChild);
+            }
+
+            cell.innerText = "";
+
+            for (var permission in permissions) {
+                value = permissions[permission];
+
+                if (value === 'prompt' || value === 'granted' || value === 'denied') {
+                    cell.innerText += permission + " : " + value + "\n";
+                }
+            }
+
+            ;
+            cell.innerText = cell.innerText.substring(0, cell.innerText.length - 1);
+        };
+
+        /***/
+    }),
+    /* 364 */
+    /***/
+    (function(module, exports) {
+
+        (function() {
+            api.register("platform", function() {
+                return window.navigator.platform;
+            });
+        })();
+
+        /***/
+    }),
+    /* 365 */
+    /***/
+    (function(module, exports, __webpack_require__) {
+
+        __webpack_require__(327);
+
+        __webpack_require__(195);
+
+        __webpack_require__(74);
+
+        __webpack_require__(60);
+
+        __webpack_require__(79);
+
+        (function() {
+            api.register('plugins', function() {
+                var time_taken = Date.now() - window.global_start_time;
+                console.log("Plugins begin time: " + time_taken); 
+                var res = {};
+                var np = window.navigator.plugins;
+                var plist = [];
+
+                if (np.length === 0) {
+                    return {
+                        plugins: 'none'
                     };
                 }
 
-                $('#table_header').DataTable(options);
-                $('#table_js').DataTable(options);
+                for (var i = 0; i < np.length; i++) {
+                    var name = np[i].name;
+                    res['plugin-' + name] = np[i].name;
+                    plist[i] = name + '; ';
+                    plist[i] += np[i].description + '; ';
+                    plist[i] += np[i].filename;
+                    plist[i] += '. ';
+                }
+
+                var plugins = '';
+
+                for (var j = 0; j < np.length; j++) {
+                    plugins += 'Plugin ' + j + ': ' + plist[j];
+                }
+
+                res['plugins'] = plugins;
+                return res;
+                time_taken = Date.now() - window.global_start_time;
+                console.log("Plugins end time: " + time_taken); 
             });
+        })();
+
+        window.amiunique_display['plugins'] = function(cell, plugins) {
+            // For the plugins list, we create a html table with the list of plugin
+            cell.innerText = plugins['plugins'];
+
+            if (Object.keys(plugins).length > 1 && document.getElementById('detail-table')) {
+                var pluginTable = createPluginTable();
+                document.getElementById('detail-table').appendChild(pluginTable);
+                var keys = Object.keys(plugins);
+
+                for (var j = keys.length - 2; j >= 0; j--) {
+                    var attribute = keys[j];
+                    var name = plugins[attribute];
+                    var rank = 'Plugin ' + j;
+                    var newTr = document.createElement('tr');
+                    var cellA = createElementWithAttributes('td', ['class'], ['text-center']);
+                    cellA.innerText = rank;
+                    newTr.appendChild(cellA);
+                    var cellB = createElementWithAttributes('td', ['id', 'class'], [keys[j] + '-stats', 'text-center']);
+                    newTr.appendChild(cellB);
+                    var cellC = createElementWithAttributes('td', ['id', 'class'], [keys[j] + '-name', 'text-left']);
+                    cellC.innerText = name;
+                    newTr.appendChild(cellC);
+                    insertAfter(newTr, document.getElementById('plugin-detail'));
+                }
+            }
         };
-        /**
-         * Function that begins the pipeline for fingerprint collect.
-         * If user came less than 5 minutes, put the previous view of the page
-         */
 
+        function createPluginTable() {
+            var table = createElementWithAttributes('table', ['class'], ['table table-bordered table-stripped table-hover']);
+            var tableHeader = document.createElement('thead');
+            var trHeadLine = document.createElement('tr');
+            var trHeadLine2 = createElementWithAttributes('tr', ['id'], ['plugin-detail']);
+            var tdHeadline = createElementWithAttributes('th', ['colspan', 'style'], [3, 'font-weight:bold']);
+            tdHeadline.innerText = 'Plugins detail';
+            trHeadLine.appendChild(tdHeadline);
+            tableHeader.appendChild(trHeadLine);
+            var header0 = createElementWithAttributes('th', ['class'], ['text-center']);
+            header0.innerText = 'Number of plugin';
+            trHeadLine2.appendChild(header0);
+            var header = createElementWithAttributes('th', ['class', 'id'], ['text-center', 'pluginsRatio']);
+            header.innerText = 'Similarity ratio ';
+            trHeadLine2.appendChild(header);
+            var header3 = createElementWithAttributes('th', ['class'], ['text-left']);
+            header3.innerText = 'Name of plugin';
+            trHeadLine2.appendChild(header3);
+            tableHeader.appendChild(trHeadLine2);
+            table.appendChild(trHeadLine);
+            table.appendChild(trHeadLine2);
+            return table;
+        }
 
-        api.exec = _asyncToGenerator(
-            /*#__PURE__*/
-            regeneratorRuntime.mark(function _callee2() {
-                var fpTime, currentFp, jsAttributes, cookieId, fp;
-                return regeneratorRuntime.wrap(function _callee2$(_context2) {
-                    while (1) {
-                        switch (_context2.prev = _context2.next) {
-                            case 0:
-                                fpTime = getCookie('fpTime');
-                                currentFp = getEvercookie('currentFp');
-                                getPeriodName();
-                                $('input[name="slider"]').change(function() {
-                                    api.changeStat(this.value);
-                                });
-                                recreateEvercookie('AmIUniqueId', 120);
+        /***/
+    }),
+    /* 366 */
+    /***/
+    (function(module, exports) {
 
-                                if (!(fpTime !== null && currentFp !== undefined)) {
-                                    _context2.next = 9;
-                                    break;
-                                }
+        (function() {
+            api.register(['screen_width', 'screen_height', 'screen_depth', 'screen_availTop', 'screen_availLeft', 'screen_availHeight', 'screen_availWidth', 'screen_left', 'screen_top'], function() {
+                return {
+                    'screen_width': window.screen.width,
+                    'screen_height': window.screen.height,
+                    'screen_depth': window.screen.colorDepth,
+                    'screen_availTop': window.screen.availTop,
+                    'screen_availLeft': window.screen.availLeft,
+                    'screen_availHeight': window.screen.availHeight,
+                    'screen_availWidth': window.screen.availWidth,
+                    'screen_left': window.screen.left,
+                    'screen_top': window.screen.top
+                };
+            });
+        })();
 
-                                //displayDataCookie(JSON.parse(currentFp));
-                                _context2.next = 21;
-                                break;
+        /***/
+    }),
+    /* 367 */
+    /***/
+    (function(module, exports, __webpack_require__) {
 
-                            case 9:
-                                //Phani
-                                var xhr = new XMLHttpRequest();
-                                var url = '/bfp/debug.php';
-                                xhr.open('POST', url, true);
-                                xhr.send("case 9 here");
-                                var time_taken = Date.now() - window.global_start_time;
-                                console.log("Time at begin case 9: " + time_taken); 
-                                $('body').css('cursor', 'progress');
-                                //api.addSummary();
-                                _context2.next = 13;
-                                return api.run();
+        __webpack_require__(341);
 
-                            case 13:
-                                //Phani
-                                var xhr = new XMLHttpRequest();
-                                var url = '/bfp/debug.php';
-                                xhr.open('POST', url, true);
-                                xhr.send("case 13 here");
-                                var time_taken = Date.now() - window.global_start_time;
-                                console.log("Time at begin case 13: " + time_taken); 
-                                $('body').css('cursor', 'progress');
-                                jsAttributes = _context2.sent;
-                                //api.display(jsAttributes);
-                                _context2.next = 17;
-                                return getIdCookie();
+        __webpack_require__(211);
 
-                            case 17:
-                                //Phani
-                                var xhr = new XMLHttpRequest();
-                                var url = '/bfp/debug.php';
-                                xhr.open('POST', url, true);
-                                xhr.send("case 17 here");
-                                var time_taken = Date.now() - window.global_start_time;
-                                console.log("Time at begin case 17: " + time_taken); 
-                                cookieId = _context2.sent;
-                                jsAttributes['cookieId'] = cookieId;
-                                fp = Object.assign(headers, jsAttributes);
-                                time_taken = Date.now() - window.global_start_time;
-                                console.log("Time after fp extract case 17: " + time_taken); 
-                                api.store(fp);
+        __webpack_require__(74);
 
-                            case 21:
-                            case "end":
-                                return _context2.stop();
+        var checkAccelerometerPresence = function() {
+            var _ref2 = _asyncToGenerator(
+                /*#__PURE__*/
+                regeneratorRuntime.mark(function _callee2() {
+                    var accelerometer;
+                    return regeneratorRuntime.wrap(function _callee2$(_context2) {
+                        while (1) {
+                            switch (_context2.prev = _context2.next) {
+                                case 0:
+                                    accelerometer = null;
+                                    _context2.prev = 1;
+                                    accelerometer = new Accelerometer({
+                                        referenceFrame: 'device'
+                                    });
+                                    accelerometer.addEventListener('error', function(event) {
+                                        return false;
+                                    });
+                                    accelerometer.start();
+                                    _context2.next = 7;
+                                    return sleep(200);
+
+                                case 7:
+                                    return _context2.abrupt("return", accelerometer.activated && accelerometer.x !== null);
+
+                                case 10:
+                                    _context2.prev = 10;
+                                    _context2.t0 = _context2["catch"](1);
+                                    return _context2.abrupt("return", false);
+
+                                case 13:
+                                case "end":
+                                    return _context2.stop();
+                            }
                         }
-                    }
-                }, _callee2);
-            }));
+                    }, _callee2, null, [
+                        [1, 10]
+                    ]);
+                }));
 
-        api.changeStat = function(value) {
-            var newStat;
-            var name;
+            return function checkAccelerometerPresence() {
+                return _ref2.apply(this, arguments);
+            };
+        }();
 
-            if (value === '1') {
-                newStat = 'stats7';
-                name = statsName[0];
-            } else if (value === '2') {
-                newStat = 'stats15';
-                name = statsName[1];
-            } else if (value === '3') {
-                newStat = 'stats30';
-                name = statsName[2];
-            } else if (value === '4') {
-                newStat = 'stats90';
-                name = statsName[3];
+        function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
+            try {
+                var info = gen[key](arg);
+                var value = info.value;
+            } catch (error) {
+                reject(error);
+                return;
+            }
+            if (info.done) {
+                resolve(value);
             } else {
-                newStat = 'statsAll';
-                name = statsName[4];
+                Promise.resolve(value).then(_next, _throw);
+            }
+        }
+
+        function _asyncToGenerator(fn) {
+            return function() {
+                var self = this,
+                    args = arguments;
+                return new Promise(function(resolve, reject) {
+                    var gen = fn.apply(self, args);
+
+                    function _next(value) {
+                        asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);
+                    }
+
+                    function _throw(err) {
+                        asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);
+                    }
+                    _next(undefined);
+                });
+            };
+        }
+
+        (function() {
+            api.register(['accelerometer', 'gyroscope', 'proximity_sensor'], function() {
+                return new Promise(function() {
+                    var _ref = _asyncToGenerator(
+                        /*#__PURE__*/
+                        regeneratorRuntime.mark(function _callee(resolve, reject) {
+                            return regeneratorRuntime.wrap(function _callee$(_context) {
+                                while (1) {
+                                    switch (_context.prev = _context.next) {
+                                        case 0:
+                                            _context.next = 2;
+                                            return checkAccelerometerPresence();
+
+                                        case 2:
+                                            accelerometer = _context.sent;
+                                            gyroscope = false;
+                                            proximity_sensor = false;
+
+                                            if (typeof Gyroscope === " function ") {
+                                                gyroscope = true;
+                                            }
+
+                                            if (" ProximitySensor " in window) {
+                                                proximity_sensor = true;
+                                            }
+
+                                            result = {
+                                                'accelerometer': accelerometer,
+                                                'gyroscope': gyroscope,
+                                                'proximity_sensor': proximity_sensor //        'maxTouchPoints': navigator.maxTouchPoints,
+
+                                            };
+                                            resolve(result);
+
+                                        case 9:
+                                        case "end":
+                                            return _context.stop();
+                                    }
+                                }
+                            }, _callee);
+                        }));
+
+                    return function(_x, _x2) {
+                        return _ref.apply(this, arguments);
+                    };
+                }());
+            });
+        })();
+
+        function sleep(ms) {
+            return new Promise(function(resolve) {
+                return setTimeout(resolve, ms);
+            });
+        }
+
+        /***/
+    }),
+    /* 368 */
+    /***/
+    (function(module, exports) {
+
+        (function() {
+            testLocalStorage = function testLocalStorage() {
+                try {
+                    localStorage.fp = 'test';
+                } catch (ex) {}
+
+                try {
+                    if (localStorage.fp == 'test') {
+                        return 'yes';
+                    }
+
+                    return window.amiunique_not_supported;
+                } catch (ex) {
+                    return window.amiunique_not_supported;
+                }
+            };
+
+            testSessionStorage = function testSessionStorage() {
+                try {
+                    sessionStorage.fp = 'test';
+                } catch (ex) {}
+
+                try {
+                    if (sessionStorage.fp == 'test') {
+                        return 'yes';
+                    }
+
+                    return window.amiunique_not_supported;
+                } catch (ex) {
+                    return window.amiunique_not_supported;
+                }
+            };
+
+            testIndexedDB = function testIndexedDB() {
+                try {
+                    indexedDBStorage = window.indexedDB;
+
+                    if (indexedDBStorage !== '' && indexedDBStorage !== null && indexedDBStorage !== undefined) {
+                        return 'yes';
+                    }
+                } catch (e) {
+                    return window.amiunique_not_supported;
+                }
+            };
+
+            api.register(['storage_local', 'storage_session', 'storage_indexedDB'], function() {
+                return {
+                    'storage_local': testLocalStorage(),
+                    'storage_session': testSessionStorage(),
+                    'storage_indexedDB': testIndexedDB()
+                };
+            });
+        })();
+
+        /***/
+    }),
+    /* 369 */
+    /***/
+    (function(module, exports) {
+
+        (function() {
+            var storage_usage = window.amiunique_not_supported;
+            var storage_quota = window.amiunique_not_supported;
+
+            if ('storage' in navigator && 'estimate' in navigator.storage) {
+                navigator.storage.estimate().then(function(_ref) {
+                    var usage = _ref.usage,
+                        quota = _ref.quota;
+                    storage_usage = usage;
+                    storage_quota = quota;
+                });
             }
 
-            var stat = fpData['stat'][newStat];
-            api.displayStat(stat, name);
-            api.displaySummary(fpData.summary, newStat, name);
+            api.register(['storage_usage', 'storage_quota'], function() {
+                return {
+                    'storage_usage': storage_usage,
+                    'storage_quota': storage_quota
+                };
+            });
+        })();
+
+        /***/
+    }),
+    /* 370 */
+    /***/
+    (function(module, exports) {
+
+        (function() {
+            api.register('timezone', function() {
+                return new Date().getTimezoneOffset();
+            });
+        })();
+
+        /***/
+    }),
+    /* 371 */
+    /***/
+    (function(module, exports) {
+
+        (function() {
+            api.register("userAgent-js", function() {
+                return window.navigator.userAgent;
+            });
+        })();
+
+        /***/
+    }),
+    /* 372 */
+    /***/
+    (function(module, exports, __webpack_require__) {
+
+        __webpack_require__(173);
+
+        (function() {
+            api.register("videoFormats", function() {
+                try {
+                    var formatNames = ['video/mp4; codecs="flac"', 'video/mp4; codecs="H.264, mp3"', 'video/mp4; codecs="H.264, aac"', 'video/mpeg; codec="H.264"', 'video/ogg; codecs="theora"', 'video/ogg; codecs="opus"', 'video/webm; codecs="vp9, opus"', 'video/webm; codecs="vp8, vorbis"'];
+                    var videoFormats = {};
+                    var element = document.createElement('video');
+                    formatNames.forEach(function(format) {
+                        videoFormats[format] = !!element.canPlayType && element.canPlayType(format);
+                    });
+                } catch (e) {
+                    return {};
+                }
+
+                return videoFormats;
+            });
+        })();
+
+        window.amiunique_display['videoFormats'] = function(cell, videoFormats) {
+            // cell, values, separator, number
+            displayMap(cell, videoFormats, '\n', 10);
         };
+
+        /***/
+    }),
+    /* 373 */
+    /***/
+    (function(module, exports, __webpack_require__) {
+
+        __webpack_require__(270);
+
+        __webpack_require__(3);
+
+        __webpack_require__(327);
+
+        __webpack_require__(195);
+
+        __webpack_require__(74);
+
+        __webpack_require__(60);
+
+        __webpack_require__(133);
+
+        __webpack_require__(139);
+
+        __webpack_require__(209);
+
+        __webpack_require__(184);
+
+        __webpack_require__(242); __webpack_require__(173);
+
+        function _typeof(obj) {
+            if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+                _typeof = function _typeof(obj) {
+                    return typeof obj;
+                };
+            } else {
+                _typeof = function _typeof(obj) {
+                    return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+                };
+            }
+            return _typeof(obj);
+        }
+
+        (function() {
+            api.register(['webGLVendor', 'webGLRenderer', 'webGLData', 'webGLParameters'], function() {
+                // WebGL fingerprinting
+                // Code from https://github.com/Valve/fingerprintjs2
+                // Reworked by Antonin
+                var webGLVendor;
+                var webGLRenderer;
+                var webGLData;
+                var webGLParameters;
+
+                var fa2s = function fa2s(fa) {
+                    gl.clearColor(0.0, 0.0, 0.0, 1.0);
+                    gl.enable(gl.DEPTH_TEST);
+                    gl.depthFunc(gl.LEQUAL);
+                    gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+                    return '[' + fa[0] + ', ' + fa[1] + ']';
+                };
+                var time_taken = Date.now() - window.global_start_time;
+                console.log("Web GL fingerprinting begin time: " + time_taken); 
+
+                var getGeneralParameters = function getGeneralParameters(webGLParameters, gl) {
+                    var fa2sParameters = ['ALIASED_LINE_WIDTH_RANGE', 'ALIASED_POINT_SIZE_RANGE', 'MAX_VIEWPORT_DIMS'];
+                    var generalParameterNames = ['ALPHA_BITS', 'BLUE_BITS', 'DEPTH_BITS', 'GREEN_BITS', 'MAX_COMBINED_TEXTURE_IMAGE_UNITS', 'MAX_CUBE_MAP_TEXTURE_SIZE', 'MAX_FRAGMENT_UNIFORM_VECTORS', 'MAX_RENDERBUFFER_SIZE', 'MAX_RENDERBUFFER_SIZE', 'MAX_TEXTURE_IMAGE_UNITS', 'MAX_TEXTURE_SIZE', 'MAX_VARYING_VECTORS', 'MAX_VERTEX_ATTRIBS', 'MAX_VERTEX_TEXTURE_IMAGE_UNITS', 'MAX_VERTEX_UNIFORM_VECTORS', 'RED_BITS', 'RENDERER', 'SHADING_LANGUAGE_VERSION', 'STENCIL_BITS', 'VENDOR', 'VERSION'];
+                    generalParameters = {};
+
+                    try {
+                        generalParameters['MAX_ANISOTROPY'] = maxAnisotropy(gl);
+                        generalParameters['ANTIALIAS'] = gl.getContextAttributes().antialias ? 'yes' : 'no';
+                        fa2sParameters.forEach(function(fa2sParameter) {
+                            generalParameters[fa2sParameter] = fa2s(gl.getParameter(gl[fa2sParameter]));
+                        });
+                        generalParameterNames.forEach(function(generalParameterName) {
+                            generalParameters[generalParameterName] = gl.getParameter(gl[generalParameterName]);
+                        });
+                        return generalParameters;
+                    } catch (e) {
+                        return window.amiunique_not_supported;
+                    }
+                };
+
+                var getShaderPrecisionParameters = function getShaderPrecisionParameters(webGLParameters, gl) {
+                    var shadersTypes = ['VERTEX_SHADER', 'FRAGMENT_SHADER'];
+                    var numberTypes = ['HIGH_FLOAT', 'MEDIUM_FLOAT', 'LOW_FLOAT', 'HIGH_INT', 'MEDIUM_INT', 'LOW_INT'];
+                    var parameters = ['precision', 'rangeMin', 'rangeMax'];
+                    shadersPrecisionParameters = {};
+
+                    try {
+                        shadersTypes.forEach(function(shaderType) {
+                            numberTypes.forEach(function(numberType) {
+                                parameters.forEach(function(parameter) {
+                                    var fullName = shaderType + ' ' + numberType + ' ' + parameter;
+                                    shadersPrecisionParameters[fullName] = gl.getShaderPrecisionFormat(gl[shaderType], gl[numberType])[parameter];
+                                });
+                            });
+                        });
+                        return shadersPrecisionParameters;
+                    } catch (e) {
+                        return window.amiunique_not_supported;
+                    }
+                };
+
+                var generateWebGLData = function generateWebGLData(gl) {
+                    try {
+                        var vShaderTemplate = 'attribute vec2 attrVertex;varying vec2 varyinTexCoordinate;uniform vec2 uniformOffset;void main(){varyinTexCoordinate=attrVertex+uniformOffset;gl_Position=vec4(attrVertex,0,1);}';
+                        var fShaderTemplate = 'precision mediump float;varying vec2 varyinTexCoordinate;void main() {gl_FragColor=vec4(varyinTexCoordinate,0,1);}';
+                        var vertexPosBuffer = gl.createBuffer();
+                        gl.bindBuffer(gl.ARRAY_BUFFER, vertexPosBuffer);
+                        var vertices = new Float32Array([-.2, -.9, 0, .4, -.26, 0, 0, .732134444, 0]);
+                        gl.bufferData(gl.ARRAY_BUFFER, vertices, gl.STATIC_DRAW);
+                        vertexPosBuffer.itemSize = 3;
+                        vertexPosBuffer.numItems = 3;
+                        var program = gl.createProgram();
+                        var vshader = gl.createShader(gl.VERTEX_SHADER);
+                        gl.shaderSource(vshader, vShaderTemplate);
+                        gl.compileShader(vshader);
+                        var fshader = gl.createShader(gl.FRAGMENT_SHADER);
+                        gl.shaderSource(fshader, fShaderTemplate);
+                        gl.compileShader(fshader);
+                        gl.attachShader(program, vshader);
+                        gl.attachShader(program, fshader);
+                        gl.linkProgram(program);
+                        gl.useProgram(program);
+                        program.vertexPosAttrib = gl.getAttribLocation(program, 'attrVertex');
+                        program.offsetUniform = gl.getUniformLocation(program, 'uniformOffset');
+                        gl.enableVertexAttribArray(program.vertexPosArray);
+                        gl.vertexAttribPointer(program.vertexPosAttrib, vertexPosBuffer.itemSize, gl.FLOAT, !1, 0, 0);
+                        gl.uniform2f(program.offsetUniform, 1, 1);
+                        gl.drawArrays(gl.TRIANGLE_STRIP, 0, vertexPosBuffer.numItems);
+
+                        if (gl.canvas != null) {
+                            return gl.canvas.toDataURL();
+                        }
+                    } catch (e) {
+                        return 'Not supported';
+                    }
+                };
+
+                var maxAnisotropy = function maxAnisotropy(gl) {
+                    var anisotropy;
+                    var ext = gl.getExtension('EXT_texture_filter_anisotropic') || gl.getExtension('WEBKIT_EXT_texture_filter_anisotropic') || gl.getExtension('MOZ_EXT_texture_filter_anisotropic');
+                    return ext ? (anisotropy = gl.getParameter(ext.MAX_TEXTURE_MAX_ANISOTROPY_EXT), 0 === anisotropy && (anisotropy = 2), anisotropy) : null;
+                };
+
+                try {
+                    canvas = document.createElement('canvas');
+                    var gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+
+                    if (gl.getSupportedExtensions().indexOf('WEBGL_debug_renderer_info') >= 0) {
+                        try {
+                            webGLVendor = gl.getParameter(gl.getExtension('WEBGL_debug_renderer_info').UNMASKED_VENDOR_WEBGL);
+                        } catch (e) {
+                            webGLVendor = window.amiunique_not_supported;
+                        }
+
+                        try {
+                            webGLRenderer = gl.getParameter(gl.getExtension('WEBGL_debug_renderer_info').UNMASKED_RENDERER_WEBGL);
+                        } catch (e) {
+                            webGLRenderer = window.amiunique_not_supported;
+                        }
+
+                        webGLData = generateWebGLData(gl);
+                        webGLParameters = {};
+                        webGLParameters['extensions'] = gl.getSupportedExtensions();
+                        webGLParameters['general'] = getGeneralParameters(webGLParameters, gl);
+                        webGLParameters['shaderPrecision'] = getShaderPrecisionParameters(webGLParameters, gl);
+                    } else {
+                        webGLVendor = window.amiunique_not_supported;
+                        webGLRenderer = window.amiunique_not_supported;
+                        webGLParameters = window.amiunique_not_supported;
+                        webGLData = window.amiunique_not_supported;
+                    }
+                } catch (e) {
+                    webGLVendor = window.amiunique_not_supported;
+                    webGLRenderer = window.amiunique_not_supported;
+                    webGLParameters = window.amiunique_not_supported;
+                    webGLData = window.amiunique_not_supported;
+                }
+
+                time_taken = Date.now() - window.global_start_time;
+                console.log("Web GL fingerprinting probable end time: " + time_taken); 
+                return {
+                    webGLVendor: webGLVendor,
+                    webGLRenderer: webGLRenderer,
+                    webGLData: webGLData,
+                    webGLParameters: webGLParameters
+                };
+            });
+        })();
+
+        window.amiunique_display['webGLData'] = function(cell, canvasData) {
+            // Split with § is necessary due to compatibility with first version of AmIUnique (need to stay because of displaying old data through extension)
+            if (cell.firstChild) {
+                if (cell.firstChild.tagName === 'DIV') {
+                    if (cell.firstChild.firstChild) {
+                        if (cell.firstChild.firstChild.tagName === 'IMG') {
+                            return;
+                        }
+                    }
+                } else if (cell.firstChild.tagName === 'IMG') {
+                    return;
+                }
+            }
+            /*  if (cell.firstChild.tagName === 'DIV' && cell.firstChild.firstChild.tagName === 'IMG' || cell.firstChild.tagName === 'IMG' ) {
+              return;
+            }*/
+
+
+            canvasData = canvasData.split('§')[0];
+
+            if (canvasData === window.amiunique_not_supported || canvasData === window.amiunique_no_value) {
+                cell.innerText = canvasData;
+                return;
+            }
+
+            if (canvasData === window.amiunique_no_js || canvasData === window.amiunique_nojs) {
+                cell.innerText = canvasData;
+                return;
+            }
+
+            var img = new Image();
+            img.src = canvasData;
+
+            img.onload = function() {
+                img.drawImage;
+            };
+
+            if (cell.firstChild) {
+                cell.removeChild(cell.firstChild);
+            }
+
+            cell.appendChild(img);
+        };
+
+        window.amiunique_display['webGLParameters'] = function(cell, webGLParameters) {
+            if (webGLParameters === window.amiunique_nojs || webGLParameters === window.amiunique_no_js) {
+                cell.innerText = window.amiunique_no_js;
+                return;
+            }
+
+            if (typeof webGLParameters === 'string' && webGLParameters.startsWith('{') && webGLParameters.endsWith('}')) {
+                webGLParameters = JSON.parse(webGLParameters);
+            }
+
+            if (_typeof(webGLParameters) !== 'object') {
+                cell.innerText = webGLParameters;
+                return;
+            }
+
+            var extensions;
+
+            if ('extensions' in webGLParameters) {
+                if (typeof webGLParameters.extensions === 'string') {
+                    extensions = webGLParameters.extensions.split(',').length + ' different extensions';
+                } else {
+                    extensions = webGLParameters.extensions.length + ' different extensions';
+                }
+            } else {
+                extensions = '';
+            }
+
+            var general = 'general' in webGLParameters ? Object.keys(webGLParameters.general).length + ' different general parameters analyzed' : '';
+            var shaderPrecision = 'shaderPrecision' in webGLParameters ? Object.keys(webGLParameters.shaderPrecision).length + ' different shaders precisions analyzed' : '';
+            var text = '';
+
+            if (cell.firstChild) {
+                cell.removeChild(cell.firstChild);
+            }
+
+            cell.innerText = '';
+
+            if (extensions !== '') {
+                text += extensions + '\n';
+            }
+
+            if (general !== '') {
+                text += general + '\n';
+            }
+
+            if (shaderPrecision !== '') {
+                text += shaderPrecision;
+            }
+
+            cell.innerText = text;
+        };
+
+        /***/
+    }),
+    /* 374 */
+    /***/
+    (function(module, exports) {
+
+        (function() {
+            api.register(["key", "locationbar", "menubar", "personalbar", "statusbar", "toolbar", "result_state"], function() {
+                return {
+                    "key": window.key,
+                    "locationbar": window.locationbar !== undefined ? window.locationbar.visible : undefined,
+                    "menubar": window.menubar !== undefined ? window.menubar.visible : undefined,
+                    "personalbar": window.personalbar !== undefined ? window.personalbar.visible : undefined,
+                    "statusbar": window.statusbar !== undefined ? window.statusbar.visible : undefined,
+                    "toolbar": window.toolbar !== undefined ? window.toolbar.visible : undefined,
+                    "result_state": window.result != undefined ? window.result.state : undefined
+                };
+            });
+        })();
+
+        window.amiunique_display['locationbar'] = function(cell, locationbar) {
+            formatBarVisibility(cell, locationbar);
+        };
+
+        window.amiunique_display['menubar'] = function(cell, menubar) {
+            formatBarVisibility(cell, menubar);
+        };
+
+        window.amiunique_display['personalbar'] = function(cell, personalbar) {
+            formatBarVisibility(cell, locationbar);
+        };
+
+        window.amiunique_display['statusbar'] = function(cell, statusbar) {
+            formatBarVisibility(cell, locationbar);
+        };
+
+        window.amiunique_display['toolbar'] = function(cell, toolbar) {
+            formatBarVisibility(cell, locationbar);
+        };
+
+        function formatBarVisibility(cell, value) {
+            cell.innerText = value ? window.amiunique_visible : window.amiunique_invisible;
+        }
 
         /***/
     })

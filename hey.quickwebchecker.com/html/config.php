@@ -108,9 +108,9 @@ $all_headers=array();
                 $name=strtolower($name);
                 $name=ucwords($name);
                 $name=str_replace(' ', '-', $name);
-                $all_headers[$name] = $value; 
+                $all_headers[strtolower($name)] = $value; 
             } elseif($function_name=='apache_request_headers'){
-                $all_headers[$name] = $value; 
+                $all_headers[strtolower($name)] = $value; 
             }
        }
     }
@@ -154,7 +154,7 @@ try {
             'queryInsertTimeStamp' => getTimestamp(), // time lags with current time, use session_first_seen time
 	    'session_id' => 'sess_'.session_id()
           ];
-    echo print_r($doc);
+    //echo print_r($doc);
     $bulk->insert($doc);
     $m->executeBulkWrite("botDetector.requestHeader", $bulk);
 

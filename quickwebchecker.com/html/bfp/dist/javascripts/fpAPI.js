@@ -5940,91 +5940,28 @@
 
 
         api.store = function(fp) {
-            var xhr1 = new XMLHttpRequest();
-            var url1 = '/bfp/debug.php';
-            xhr1.open('POST', url1, true);
-            xhr1.send("ready POST here");
             console.log("Here's the end time: " + Date.now());
-            //var xhr = getXMLHttpRequest();
+            var xhr = getXMLHttpRequest();
 
-            //xhr.onreadystatechange = function() {
-                //if (xhr.readyState === 4 && (xhr.status === 200 || xhr.status === 0)) {
-                    //var data = JSON.parse(xhr.responseText);
-                    //window.fpData = data;
-                    //api.changeStat(5);
-                    //var cookieData = createCookieContent(fp, data.summary, data.stat); // because we put local and session as storages mechanism, we can put undefined for the days value
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && (xhr.status === 200 || xhr.status === 0)) {
+                    var data = JSON.parse(xhr.responseText);
+                    window.fpData = data;
+                    api.changeStat(5);
+                    var cookieData = createCookieContent(fp, data.summary, data.stat); // because we put local and session as storages mechanism, we can put undefined for the days value
 
-                    //setCustomStorages('currentFp', cookieData, undefined, ['local', 'session']); // 5 minutes = 1 / 24 / 60 * 5
+                    setCustomStorages('currentFp', cookieData, undefined, ['local', 'session']); // 5 minutes = 1 / 24 / 60 * 5
 
-                    //setCookie('fpTime', 1, 0.003472222);
-                //}
+                    setCookie('fpTime', 1, 0.003472222);
+                }
 
-                ////$('body').css('cursor', 'default');
-            //};
+                $('body').css('cursor', 'default');
+            };
 
-            ////var url = 'https://cors-anywhere.herokuapp.com/https://amiunique.org/fp';
-            //var url = '/bfp/bfp.php';
-            //xhr.open('POST', url, true);
-            //xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
-            ////xhr.send(JSON.stringify(fp));
-            //xhr.send("abcdefghijklmnopqrstuvwxyz");
-
-            var data = JSON.stringify(fp);
-            xhr1 = new XMLHttpRequest();
-            url1 = '/bfp/debug.php';
-            xhr1.open('POST', url1, true);
-            xhr1.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
-            xhr1.send("POST done here: "  + data.length);
-
-            var data_subset = data.slice(0,2000)
-            xhr1 = new XMLHttpRequest();
-            url1 = '/bfp/debug.php';
-            xhr1.open('POST', url1, true);
-            xhr1.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
-            xhr1.send("2000 done " + data_subset);
-
-            data_subset = data.slice(2000,4000)
-            xhr1 = new XMLHttpRequest();
-            url1 = '/bfp/debug.php';
-            xhr1.open('POST', url1, true);
-            xhr1.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
-            xhr1.send("2k-4k " + data_subset);
-
-            data_subset = data.slice(4000,6000)
-            xhr1 = new XMLHttpRequest();
-            url1 = '/bfp/debug.php';
-            xhr1.open('POST', url1, true);
-            xhr1.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
-            xhr1.send("4k-6k" + data_subset);
-
-            data_subset = data.slice(6000,8000)
-            xhr1 = new XMLHttpRequest();
-            url1 = '/bfp/debug.php';
-            xhr1.open('POST', url1, true);
-            xhr1.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
-            xhr1.send("6k-8k" + data_subset);
-
-            data_subset = data.slice(8000,10000)
-            xhr1 = new XMLHttpRequest();
-            url1 = '/bfp/debug.php';
-            xhr1.open('POST', url1, true);
-            xhr1.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
-            xhr1.send("8k-10k" + data_subset);
-
-            try {
-            xhr1 = new XMLHttpRequest();
-            url1 = '/bfp/debug.php';
-            xhr1.open('POST', url1, true);
-            xhr1.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
-            xhr1.send("all data" + data);
-            }
-            catch(error) {
-                xhr1 = new XMLHttpRequest();
-                url1 = '/bfp/debug.php';
-                xhr1.open('POST', url1, true);
-                xhr1.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
-                xhr1.send("got error in shipping data: " + error);
-           }
+            var url = 'https://cors-anywhere.herokuapp.com/https://amiunique.org/fp';
+            xhr.open('POST', url, true);
+            xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+            xhr.send(JSON.stringify(fp));
         };
         /**
          * Function  that display the content of the page saved in local storage.
@@ -6230,43 +6167,28 @@
                                     break;
                                 }
 
-                                //displayDataCookie(JSON.parse(currentFp));
+                                displayDataCookie(JSON.parse(currentFp));
                                 _context2.next = 21;
                                 break;
 
                             case 9:
-                                //Phani
-                                var xhr = new XMLHttpRequest();
-                                var url = '/bfp/debug.php';
-                                xhr.open('POST', url, true);
-                                xhr.send("case 9 here");
                                 var time_taken = Date.now() - window.global_start_time;
                                 console.log("Time at begin case 9: " + time_taken); 
                                 $('body').css('cursor', 'progress');
-                                //api.addSummary();
+                                api.addSummary();
                                 _context2.next = 13;
                                 return api.run();
 
                             case 13:
-                                //Phani
-                                var xhr = new XMLHttpRequest();
-                                var url = '/bfp/debug.php';
-                                xhr.open('POST', url, true);
-                                xhr.send("case 13 here");
                                 var time_taken = Date.now() - window.global_start_time;
                                 console.log("Time at begin case 13: " + time_taken); 
                                 $('body').css('cursor', 'progress');
                                 jsAttributes = _context2.sent;
-                                //api.display(jsAttributes);
+                                api.display(jsAttributes);
                                 _context2.next = 17;
                                 return getIdCookie();
 
                             case 17:
-                                //Phani
-                                var xhr = new XMLHttpRequest();
-                                var url = '/bfp/debug.php';
-                                xhr.open('POST', url, true);
-                                xhr.send("case 17 here");
                                 var time_taken = Date.now() - window.global_start_time;
                                 console.log("Time at begin case 17: " + time_taken); 
                                 cookieId = _context2.sent;

@@ -4,42 +4,32 @@
 <head>
     <title>AmIUnique</title>
     <script type="text/javascript">
-        console.log("Here's the time 1:" + Date.now());
+        window.global_start_time = Date.now();
+        console.log("Here's the time 1:" + window.global_start_time);
     </script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, shrink-to-fit=no">
     <meta name="description" content="Fingerprint collecting platform">
-    <!-- - Fav icon-->
-    <link rel="icon" href="bfp/images/favicon.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="bfp/images/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="/bfp/stylesheets/lato/latoFonts.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="/bfp/stylesheets/font-awesome/css/font-awesome.min.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="/bfp/stylesheets/custom.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="/bfp/stylesheets/sb-admin.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="/bfp/stylesheets/nav.css" media="screen">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- JS Fix for IE8 display bugs -->
     <!--[if lt IE 9]><script type="text/javascript" src="/javascripts/lib/html5shiv.min.js"></script><script type="text/javascript" src="/javascripts/lib/respond.min.js"></script><script type="text/javascript" src="/javascripts/lib/IECSSFix.js"></script><![endif]-->
     <!--[if IE 9]><link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap-ie9.css" media="screen"><script type="text/javascript" src="/javascripts/lib/bootstrap-ie9.js"></script><![endif]-->
     <!--[if lte IE 8]><link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap-ie8.css" media="screen"><script type="text/javascript" src="/javascripts/lib/bootstrap-ie8.js"></script><![endif]-->
-    <script type="text/javascript" src="/bfp/javascripts/lib/core.min.js"></script>
-    <script type="text/javascript" src="/bfp/javascripts/lib/qsa-scope.js"></script>
-    <script type="text/javascript" src="/bfp/javascripts/lib/classList.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="/bfp/stylesheets/info.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="/bfp/stylesheets/dataTables.bootstrap4.min.css" media="screen">
-    <script type="text/javascript" src="/bfp/javascripts/lib/jquery.min.js"></script>
-    <script type="text/javascript" src="/bfp/javascripts/lib/bootstrap4.bundle.min.js"></script>
-    <script type="text/javascript" src="/bfp/dist/javascripts/utils/cookies.js"></script>
-    <script type="text/javascript" src="/bfp/javascripts/lib/cookie-notice.js"></script>
-    <script type="text/javascript" src="/bfp/javascripts/lib/ua-parser.min.js"></script>
-    <script type="text/javascript" src="/bfp/javascripts/lib/PluginDetect_All.js"></script>
-    <script type="text/javascript" src="/bfp/javascripts/lib/canvasjs.js"></script>
-    <script type="text/javascript" src="/bfp/javascripts/utils/advert.js"></script>
-    <script type="text/javascript" src="/bfp/javascripts/utils/tools.js"></script>
-    <script type="text/javascript" src="/bfp/dist/javascripts/fpAPI.js"></script>
-    <script type="text/javascript" src="/bfp/dist/javascripts/fingerprint/js/fp.js"></script>
-    <script type="text/javascript" src="/bfp/javascripts/lib/dataTables.bootstrap4.min.js"></script>
+    <script type="text/javascript" src="/javascripts/lib/core.min.js"></script>
+    <script type="text/javascript" src="/javascripts/lib/qsa-scope.js"></script>
+    <script type="text/javascript" src="/javascripts/lib/classList.min.js"></script>
+    <script type="text/javascript" src="/javascripts/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="/javascripts/lib/bootstrap4.bundle.min.js"></script>
+    <script type="text/javascript" src="/dist/javascripts/utils/cookies.js"></script>
+    <script type="text/javascript" src="/javascripts/lib/cookie-notice.js"></script>
+    <script type="text/javascript" src="/javascripts/lib/ua-parser.min.js"></script>
+    <script type="text/javascript" src="/javascripts/lib/PluginDetect_All.js"></script>
+    <script type="text/javascript" src="/javascripts/lib/canvasjs.js"></script>
+    <script type="text/javascript" src="/javascripts/utils/advert.js"></script>
+    <script type="text/javascript" src="/javascripts/utils/tools.js"></script>
+    <script type="text/javascript" src="/dist/javascripts/fpAPI.js"></script>
+    <script type="text/javascript" src="/dist/javascripts/fingerprint/js/fp.js"></script>
     <script type="text/javascript">
         console.log("Here's the time 2:" + Date.now());
         window.onload = api.exec
@@ -47,27 +37,42 @@
 </head>
 
 <body>
+    <nav class="navbar navbar-dark bg-primary nav__tabs fixed-top" role="navigation">
+        <div class="navbar-header"><a class="navbar-brand" href="/">AmIUnique</a></div>
+        <ul class="nav nav__primary">
+            <li class="nav-item"><a class="nav-link" id="menufp" href="/fpNoJS"><i class="fa fa-fw fa-paw"></i>My fingerprint</a></li>
+            <li class="nav-item" id="historyItem" style="display:none"><a class="nav-link" id="history" href="/history"><i class="fa fa-fw fa-book"></i>My history</a></li>
+            <li class="nav-item"><a class="nav-link" id="menuTimeline" href="/timeline"><i class="fa fa-fw fa-clock-o"></i>My timeline</a></li>
+            <li class="nav-item"><a class="nav-link" id="stats" href="/stats"><i class="fa fa-fw fa-pie-chart"></i>Global statistics</a></li>
+            <li class="nav-item"><a class="nav-link" id="faq" href="/faq"><i class="fa fa-fw fa-question"></i>FAQ</a></li>
+            <li class="nav-item"><a class="nav-link" id="privacy" href="/privacy"><i class="fa fa-fw fa-shield"></i>Privacy policy</a></li>
+            <li class="nav-item"><a class="nav-link" id="tools" href="/tools"><i class="fa fa-fw fa-cogs"></i>Privacy tools</a></li>
+            <li class="nav-item"><a class="nav-link" id="links" href="/links"><i class="fa fa-fw fa-link"></i>Links</a></li>
+            <li class="nav-item"><a class="nav-link" id="survey" href="/survey"><i class="fa fa-fw fa-pencil"></i>Survey</a></li>
+            <li class="nav-item"><a class="nav-link" id="about" href="/about"><i class="fa fa-fw fa-circle-o"></i>About</a></li>
+        </ul>
+    </nav>
     <div id="page-wrapper">
         <div class="container-fluid" id="container-fluid">
             <div class="col-md-12 col-lg-8 offset-lg-2" id="content-page">
                 <script>
                     var headers = {
-                      //  "host": "amiunique.org",
-                      //  "x-forwarded-proto": "https",
-                      //  "x-real-ip": "104.177.221.117",
-                      //  "x-forwarded-for": "104.177.221.117",
-                      //  "pragma": "no-cache",
-                      //  "cache-control": "no-cache",
-                      //  "upgrade-insecure-requests": "1",
-                      //  "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.79 Safari/537.36",
-                      //  "sec-fetch-user": "?1",
-                      //  "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
-                      //  "sec-fetch-site": "same-origin",
-                      //  "sec-fetch-mode": "navigate",
-                      //  "referer": "https://amiunique.org/",
-                      //  "accept-encoding": "gzip, deflate, br",
-                      //  "accept-language": "en-US,en;q=0.9",
-                      //  "cookie": "AmIUniqueId=824b19e6-a94b-401f-9294-5a370dc8a979; fpTime=1; cookie_notice=1"
+                        "host": "amiunique.org",
+                        "x-forwarded-proto": "https",
+                        "x-real-ip": "104.177.221.117",
+                        "x-forwarded-for": "104.177.221.117",
+                        "pragma": "no-cache",
+                        "cache-control": "no-cache",
+                        "upgrade-insecure-requests": "1",
+                        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.79 Safari/537.36",
+                        "sec-fetch-user": "?1",
+                        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
+                        "sec-fetch-site": "same-origin",
+                        "sec-fetch-mode": "navigate",
+                        "referer": "https://amiunique.org/",
+                        "accept-encoding": "gzip, deflate, br",
+                        "accept-language": "en-US,en;q=0.9",
+                        "cookie": "AmIUniqueId=824b19e6-a94b-401f-9294-5a370dc8a979; fpTime=1; cookie_notice=1"
                     }
                 </script>
                 <h1 class="text-center">My browser fingerprint</h1><br>
