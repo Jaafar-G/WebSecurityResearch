@@ -1,9 +1,8 @@
 <?php
 session_start();
 // Debug mode set 
-echo("Hi there");
 ini_set('log_errors', TRUE);
-//error_log("Here's some of the data for you".file_get_contents('php://input').PHP_EOL, 3, '/tmp/debug_bfp_php.txt');
+error_log("Here's some of the data for you".file_get_contents('php://input').PHP_EOL, 3, '/tmp/debug_bfp_php.txt');
 $fingerprint = file_get_contents('php://input');
 if (strlen($fingerprint) < 10) 
     exit(0);
@@ -30,31 +29,33 @@ function getHeadersFromSessionId($m) {
     return $headers;
 }
 
-function createfp($fingerprint, $headers) {
-  $json = json_decode($fingerprint, true);
-  $new_json = array();
-  foreach($headers as $arr) {
-   foreach($arr as $key => $value) {
-       $new_json[$key] = $value;
-    }
-  }
- $new_json = json_encode($new_json);
+//function createfp($fingerprint, $headers) {
+//  $json = json_decode($fingerprint, true);
+//  $new_json = array();
+//  foreach($headers as $arr) {
+//   foreach($arr as $key => $value) {
+//       $new_json[$key] = $value;
+//    }
+//  }
+// //$new_json = json_encode($new_json);
+//
+//return $new_json;
 
- $array[] = array_reverse(json_decode($new_json, true));
- $array[] = json_decode($fingerprint, true);
-
- //return $array;
-
- $to_return = array();
-
-  foreach($array as $arr) {
-   foreach($arr as $key => $value) {
-       $to_return[$key] = $value;
-    }
-  }
-
- return $to_return;
-}
+// $array[] = array_reverse(json_decode($new_json, true));
+// $array[] = json_decode($fingerprint, true);
+//
+// //return $array;
+//
+// $to_return = array();
+//
+//  foreach($array as $arr) {
+//   foreach($arr as $key => $value) {
+//       $to_return[$key] = $value;
+//    }
+//  }
+//
+// return $to_return;
+//}
 
 
 try {
@@ -66,11 +67,10 @@ try {
             'fingerprint' => $fingerprint,
             'webGLData_hash' => hash('sha256',$decode['webGLData']),
             'canvas_hash' => hash('sha256',$decode['canvas']),
-	    'session_id' => 'sess_'.session_id(),
-            'fpwithheaders' => createfp($fingerprint, getHeadersFromSessionId($m))
+	    'session_id' => 'sess_'.session_id()
+           // 'fpwithheaders' => createfp($fingerprint, getHeadersFromSessionId($m))
 
           ];
-    echo print_r($doc);
     $bulk->insert($doc);
     $m->executeBulkWrite("botDetector.browserFP", $bulk);
     error_log("Done inserting".PHP_EOL, 3, '/tmp/debug_bfp_php.txt');

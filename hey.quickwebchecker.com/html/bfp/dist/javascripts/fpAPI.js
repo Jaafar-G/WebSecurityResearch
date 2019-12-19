@@ -5940,91 +5940,107 @@
 
 
         api.store = function(fp) {
-            var xhr1 = new XMLHttpRequest();
-            var url1 = '/bfp/debug.php';
-            xhr1.open('POST', url1, true);
-            xhr1.send("ready POST here");
-            console.log("Here's the end time: " + Date.now());
-            //var xhr = getXMLHttpRequest();
+            //var xhr1 = new XMLHttpRequest();
+            //var url1 = '/bfp/debug.php';
+            //xhr1.open('POST', url1, true);
+            //xhr1.send("ready POST here");
+            //console.log("Here's the end time: " + Date.now());
+            var xhr = new XMLHttpRequest();
+            var data = JSON.stringify(fp);
 
-            //xhr.onreadystatechange = function() {
-                //if (xhr.readyState === 4 && (xhr.status === 200 || xhr.status === 0)) {
-                    //var data = JSON.parse(xhr.responseText);
-                    //window.fpData = data;
-                    //api.changeStat(5);
-                    //var cookieData = createCookieContent(fp, data.summary, data.stat); // because we put local and session as storages mechanism, we can put undefined for the days value
-
-                    //setCustomStorages('currentFp', cookieData, undefined, ['local', 'session']); // 5 minutes = 1 / 24 / 60 * 5
-
-                    //setCookie('fpTime', 1, 0.003472222);
-                //}
-
-                ////$('body').css('cursor', 'default');
-            //};
-
+            // The below line will send data to amiunique.org servers via a CORS Proxy
             ////var url = 'https://cors-anywhere.herokuapp.com/https://amiunique.org/fp';
-            //var url = '/bfp/bfp.php';
-            //xhr.open('POST', url, true);
-            //xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
-            ////xhr.send(JSON.stringify(fp));
+            var url = '/bfp/bfpG.php';
+            xhr.open('POST', url, true);
+            xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+            //xhr.send(JSON.stringify(fp));
             //xhr.send("abcdefghijklmnopqrstuvwxyz");
 
+            var start = 0;
+            var end = data.length;
+            var totalSequence = Math.ceil(end / 2000);
+            var sequence = 0;
+            var xhr = new XMLHttpRequest();
             var data = JSON.stringify(fp);
-            xhr1 = new XMLHttpRequest();
-            url1 = '/bfp/debug.php';
-            xhr1.open('POST', url1, true);
-            xhr1.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
-            xhr1.send("POST done here: "  + data.length);
+            var url = '/bfp/bfpG.php';
+            xhr.open('POST', url, true);
+            xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
 
-            var data_subset = data.slice(0,2000)
-            xhr1 = new XMLHttpRequest();
-            url1 = '/bfp/debug.php';
-            xhr1.open('POST', url1, true);
-            xhr1.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
-            xhr1.send("2000 done " + data_subset);
+            var raw_hash = CryptoJS.SHA256(data);
+            hash = raw_hash.toString(CryptoJS.enc.Hex);
+ 
+	    var toSend ={"hash":  hash, "totalSequence": totalSequence, "head":true, "datalen":data.length}; 
+            xhr.send(JSON.stringify(toSend));
 
-            data_subset = data.slice(2000,4000)
-            xhr1 = new XMLHttpRequest();
-            url1 = '/bfp/debug.php';
-            xhr1.open('POST', url1, true);
-            xhr1.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
-            xhr1.send("2k-4k " + data_subset);
-
-            data_subset = data.slice(4000,6000)
-            xhr1 = new XMLHttpRequest();
-            url1 = '/bfp/debug.php';
-            xhr1.open('POST', url1, true);
-            xhr1.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
-            xhr1.send("4k-6k" + data_subset);
-
-            data_subset = data.slice(6000,8000)
-            xhr1 = new XMLHttpRequest();
-            url1 = '/bfp/debug.php';
-            xhr1.open('POST', url1, true);
-            xhr1.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
-            xhr1.send("6k-8k" + data_subset);
-
-            data_subset = data.slice(8000,10000)
-            xhr1 = new XMLHttpRequest();
-            url1 = '/bfp/debug.php';
-            xhr1.open('POST', url1, true);
-            xhr1.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
-            xhr1.send("8k-10k" + data_subset);
-
-            try {
-            xhr1 = new XMLHttpRequest();
-            url1 = '/bfp/debug.php';
-            xhr1.open('POST', url1, true);
-            xhr1.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
-            xhr1.send("all data" + data);
+            while (start < end) {
+                 var xhr = new XMLHttpRequest();
+                 var data = JSON.stringify(fp);
+                 var url = '/bfp/bfpG.php';
+           	 xhr.open('POST', url, true);
+                 xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+                 var toSend = { "parts" : JSON.stringify(fp).slice(start, start + 2000), "sequence": sequence };
+                 xhr.send(JSON.stringify(toSend));
+		 start = start + 2000;
+                 sequence = sequence + 1;
             }
-            catch(error) {
-                xhr1 = new XMLHttpRequest();
-                url1 = '/bfp/debug.php';
-                xhr1.open('POST', url1, true);
-                xhr1.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
-                xhr1.send("got error in shipping data: " + error);
-           }
+
+
+//            var data = JSON.stringify(fp);
+//            xhr1 = new XMLHttpRequest();
+//            url1 = '/bfp/debug.php';
+//            xhr1.open('POST', url1, true);
+//            xhr1.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+//            xhr1.send("POST done here: "  + data.length);
+//
+//            var data_subset = data.slice(0,2000)
+//            xhr1 = new XMLHttpRequest();
+//            url1 = '/bfp/debug.php';
+//            xhr1.open('POST', url1, true);
+//            xhr1.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+//            xhr1.send("2000 done " + data_subset);
+//
+//            data_subset = data.slice(2000,4000)
+//            xhr1 = new XMLHttpRequest();
+//            url1 = '/bfp/debug.php';
+//            xhr1.open('POST', url1, true);
+//            xhr1.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+//            xhr1.send("2k-4k " + data_subset);
+//
+//            data_subset = data.slice(4000,6000)
+//            xhr1 = new XMLHttpRequest();
+//            url1 = '/bfp/debug.php';
+//            xhr1.open('POST', url1, true);
+//            xhr1.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+//            xhr1.send("4k-6k" + data_subset);
+//
+//            data_subset = data.slice(6000,8000)
+//            xhr1 = new XMLHttpRequest();
+//            url1 = '/bfp/debug.php';
+//            xhr1.open('POST', url1, true);
+//            xhr1.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+//            xhr1.send("6k-8k" + data_subset);
+//
+//            data_subset = data.slice(8000,10000)
+//            xhr1 = new XMLHttpRequest();
+//            url1 = '/bfp/debug.php';
+//            xhr1.open('POST', url1, true);
+//            xhr1.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+//            xhr1.send("8k-10k" + data_subset);
+//
+//            try {
+//            xhr1 = new XMLHttpRequest();
+//            url1 = '/bfp/debug.php';
+//            xhr1.open('POST', url1, true);
+//            xhr1.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+//            xhr1.send("all data" + data);
+//            }
+//            catch(error) {
+//                xhr1 = new XMLHttpRequest();
+//                url1 = '/bfp/debug.php';
+//                xhr1.open('POST', url1, true);
+//                xhr1.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+//                xhr1.send("got error in shipping data: " + error);
+//           }
         };
         /**
          * Function  that display the content of the page saved in local storage.

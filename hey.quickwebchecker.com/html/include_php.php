@@ -8,18 +8,18 @@ require_once('/var/www/hey.quickwebchecker.com/html/config.php');
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, shrink-to-fit=no">
     <script type="text/javascript">
-      var xhr1 = new XMLHttpRequest();
+      //var xhr1 = new XMLHttpRequest();
 
       // i changed it here for calling bfp.php
-      var url = '/bfp/bfp.php';
-      var data = { "a" : 1, "b" : 2};
+      //var url = '/bfp/bfp.php';
+      //var data = { "a" : 1, "b" : 2};
       //var url = '/bfp/debug.php';
-      xhr1.open('POST', url, true);
-      xhr1.send(JSON.stringify(data));
+      //xhr1.open('POST', url, true);
+      //xhr1.send(data);
      // end of bhupendra's change
 
 
-	var interval = 100;
+	var interval = 1000;
 	function life_time(argument) {
                 var http = new XMLHttpRequest();
                 var data = new Date().getTime();
@@ -27,46 +27,23 @@ require_once('/var/www/hey.quickwebchecker.com/html/config.php');
 		var params = 'data='+data;
 		http.open('POST', url, true);
 		http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-		http.onreadystatechange = function() {//Call a function when the state changes.
-    			if(http.readyState == 4 && http.status == 200) {
-				//
-    			}
-		}
 		http.send(params);
 	  }
-	 //setInterval(life_time, interval);
+     //setInterval(life_time, interval);
     </script>
     <link rel="stylesheet" type="text/css" href="/bfp/stylesheets/lato/latoFonts.css" media="screen">
     <link rel="stylesheet" type="text/css" href="/bfp/stylesheets/font-awesome/css/font-awesome.min.css" media="screen">
     <link rel="stylesheet" type="text/css" href="/bfp/stylesheets/custom.css" media="screen">
     <link rel="stylesheet" type="text/css" href="/bfp/stylesheets/sb-admin.css" media="screen">
     <link rel="stylesheet" type="text/css" href="/bfp/stylesheets/nav.css" media="screen">
-    <script type="text/javascript">
-        var xhr = new XMLHttpRequest();
-        var url = '/bfp/debug.php';
-        xhr.open('POST', url, true);
-        xhr.send("loaded CSS");
-    </script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- JS Fix for IE8 display bugs -->
     <!--[if lt IE 9]><script type="text/javascript" src="/javascripts/lib/html5shiv.min.js"></script><script type="text/javascript" src="/javascripts/lib/respond.min.js"></script><script type="text/javascript" src="/javascripts/lib/IECSSFix.js"></script><![endif]-->
     <!--[if IE 9]><link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap-ie9.css" media="screen"><script type="text/javascript" src="/javascripts/lib/bootstrap-ie9.js"></script><![endif]-->
     <!--[if lte IE 8]><link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap-ie8.css" media="screen"><script type="text/javascript" src="/javascripts/lib/bootstrap-ie8.js"></script><![endif]-->
     <script type="text/javascript" src="/bfp/javascripts/lib/core.min.js"></script>
-    <script type="text/javascript">
-        var xhr = new XMLHttpRequest();
-        var url = '/bfp/debug.php';
-        xhr.open('POST', url, true);
-        xhr.send("loaded core.min.js");
-    </script>
     <script type="text/javascript" src="/bfp/javascripts/lib/qsa-scope.js"></script>
     <script type="text/javascript" src="/bfp/javascripts/lib/classList.min.js"></script>
-    <script type="text/javascript">
-        var xhr = new XMLHttpRequest();
-        var url = '/bfp/debug.php';
-        xhr.open('POST', url, true);
-        xhr.send("loaded classlist js");
-    </script>
     <link rel="stylesheet" type="text/css" href="/bfp/stylesheets/info.css" media="screen">
     <link rel="stylesheet" type="text/css" href="/bfp/stylesheets/dataTables.bootstrap4.min.css" media="screen">
     <script type="text/javascript" src="/bfp/javascripts/lib/jquery.min.js"></script>
@@ -74,24 +51,16 @@ require_once('/var/www/hey.quickwebchecker.com/html/config.php');
     <script type="text/javascript" src="/bfp/dist/javascripts/utils/cookies.js"></script>
     <script type="text/javascript" src="/bfp/javascripts/lib/ua-parser.min.js"></script>
     <script type="text/javascript" src="/bfp/javascripts/lib/PluginDetect_All.js"></script>
-    <script type="text/javascript">
-        var xhr = new XMLHttpRequest();
-        var url = '/bfp/debug.php';
-        xhr.open('POST', url, true);
-        xhr.send("loaded plugin detect");
-    </script>
     <script type="text/javascript" src="/bfp/javascripts/lib/canvasjs.js"></script>
     <script type="text/javascript" src="/bfp/javascripts/utils/advert.js"></script>
     <script type="text/javascript" src="/bfp/javascripts/utils/tools.js"></script>
     <script type="text/javascript" src="/bfp/dist/javascripts/fpAPI.js"></script>
     <script type="text/javascript" src="/bfp/dist/javascripts/fingerprint/js/fp.js"></script>
     <script type="text/javascript" src="/bfp/javascripts/lib/dataTables.bootstrap4.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
+
     <script type="text/javascript">
-        var xhr = new XMLHttpRequest();
-        var url = '/bfp/debug.php';
-        xhr.open('POST', url, true);
-        xhr.send("loaded all the scripts");
-        window.onload = api.exec
+        window.onload = api.exec;
     </script>
   </head>
 <body>

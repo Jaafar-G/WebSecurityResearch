@@ -6490,7 +6490,7 @@
                 xhr.open('POST', url, true);
                 xhr.send("canvas end");
                 console.log("Canvas end time: " + time_taken); 
-                canvasData = "abc";
+                //canvasData = "abc";
                 return canvasData;
             });
         })();
@@ -8825,7 +8825,7 @@
                 url = '/bfp/debug.php';
                 xhr.open('POST', url, true);
                 xhr.send("webgl end");
-                webGLData = "abc";
+                //webGLData = "abc";
                 console.log("Web GL fingerprinting probable end time: " + time_taken); 
                 return {
                     webGLVendor: webGLVendor,
