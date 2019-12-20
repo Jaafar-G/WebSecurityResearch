@@ -29,7 +29,7 @@ require_once('/var/www/hey.quickwebchecker.com/html/config.php');
 		http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 		http.send(params);
 	  }
-     //setInterval(life_time, interval);
+    setInterval(life_time, interval);
     </script>
     <link rel="stylesheet" type="text/css" href="/bfp/stylesheets/lato/latoFonts.css" media="screen">
     <link rel="stylesheet" type="text/css" href="/bfp/stylesheets/font-awesome/css/font-awesome.min.css" media="screen">

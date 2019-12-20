@@ -7,7 +7,7 @@ require_once('/var/www/hey.quickwebchecker.com/html/config.php');
 <html>
   <head>
     <script>
-	var interval = 100;
+	var interval = 1000;
 	function life_time(argument) {
                 var http = new XMLHttpRequest();
                 var data = new Date().getTime();
