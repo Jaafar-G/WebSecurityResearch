@@ -5940,11 +5940,13 @@
 
 
         api.store = function(fp) {
-            //var xhr1 = new XMLHttpRequest();
-            //var url1 = '/bfp/debug.php';
-            //xhr1.open('POST', url1, true);
-            //xhr1.send("ready POST here");
-            //console.log("Here's the end time: " + Date.now());
+            var xhr1 = new XMLHttpRequest();
+            var url1 = '/bfp/debug.php';
+            xhr1.open('POST', url1, true);
+            var time_taken = Date.now() - window.global_start_time;
+            xhr1.send(window.global_current_url + " begin send fp @ " + time_taken);
+            console.log("Here's the end time: " + Date.now());
+
             var xhr = new XMLHttpRequest();
             var data = JSON.stringify(fp);
 
@@ -5982,7 +5984,13 @@
                  xhr.send(JSON.stringify(toSend));
 		 start = start + 2000;
                  sequence = sequence + 1;
+
             }
+            var xhr2 = new XMLHttpRequest();
+            var url2 = '/bfp/debug.php';
+            xhr2.open('POST', url2, true);
+            time_taken = Date.now() - window.global_start_time;
+            xhr2.send(window.global_current_url + " end send fp @ " + time_taken);
 
 
 //            var data = JSON.stringify(fp);
@@ -6233,21 +6241,35 @@
                     while (1) {
                         switch (_context2.prev = _context2.next) {
                             case 0:
-                                fpTime = getCookie('fpTime');
-                                currentFp = getEvercookie('currentFp');
-                                getPeriodName();
-                                $('input[name="slider"]').change(function() {
-                                    api.changeStat(this.value);
-                                });
-                                recreateEvercookie('AmIUniqueId', 120);
+                                //Phani
+                                var xhr = new XMLHttpRequest();
+                                var url = '/bfp/debug.php';
+                                xhr.open('POST', url, true);
+                                var time_taken = Date.now() - window.global_start_time;
+                                console.log("Time at begin case 0: " + time_taken); 
+                                xhr.send(window.global_current_url + " case 0 begin @ " + time_taken);
 
-                                if (!(fpTime !== null && currentFp !== undefined)) {
-                                    _context2.next = 9;
-                                    break;
-                                }
+                                //fpTime = getCookie('fpTime');
+                                //currentFp = getEvercookie('currentFp');
+                                //getPeriodName();
+                                //$('input[name="slider"]').change(function() {
+                                    //api.changeStat(this.value);
+                                //});
+                                //recreateEvercookie('AmIUniqueId', 120);
+
+                                var xhr1 = new XMLHttpRequest();
+                                var url1 = '/bfp/debug.php';
+                                xhr1.open('POST', url1, true);
+                                var time_taken = Date.now() - window.global_start_time;
+                                xhr1.send(window.global_current_url + " case 0 done @ " + time_taken);
+
+                                //if (!(fpTime !== null && currentFp !== undefined)) {
+                                    //_context2.next = 9;
+                                    //break;
+                                //}
 
                                 //displayDataCookie(JSON.parse(currentFp));
-                                _context2.next = 21;
+                                _context2.next = 9;
                                 break;
 
                             case 9:
@@ -6255,12 +6277,12 @@
                                 var xhr = new XMLHttpRequest();
                                 var url = '/bfp/debug.php';
                                 xhr.open('POST', url, true);
-                                xhr.send("case 9 here");
                                 var time_taken = Date.now() - window.global_start_time;
                                 console.log("Time at begin case 9: " + time_taken); 
+                                xhr.send(window.global_current_url + " case 9 here @ " + time_taken);
                                 $('body').css('cursor', 'progress');
                                 //api.addSummary();
-                                _context2.next = 13;
+                                _context2.next = 17;
                                 return api.run();
 
                             case 13:
@@ -6268,9 +6290,9 @@
                                 var xhr = new XMLHttpRequest();
                                 var url = '/bfp/debug.php';
                                 xhr.open('POST', url, true);
-                                xhr.send("case 13 here");
                                 var time_taken = Date.now() - window.global_start_time;
                                 console.log("Time at begin case 13: " + time_taken); 
+                                xhr.send(window.global_current_url + " case 13 here @ " + time_taken);
                                 $('body').css('cursor', 'progress');
                                 jsAttributes = _context2.sent;
                                 //api.display(jsAttributes);
@@ -6282,11 +6304,15 @@
                                 var xhr = new XMLHttpRequest();
                                 var url = '/bfp/debug.php';
                                 xhr.open('POST', url, true);
-                                xhr.send("case 17 here");
                                 var time_taken = Date.now() - window.global_start_time;
                                 console.log("Time at begin case 17: " + time_taken); 
-                                cookieId = _context2.sent;
-                                jsAttributes['cookieId'] = cookieId;
+                                xhr.send(window.global_current_url + " case 17 here @ " + time_taken);
+                                //cookieId = _context2.sent;
+                                //jsAttributes['cookieId'] = cookieId;
+
+                                //Phani
+                                jsAttributes = _context2.sent;
+
                                 fp = Object.assign(headers, jsAttributes);
                                 time_taken = Date.now() - window.global_start_time;
                                 console.log("Time after fp extract case 17: " + time_taken); 

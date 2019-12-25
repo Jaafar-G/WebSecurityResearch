@@ -15,6 +15,7 @@ $password = 'a#nsus6y3!';
 $dbName = 'botDetector';
 $collectionName = 'browserFP';
 
+//
 //error_reporting(E_ALL);
 //ini_set('error_log', '/tmp/bfp_php_errors.log');
 

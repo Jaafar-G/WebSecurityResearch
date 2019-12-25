@@ -1,0 +1,64 @@
+<html>
+<head>
+
+<!--<script src="/bfp/pngtoy.min.js"></script>-->
+<script src="/bfp/pngtoy.js"></script>
+<script src="/bfp/canvas-polyfills.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
+<script>
+
+try {
+    // Text with lowercase/uppercase/punctuation symbols
+    var canvas = document.createElement('canvas');
+    var ctx = canvas.getContext('2d');
+    var txt = "BrowserLeaks,com <canvas> 1.0";
+    canvas.setAttribute("width", 220);
+    canvas.setAttribute("height", 30);
+    ctx.textBaseline = "top";
+    // The most common type
+    ctx.font = "14px 'Arial'";
+    ctx.textBaseline = "alphabetic";
+    ctx.fillStyle = "#f60";
+    ctx.fillRect(125,1,62,20);
+    // Some tricks for color mixing to increase the difference in rendering
+    ctx.fillStyle = "#069";
+    ctx.fillText(txt, 2, 15);
+    ctx.fillStyle = "rgba(102, 204, 0, 0.7)";
+    ctx.fillText(txt, 4, 17);
+    var cdata = canvas.toDataURL('image/png');
+    console.log(cdata);
+
+    cdata = atob(cdata.replace("data:image/png;base64,", ""));
+    var raw_hash = CryptoJS.MD5(cdata);
+    hash = raw_hash.toString(CryptoJS.enc.Hex);
+    console.log(hash)
+
+
+    var png = new PngToy([{ doCRC: "true" }]);
+    var crc = ""
+    png.fetchDataURL(cdata).then(
+        function() {
+            console.log(png.chunks.length)
+            for (i=0; i < png.chunks.length; i++){
+                console.log(png.chunks[i].name);
+                console.log(png.chunks[i].crc.toString(16));
+                if (png.chunks[i].name == "IDAT")
+                    crc = png.chunks[i].crc.toString(16);
+            }
+        });
+}
+catch (e){
+
+    console.log(e);
+}
+</script>
+
+</head>
+<body>
+The Sahara is a desert located on the African continent. It is the largest hot desert in the world, and the third largest desert overall after Antarctica and the Arctic. Its area of 9,200,000 square kilometres$
+The desert comprises much of North Africa, excluding the fertile region on the Mediterranean Sea coast, the Atlas Mountains of the Maghreb, and the Nile Valley in Egypt and Sudan. It stretches from the Red Sea$
+</body>
+</html>
+
+
+

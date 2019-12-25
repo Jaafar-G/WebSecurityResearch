@@ -1,0 +1,43 @@
+<?php
+session_start();
+require_once('/var/www/hey.quickwebchecker.com/html/config.php');
+?>
+
+<html>
+<head>
+<script src='https://www.google.com/recaptcha/api.js?render=6Lf1tsgUAAAAAGeYgdejWRjrKIcGylPLrwLlBFNK'></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+  function executeScript(){
+        setTimeout(function(){
+        let SITE_KEY = '6Lf1tsgUAAAAAGeYgdejWRjrKIcGylPLrwLlBFNK';
+        grecaptcha.ready(function() {
+            grecaptcha.execute(SITE_KEY, {action: 'homepage'}).then(function(token){
+               //console.log(token);
+               let urlAddr = window.location.href;
+               //console.log(urlAddr);
+               //alert("Page is loaded");
+               sendInfo(token, urlAddr);
+        })})
+        },2500);
+  }
+
+function sendInfo(token, urlAddr){
+        $.ajax({
+                url: '/ac_backend.php',
+                type: 'POST',
+                data: {Name: token, urlName: urlAddr},
+                success: function(data){
+                        console.log(data)
+                },
+                error:function(error){console.log(`Error ${error}`)}})
+        //console.log('sent')
+}
+</script>
+</head>
+<body onload="executeScript()">
+The Sahara is a desert located on the African continent. It is the largest hot desert in the world, and the third largest desert overall after Antarctica and the Arctic. Its area of 9,200,000 square kilometres$
+The desert comprises much of North Africa, excluding the fertile region on the Mediterranean Sea coast, the Atlas Mountains of the Maghreb, and the Nile Valley in Egypt and Sudan. It stretches from the Red Sea$
+</body>
+</html>
+

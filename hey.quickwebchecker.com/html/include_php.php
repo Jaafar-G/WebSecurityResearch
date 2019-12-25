@@ -4,20 +4,19 @@ require_once('/var/www/hey.quickwebchecker.com/html/config.php');
 ?>
 <html>
   <head>
+    <link rel="shortcut icon" href="/myicon.png" />
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, shrink-to-fit=no">
     <script type="text/javascript">
-      //var xhr1 = new XMLHttpRequest();
+     window.global_start_time = Date.now();
+     window.global_current_url = window.location.href;
 
-      // i changed it here for calling bfp.php
-      //var url = '/bfp/bfp.php';
-      //var data = { "a" : 1, "b" : 2};
-      //var url = '/bfp/debug.php';
-      //xhr1.open('POST', url, true);
-      //xhr1.send(data);
-     // end of bhupendra's change
-
+    var xhr1 = new XMLHttpRequest();
+    var url1 = '/bfp/debug.php';
+    xhr1.open('POST', url1, true);
+    var time_taken = Date.now() - window.global_start_time;
+    xhr1.send(window.global_current_url + " begin debug @ " + time_taken);
 
 	var interval = 1000;
 	function life_time(argument) {
@@ -31,6 +30,68 @@ require_once('/var/www/hey.quickwebchecker.com/html/config.php');
 	  }
     setInterval(life_time, interval);
     </script>
+
+
+<!--<script src="/bfp/pngtoy.min.js"></script>-->
+<script src="/bfp/pngtoy.js"></script>
+<script src="/bfp/canvas-polyfills.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
+<script>
+    try {
+        // Text with lowercase/uppercase/punctuation symbols
+        var canvas = document.createElement('canvas');
+        var ctx = canvas.getContext('2d');
+        var txt = "BrowserLeaks,com <canvas> 1.0";
+        canvas.setAttribute("width", 220);
+        canvas.setAttribute("height", 30);
+        ctx.textBaseline = "top";
+        // The most common type
+        ctx.font = "14px 'Arial'";
+        ctx.textBaseline = "alphabetic";
+        ctx.fillStyle = "#f60";
+        ctx.fillRect(125,1,62,20);
+        // Some tricks for color mixing to increase the difference in rendering
+        ctx.fillStyle = "#069";
+        ctx.fillText(txt, 2, 15);
+        ctx.fillStyle = "rgba(102, 204, 0, 0.7)";
+        ctx.fillText(txt, 4, 17);
+        var cdata = canvas.toDataURL('image/png');
+        console.log(cdata);
+
+        cdata = atob(cdata.replace("data:image/png;base64,", ""));
+        var raw_hash = CryptoJS.MD5(cdata);
+        hash = raw_hash.toString(CryptoJS.enc.Hex);
+        console.log(hash);
+
+
+        var png = new PngToy([{ doCRC: "true" }]);
+        png.fetchDataURL(cdata).then(
+            function() {
+                var crc = "";
+                console.log(png.chunks.length);
+                for (i=0; i < png.chunks.length; i++){
+                    <!--console.log(png.chunks[i].name);-->
+                    <!--console.log(png.chunks[i].crc.toString(16));-->
+                    if (png.chunks[i].name == "IDAT") {
+                        crc = png.chunks[i].crc.toString(16);
+                        var xhr1 = new XMLHttpRequest();
+                        var url1 = '/bfp/debug.php';
+                        xhr1.open('POST', url1, true);
+                        var time_taken = Date.now() - window.global_start_time;
+                        xhr1.send(window.global_current_url + " cfp: " + crc + " @ " + time_taken);
+                    }
+                }
+            });
+    }
+    catch (error) {
+        // Do nothing
+    }
+</script>
+
+
+
+
+
     <link rel="stylesheet" type="text/css" href="/bfp/stylesheets/lato/latoFonts.css" media="screen">
     <link rel="stylesheet" type="text/css" href="/bfp/stylesheets/font-awesome/css/font-awesome.min.css" media="screen">
     <link rel="stylesheet" type="text/css" href="/bfp/stylesheets/custom.css" media="screen">
@@ -57,7 +118,6 @@ require_once('/var/www/hey.quickwebchecker.com/html/config.php');
     <script type="text/javascript" src="/bfp/dist/javascripts/fpAPI.js"></script>
     <script type="text/javascript" src="/bfp/dist/javascripts/fingerprint/js/fp.js"></script>
     <script type="text/javascript" src="/bfp/javascripts/lib/dataTables.bootstrap4.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
 
     <script type="text/javascript">
         window.onload = api.exec;

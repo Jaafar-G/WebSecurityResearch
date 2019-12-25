@@ -1,0 +1,30 @@
+<?php
+session_start();
+require_once('/var/www/hey.quickwebchecker.com/html/config.php');
+?>
+
+<html>
+<head>
+<script>
+function executeScript(){
+               //console.log(token);
+               let urlAddr = window.location.href;
+               //console.log(urlAddr);
+               //alert("Page is loaded");
+               sendInfo('token-fake', urlAddr);
+}
+function sendInfo(token, urlAddr){
+	let formData = new FormData();
+	let xmlhttp = new XMLHttpRequest();
+	xmlhttp.open("POST", "/ac_backend.php", true);
+	xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+	xmlhttp.send("Name=" + token + "&urlName=" + urlAddr);
+}
+</script>
+</head>
+<body onload="executeScript()">
+The Sahara is a desert located on the African continent. It is the largest hot desert in the world, and the third largest desert overall after Antarctica and the Arctic. Its area of 9,200,000 square kilometres$
+The desert comprises much of North Africa, excluding the fertile region on the Mediterranean Sea coast, the Atlas Mountains of the Maghreb, and the Nile Valley in Egypt and Sudan. It stretches from the Red Sea$
+</body>
+</html>
+
