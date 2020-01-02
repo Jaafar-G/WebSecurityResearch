@@ -86,5 +86,13 @@ Get timestamp of first inserted data
 Get full stats of the collections
 > db.requestHeader.stats()
 
+Drop matching collections
+> regExp = /sess_/;
+db.getCollectionNames().filter(function(name){
+  return name.match(regExp)
+}).forEach(function(name){
+  db.getCollection(name).drop()
+});
+
 ## Additional Reference in Tools and Set up
 <a href ="https://github.com/ba127004/detectbot/blob/master/docs/mitmproxy-setup.pdf"> Mitm Proxy Set up </a>
