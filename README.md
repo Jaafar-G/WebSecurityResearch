@@ -87,11 +87,17 @@ Get full stats of the collections
 > db.requestHeader.stats()
 
 Drop matching collections
-> regExp = /sess_/;
+> 
+regExp = /sess_/;
+
 db.getCollectionNames().filter(function(name){
-  return name.match(regExp)
+
+return name.match(regExp)
+
 }).forEach(function(name){
-  db.getCollection(name).drop()
+
+db.getCollection(name).drop()
+
 });
 
 ## Additional Reference in Tools and Set up
