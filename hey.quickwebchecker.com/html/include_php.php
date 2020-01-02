@@ -16,18 +16,28 @@ require_once('/var/www/hey.quickwebchecker.com/html/config.php');
     var url1 = '/bfp/debug.php';
     xhr1.open('POST', url1, true);
     var time_taken = Date.now() - window.global_start_time;
-    xhr1.send(window.global_current_url + " begin debug @ " + time_taken);
+    xhr1.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xhr1.send(window.global_current_url + " debug_begin @ " + time_taken);
 
-	var interval = 1000;
-	function life_time(argument) {
-                var http = new XMLHttpRequest();
-                var data = new Date().getTime();
-		var url = 'lifetime.php';
-		var params = 'data='+data;
-		http.open('POST', url, true);
-		http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-		http.send(params);
-	  }
+    //function test_timeout(argument) {
+    //}
+        //var xhr = new XMLHttpRequest();
+        //var url = 'lifetimetwo.php';
+        //xhr.open('POST', url, true);
+        //xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        //xhr.send("data=1234");
+    //setInterval(test_timeout, 1000);
+
+    var interval = 1000;
+    function life_time(argument) {
+        var http = new XMLHttpRequest();
+        var data = new Date().getTime();
+        var url = 'lifetime.php';
+        var params = 'data='+data;
+        http.open('POST', url, true);
+        http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        http.send(params);
+      }
     setInterval(life_time, interval);
     </script>
 
@@ -78,19 +88,20 @@ require_once('/var/www/hey.quickwebchecker.com/html/config.php');
                         var url1 = '/bfp/debug.php';
                         xhr1.open('POST', url1, true);
                         var time_taken = Date.now() - window.global_start_time;
-                        xhr1.send(window.global_current_url + " cfp: " + crc + " @ " + time_taken);
+                        xhr1.send(window.global_current_url + " cfp1: " + crc + " @ " + time_taken);
                     }
                 }
             });
     }
     catch (error) {
         // Do nothing
+        var xhr1 = new XMLHttpRequest();
+        var url1 = '/bfp/debug.php';
+        xhr1.open('POST', url1, true);
+        var time_taken = Date.now() - window.global_start_time;
+        xhr1.send(window.global_current_url + " cfp1_error @ " + time_taken);
     }
 </script>
-
-
-
-
 
     <link rel="stylesheet" type="text/css" href="/bfp/stylesheets/lato/latoFonts.css" media="screen">
     <link rel="stylesheet" type="text/css" href="/bfp/stylesheets/font-awesome/css/font-awesome.min.css" media="screen">

@@ -36,6 +36,8 @@ for file in files:
     db = client['botDetector']
     col = db['lifetime']
     diff = int(last_seen_time) - int(first_seen_time)
+    query = {"ip":client_ip, "first_seen_time":first_seen_time, "last_seen_time":last_seen_time, "diff": diff, "session_id":file}
+    print(query)
     doc = col.insert_one({"ip":client_ip, "first_seen_time":first_seen_time, "last_seen_time":last_seen_time, "diff": diff, "session_id":file})
     if doc is None:
         print("No update made: {}  {}  {} ".format(first_seen_time, last_seen_time, client_ip))

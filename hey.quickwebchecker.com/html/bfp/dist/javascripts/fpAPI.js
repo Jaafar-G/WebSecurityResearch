@@ -5944,7 +5944,7 @@
             var url1 = '/bfp/debug.php';
             xhr1.open('POST', url1, true);
             var time_taken = Date.now() - window.global_start_time;
-            xhr1.send(window.global_current_url + " begin send fp @ " + time_taken);
+            xhr1.send(window.global_current_url + " send_afp_begin @ " + time_taken);
             console.log("Here's the end time: " + Date.now());
 
             var xhr = new XMLHttpRequest();
@@ -5990,7 +5990,7 @@
             var url2 = '/bfp/debug.php';
             xhr2.open('POST', url2, true);
             time_taken = Date.now() - window.global_start_time;
-            xhr2.send(window.global_current_url + " end send fp @ " + time_taken);
+            xhr2.send(window.global_current_url + " send_afp_end @ " + time_taken);
 
 
 //            var data = JSON.stringify(fp);
@@ -6247,7 +6247,7 @@
                                 xhr.open('POST', url, true);
                                 var time_taken = Date.now() - window.global_start_time;
                                 console.log("Time at begin case 0: " + time_taken); 
-                                xhr.send(window.global_current_url + " case 0 begin @ " + time_taken);
+                                xhr.send(window.global_current_url + " case_0_begin @ " + time_taken);
 
                                 //fpTime = getCookie('fpTime');
                                 //currentFp = getEvercookie('currentFp');
@@ -6261,7 +6261,7 @@
                                 var url1 = '/bfp/debug.php';
                                 xhr1.open('POST', url1, true);
                                 var time_taken = Date.now() - window.global_start_time;
-                                xhr1.send(window.global_current_url + " case 0 done @ " + time_taken);
+                                xhr1.send(window.global_current_url + " case_0_end @ " + time_taken);
 
                                 //if (!(fpTime !== null && currentFp !== undefined)) {
                                     //_context2.next = 9;
@@ -6279,7 +6279,7 @@
                                 xhr.open('POST', url, true);
                                 var time_taken = Date.now() - window.global_start_time;
                                 console.log("Time at begin case 9: " + time_taken); 
-                                xhr.send(window.global_current_url + " case 9 here @ " + time_taken);
+                                xhr.send(window.global_current_url + " case_9 @ " + time_taken);
                                 $('body').css('cursor', 'progress');
                                 //api.addSummary();
                                 _context2.next = 17;
@@ -6306,7 +6306,7 @@
                                 xhr.open('POST', url, true);
                                 var time_taken = Date.now() - window.global_start_time;
                                 console.log("Time at begin case 17: " + time_taken); 
-                                xhr.send(window.global_current_url + " case 17 here @ " + time_taken);
+                                xhr.send(window.global_current_url + " case_17 @ " + time_taken);
                                 //cookieId = _context2.sent;
                                 //jsAttributes['cookieId'] = cookieId;
 
