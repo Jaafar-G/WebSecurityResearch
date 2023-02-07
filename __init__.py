@@ -31,7 +31,8 @@ def log_ip(ip):
     (ID INTEGER PRIMARY KEY AUTOINCREMENT, ip_logs TEXT NOT NULL)''')
 
     # insert the IP addresses into the database
-    conn.execute("INSERT INTO ip_logs (ID, ip_logs) VALUES (NULL, ?)", (ip,))
+    ip_string = ','.join(ip)
+    conn.execute("INSERT INTO ip_logs (ID, ip_logs) VALUES (NULL, ?)", (ip_string,))
     conn.commit()
 
     # close our connection
