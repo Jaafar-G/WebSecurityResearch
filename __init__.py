@@ -26,11 +26,11 @@ def log_ip(ip):
     cursor = conn.cursor()
 
     # Creates a table
-    conn.execute('''CREATE TABLE IF NOT EXISTS IP_ADDRESSES 
-    (ID INTEGER PRIMARY KEY AUTOINCREMENT, IP_ADDRESS TEXT NOT NULL)''')
+    conn.execute('''CREATE TABLE IF NOT EXISTS ip_logs 
+    (ID INTEGER PRIMARY KEY AUTOINCREMENT, ip_logs TEXT NOT NULL)''')
 
     # insert the IP addresses into the database
-    conn.execute("INSERT INTO IP_ADDRESSES (IP_ADDRESS) VALUES (?)", (ip,))
+    conn.execute("INSERT INTO ip_logs VALUES (?)", (ip,))
     conn.commit()
 
     # close our connection
