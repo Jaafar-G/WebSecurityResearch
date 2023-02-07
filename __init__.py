@@ -19,7 +19,7 @@ def home():
 
 def log_ip(ip):
     # Creates a connection to the database names Client_req_logs
-    conn = sqlite3.connect("IP_Req_Logs.db")
+    conn = sqlite3.connect("ips.db")
     print("opened database successfully");
 
     # Creates a cursor object that allows interaction with database and add records
@@ -45,7 +45,6 @@ def get_ip_requests():
     ips = [row[0] for row in c.fetchall()]
     conn.close()
     return jsonify(ips), 200
-
 
 
 @app.route("/get_my_date", methods=["GET"])
