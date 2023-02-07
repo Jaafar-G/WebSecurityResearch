@@ -18,7 +18,7 @@ def home():
 
 
 def log_ip(ip):
-    ip = request.remote_addr
+    ip = request.access_route
     # Creates a connection to the database names Client_req_logs
     conn = sqlite3.connect("ips.db")
     print("opened database successfully");
@@ -40,7 +40,7 @@ def log_ip(ip):
 
 @app.route('/get_ip')
 def get_ip_requests():
-    ip = request.remote_addr
+    ip = request.access_route
     log_ip(ip)
     conn = sqlite3.connect('ips.db')
     c = conn.cursor()
