@@ -26,11 +26,11 @@ def log_ip(ip):
     # Creates a cursor object that allows interaction with database and add records
     cursor = conn.cursor()
 
-    # Creates a table
+    # Creates a table with two columns ID which is the request number and ip-logs which is the ip address
     conn.execute('''CREATE TABLE IF NOT EXISTS ip_logs 
     (ID INTEGER PRIMARY KEY AUTOINCREMENT, ip_logs TEXT NOT NULL)''')
 
-    # insert the IP addresses into the database
+    # insert the IP address as a string into the ip_logs table
     ip_string = ','.join(ip)
     conn.execute("INSERT INTO ip_logs (ID, ip_logs) VALUES (NULL, ?)", (ip_string,))
     conn.commit()
@@ -41,13 +41,18 @@ def log_ip(ip):
 
 @app.route('/get_ip')
 def get_ip_requests():
+    # creates the variable for the ip address
     ip = request.access_route
+    # calls the log_ip function to log each address
     log_ip(ip)
     conn = sqlite3.connect('ips.db')
     c = conn.cursor()
+    # selects the ip addresses from the database table
     c.execute("SELECT ip_logs FROM ip_logs")
+    # creates a list that stores the ip addresses from table
     ips = [row[0] for row in c.fetchall()]
     conn.close()
+    # displays the list of ip addresses
     return jsonify(ips), 200
 
 
