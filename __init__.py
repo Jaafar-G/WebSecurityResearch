@@ -17,30 +17,31 @@ def home():
     return jsonify({'Message': "Testing"})
 
 
+def log_ip(ip):
+    # Creates a connection to the database names Client_req_logs
+    conn = sqlite3.connect("IP_Req_Logs.db")
+    print("opened database successfully");
+
+    # Creates a cursor object that allows interaction with database and add records
+    cursor = conn.cursor()
+
+    # Creates a table
+    conn.execute('''CREATE TABLE IF NOT EXISTS IP_ADDRESSES 
+    (ID INTEGER PRIMARY KEY AUTOINCREMENT, IP_ADDRESS TEXT NOT NULL)''')
+
+    # insert the IP addresses into the database
+    conn.execute("INSERT INTO IP_ADDRESSES (IP_ADDRESS) VALUES (?)", (ip,))
+    conn.commit()
+
+    # close our connection
+    conn.close()
+
+
 @app.route("/get_my_ip", methods=["GET"])
-def get_my_ip():
-    return jsonify({'ip': request.access_route}), 200
-
-
-# Creates a connection to the database names Client_req_logs
-conn = sqlite3.connect("IP_Req_Logs.db")
-print("opened database successfully");
-
-# Creates a cursor object that allows interaction with database and add records
-cursor = conn.cursor()
-
-# Creates a table
-#cursor.execute (
- #   "INSERT INTO ips VALUES"
-#)
-
-print("IP table created successfully");
-
-# commit our command
-conn.commit()
-
-# close our connection
-conn.close()
+def get_ip_requests():
+    ip = request.remote_addr
+    log_ip(ip)
+    return jsonify({'Logged IP: {}'.format(ip)}), 200
 
 
 @app.route("/get_my_date", methods=["GET"])
