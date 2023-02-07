@@ -37,11 +37,15 @@ def log_ip(ip):
     conn.close()
 
 
-@app.route("/get_my_ip", methods=["GET"])
+@app.route('/get_ip_requests')
 def get_ip_requests():
-    ip = request.remote_addr
-    log_ip(ip)
-    return jsonify({'Logged IP: {}'.format(ip)}), 200
+    conn = sqlite3.connect('ips.db')
+    c = conn.cursor()
+    c.execute("SELECT ip FROM ip_logs")
+    ips = [row[0] for row in c.fetchall()]
+    conn.close()
+    return jsonify(ips), 200
+
 
 
 @app.route("/get_my_date", methods=["GET"])
