@@ -41,7 +41,7 @@ def log_ip(ip):
 def get_ip_requests():
     conn = sqlite3.connect('ips.db')
     c = conn.cursor()
-    c.execute("SELECT ip FROM ip_logs")
+    c.execute("SELECT ip_logs FROM ip_logs")
     ips = [row[0] for row in c.fetchall()]
     conn.close()
     return jsonify(ips), 200
