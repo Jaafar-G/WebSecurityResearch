@@ -1,6 +1,12 @@
 from flask import Flask
 from flask import jsonify
 from flask import request
+import time
+import datetime
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+from email.mime.image import MIMEImage
 import sqlite3
 
 config = {
@@ -37,6 +43,41 @@ def log_ip(ip):
 
     # close our connection
     conn.close()
+
+
+def send_mail():
+    # Setting up the email parameters
+    sender = 'sender@email.com'
+    recipient = 'testsubject@email.com'
+    subject = 'Test Email'
+    body = 'this is a test email.'
+    unique_identifier = 0
+
+    # Connection to the SMTP Server (sample information)
+    smtp_server = 'smtp.email.com'
+    smtp_port = 80
+    smtp_username = 'sender@email.com'
+    smtp_password = 'sender1@1Trackerapp_123'
+
+    # Creation of the email message with all contents
+    msg = MIMEMultipart()
+    msg['From'] = sender
+    msg['To'] = recipient
+    msg['Subject'] = subject
+    msg.attach(MIMEText(body))
+    img = MIMEImage(unique_identifier)
+    img.add_header('Content-ID', '<tracking_pixel>')
+    msg.attach(img)
+
+    # execution of the function send_mail
+    # starts with creation of server object
+    # then creates a TLS encryption for connection
+    # after the function logs into the SMTP server
+    # last line is for actually sending the email
+    with smtplib.SMTP(smtp_server, smtp_port) as server:
+        server.starttls()
+        server.login(smtp_username, smtp_password)
+        server.sendmail(sender, recipient, msg.as_string())
 
 
 @app.route('/get_ip')
