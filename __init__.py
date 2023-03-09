@@ -1,9 +1,10 @@
-from flask import Flask
+from flask import Flask, render_template
 from flask import jsonify
 from flask import request
 import time
 import datetime
 import smtplib
+import uuid
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from email.mime.image import MIMEImage
@@ -82,6 +83,12 @@ def send_mail():
 
 @app.route('/get_ip')
 def get_ip_requests():
+    # First we create a Unique ID using the UUID function from uuid
+    # the id is converted to a string and placed in the variable unique_id
+    # the page then displays the template of unique_id
+    unique_id = str(uuid.uuid4())
+    return render_template('unique_id.html', unique_id=unique_id)
+
     # creates the variable for the ip address
     ip = request.access_route
     # calls the log_ip function to log each address
@@ -90,11 +97,8 @@ def get_ip_requests():
     c = conn.cursor()
     # selects the ip addresses from the database table
     c.execute("SELECT ip_logs FROM ip_logs")
-    # creates a list that stores the ip addresses from table
-    ips = [row[0] for row in c.fetchall()]
+    # connection is then closed
     conn.close()
-    # displays the list of ip addresses
-    return jsonify(ips), 200
 
 
 if __name__ == "__main__":
